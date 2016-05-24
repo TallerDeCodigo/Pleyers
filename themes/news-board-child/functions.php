@@ -8,7 +8,7 @@ add_action('init', function(){
 
 		$labels = array(
 			'name' 			=> 	'Noticias',
-			'singular_name'	=>	'new noticia',
+			'singular_name'	=>	'noticia',
 			'add_new'		=>	'Nueva noticia',
 			'add_new_item'  => 	'Nueva noticia',
 			'edit_item'     => 	'Editar noticia',
@@ -41,12 +41,12 @@ add_action('init', function(){
 
 		$labels = array(
 			'name' 			=> 	'Episodios',
-			'singular_name'	=>	'new episodio',
-			'add_new'		=>	'Nueva episodio',
-			'add_new_item'  => 	'Nueva episodio',
+			'singular_name'	=>	'episodio',
+			'add_new'		=>	'Nuevo episodio',
+			'add_new_item'  => 	'Nuevo episodio',
 			'edit_item'     => 	'Editar episodio',
-			'new_item'      => 	'Nueva episodio',
-			'all_items'     => 	'Todas',
+			'new_item'      => 	'Nuevo episodio',
+			'all_items'     => 	'Todos',
 			'view_item'     => 	'Ver episodio',
 			'search_items'  => 	'Buscar new',
 			'not_found'     => 	'No se encontro',
@@ -101,7 +101,7 @@ add_action('init', function(){
 			'taxonomies'         => array( 'category' ),
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 			);
-		register_post_type('opinion', $args);
+		register_post_type('opiniones', $args);
 
 	});//end add action
 	
@@ -117,7 +117,7 @@ add_action('init', function(){
 		if( ! taxonomy_exists('shows')){
 
 			$labels = array(
-				'name'              => 'Nombres shows',
+				'name'              => 'Nombres de shows',
 				'singular_name'     => 'Show',
 				'search_items'      => 'Buscar',
 				'all_items'         => 'Todos',
@@ -154,7 +154,7 @@ add_action('init', function(){
 				'update_item'       => 'Actualizar Noticia de',
 				'add_new_item'      => 'Nueva Noticia de',
 				'new_item_name'     => 'Nombre Nueva Noticia de',
-				'menu_name'         => 'Nombres de shows'
+				'menu_name'         => 'Noticias de'
 			);
 
 			$args = array(
@@ -170,7 +170,36 @@ add_action('init', function(){
 			register_taxonomy( 'noticiasde', 'noticia', $args );
 		}
 
-}
+
+		// TIPOS DE OPINION 
+		if( ! taxonomy_exists('tipodeopinion')){
+
+			$labels = array(
+				'name'              => 'Tipos de opinión',
+				'singular_name'     => 'Tipo de opinión',
+				'search_items'      => 'Buscar',
+				'all_items'         => 'Todos',
+				'edit_item'         => 'Editar Tipo de opinión',
+				'update_item'       => 'Actualizar Tipo de opinión',
+				'add_new_item'      => 'Nueva Tipo de opinión',
+				'new_item_name'     => 'Nombre Nueva Tipo de opinión',
+				'menu_name'         => 'Tipos de opinión'
+			);
+
+			$args = array(
+				'hierarchical'      => true,
+				'labels'            => $labels,
+				'show_ui'           => true,
+				'show_admin_column' => true,
+				'show_in_nav_menus' => true,
+				'query_var'         => true,
+				'rewrite'           => array( 'slug' => 'tipodeopinion' ),
+			);
+
+			register_taxonomy( 'tipodeopinion', 'opiniones', $args );
+		}
+
+} //end custom_taxonomies_callback
 	
 
 ?>
