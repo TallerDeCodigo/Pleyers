@@ -1,0 +1,19 @@
+/*
+Theme Name:     News-Board - Child
+Theme URI:		http://themeforest.net/user/Mestowabo/portfolio
+Description:    Child theme for the News-Board theme
+Version:		1.0
+Author:         Mestowabo
+Author URI:		http://themeforest.net/user/Mestowabo
+Template:		news-board
+
+*/
+
+@import url("../news-board/style.css");
+@import url("framework/css/options.css");
+
+/* --------- Insert your custom styles on next rows --------- */
+.myrs{display:none;}
+.mes_header_menu li {background: #303030;}
+a {color: #eee!important; text-decoration: none;}
+.mes_socials_holder i{color:#444!important}
