@@ -10,12 +10,11 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
 
 <div class="container">
     <div class="row">
-        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?> col-md-12 <?php } else { ?> col-md-12 col-sm-12 <?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
+        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8 col-sm-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
             <?php if ( !is_archive() ) { ?>
                 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('paged='.$paged.'&cat='.$cat); ?>		
             <?php } ?> 
-            <?php if (!(have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?> 
-             
+            <?php if (!(have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                                
                                 

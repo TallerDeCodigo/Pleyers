@@ -83,7 +83,7 @@ function my_body_classes( $classes ) {
 </div>
 
 <div class="mes_menu_content_holder">
-    <div class="container">
+    <div class="container"> 
             <?php if ( has_nav_menu( 'main_menu' ) ){
                 $walker = new MES_Walker;
                 wp_nav_menu(array(

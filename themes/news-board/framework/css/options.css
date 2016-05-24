@@ -9,7 +9,7 @@
 
 
 .mes_more_btn:hover {color:#ffc301;border-bottom: 2px solid #ffc301;}
-.mes_header_menu>li {background: #303030; }
+.mes_header_menu>li {background: #303030 }
 
 h1, h2, h3, h4, h5, h6:not(.mes_blog_legend_descr) {
 	font-family: raleway;}
