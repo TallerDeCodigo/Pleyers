@@ -1,4 +1,7 @@
 <?php 
+/*
+Template Name: No-Sidebar Page Template
+*/
 get_header(); 
 global $more;
 $more = 0;
@@ -10,7 +13,8 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
 
 <div class="container">
     <div class="row">
-        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8 col-sm-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
+        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8qRpUtDMsHU" frameborder="0" allowfullscreen></iframe>
             <?php if ( !is_archive() ) { ?>
                 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('paged='.$paged.'&cat='.$cat); ?>		
             <?php } ?> 
