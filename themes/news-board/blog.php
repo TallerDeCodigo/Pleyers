@@ -11,6 +11,7 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
 ?>
                         <div class="container">
                         <div class="row">
+                            este es blog.php
                             <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8 col-sm-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
                                 <?php if ( !is_archive() ) { ?>
                                     <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('paged='.$paged.'&cat='.$cat); ?>		

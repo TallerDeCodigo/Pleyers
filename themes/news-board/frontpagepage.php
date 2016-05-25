@@ -1,7 +1,7 @@
 <?php // Template Name: Front Page
 get_header(); 
 ?>
-
+este es front page.php
 <div class="mes_page_cont_holder main_content_area">
 	<div class="container">
         <div class="row">

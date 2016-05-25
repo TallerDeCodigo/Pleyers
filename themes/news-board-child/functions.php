@@ -27,7 +27,7 @@ add_action('init', function(){
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'noticia' ),
+			'rewrite'            => array( 'slug' => 'noticias' ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,
@@ -35,7 +35,7 @@ add_action('init', function(){
 			'taxonomies'         => array( 'category' ),
 			'supports'           => array( 'title', 'editor', 'thumbnail' )
 			);
-		register_post_type('noticia', $args);
+		register_post_type('noticias', $args);
 
 		//EPISODIOS
 
@@ -167,7 +167,7 @@ add_action('init', function(){
 				'rewrite'           => array( 'slug' => 'noticiasde' ),
 			);
 
-			register_taxonomy( 'noticiasde', 'noticia', $args );
+			register_taxonomy( 'noticiasde', 'noticias', $args );
 		}
 
 

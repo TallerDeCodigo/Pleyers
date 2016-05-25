@@ -16,6 +16,7 @@ $sb_pos =  get_post_meta($post->ID, 'sidebarss_position', 1);
 ?> 
 
 <div class="main_content_area mes_page_cont_holder">
+    este es single postfolio.php
     <div class="container">
         <?php  global $smof_data; ?>
 <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); ?>

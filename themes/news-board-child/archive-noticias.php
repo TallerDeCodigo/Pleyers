@@ -1,4 +1,4 @@
 <?php get_header(); ?>
+esto es noticias
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

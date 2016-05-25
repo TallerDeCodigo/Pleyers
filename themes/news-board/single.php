@@ -4,6 +4,7 @@ get_header();
 $mes_options['blog_sidebar_position'] = "Right Sidebar";
 ?>
     <div class="container">
+        este es single.php
         <div class="row">
 	        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8 col-sm-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
         	

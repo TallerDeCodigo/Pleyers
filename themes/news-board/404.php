@@ -6,7 +6,7 @@ get_header();
 #akceptor {position: absolute;top:0;bottom: 0;left: 0;right: 0;margin: auto;}
 </style>
 
-				
+				este es 404
                 <div class="main_content_area" id="akceptor" style="position:relative;  margin-bottom:40px">
                     <div class="container">
                         <div class="row">

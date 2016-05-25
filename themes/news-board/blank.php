@@ -9,6 +9,7 @@ body { background:#fff;}
 html {height: 100%;}
 .wide_cont { position: inherit;}
 </style>
+este es blank
 				<?php 
 					global $more;
 					$more = 0;	 
