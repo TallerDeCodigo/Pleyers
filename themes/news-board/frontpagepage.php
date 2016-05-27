@@ -6,7 +6,8 @@ este es front page.php
 	<div class="container">
         <div class="row">
             <div class="col-md-12">
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <?php $args=query_posts('meta_key=priority&orderby=meta_value&order=ASC');?>
+                <?php if ( $args->have_posts() ) : while ( $args->have_posts() ) : $args->the_post(); ?>
                     <?php the_content(); ?>
                 <?php endwhile;  ?> 
                 <?php endif; ?>

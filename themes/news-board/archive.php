@@ -15,6 +15,7 @@ if (is_archive()){$mes_options['blog_sidebar_position'] = "Right Sidebar";}
                             este es archive.php
                         <div class="row">
                             <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8 col-sm-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
+                                <?php do_shortcode("[ess_grid alias='jiots-grid']")?>
                                 <?php if ( !is_archive() ) { ?>
                                     <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('paged='.$paged.'&cat='.$cat); ?>		
                                 <?php } ?> 

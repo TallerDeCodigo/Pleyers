@@ -26,4 +26,5 @@ Template:		news-board
 .mes_blog_meta{display:block;}
 .colored{color:#fff!important;}
 li{font-style: none;list-style: none!important}
-.mes_blog_full_content_holder{position:absolute;bottom:120px;z-index:9;}
+.mes_blog_full_content_holder{position:absolute;bottom:120px;z-index:9;} 
+.noticias_grid{margin-top:60px;margin-bottom:60px;}

@@ -14,45 +14,47 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
 <div class="container">
     <div class="row">
         <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
-<!--
-            <?php 
-                $args =  array(
-                            'post_type'=>array('episodios','noticias'),
-                            'posts_per_page'=>'-1',
-                            );
-                $query = new WP_Query($args);
+
+            <?php
+                echo do_shortcode("[ess_grid alias='first-video']"); 
+                echo do_shortcode("[ess_grid alias='main-grid']"); 
+                
+    //            $args =  array(
+    //                        'post_type'=>array('episodios','noticias', 'opinones'),
+    //                        'posts_per_page'=>'-1',
+    //                        );
+    //            $query = new WP_Query($args);
             ?>
--->
-            <?php if ( have_posts() ) { ?>
+            <!--<?php if ( $query->have_posts() ) { ?>
                 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('paged='.$paged.'&cat='.$cat); ?>		
             <?php } ?>
-            <?php if (!(have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php if (!($query->have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
+            <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>-->
                                
                                 
-            <div <?php post_class('row mes_post'); ?> id="post-<?php the_ID(); ?>">
+            <!-- <div <?php post_class('row mes_post'); ?> id="post-<?php the_ID(); ?>">
                 <div class="col-md-12">
                     <div class="blog_item">
                         <?php $format = get_post_format(); get_template_part( 'framework/post-format/format', $format );   ?>
                     </div>
                 </div>
-            </div>                  
-            <?php endwhile;  ?> 
-            <?php endif; ?>
-            <hr class="notopmargin">
-            <?php if (function_exists('wp_corenavi')) { ?><div class="pride_pg"><?php wp_corenavi(); ?></div><?php }?>
-        </div>
+            </div> -->                  
+            <!--<?php endwhile;  ?> 
+            <?php endif; ?>-->
+            <!-- <hr class="notopmargin"> -->
+           <!-- <?php if (function_exists('wp_corenavi')) { ?><div class="pride_pg"><?php wp_corenavi(); ?></div><?php }?>-->
+        <!-- </div> -->
         <!--/Page content-->
-        <?php if (($mes_options['blog_sidebar_position'] == "Left Sidebar")|| ($mes_options['blog_sidebar_position'] == "Right Sidebar")) { ?>
+        <!--<?php if (($mes_options['blog_sidebar_position'] == "Left Sidebar")|| ($mes_options['blog_sidebar_position'] == "Right Sidebar")) { ?>-->
         <!--Sidebar-->
-        <div class="col-md-4 col-sm-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 col-sm-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
-            <div class="myrs">
-                                <?php if ( is_active_sidebar("blog_sidebar") ) : ?><?php dynamic_sidebar( "blog_sidebar" ); ?>              
-                                <?php endif; ?>
-            </div>
+        <!-- <div class="col-md-4 col-sm-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 col-sm-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
+            <div class="myrs"> -->
+                                <!--<?php if ( is_active_sidebar("blog_sidebar") ) : ?><?php dynamic_sidebar( "blog_sidebar" ); ?>              
+                                <?php endif; ?>-->
+            <!-- </div> -->
         </div>
-        <!--/Sidebar-->
-        <?php } ?>
+        <!--/Sidebar--><!--
+        <?php } ?>-->
     </div>
 </div>
 <?php
