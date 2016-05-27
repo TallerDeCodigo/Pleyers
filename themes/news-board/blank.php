@@ -19,6 +19,7 @@ este es blank
                 <div class="main_content_area" id="akceptor">
                     <div class="container">
                         <div class="row">
+                            este es blank.php
                             <div class="col-md-12" id="donor">
                                 <?php if (!(have_posts())) { ?><div class="span12"><h2 class="colored uppercase"><?php __("There are no posts","mestowabo"); ?></h2></div><?php }  ?>   
                                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

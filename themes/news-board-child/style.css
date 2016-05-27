@@ -13,16 +13,17 @@ Template:		news-board
 @import url("framework/css/options.css");
 
 /* --------- Insert your custom styles on next rows --------- */
-/*.myrs{display:none;}*/
-.mes_header_menu li {background: #303030;}
-/*a {color: #eee!important; text-decoration: none;}*/
+.mes_header_menu li {background: #303030!important;}
+.mes_header_menu li a{padding:25px!important;}
 .mes_socials_holder i{color:#444!important}
-/*.row{border: 1px solid red}*/
 .menu-item a{color:#fff;}
 .mes_full_blog_post_date{background-color:none!important;top:30px;left:30px;}
 .mes_full_blog_post_date h2.mes_date_d{font-size: 13px!important; display: inline-block!important;}
 .mes_blog_post_title a{color:#fff!important;}
-.mes_blog_meta{display:none;}
+.mes_logo_holdred{padding-top:20px!important;padding-bottom:40px!important;text-align: none!important}
+.mes_logo_holdred a{max-width: none!important;}
+.mes_logo_holdred img{width:500px!important;height:auto!important;}
+.mes_blog_meta{display:block;}
 .colored{color:#fff!important;}
 li{font-style: none;list-style: none!important}
 .mes_blog_full_content_holder{position:absolute;bottom:120px;z-index:9;}

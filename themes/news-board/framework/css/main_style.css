@@ -287,8 +287,8 @@ box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);text-align: left;}
 .eg-mestowabo-portfolio-little-wrapper .esg-cc.eec {z-index: 99;}
 .lazyloadcover {z-index: -9 !important;background: transparent !important;}
 .myrs .esg-grid {margin-top: -10px}
-.eg-mestowabo-widget-2-wrapper .esg-entry-media-wrapper {width: 100%;}
-.eg-mestowabo-block-large-wrapper .esg-bc.eec {background: none repeat scroll 0 0 #333 !important;text-align: left;width: 400px;}
+.eg-mestowabo-widget-2-wrapper .esg-entry-media-wrapper {width: 100%;}/*
+.eg-mestowabo-block-large-wrapper .esg-bc.eec {background: none repeat scroll 0 0 #333 !important;text-align: left;width: 400px;}*/
 .overflow .esg-overflowtrick {overflow: visible !important;}
 .eg-mestowabo-widget-wrapper > .esg-media-cover-wrapper > a {}
 .eg-mestowabo-widget-wrapper .esg-entry-media-wrapper {}

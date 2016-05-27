@@ -14,8 +14,7 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
 <div class="container">
     <div class="row">
         <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
-            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/8qRpUtDMsHU" frameborder="0" allowfullscreen></iframe>-->
-
+<!--
             <?php 
                 $args =  array(
                             'post_type'=>array('episodios','noticias'),
@@ -23,12 +22,12 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
                             );
                 $query = new WP_Query($args);
             ?>
-
-            <?php if ( $query->have_posts() ) { ?>
+-->
+            <?php if ( have_posts() ) { ?>
                 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts('paged='.$paged.'&cat='.$cat); ?>		
             <?php } ?>
-            <?php if (!($query->have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
-            <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+            <?php if (!(have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                                
                                 
             <div <?php post_class('row mes_post'); ?> id="post-<?php the_ID(); ?>">
