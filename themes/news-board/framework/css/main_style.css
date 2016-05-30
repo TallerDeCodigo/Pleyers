@@ -166,7 +166,7 @@ li:hover .esg_decr_holder {height: 100%;}
 
 
 /*HOLDER*/
-.mes_header_holder {position: relative;height: 100%;margin: 0 auto;background: #fff;}
+.mes_header_holder {position: relative;/*height: 100%;*/margin: 0 auto;background: #fff;}
 
 /*TOP HEADER*/
 .mes_top_header {margin: 0 auto;background: #f2f2f2;border-bottom: 1px solid #eee;height: 50px;}

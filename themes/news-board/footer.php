@@ -3,7 +3,7 @@
 <div class="mes_footer_holder">
     <div class="container">
         <div class="mes_footer">
-            <div class="row">       
+            <div class="row">
                 <div class="col-md-4 col-sm-4">
                      <div class="mes_f_widget">
                     <?php if ( is_active_sidebar("footer_sidebar1") ) : ?> 

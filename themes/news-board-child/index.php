@@ -17,7 +17,9 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
 
             <?php
                 echo do_shortcode("[ess_grid alias='first-video']"); 
-                echo do_shortcode("[ess_grid alias='main-grid']"); 
+                echo do_shortcode("[ess_grid alias='main-grid']");
+            ?>    
+            <?php
                 
     //            $args =  array(
     //                        'post_type'=>array('episodios','noticias', 'opinones'),
@@ -57,6 +59,4 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
         <?php } ?>-->
     </div>
 </div>
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>

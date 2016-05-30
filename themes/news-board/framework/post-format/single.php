@@ -8,7 +8,7 @@
             	<h2 class="mes_blog_post_title_inner"><?php the_title();?></h2>
                 <div class="mes_blog_meta">
                 	<?php the_time('d F Y') ?>,&nbsp;&nbsp;
-                    By <?php the_author_posts_link() ?>,&nbsp;&nbsp;
+                    <?php the_author_posts_link() ?>,&nbsp;&nbsp;
                     <a href="<?php the_permalink() ?>#comments"><?php comments_number('0','1','%')?>  <?php echo __("Comments","mestowabo")?></a>
                 </div>
             </div>

@@ -4,9 +4,8 @@ get_header();
 $mes_options['blog_sidebar_position'] = "Right Sidebar";
 ?>
     <div class="container">
-        este es single.php
         <div class="row">
-	        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8 col-sm-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
+	        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
         	
             
 				<?php if (!(have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
@@ -17,19 +16,22 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                     <div class="col-md-12">
                         <div class="blog_item">
                         <?php $format = get_post_format(); get_template_part( 'framework/post-format/single', $format );   ?>
-<!--navigation -->
-<div class="mes_blog_nav">
-<div class="alignleft"><h4>
-<?php previous_post('%',
- 'Toward The Past: ', 'yes'); ?>
-</h4></div>
-<div class="alignright"><h4>
-<?php next_post('%',
- 'Toward The Future: ', 'yes'); ?>
-</h4></div>
-</div>
-<!--/navigation -->
+
+                            <!--navigation -->
+                            <div class="mes_blog_nav">
+                            <div class="alignleft"><h4>
+                            <?php previous_post('%',
+                             'Toward The Past: ', 'yes'); ?>
+                            </h4></div>
+                            <div class="alignright"><h4>
+                            <?php next_post('%',
+                             'Toward The Future: ', 'yes'); ?>
+                            </h4></div>
+                            </div>
+                            <!--/navigation -->
                     	</div>
+                            <?php echo do_shortcode( "[ess_grid alias='related-posts']")?>
+
 						<?php if ( ! post_password_required() ) {?>
                         <?php if (comments_open()) {?>
                         <div class="mes_commente_holder" id="comments">
@@ -37,7 +39,7 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                         <?php $comment_count = get_comment_count($post->ID); ?>
                         <h4 class="mes_comments_title"><?php if($comment_count['approved'] > 0) { comments_number('0 Comments','1 Comment:','% Comments:'); };?></h4>
                         </div>
-                        <ol class="mes_ticket_commentlist">
+                        <ol class="mes_ticket_commentlist"> 
                         <?php	 		 		 		 		 		 	
                         //Gather comments for a specific page/post 
                         $comments = get_comments(array(
@@ -87,15 +89,19 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
             
             </div>
             <!--/Page contetn-->
-            <?php if (($mes_options['blog_sidebar_position'] == "Left Sidebar")|| ($mes_options['blog_sidebar_position'] == "Right Sidebar")) { ?>
             <!--Sidebar-->
-            <div class="col-md-4 col-sm-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 col-sm-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
-                <div class="myrs">
-                        <?php if ( is_active_sidebar("blog_sidebar") ) : ?><?php dynamic_sidebar("blog_sidebar"); ?>              
-                        <?php endif; ?>
-                </div>
-            </div>
+            <!--
+                <?php if (($mes_options['blog_sidebar_position'] == "Left Sidebar")|| ($mes_options['blog_sidebar_position'] == "Right Sidebar")) { ?>
+                 <div class="col-md-4 col-sm-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 col-sm-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
+                    <div class="myrs">
+                            <?php if ( is_active_sidebar("blog_sidebar") ) : ?><?php dynamic_sidebar("blog_sidebar"); ?>              
+                            <?php endif; ?>
+                    </div>
+                </div> 
+            -->
+            
             <!--/Sidebar-->
+            
             <?php } ?>
         </div>
     </div>

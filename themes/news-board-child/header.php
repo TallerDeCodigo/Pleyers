@@ -24,7 +24,6 @@ function my_body_classes( $classes ) {
 }
 ?>
 <body  <?php body_class(); ?> style="background:url('<?php echo $mes_options['mes_background_upload']['url']?>'); background-size: <?php echo $mes_options['pattern_size']?> auto;">
-
 <!--PRELOADER -->
 <?php if ($mes_options['preloader'] == true) { ?>  
     <div class="preloader-holder" style="background:url('<?php echo $mes_options['mes_background_upload']['url']?>'); background-size: <?php echo $mes_options['pattern_size']?> auto;">
