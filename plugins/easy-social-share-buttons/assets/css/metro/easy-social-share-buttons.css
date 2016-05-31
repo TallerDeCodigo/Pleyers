@@ -224,7 +224,7 @@
 
 .essb_totalcount_item .essb_totalcount {
 	border: 0 !important;
-	padding-top: 6px !important;
+	/*padding-top: 6px !important*/;
 }
 
 .essb_fixed {
