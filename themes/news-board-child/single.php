@@ -1,24 +1,20 @@
 <?php 
 /* Default Post Template */
-get_header(); 
+get_header();
 $mes_options['blog_sidebar_position'] = "Right Sidebar";
 ?>
     <div class="container">
         <div class="row">
 	        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
-        	
-            
-				<?php if (!(have_posts())) { ?><h3 class="page_title">There are no posts</h3><?php }  ?>   
+				<?php if (!(have_posts())) { ?><h3 class="page_title"><!-- There are no posts --></h3><?php }  ?> 
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                
                 
                 <div <?php post_class('row mes_post'); ?> id="post-<?php the_ID(); ?>">
                     <div class="col-md-12">
-                        <div class="blog_item">
+                        <div class="blog_item"> 
                         <?php $format = get_post_format(); get_template_part( 'framework/post-format/single', $format );   ?>
-
                             <!--navigation -->
-                            <div class="mes_blog_nav">
+                            <!-- <div class="mes_blog_nav">
                             <div class="alignleft"><h4>
                             <?php previous_post('%',
                              'Toward The Past: ', 'yes'); ?>
@@ -27,7 +23,7 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                             <?php next_post('%',
                              'Toward The Future: ', 'yes'); ?>
                             </h4></div>
-                            </div>
+                            </div> -->
                             <!--/navigation -->
                     	</div>
                             <?php echo do_shortcode( "[ess_grid alias='related-posts']")?>
@@ -81,6 +77,19 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                 </div>
                 <?php };?>
                 <?php };?>
+
+                    <a href="http://localhost/pleyers">
+                        <p class="regreso">regreso &nbsp; &lt;</p>
+                    </a>    
+                    <p class="label_form">deja un comentario</p>
+                    
+                    <form id="page_form" name="_pageForm" method="post" action="page.php">
+                        <input type="text" name="nombre"    class="entradas">
+                        <input type="text" name="email"     class="entradas">
+                        <input type="textarea" rows="60"    class="entradas" name="mensaje">
+                        <input type="submit" class="enviar">
+                    </form>
+                
                 </div>
                 
                 </div>  
@@ -88,6 +97,8 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
             
             
             </div>
+            <section >
+            </section>
             <!--/Page contetn-->
             <!--Sidebar-->
             <!--

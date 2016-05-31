@@ -35,7 +35,7 @@ li{font-style: none;list-style: none!important}
 .row{text-align: center}
 .mes_blog_head{text-align: left;}
 .noticias_grid h2{text-align: left}
-.mes_blog_item_main_content p{text-align: left;width:70%;margin:0 auto;}
+.mes_blog_item_main_content p{text-align: left;width:100%;margin:0 auto;}
 .contenido_single{margin:0px auto;width:70%;}
 .titulo_shows{text-align: left}
 .redes_sociales div:first-child iframe{height:20px!important;}
@@ -48,7 +48,8 @@ li{font-style: none;list-style: none!important}
 #right{float:right;text-align: right;}
 .entradas{width:95%;margin-bottom:20px;padding:0px!important;}
 .enviar{float: left;margin-left:2.5%;}
-.label_form{float:left;}
-.regreso{float:right;}
+.label_form{float:left;margin-left: 2.5%}
+.regreso{float:right;margin-right: 2.5%}
 .mes_footer_holder{padding:0px 40px!important;}
 #mainFooter{width:95%;margin:0 auto;}
+.left_align{text-align: left}

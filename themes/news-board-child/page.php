@@ -6,7 +6,7 @@
                     <?php the_content(); ?>
                 <?php endwhile;  ?> 
                 <?php endif; ?>
-            <a href="http://localhost/pleyers">
+            <!-- <a href="http://localhost/pleyers">
                 <p class="regreso">regreso &nbsp; &lt;</p>
             </a>    
             <p class="label_form">deja un comentario</p>
@@ -16,7 +16,7 @@
                 <input type="text" name="email"     class="entradas">
                 <input type="textarea" rows="60"    class="entradas" name="mensaje">
                 <input type="submit" class="enviar">
-            </form>
+            </form> -->
             </div>
         </div>
     </div>
