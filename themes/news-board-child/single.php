@@ -125,7 +125,7 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                 if(!empty($mensaje)){
                     wp_insert_comment($data);
                 }else{
-                    echo "no hay datos";
+                    //echo "no hay datos";
                 }
             ?>
         </div>

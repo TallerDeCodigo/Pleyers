@@ -38,7 +38,32 @@ function my_body_classes( $classes ) {
     <div class="container">
     <div class="row">
         <div class="mes_socials_holder col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-6 col-sm-4 col-xs-12">
-            <?php echo $mes_options['header_field_text_2']?>
+
+            <ul id="redes_icons_top">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            
+            <?php //echo $mes_options['header_field_text_2']?>
+
             <div class="mes_top_left_widget">
                 <?php if ( is_active_sidebar("top_left_widget") ) : ?><?php dynamic_sidebar( "top_left_widget" ); ?>              
                 <?php endif; ?>

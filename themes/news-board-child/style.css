@@ -22,7 +22,7 @@ Template:		news-board
 .mes_blog_post_title a{color:#fff!important;}
 .mes_logo_holdred{padding-top:20px!important;padding-bottom:40px!important;text-align: none!important}
 .mes_logo_holdred a{max-width: none!important;}
-.mes_logo_holdred img{width:500px!important;height:auto!important;}
+.mes_logo_holdred img{max-width:500px!important;height:auto!important;}
 .mes_blog_meta{display:block;}
 .colored{color:#fff!important;}
 li{font-style: none;list-style: none!important}
@@ -55,3 +55,6 @@ li{font-style: none;list-style: none!important}
 .left_align{text-align: left}
 .essb_counter_right{padding:2px 6px!important;}
 .essb_totalcount{padding-left:6px!important;padding-right: 6px!important; padding-top:3px!important;}
+#redes_icons_top li{display:inline-block;}
+.opiniones_txt{font-size: 1.4em}
+#searchsubmit{background:#333!important;}

@@ -134,82 +134,83 @@ add_image_size( 'portfolio-wide', 762, 480, true );
 =======================================*/
 
 if ( function_exists('register_sidebar') ){
-	register_sidebar(array(
-		'name' => 'Blog Sidebar',
-		'id' => 'blog_sidebar',
-        'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h6 class="mes_widget_title">',
-        'after_title' => '</h6>'
-    ));
-	register_sidebar(array(
-		'name' => 'Top Left Widget',
-		'id' => 'top_left_widget',
-        'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h6 class="mes_widget_title">',
-        'after_title' => '</h6>'
-    ));
-
-	register_sidebar( array(
-		'name' => 'WooCommerce Page Sidebar',
-		'id' => 'woocommerce_sidebar',
-		'before_widget' => '<div id="%1$s" class="widgetSidebar %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	
-	register_sidebar(array(
-		'name' => 'Page Sidebar',
-		'id' => 'page_sidebar',
-		'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div><div class="clearfix"></div>',
-        'before_title' => '<div class="clearfix"></div><h6 class="mes_widget_title">',
-        'after_title' => '</h6>'
-	));
-	register_sidebar(array(
-		'name' => 'Footer Sidebar 1',
-		'id' => 'footer_sidebar1',
-		'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div><div class="clearfix"></div>',
-        'before_title' => '<div class="clearfix"></div><h5 class="mes_widget_title_single">',
-        'after_title' => '</h5>'
-	));
-	register_sidebar(array(
-		'name' => 'Footer Sidebar 2',
-		'id' => 'footer_sidebar2',
-		'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div><div class="clearfix"></div>',
-        'before_title' => '<div class="clearfix"></div><h5 class="mes_widget_title_single">',
-        'after_title' => '</h5>'
-	));
-	register_sidebar(array(
-		'name' => 'Footer Sidebar 3',
-		'id' => 'footer_sidebar3',
-		'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div><div class="clearfix"></div>',
-        'before_title' => '<div class="clearfix"></div><h5 class="mes_widget_title_single">',
-        'after_title' => '</h5>'
-	));
-	register_sidebar(array(
-		'name' => 'Footer Sidebar 4',
-		'id' => 'footer_sidebar4',
-		'before_widget' => '<div class="mes_widget">',
-        'after_widget' => '</div><div class="clearfix"></div>',
-        'before_title' => '<div class="clearfix"></div><h3 class="mes_widget_title_single">',
-        'after_title' => '</h3>'
-	));
-	
-	register_sidebar( array(
-		'name' => 'Portfolio Page Sidebar',
-		'id' => 'portfolio_sidebar',
-		'before_widget' => '<div id="%1$s" class="widgetSidebar %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	// register_sidebar(array(
+	// 	'name' => 'Blog Sidebar',
+	// 	'id' => 'blog_sidebar',
+ //        'before_widget' => '<div class="mes_widget">',
+ //        'after_widget' => '</div>',
+ //        'before_title' => '<h6 class="mes_widget_title">',
+ //        'after_title' => '</h6>'
+ //    ));
 }
+// 	register_sidebar(array(
+// 		'name' => 'Top Left Widget',
+// 		'id' => 'top_left_widget',
+//         'before_widget' => '<div class="mes_widget">',
+//         'after_widget' => '</div>',
+//         'before_title' => '<h6 class="mes_widget_title">',
+//         'after_title' => '</h6>'
+//     ));
+
+// 	register_sidebar( array(
+// 		'name' => 'WooCommerce Page Sidebar',
+// 		'id' => 'woocommerce_sidebar',
+// 		'before_widget' => '<div id="%1$s" class="widgetSidebar %2$s">',
+// 		'after_widget'  => '</div>',
+// 		'before_title'  => '<h3 class="widget-title">',
+// 		'after_title'   => '</h3>',
+// 	) );
+	
+// 	register_sidebar(array(
+// 		'name' => 'Page Sidebar',
+// 		'id' => 'page_sidebar',
+// 		'before_widget' => '<div class="mes_widget">',
+//         'after_widget' => '</div><div class="clearfix"></div>',
+//         'before_title' => '<div class="clearfix"></div><h6 class="mes_widget_title">',
+//         'after_title' => '</h6>'
+// 	));
+// 	register_sidebar(array(
+// 		'name' => 'Footer Sidebar 1',
+// 		'id' => 'footer_sidebar1',
+// 		'before_widget' => '<div class="mes_widget">',
+//         'after_widget' => '</div><div class="clearfix"></div>',
+//         'before_title' => '<div class="clearfix"></div><h5 class="mes_widget_title_single">',
+//         'after_title' => '</h5>'
+// 	));
+// 	register_sidebar(array(
+// 		'name' => 'Footer Sidebar 2',
+// 		'id' => 'footer_sidebar2',
+// 		'before_widget' => '<div class="mes_widget">',
+//         'after_widget' => '</div><div class="clearfix"></div>',
+//         'before_title' => '<div class="clearfix"></div><h5 class="mes_widget_title_single">',
+//         'after_title' => '</h5>'
+// 	));
+// 	register_sidebar(array(
+// 		'name' => 'Footer Sidebar 3',
+// 		'id' => 'footer_sidebar3',
+// 		'before_widget' => '<div class="mes_widget">',
+//         'after_widget' => '</div><div class="clearfix"></div>',
+//         'before_title' => '<div class="clearfix"></div><h5 class="mes_widget_title_single">',
+//         'after_title' => '</h5>'
+// 	));
+// 	register_sidebar(array(
+// 		'name' => 'Footer Sidebar 4',
+// 		'id' => 'footer_sidebar4',
+// 		'before_widget' => '<div class="mes_widget">',
+//         'after_widget' => '</div><div class="clearfix"></div>',
+//         'before_title' => '<div class="clearfix"></div><h3 class="mes_widget_title_single">',
+//         'after_title' => '</h3>'
+// 	));
+	
+// 	register_sidebar( array(
+// 		'name' => 'Portfolio Page Sidebar',
+// 		'id' => 'portfolio_sidebar',
+// 		'before_widget' => '<div id="%1$s" class="widgetSidebar %2$s">',
+// 		'after_widget'  => '</div>',
+// 		'before_title'  => '<h3 class="widget-title">',
+// 		'after_title'   => '</h3>',
+// 	) );
+// }
 
 add_filter('widget_text', 'do_shortcode');
 

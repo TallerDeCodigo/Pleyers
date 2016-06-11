@@ -7,11 +7,12 @@
                 <section id="mainFooter">
                     <section id="left" class="menuFooter">
                         <a href="http://localhost/pleyers/acerca-de/"><p>acerca de</p></a>
-                        <a href=""><p>contacto</p></a>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/CZV1iBO3thI" frameborder="0" allowfullscreen></iframe>
                     </section>
 
                     <section id="right" class="menuFooter">
-                        <ul>
+                        <p>Somos los jugadores del internet. <br>Entendemos la dinámica del deporte <br>y te llevamos los contenidos que te importan. <br>No jugamos a informar, le damos juego a la información.</p>
+                        <!-- <ul>
                             <li>
                                 <a href="">correo@correo.com</a>
                             </li>
@@ -24,7 +25,7 @@
                             <li>
                                 <a href="">Dirección, 123, dirección</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </section>    
                 </section>
                 <form id="reply_form" class="forma" action="footer.php">
