@@ -43,7 +43,7 @@
                 <?php if (get_post_type()=='noticias' || get_post_type()=='opiniones') {?>
                 <div class="mes_blog_item_content">
                     <div class="mes_blog_item_main_content ">
-                        <?php 
+                       <!--  <?php 
                             $args = array(
                                         'post_type'=>'opiniones',
                                         'post_per_page' => -1,
@@ -61,7 +61,7 @@
                            
                                     the_content('<div class="mes_read_more text-center"><a class="mes_readmore_btn" href="'. get_permalink($post->ID) . '">'. __("MAS","mestowabo") .'</a></div>');
                             
-                        ?>
+                        ?> -->
                 <?php }; ?>
                     </div>
                 </div>
