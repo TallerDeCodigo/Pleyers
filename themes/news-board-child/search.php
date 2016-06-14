@@ -1,6 +1,4 @@
-<?php 
-get_header(); 
-?>
+<?php get_header(); ?>
 	<div class="main_content_area">
         <div class="container">
             <div class="row">
@@ -27,10 +25,6 @@ get_header();
                 <!--Sidebar-->
                 <div class="col-md-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
                     <div class="myrs">
-
-                        <!--
-                        
-                    -->
 
                         <?php if ( is_active_sidebar("blog_sidebar") ) : ?><?php dynamic_sidebar( "blog_sidebar" ); ?>              
                         <?php endif; ?> <!-- sidebar comentado desde functions-->

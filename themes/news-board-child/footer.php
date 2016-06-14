@@ -1,3 +1,13 @@
+<?php 
+    if(isset($_POST['email'])){
+        $mail = $_POST['email'];
+
+       // print_r($mail);
+
+
+
+    }
+?>
 <?php global $mes_options;?>   
 </div> <!--widecont-->
 <div class="mes_footer_holder">
@@ -12,24 +22,10 @@
 
                     <section id="right" class="menuFooter">
                         <p>Somos los jugadores del internet. <br>Entendemos la dinámica del deporte <br>y te llevamos los contenidos que te importan. <br>No jugamos a informar, le damos juego a la información.</p>
-                        <!-- <ul>
-                            <li>
-                                <a href="">correo@correo.com</a>
-                            </li>
-                            <li>
-                                <a href="">+52-1-55-5555-5555</a>
-                            </li>
-                            <li>
-                                <a href="">+52-1-55-5555-5555</a>
-                            </li>
-                            <li>
-                                <a href="">Dirección, 123, dirección</a>
-                            </li>
-                        </ul> -->
                     </section>    
                 </section>
-                <form id="reply_form" class="forma" action="footer.php">
-                    <input type="text" name="email" />
+                <form id="reply_form" class="forma" action="" method="post">
+                    <input type="text" name="email" id="email" />
                     <input type="submit" value="Enviar">
                 </form>  
             </div>  

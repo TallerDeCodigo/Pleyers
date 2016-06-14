@@ -58,13 +58,9 @@
                                         );
                             $query = new WP_Query($args);
                             
-                            //print_r($query);
-                            //if ($query->have_posts()) {
-                                //while($query->have_posts()){
-                                    //$query->the_post();
+                           
                                     the_content('<div class="mes_read_more text-center"><a class="mes_readmore_btn" href="'. get_permalink($post->ID) . '">'. __("MAS","mestowabo") .'</a></div>');
-                                //}
-                            //}
+                            
                         ?>
                 <?php }; ?>
                     </div>

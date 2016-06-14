@@ -24,6 +24,18 @@ function my_body_classes( $classes ) {
 }
 ?>
 <body  <?php body_class(); ?> style="background:url('<?php echo $mes_options['mes_background_upload']['url']?>'); background-size: <?php echo $mes_options['pattern_size']?> auto;">
+   
+<!--FACEBOOK COMMENTS-->
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1066203396755847";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <!--PRELOADER -->
 <?php if ($mes_options['preloader'] == true) { ?>  
     <div class="preloader-holder" style="background:url('<?php echo $mes_options['mes_background_upload']['url']?>'); background-size: <?php echo $mes_options['pattern_size']?> auto;">
@@ -38,31 +50,8 @@ function my_body_classes( $classes ) {
     <div class="container">
     <div class="row">
         <div class="mes_socials_holder col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-6 col-sm-4 col-xs-12">
-
-            <ul id="redes_icons_top">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-youtube"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
             
-            <?php //echo $mes_options['header_field_text_2']?>
+            <?php echo $mes_options['header_field_text_2']?>
 
             <div class="mes_top_left_widget">
                 <?php if ( is_active_sidebar("top_left_widget") ) : ?><?php dynamic_sidebar( "top_left_widget" ); ?>              

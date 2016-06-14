@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6:not(.mes_blog_legend_descr) {
 
 .mes_top_header .menu li a:hover, .mes_socials_holder a:hover i  {color:#ffc301 !important}
 
-.ubermenu-sticky-wrapper, .ubermenu.ubermenu-main, .eg-mesto-main-colored-container, .esg-overlay.eg-mesto-main-twitter-container {background:#ffc301!important}
+.ubermenu-sticky-wrapper, .ubermenu.ubermenu-main, .eg-mesto-main-colored-container, .esg-overlay.eg-mesto-main-twitter-container {background:#2593c5!important}
 .mes-search-submit {background-color:#444 ;}
 .mes-search-submit:hover {background-color:rgba(66,66,66,0.5) ;}
 .mes_pstyle_3 .mes_date {background: #ffc301 }
@@ -26,8 +26,8 @@ h1, h2, h3, h4, h5, h6:not(.mes_blog_legend_descr) {
 .woocommerce #content input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-page #content input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover {background:#ffc301 !important;}
 
 
-.esg-navigationbutton.esg-loadmore {background: #ffc301 !important }
-a:hover {color:#ffc301;}
+.esg-navigationbutton.esg-loadmore {background: #303030; }
+a:hover {color:#303030;}
 .richard-skin .esg-navigationbutton:hover, .richard-skin .esg-filterbutton:hover, .richard-skin .esg-sortbutton:hover, .richard-skin .esg-sortbutton-order:hover, .richard-skin .esg-cartbutton-order:hover, .richard-skin .esg-filterbutton.selected,
 .mes_soc_icons .soc_round:hover {border: 2px solid #ffc301 !important}
 .eg-mestowabo-pricing-element-4 {background:#ffc301!important}
@@ -104,25 +104,3 @@ h3.mes_blog_post_title a:hover { color:#ffc301; }
 
 .mes_blog_post_title_inner h4:before  { display:inline-block; content:'//'; color:#ffc301; margin-right:5px;}
 .io_widget_title:before  { display:inline-block; content:'//'; color:#ffc301; margin-right:5px;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

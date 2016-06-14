@@ -15,7 +15,12 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                         <?php $format = get_post_format(); get_template_part( 'framework/post-format/single', $format );   ?>
                            
                     	</div>
+
+
                             <?php echo do_shortcode( "[ess_grid alias='related-posts']")?>
+
+
+
 
 						<?php if ( ! post_password_required() ) { ?>
                         <?php if (comments_open()) { ?>
@@ -69,20 +74,19 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                             <?php };?>
                         <?php };?>
 
-                        <p class="regreso">
-                            <a href="http://localhost/pleyers">
-                                regreso &nbsp; &lt;
-                            </a>    
-                        </p>
                         <?php $insert = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+                    <div class="comentarios">   
                         <p class="label_form">deja un comentario</p>
-                    
-                        <form id="page_form" name="_pageForm" method="post" action="<?php echo $insert; ?>">
+                        <p class="regreso"><a href="http://localhost/pleyers">regreso &nbsp; &lt;</a></p>
+                        <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
+                    </div>
+
+                        <!-- <form id="page_form" name="_pageForm" method="post" action="<?php echo $insert; ?>">
                             <input type="text" name="nombre"    class="entradas" placeholder="Nombre">
                             <input type="text" name="email"     class="entradas" placeholder="E-mail">
                             <textarea type="textarea" rows="7"class="entradas" name="mensaje" placeholder="Comentario"></textarea>
                             <input type="submit" class="enviar" value="Enviar">
-                        </form>
+                        </form> -->
                 
                     </div>
                 

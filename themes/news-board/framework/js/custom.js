@@ -256,4 +256,26 @@ jQuery.noConflict()(function($){
                         });
                     });
 };
+
+	$(".esg-entry-media img").each(function() {
+		console.log($(this).prop('height'));
+
+		$(this).css('height','100%');
+	});
+
+
+	var alturaImagen = $('img').height();
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

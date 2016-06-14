@@ -74,7 +74,8 @@ body {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 h1,h2,h3,h4 { font-weight:300;}
 .mes_head_title { padding:10px; margin:0px; background:rgba(0,0,0,0.3); display:inline-block; color:#fff;}
 .mes_legend { font-weight:300 !important; line-height:40px; text-align:center; font-size:28px;color: #393939;}
-h1{font-size: 44px;line-height: 1.3125em;letter-spacing: 2px;font-weight: 700;text-transform: uppercase;color: #393939;margin-top: 0 !important;}
+/*h1{font-size: 44px;line-height: 1.3125em;letter-spacing: 2px;font-weight: 700;text-transform: uppercase;color: #393939;margin-top: 0;}*/
+
 h2{font-size: 30px;line-height: 1.2em;letter-spacing: 2px;font-weight: 800;text-transform: uppercase;color: #393939;margin-top: 0;}
 h3{font-size: 20px;line-height: 1.285714285714286em;font-style: italic;font-weight: 400;color: #5d5d5d;font-family: 'Crete Round',sans-serif !important;margin-top: 0 !important;}
 h4{font-size: 13px;line-height: 1.538461538461538em;letter-spacing: 1px;font-weight: 700;text-transform: uppercase;color: #393939;margin-top: 0 !important;}
@@ -108,6 +109,7 @@ h6{font-family: 'Crete Round',sans-serif !important;font-size: 14px;line-height:
 .mes_overlay {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkYGD4z8DAYMLAwHAGRDMyMDAYMyABkAB+FQDIXATR1IUbEQAAAABJRU5ErkJggg==)}
 .mes_quote{position: relative;}
 .mes_quote i {font-size: 18px;display: inline-table;vertical-align: top;margin-top: 2px;padding: 0 8px;}
+
 
 
 /*STANDART FOR THEMES*/
@@ -530,7 +532,7 @@ select option {max-width: 300px;}
 
 .mes_widget  #searchform label { display:none;}
 .input-text { background:#fafafa; border:1px solid #ededed;}
-input, textarea{ padding:10px;}
+input, textarea{ padding:0px!important;}
 .mes_widget input {width:100%;border:1px solid transparent;font-size:12px;line-height:12px;margin-bottom:20px;}
 .mes_widget input#s{ margin:0px}
 .mes_right_sidebar .mes_widget{  padding-left:30px;}

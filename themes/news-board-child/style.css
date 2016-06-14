@@ -43,9 +43,9 @@ li{font-style: none;list-style: none!important}
 #dropdownLabel-share-list{display:none!important;}
 .dropdownPanel:before{display: none!important}
 .esg-overflowtrick{overflow: visible!important;}
-/*.mes_footer_holder{border:1px solid red;}*/
+.mes_footer_holder{margin-top:40px!important;}
 #left{float:left; text-align: left;}
-#right{float:right;text-align: right;}
+#right{float:right;text-align: right;margin-top:70px;}
 .entradas{width:95%;margin-bottom:20px;padding:0px!important;}
 .enviar{float: left;margin-left:2.5%;}
 .label_form{float:left;margin-left: 2.5%}
@@ -55,6 +55,11 @@ li{font-style: none;list-style: none!important}
 .left_align{text-align: left}
 .essb_counter_right{padding:2px 6px!important;}
 .essb_totalcount{padding-left:6px!important;padding-right: 6px!important; padding-top:3px!important;}
-#redes_icons_top li{display:inline-block;}
 .opiniones_txt{font-size: 1.4em}
 #searchsubmit{background:#333!important;}
+.esg-navigationbutton.esg-loadmore{background:#303030!important}
+.mes_footer_holder{background: #f2f2f2!important;}
+.comentarios p{margin-bottom:30px;}
+.comentarios{border-top:1px solid #666;}
+.comentarios div{margin-top:50px;}
+#reply_form{margin-top:80px;}

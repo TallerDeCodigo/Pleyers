@@ -16,9 +16,10 @@ if ( $title == "Without Sidebar")  $mes_options['blog_sidebar_position'] = "With
         <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
 
             <?php
-                echo do_shortcode("[ess_grid alias='first-video']"); 
+                echo do_shortcode("[ess_grid alias='first-video']");
                 echo do_shortcode("[ess_grid alias='main-grid']");
             ?>    
+            
             <?php
                 
     //            $args =  array(
