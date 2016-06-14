@@ -4,7 +4,7 @@
             <div class="row">
                 <!--Page contetn-->
                 <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-8<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4<?php }; ?>">
-                    <h3 style="margin-bottom:30px;"><?php _e("Search Results for:","mestowabo"); ?> <strong class="colored"><?php echo get_search_query();?></strong></h3>
+                    <h3 style="margin-bottom:30px;"><?php _e("Resultados de búsqueda:","mestowabo"); ?> <strong class="colored"><?php echo get_search_query();?></strong></h3>
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                      <div <?php post_class('row mes_post'); ?> id="post-<?php the_ID(); ?>">
                         <div class="col-md-12">
@@ -15,7 +15,7 @@
                     </div>
                     <?php endwhile; else: ?>
                     <div class="alert alert-danger">
-                        <strong>Nothing was found!</strong> Change a few things up and try submitting again.
+                        <strong>Tu búsqueda no produjo resultados</strong> Cambia algunas cosas e inténtalo de nuevo.
                     </div>
                      <?php endif; ?>
                     <hr class="notopmargin">

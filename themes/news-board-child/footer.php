@@ -28,7 +28,7 @@
                     <p>
                         <label>
                             <input type="checkbox" name="mc4wp-subscribe" value="1" />
-                            Subscribe to our newsletter.    </label>
+                            Suscríbete a nuestro newsletter.    </label>
                     </p>
                     <input type="text" name="email" id="email" />
                     <input type="submit" value="Enviar">
