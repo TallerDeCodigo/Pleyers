@@ -6,23 +6,19 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
     <div class="container">
         <div class="row">
 	        <div class="<?php if ($mes_options['blog_sidebar_position'] == "Without Sidebar") { ?>col-md-12<?php } else { ?>col-md-12 col-sm-12<?php }; if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?> col-md-push-4 col-sm-push-4<?php }; ?>">
-				<?php if (!(have_posts())) { ?><h3 class="page_title"><!-- There are no posts --></h3><?php }  ?> 
+				<?php if (!(have_posts())) { ?><h3 class="page_title"> There are no posts </h3><?php }  ?>
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 
                 <div <?php post_class('row mes_post'); ?> id="post-<?php the_ID(); ?>">
                     <div class="col-md-12">
                         <div class="blog_item"> 
-                        <?php $format = get_post_format(); get_template_part( 'framework/post-format/single', $format );   ?>
-                           
+                            <?php $format = get_post_format(); get_template_part( 'framework/post-format/single', $format );   ?>
                     	</div>
-
 
                             <?php echo do_shortcode( "[ess_grid alias='related-posts']")?>
 
 
-
-
-						<?php if ( ! post_password_required() ) { ?>
+						<!--<?php if ( ! post_password_required() ) { ?>
                         <?php if (comments_open()) { ?>
                                 <div class="mes_commente_holder" id="comments">
                                     <div class="comments_div">
@@ -31,15 +27,15 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                                     </div>
                                     <ol class="mes_ticket_commentlist"> 
                                         <?php	 		 		 		 		 		 	
-                                            //Gather comments for a specific page/post 
+
                                             $comments = get_comments(array(
                                             'post_id' => get_the_ID(),
                                             ));
                                 
-                                            //Display the list of comments
+
                                             wp_list_comments(array(
-                                            'per_page' => 10, //Allow comment pagination
-                                            'reverse_top_level' => true //Show the latest comments at the top of the list
+                                            'per_page' => 10, 
+                                            'reverse_top_level' => true 
                                             ), $comments);
                                         ?>
                                     </ol>
@@ -72,21 +68,14 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                                     <?php paginate_comments_links(); ?>
                                 </div>
                             <?php };?>
-                        <?php };?>
+                        <?php };?>-->
 
-                        <?php $insert = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-                    <div class="comentarios">   
+                    <!--    <?php $insert = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+                     <div class="comentarios">   
                         <p class="label_form">deja un comentario</p>
                         <p class="regreso"><a href="http://localhost/pleyers">regreso &nbsp; &lt;</a></p>
                         <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
-                    </div>
-
-                        <!-- <form id="page_form" name="_pageForm" method="post" action="<?php echo $insert; ?>">
-                            <input type="text" name="nombre"    class="entradas" placeholder="Nombre">
-                            <input type="text" name="email"     class="entradas" placeholder="E-mail">
-                            <textarea type="textarea" rows="7"class="entradas" name="mensaje" placeholder="Comentario"></textarea>
-                            <input type="submit" class="enviar" value="Enviar">
-                        </form> -->
+                    </div> -->
                 
                     </div>
                 
@@ -108,30 +97,6 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                 
                 <!--/Sidebar-->
             <?php } ?>
-            <?php
-
-                if(!empty($_POST)){
-                    $nombre = $_POST['nombre'];
-                    $email = $_POST['email'];
-                    $mensaje = $_POST['mensaje'];
-                }
-                
-                $time = current_time('mysql');
-                $data =  array(
-                            'comment_post_ID'       =>$post->ID,
-                            'comment_author'        =>$nombre,
-                            'comment_author_email'  =>$email,
-                            'comment_content'       =>$mensaje,
-                            'comment_date'          =>$time,
-                            'comment_approved'      =>1
-                    );
-
-                if(!empty($mensaje)){
-                    wp_insert_comment($data);
-                }else{
-                    //echo "no hay datos";
-                }
-            ?>
         </div>
     </div>
 
