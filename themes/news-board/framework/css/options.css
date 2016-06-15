@@ -14,7 +14,7 @@
 h1, h2, h3, h4, h5, h6:not(.mes_blog_legend_descr) {
 	font-family: raleway;}
 
-.mes_top_header .menu li a:hover, .mes_socials_holder a:hover i  {color:#ffc301 !important}
+.mes_top_header .menu li a:hover, .mes_socials_holder a:hover i  {color:rgba(66,66,66,0.5)!important}
 
 .ubermenu-sticky-wrapper, .ubermenu.ubermenu-main, .eg-mesto-main-colored-container, .esg-overlay.eg-mesto-main-twitter-container {background:#2593c5!important}
 .mes-search-submit {background-color:#444 ;}
