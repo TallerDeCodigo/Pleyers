@@ -11,6 +11,8 @@
     <![endif]-->
     <?php global $mes_options;?>
     <link rel="shortcut icon" href="<?php  echo stripslashes($mes_options['mes_header_favicon']['url'])?>">
+    <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <?php wp_head(); ?>
     <?php $classes = get_body_class(); ?>
 </head>

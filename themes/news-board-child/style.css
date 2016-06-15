@@ -67,6 +67,7 @@ li{font-style: none;list-style: none!important}
 .comentarios{border-top:1px solid #666;}
 .comentarios div{margin-top:50px;}
 #reply_form{margin-top:80px;}
+#reply_form input[type="checkbox"]{visibility: hidden!important}
 .mes_more_btn{border-bottom:none!important;}
 .eg-bubugrid-element-6{border-color:rgba(255,255,255,0.6)!important;}
 .singleContent{font-family:'helvetica';}
@@ -77,3 +78,6 @@ li{font-style: none;list-style: none!important}
 .eg-bubugrid-container{opacity: 0.5}
 .eg-mesto-main-image-container{background-image:url("../news-board/framework/images/grid42x42.png");opacity: 0.5!important;background-size: 5px!important}
 .mes_full_blog_post_date{margin-left:15%;}
+.srch_relacionados{width:250px;margin:0 auto;}
+.myrs{margin-top:300px;}
+.acerca{width:70%;margin:0 auto;}

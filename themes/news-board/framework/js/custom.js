@@ -266,7 +266,9 @@ jQuery.noConflict()(function($){
 
 	var alturaImagen = $('img').height();
 
+//form checkbox hidden and checked
 
+$('#reply_form input').attr('checked', 'checked');
 
 
 

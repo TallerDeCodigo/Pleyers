@@ -27,12 +27,12 @@
                 <div class="col-md-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
                     <div class="myrs">
                         <h3>Relacionados</h3>
-                        <?php //if(have_posts()){ while(have_posts()){  the_post(); ?>
+
                         <a href="<?php the_permalink(); ?>">
 
                             <?php 
                                 $args=array(
-                                        'numberposts'=>'5',
+                                        'numberposts'=>'3',
                                         'order'=>'DESC',
                                         'post_type'=>'episodios',
                                         'post_status'=>'published'
@@ -41,7 +41,8 @@
                                 $query = get_posts($args);
 
                                 for($i=0; $i<count($query); $i++){
-                                    print_r($query[$i]->post_content);
+                                    print_r("<div class='srch_relacionados'>" . $query[$i]->post_content) . "</div>"; 
+                                    // print_r($query[$i]->post_content);
                                 }
                              ?>
                         </a>
