@@ -18,6 +18,7 @@
                         <strong>Tu búsqueda no produjo resultados</strong> Cambia algunas cosas e inténtalo de nuevo.
                     </div>
                      <?php endif; ?>
+
                     <hr class="notopmargin">
 					<?php if (function_exists('wp_corenavi')) { ?><div class="pride_pg"><?php wp_corenavi(); ?></div><?php }?>
                 </div>
@@ -25,6 +26,26 @@
                 <!--Sidebar-->
                 <div class="col-md-4 <?php if ($mes_options['blog_sidebar_position'] == 'Left Sidebar'){?>col-md-pull-8 mes_left_sidebar<?php }else {?> mes_right_sidebar<?php ;}; ?>">
                     <div class="myrs">
+                        <h3>Relacionados</h3>
+                        <?php //if(have_posts()){ while(have_posts()){  the_post(); ?>
+                        <a href="<?php the_permalink(); ?>">
+
+                            <?php 
+                                $args=array(
+                                        'numberposts'=>'5',
+                                        'order'=>'DESC',
+                                        'post_type'=>'episodios',
+                                        'post_status'=>'published'
+                                    );
+
+                                $query = get_posts($args);
+
+                                for($i=0; $i<count($query); $i++){
+                                    print_r($query[$i]->post_content);
+                                }
+                             ?>
+                        </a>
+                        <?php //} }?>
 
                         <?php if ( is_active_sidebar("blog_sidebar") ) : ?><?php dynamic_sidebar( "blog_sidebar" ); ?>              
                         <?php endif; ?> <!-- sidebar comentado desde functions-->
