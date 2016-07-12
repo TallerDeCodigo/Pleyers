@@ -103,14 +103,16 @@
 
 	if ( function_exists('add_image_size') ){
 		
-		// add_image_size( 'size_name', 200, 200, true );
+		add_image_size( 'grid_home_large', 678, 334, true );
+		add_image_size( 'grid_home_square', 334, 334, true );
+		add_image_size( 'grid_home_square_large', 678, 678, false );
 		
 		// cambiar el tamaño del thumbnail
-		/*
-		update_option( 'thumbnail_size_h', 100 );
-		update_option( 'thumbnail_size_w', 200 );
-		update_option( 'thumbnail_crop', false );
-		*/
+		
+		// update_option( 'thumbnail_size_h', 100 );
+		// update_option( 'thumbnail_size_w', 200 );
+		// update_option( 'thumbnail_crop', false );
+		
 	}
 
 
@@ -135,14 +137,17 @@
 
 
 
-	add_action( 'pre_get_posts', function($query){
+	// add_action( 'pre_get_posts', function($query){
 
-		if ( $query->is_main_query() and ! is_admin() ) {
+	// 	if( $query->is_main_query() and ! is_admin()){
+	// 		if($query->is_home()){
+	// 			$query->set('post_type', array('post', 'episodios'));
+	// 			$query->set('posts_per_page', -1);
+	// 		}
+	// 	}
+	// 	return $query;
 
-		}
-		return $query;
-
-	});
+	// });
 
 
 
@@ -170,7 +175,30 @@
 		return remove_accents($filename);
 	});
 
+// INSERTAR POST THUMBNAIL DESDE URL /////////////////////////////////////////////////
 
+	function set_featured_image( $image_url, $post_id  ){
+	    $upload_dir = wp_upload_dir();
+	    $image_data = file_get_contents($image_url);
+	    $filename = basename($image_url);
+	    if(wp_mkdir_p($upload_dir['path']))     $file = $upload_dir['path'] . '/' . $filename;
+	    else                                    $file = $upload_dir['basedir'] . '/' . $filename;
+	    file_put_contents($file, $image_data);
+
+	    $wp_filetype = wp_check_filetype($filename, null );
+	    $attachment = array(
+	        'post_mime_type' => $wp_filetype['type'],
+	        'post_title' => sanitize_file_name($filename),
+	        'post_content' => '',
+	        'post_status' => 'inherit'
+	    );
+
+	    $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+	    require_once(ABSPATH . 'wp-admin/includes/image.php');
+	    $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+	    $res1= wp_update_attachment_metadata( $attach_id, $attach_data );
+	    $res2= set_post_thumbnail( $post_id, $attach_id );
+	}
 
 // HELPER METHODS AND FUNCTIONS //////////////////////////////////////////////////////
 

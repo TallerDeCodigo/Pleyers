@@ -54,6 +54,43 @@ figure {margin: 0;}
 
 /*** FONT FACE ***/
 
+@font-face {
+	font-family: 'Gotham_Medium';
+	src: url('fonts/GothamRnd-Medium.eot');
+	src: local('☺'), url('fonts/GothamRnd-Medium.woff') format('woff'), url('fonts/GothamRnd-Medium.ttf') format('truetype'), url('fonts/GothamRnd-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham_Light';
+	src: url('fonts/GothamRnd-Light.eot');
+	src: local('☺'), url('fonts/GothamRnd-Light.woff') format('woff'), url('fonts/GothamRnd-Light.ttf') format('truetype'), url('fonts/GothamRnd-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Gotham_Book';
+	src: url('fonts/GothamRnd-Book.eot');
+	src: local('☺'), url('fonts/GothamRnd-Book.woff') format('woff'), url('fonts/GothamRnd-Book.ttf') format('truetype'), url('fonts/GothamRnd-Book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham_Black';
+	src: url('fonts/Gotham-Black.eot');
+	src: local('☺'), url('fonts/Gotham-Black.woff') format('woff'), url('fonts/Gotham-Black.ttf') format('truetype'), url('fonts/Gotham-Black.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+
 
 /*** SIZING WITH REM ***/
 html { font-size: 62.5%; } 
@@ -98,26 +135,40 @@ nav ul.main-nav li.has-children img {margin-left: 20px; }
 
 .content {width: 100%; padding-top: 10px; }
 
-.wrapper-destacado {width: 100%; position: relative;}
+
+
+.wrapper-destacado {width: 100%; position: relative; margin-bottom: 10px;}
 .destacado {width: 100%;}
 .destacado .thumb { width: 100%; height: auto; vertical-align: top;}
 .destacado .post-info {}
-.destacado .date {display: block; position: absolute; top: 30px; left: 30px; color: #fff;}
+.destacado .play {position: absolute; top: 0px; width: 100px; top: 40%; left: 45%; z-index: 1000;}
+.destacado .play:hover {cursor: pointer;}
+.destacado .date {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
 .destacado .post-info {position: absolute; bottom: 30px; left: 30px; }
-.destacado .post-info a {color: #fff; text-decoration: none;}
+.destacado .post-info h2 {font-weight: normal; font-family: 'Gotham_Black', 'sans-serif'; text-transform: uppercase; font-size: 36px; display: block; max-width: 70%;}
+.destacado .post-info h2 a{color: #fff; text-decoration: none;}
+.destacado .post-info a.mas {color: #fff; text-decoration: underline; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
 .destacado .over {position: absolute; width: 100%; background: url('images/pattern.png') repeat;}
 
+.nota .thumb { width: 100%; height: auto; vertical-align: top;}
+.nota .date {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
+.nota .post-info {position: absolute; bottom: 30px; left: 30px; }
+.nota .post-info h3 {font-family: 'Gotham_Medium', 'sans-serif'; text-transform: uppercase; font-size: 24px; display: block; max-width: 280px;}
+.nota .post-info h3 a{color: #fff; text-decoration: none;}
+.nota .post-info a.mas {color: #fff; text-decoration: underline; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
+.nota .over {position: absolute; width: 100%; background: url('images/pattern.png') repeat;}
 
+.nota.post {position: relative; height: 334px; margin-bottom: 10px; width: auto;}
+.nota.episodios {width: 678px; position: relative; height: 334px; margin-bottom: 10px;}
+.nota.graficos {position: relative; margin-bottom: 10px; width: auto;}
+.nota.graficos img {width: 100%!important; height: auto; vertical-align: top;}
 
-
-
-
-
-
-
-
-
-
+.nota.episodios .play {position: absolute; top: 0px; width: 100px; top: 30%; left: 40%; z-index: 1000;}
+.nota.episodios .play:hover {cursor: pointer;}
+.nota.post.widescreen .play {position: absolute; top: 0px; width: 100px; top: 30%; left: 40%; z-index: 1000;}
+.nota.post.widescreen .play:hover {cursor: pointer;}
+.nota.post.square .play {position: absolute; top: 0px; width: 100px; top: 33%; left: 33%; z-index: 1000;}
+.nota.post.square .play:hover {cursor: pointer;}
 
 
 

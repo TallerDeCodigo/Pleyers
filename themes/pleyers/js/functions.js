@@ -31,6 +31,15 @@
 			return result;
 		}
 
+		/*** ISOTOPE ***/
+
+		$('.posts-pool').isotope({
+			masonry: {
+				columnWidth: 334,
+				gutter: 10
+			}
+		});
+
 		/*** OVERLAY ***/
 
 		var destacado_height = $('.wrapper-destacado').height();
@@ -43,6 +52,19 @@
 		}, function(){
 			$('.destacado .over').show();
 		});
+
+
+		$('.nota').hover(function(){
+			$(this).find('.over').hide();
+		}, function(){
+			$(this).find('.over').show();
+		});
+
+
+		var alturapornota = $('.nota').find('img').height();
+		$('.nota .over').height(alturapornota);
+
+
 	});
 
 })(jQuery);

@@ -3,12 +3,16 @@
 
 // CUSTOM METABOXES //////////////////////////////////////////////////////////////////
 
-
+	
 
 	add_action('add_meta_boxes', function(){
 
-		// add_meta_box( id, title, name_meta_callback, post_type, context, priority );
+		$types = array('post', 'episodios');
+		foreach($types as $posttype){
+			add_meta_box( 'post_video_meta', 'ID de Youtube', 'show_post_video_meta', $posttype, 'side', 'high' );
+		}
 
+		add_meta_box( 'id_cerocero_meta', 'ID de CeroCero', 'show_id_cerocero', 'graficos', 'side', 'high' );
 	});
 
 
@@ -17,13 +21,17 @@
 
 
 
-	function name_meta_callback($post){
-		// $name = get_post_meta($post->ID, '_name_meta', true);
-		// wp_nonce_field(__FILE__, '_name_meta_nonce');
-		// echo "<input type='text' class='widefat' id='name' name='_name_meta' value='$name'/>";
+	function show_post_video_meta($post){
+		$eg_sources_youtube = get_post_meta($post->ID, 'eg_sources_youtube', true);
+		wp_nonce_field(__FILE__, 'post_video_meta_nonce');
+		echo "<input type='text' class='widefat' id='eg_sources_youtube' name='eg_sources_youtube' value='$eg_sources_youtube'/>";
 	}
 
-
+	function show_id_cerocero($post){
+		$id_cerocero = get_post_meta($post->ID, 'id_cerocero', true);
+		wp_nonce_field(__FILE__, 'id_cerocero_meta_nonce');
+		echo "<input type='text' class='widefat' id='id_cerocero' name='id_cerocero' value='$id_cerocero'/>";
+	}
 
 // SAVE METABOXES DATA ///////////////////////////////////////////////////////////////
 
@@ -44,10 +52,13 @@
 			return $post_id;
 
 
-		if ( isset($_POST['_name_meta']) and check_admin_referer(__FILE__, '_name_meta_nonce') ){
-			update_post_meta($post_id, '_name_meta', $_POST['_name_meta']);
+		if ( isset($_POST['eg_sources_youtube']) and check_admin_referer(__FILE__, 'post_video_meta_nonce') ){
+			update_post_meta($post_id, 'eg_sources_youtube', $_POST['eg_sources_youtube']);
 		}
 
+		if ( isset($_POST['id_cerocero']) and check_admin_referer(__FILE__, 'id_cerocero_meta_nonce') ){
+			update_post_meta($post_id, 'id_cerocero', $_POST['id_cerocero']);
+		}
 
 		// Guardar correctamente los checkboxes
 		/*if ( isset($_POST['_checkbox_meta']) and check_admin_referer(__FILE__, '_checkbox_nonce') ){
