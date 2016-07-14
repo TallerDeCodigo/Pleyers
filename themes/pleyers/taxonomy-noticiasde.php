@@ -6,16 +6,25 @@
 	// echo '</pre>';
 ?>
 	<div class="content clearfix">
-		<div class="top_taxonomy">
+		<div class="top_taxonomy category_archive">
+			<div class="tax_description">
+				<h1><?php echo $objeto->name; ?></h1>
+				<?php 
+					$content = $objeto->description;
+					$descripcion = apply_filters('the_content', $content);
+
+					echo $descripcion; 
+				?>
+			</div>
 			<div class="wrapper-destacado">
 
 				<?php 
 					$args = array(
-							'post_type'			=> 'episodios',
+							'post_type'			=> array('post'),
 							'posts_per_page' 	=> 1,
 							'tax_query' => array(
 								array(
-									'taxonomy' => 'shows',
+									'taxonomy' => 'noticiasde',
 									'field'    => 'id',
 									'terms'    => $objeto->term_id,
 								),
@@ -47,27 +56,19 @@
 			</div><!-- wrapper destacado -->				
 
 
-			<div class="tax_description">
-				<h1><?php echo $objeto->name; ?></h1>
-				<?php 
-					$content = $objeto->description;
-					$descripcion = apply_filters('the_content', $content);
-
-					echo $descripcion; 
-				?>
-			</div>
+			
 		
 		</div><!-- top_taxonomy -->
-		<div class="shows-pool clearfix">
+		<div class="posts-pool clearfix">
 
 				<?php
 					$args = array(
-						'post_type'			=> 'episodios',
+						'post_type'			=> 'post',
 						'posts_per_page' 	=> -1,
 						'exclude'			=> $destacado_id,
 						'tax_query' => array(
 							array(
-								'taxonomy' => 'shows',
+								'taxonomy' => 'noticiasde',
 								'field'    => 'id',
 								'terms'    => $objeto->term_id,
 							),
@@ -81,16 +82,15 @@
 					$random = rand(1,3);
 				?>
 
-				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
+				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen'; } else { echo 'square'; } ?>">
 					<div class="over"></div>
+
 					<?php 
 						$widescreen = get_the_post_thumbnail( $post->ID, 'grid_home_large' );
 						$square = get_the_post_thumbnail( $post->ID, 'grid_home_square' );
 					?>
 					<a href="<?php the_permalink(); ?>">
-					<?php 
-						echo $widescreen;
-					?>
+					<?php  if($random == 1 ){ echo $widescreen; } else { echo $square; } ?>
 					</a>
 					<span class="date"><?php echo get_the_date(); ?></span>
 					<?php 

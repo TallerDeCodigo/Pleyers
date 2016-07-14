@@ -212,9 +212,16 @@ nav ul.main-nav li.has-children img {margin-left: 20px; }
 .related_posts .nota:nth-child(3) {margin-right: 0px!important;}
 
 
+/*** SHOWS ***/
 
+.shows-pool .nota {width: 100%; overflow: hidden;}
+.shows-pool .nota img:not(.play) {width: 100%!important; height: auto;}
 
+.top_taxonomy {margin-bottom: 60px;}
+.top_taxonomy .tax_description {width: 720px; margin: 0 auto;} 
+.top_taxonomy .tax_description h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 30px; color:#545454;} 
+.top_taxonomy .tax_description p { color: #888888; font-family: 'Roboto Condensed', sans-serif; font-size: 20px; line-height: 28px;}
 
-
+.category_archive .tax_description h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 30px; color:#545454; text-align: center;} 
 
 
