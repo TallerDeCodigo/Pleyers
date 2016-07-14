@@ -137,18 +137,19 @@
 
 
 
-	// add_action( 'pre_get_posts', function($query){
+	add_action( 'pre_get_posts', function($query){
 
-	// 	if( $query->is_main_query() and ! is_admin()){
-	// 		if($query->is_home()){
-	// 			$query->set('post_type', array('post', 'episodios'));
-	// 			$query->set('posts_per_page', -1);
-	// 		}
-	// 	}
-	// 	return $query;
+		if( $query->is_main_query() and ! is_admin()){
+			if($query->is_search()){
+				$query->set('post_type', array('post', 'episodios', 'graficos', 'tweets', 'frases'));
+				$query->set('posts_per_page', -1);
+			}
+		}
+		return $query;
 
-	// });
+	});
 
+		
 
 
 // THE EXECRPT FORMAT AND LENGTH /////////////////////////////////////////////////////

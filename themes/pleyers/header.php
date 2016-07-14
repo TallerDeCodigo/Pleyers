@@ -49,8 +49,8 @@
 							<ul class="main-nav">
 								<li class="has-children">SHOWS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" /></li>
 								<li class="has-children">NOTICIAS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" /></li>
-								<li class=""><a href="">OPINIÓN</a></li>
-								<li class=""><a href="">(0-0)</a></li>
+								<li class=""><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
+								<li class=""><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
 								<li class=""><a href="">ACERCA DE</a></li>
 							</ul>
 						</nav>
