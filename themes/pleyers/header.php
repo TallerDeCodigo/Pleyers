@@ -20,7 +20,7 @@
 			<div class="top-header clearfix">
 				<div class="container clearfix">
 					<div class="search">
-						<form role="search" method="get" id="searchform" class="searchform" action="http://localhost/lospleyers/">
+						<form role="search" method="get" id="searchform" class="searchform" action="<?php echo site_url(); ?>">
 							<div>
 								<input type="text" value="" name="s" id="s" />
 								<input type="submit" id="searchsubmit" value="" />

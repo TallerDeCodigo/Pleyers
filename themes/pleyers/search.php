@@ -26,7 +26,7 @@
 						$square = get_the_post_thumbnail( $post->ID, 'grid_home_square' );
 					?>
 					<a href="<?php the_permalink(); ?>">
-					<?php  if($random == 1 ){ echo $widescreen; } else { echo $square; } ?>
+					<?php  if($random == 1 or get_post_type($post->ID) == 'episodios'){ echo $widescreen; } else { echo $square; } ?>
 					</a>
 					<span class="date"><?php echo get_the_date(); ?></span>
 					<?php 
