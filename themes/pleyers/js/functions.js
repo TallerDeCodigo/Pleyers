@@ -65,6 +65,10 @@
 		$('.nota .over').height(alturapornota);
 
 
+		/*** FITVIDS ***/
+
+		//$('.container').fitvids();
+
 	});
 
 })(jQuery);

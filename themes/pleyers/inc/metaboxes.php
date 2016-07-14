@@ -13,6 +13,8 @@
 		}
 
 		add_meta_box( 'id_cerocero_meta', 'ID de CeroCero', 'show_id_cerocero', 'graficos', 'side', 'high' );
+		add_meta_box( 'nombre_autor_meta', 'Autor de la frase', 'show_nombre_autor_meta', 'frases', 'side', 'high' );
+		add_meta_box( 'id_pleyers_twitter_meta', 'ID de Twitter', 'show_id_pleyers_twitter_meta', 'tweets', 'side', 'high' );
 	});
 
 
@@ -31,6 +33,18 @@
 		$id_cerocero = get_post_meta($post->ID, 'id_cerocero', true);
 		wp_nonce_field(__FILE__, 'id_cerocero_meta_nonce');
 		echo "<input type='text' class='widefat' id='id_cerocero' name='id_cerocero' value='$id_cerocero'/>";
+	}
+
+	function show_id_pleyers_twitter_meta($post){
+		$id_twitter = get_post_meta($post->ID, 'id_twitter', true);
+		wp_nonce_field(__FILE__, 'id_twitter_meta_nonce');
+		echo "<input type='text' class='widefat' id='id_twitter' name='id_twitter' value='$id_twitter'/>";
+	}
+
+	function show_nombre_autor_meta($post){
+		$nombre_autor = get_post_meta($post->ID, 'nombre_autor', true);
+		wp_nonce_field(__FILE__, 'nombre_autor_meta_nonce');
+		echo "<input type='text' class='widefat' id='nombre_autor' name='nombre_autor' value='$nombre_autor'/>";
 	}
 
 // SAVE METABOXES DATA ///////////////////////////////////////////////////////////////
@@ -58,6 +72,14 @@
 
 		if ( isset($_POST['id_cerocero']) and check_admin_referer(__FILE__, 'id_cerocero_meta_nonce') ){
 			update_post_meta($post_id, 'id_cerocero', $_POST['id_cerocero']);
+		}
+
+		if ( isset($_POST['id_twitter']) and check_admin_referer(__FILE__, 'id_twitter_meta_nonce') ){
+			update_post_meta($post_id, 'id_twitter', $_POST['id_twitter']);
+		}
+
+		if ( isset($_POST['nombre_autor']) and check_admin_referer(__FILE__, 'nombre_autor_meta_nonce') ){
+			update_post_meta($post_id, 'nombre_autor', $_POST['nombre_autor']);
 		}
 
 		// Guardar correctamente los checkboxes

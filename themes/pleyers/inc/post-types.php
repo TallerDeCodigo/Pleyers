@@ -71,4 +71,69 @@
 		);
 		register_post_type( 'graficos', $args );
 
+		// TWEETS
+		$labels = array(
+			'name'          => 'Tweets',
+			'singular_name' => 'Tweet',
+			'add_new'       => 'Nuevo Tweet',
+			'add_new_item'  => 'Nuevo Tweet',
+			'edit_item'     => 'Editar Tweet',
+			'new_item'      => 'Nuevo Tweet',
+			'all_items'     => 'Todos',
+			'view_item'     => 'Ver Tweet',
+			'search_items'  => 'Buscar Tweet',
+			'not_found'     => 'No se encontró',
+			'menu_name'     => 'Tweets'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'tweets' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'taxonomies'         => array( 'category' ),
+			'supports'           => array( 'editor', 'thumbnail' )
+		);
+		register_post_type( 'tweets', $args );
+
+		// FRASE DEL DÍA
+		$labels = array(
+			'name'          => 'Frase del día',
+			'singular_name' => 'Frase',
+			'add_new'       => 'Nueva Frase',
+			'add_new_item'  => 'Nueva Frase',
+			'edit_item'     => 'Editar Frase',
+			'new_item'      => 'Nueva Frase',
+			'all_items'     => 'Todos',
+			'view_item'     => 'Ver Frase',
+			'search_items'  => 'Buscar Frase',
+			'not_found'     => 'No se encontró',
+			'menu_name'     => 'Frase del día'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'frases' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'taxonomies'         => array( 'category' ),
+			'supports'           => array( 'title' )
+		);
+		register_post_type( 'frases', $args );
+
+
 	});

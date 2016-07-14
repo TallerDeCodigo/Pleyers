@@ -33,7 +33,7 @@
 			<div class="posts-pool clearfix">
 				<?php
 					$args = array(
-							'post_type' 		=> array('graficos', 'post', 'episodios'),
+							'post_type' 		=> array('graficos', 'post', 'episodios', 'tweets', 'frases'),
 							'posts_per_page'	=>	-1,
 							'exclude'			=> $destacado_id
 							
@@ -47,6 +47,28 @@
 					}
 					
 				?>
+
+				<?php if(get_post_type($post->ID) == 'tweets') { ?>
+
+				<a target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix tweets">
+					
+					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
+					<div class="tweet_content"><?php the_content(); ?></div>
+					<span class="date"><?php echo get_the_date(); ?></span>
+					
+				</div></a><!-- tweet -->
+
+				<?php } elseif(get_post_type($post->ID) == 'frases') { ?>
+
+					<div class="clearfix frases">
+					
+					<span class="tweetie">#frasedeldía</span>
+					<div class="tweet_content">"<?php the_title(); ?>"</div>
+					<span class="date">- <?php echo get_post_meta($post->ID, 'nombre_autor', true); ?></span>
+					
+				</div><!-- tweet -->
+
+				<?php } else { ?> 
 
 				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
 					<div class="over"></div>
@@ -84,6 +106,7 @@
 						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
 					</div><!-- post-info -->
 				</div><!-- post -->
+				<?php } ?>
 				<?php endforeach; wp_reset_query(); ?>
 			</div><!-- posts-pool -->
 		</div><!-- content -->

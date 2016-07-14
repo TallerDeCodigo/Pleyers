@@ -8,6 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="cleartype" content="on">
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+		<script src="https://use.fontawesome.com/1656c3d468.js"></script>
 		<?php wp_head(); ?>
 	</head>
 
@@ -18,23 +20,31 @@
 			<div class="top-header clearfix">
 				<div class="container clearfix">
 					<div class="search">
-						<?php get_search_form(); ?>	
+						<form role="search" method="get" id="searchform" class="searchform" action="http://localhost/lospleyers/">
+							<div>
+								<input type="text" value="" name="s" id="s" />
+								<input type="submit" id="searchsubmit" value="" />
+							</div>
+						</form>		
 					</div><!-- search -->
 					<div class="social clearfix">
 						<ul class="social-icons">
-							<li class="tw"><a target="_blank" href=""></a></li>
-							<li class="tw"><a target="_blank" href=""></a></li>
-							<li class="tw"><a target="_blank" href=""></a></li>
-							<li class="tw"><a target="_blank" href=""></a></li>
+
+							<li class="tw"><a target="_blank" href="https://www.facebook.com/LosPleyers/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+							<li class="tw"><a target="_blank" href="https://twitter.com/los_pleyers/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li class="tw"><a target="_blank" href="https://www.instagram.com/lospleyers/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li class="tw"><a target="_blank" href="https://www.youtube.com/channel/UCbp3C3hELysSQkyamnpM2og"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 						</ul>
 					</div><!-- social -->
 				</div><!-- container -->
 			</div><!-- top-header -->
 				<header class="clearfix">
 					<div class="container clearfix">
-						<div class="logo">
-							<h1>LOS PLEYERS</h1>
-						</div>
+						<a href="<?php echo site_url(); ?>">
+							<div class="logo">
+								<h1>LOS PLEYERS</h1>
+							</div>
+						</a>
 						<nav class="clearfix">
 							<ul class="main-nav">
 								<li class="has-children">SHOWS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" /></li>

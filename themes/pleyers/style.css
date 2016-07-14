@@ -115,9 +115,15 @@ body {background: url('images/bg.png') repeat;}
 /*** HEADER ***/
 
 .top-header {width: 100%; background: #f2f2f2; height: 50px;}
-.top-header .search {float: left;}
+.top-header .search {float: left; height: 33px; margin-top: 9px;}
+.top-header .search input{height: 33px; border: 0px!important; float: left;}
+.top-header .search input#searchsubmit{height: 33px; width: 33px; border: 0px!important; background: url('images/search.png') no-repeat;}
 .top-header .social {float: right;}
-.top-header .social li {display: block; float: left;}
+.top-header .social ul {margin-top: 9px; padding-top: 0px;}
+.top-header .social li {width:33px; height: 33px; display: block; float: left;  background: #fff; text-align: center; margin-left: 5px;}
+.top-header .social li:hover {background: #303030}
+.top-header .social li:hover i{color: #fff}
+.top-header .social li i {font-size: 2.2rem; color: #303030; padding-top: .6rem;}
 
 header {width: 100%; background: #fff; height: 270px;}
 .logo {width: 470px; height: 105px; background: url('images/logo.png') no-repeat center; margin: 0 auto 40px auto;}
@@ -163,24 +169,47 @@ nav ul.main-nav li.has-children img {margin-left: 20px; }
 .nota.graficos {position: relative; margin-bottom: 10px; width: auto;}
 .nota.graficos img {width: 100%!important; height: auto; vertical-align: top;}
 
-.nota.episodios .play {position: absolute; top: 0px; width: 100px; top: 30%; left: 40%; z-index: 1000;}
+.nota.episodios .play {position: absolute; top: 0px; width: 100px; top: 30%; left: 42%; z-index: 1000;}
 .nota.episodios .play:hover {cursor: pointer;}
 .nota.post.widescreen .play {position: absolute; top: 0px; width: 100px; top: 30%; left: 40%; z-index: 1000;}
 .nota.post.widescreen .play:hover {cursor: pointer;}
 .nota.post.square .play {position: absolute; top: 0px; width: 100px; top: 33%; left: 33%; z-index: 1000;}
 .nota.post.square .play:hover {cursor: pointer;}
 
+.tweets {width: 334px; height: 334px; margin-bottom: 10px; background: #2593c5; position: relative;}
+.tweets .date {display: block; position: absolute; top: auto!important; bottom: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
+.tweets .tweetie img {margin-right: 20px; margin-bottom: -5px;}
+.tweets .tweetie {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Medium; font-size: 14px; text-transform: uppercase;}
+.tweets .tweet_content {position: absolute; left: 30px; width: 214px; top: 60px; font-size: 20px; font-family: Gotham_Light; line-height: 25px; color: #fff;}
+
+.frases {width: 334px; height: 334px; margin-bottom: 10px; background: #ff574a; position: relative;}
+.frases .date {display: block; position: absolute; top: auto!important; bottom: 30px; left: 30px; color: #fff; font-family: Gotham_Medium; font-size: 16px; text-transform: uppercase;}
+.frases .tweetie img {margin-right: 20px; margin-bottom: -5px;}
+.frases .tweetie {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Medium; font-size: 14px; text-transform: uppercase;}
+.frases .tweet_content {position: absolute; left: 30px; width: 214px; top: 60px; font-size: 20px; font-family: Gotham_Light; line-height: 25px; color: #fff;}
 
 
+/*** SINGLE ***/
 
+.single_post {width: 100%; color: #888888; margin-top: 10px;}
+.single_post .single_top img {width: 100%; height: auto;} 
+.single_post .single_top img, .single_post .single_top iframe {margin-bottom: 65px;} 
 
+.single_post .single_content {width: 720px; margin: 0 auto;}
+.single_post .single_content .date {display: block; color: #545454; font-family: 'Gotham_Black', sans-serif; font-size: 12px; margin-bottom: 20px;}
+.single_post .single_content h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 0px; margin-bottom: 65px; color:#545454;}
+.single_post .single_content p {font-family: 'Roboto Condensed', sans-serif; font-size: 20px; line-height: 28px;}
+.single_post .single_content p strong {color: #545454;}
+.single_post .single_content p em {font-style: italic;}
+.single_post .single_content p a {color: #545454; }
+.single_post .single_content img {width: 100%; height: auto;}
+.single_post .single_content .twitter-tweet {margin: 0 auto;}
 
+/*** RELATED POSTS ***/
 
-
-
-
-
-
+.related_posts .nota {width: 334px; height: 334px; float: left; margin-right: 10px;}
+.related_posts .nota .play {left: 35%;}
+.related_posts .nota:nth-child(3) {margin-right: 0px!important;}
 
 
 
