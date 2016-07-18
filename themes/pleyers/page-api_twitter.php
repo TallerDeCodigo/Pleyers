@@ -3,14 +3,14 @@
 
 	/** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 	$settings = array(
-	    'oauth_access_token' => "69086460-TKNqrf4KESiOrzpe9O6b9XsNk5ujp11Iq1PgpsHFn",
-	    'oauth_access_token_secret' => "sZVx4RLrfoHDGObKWUE6gA345qoeDKW8c9NccYnmAEGeV",
-	    'consumer_key' => "p1sCAJAO1NVJiAlS4lSE2gYD3",
-	    'consumer_secret' => "8lFrgVNAvhtlTOJdX4FPydDsrJwp8UtbJXmaOmgk9OnX2REjy9"
+	    'oauth_access_token' => "3167965476-WTWSXzyCogektu0YSwbbffGLrrkoVTw8IwnosKl",
+	    'oauth_access_token_secret' => "je2651FolOPU9keGqo2FgUIC6Y81VNycATLEp4gYbvAtU",
+	    'consumer_key' => "Xcey3zZJOlElb9SVngDCTTTe7",
+	    'consumer_secret' => "qA4Q7XMrq9mXUqVw6Pe3Ro8vYpIIi9XYRqYuYqFbklg0OwAxYx"
 	);
 
 	$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-	$getfield = '?username=cova_kid';
+	$getfield = '?username=los_pleyers';
 	$requestMethod = 'GET';
 
 
