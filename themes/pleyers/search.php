@@ -20,10 +20,11 @@
 
 				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen'; } else { echo 'square'; } ?>">
 					<div class="over"></div>
-
+	
 					<?php 
-						$widescreen = get_the_post_thumbnail( $post->ID, 'grid_home_large' );
+						$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
 						$square = get_the_post_thumbnail( $post->ID, 'grid_home_square' );
+						$widescreen = get_the_post_thumbnail($post->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
 					?>
 					<a href="<?php the_permalink(); ?>">
 					<?php  if($random == 1 or get_post_type($post->ID) == 'episodios'){ echo $widescreen; } else { echo $square; } ?>

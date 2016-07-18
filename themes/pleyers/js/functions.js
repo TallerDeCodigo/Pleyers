@@ -54,7 +54,15 @@
 		});
 
 
-		
+		/*** SUBMENUS ***/
+
+		$('.has-children').hover(function(){
+			var datashow = $(this).attr('data');
+			$('#'+datashow).show();
+		}, function(){
+			var datashow = $(this).attr('data');
+			$('#'+datashow).hide();
+		});
 
 
 		/*** FITVIDS ***/

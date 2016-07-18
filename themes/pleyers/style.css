@@ -110,7 +110,7 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
 /*** GENERAL ***/
 
 body {background: url('images/bg.png') repeat;}
-.container {max-width: 1024px; margin: 0 auto; }
+.container {max-width: 1024px; margin: 0 auto; position: relative;}
 
 /*** HEADER ***/
 
@@ -130,11 +130,25 @@ header {width: 100%; background: #fff; height: 270px;}
 .logo h1 {text-indent: -100000px; margin-top: 50px; }
 
 nav {width: 100%;}
-nav ul.main-nav {margin:0px; padding:0px;}
+nav ul.main-nav {margin:0px; padding:0px; overflow: hidden;}
 nav ul.main-nav li {display: table-cell; vertical-align: middle; width: 1%; height: 75px; background: #303030; text-align: center; color: #fff; border-right: 7px solid #fff;}
 nav ul.main-nav li:last-child{border-right: none!important;}
 nav ul.main-nav li a {color: #fff; text-decoration: none;}
 nav ul.main-nav li.has-children img {margin-left: 20px; }
+
+ul.submenu {position: absolute; z-index: 10000; margin:27px 0 0 0; padding-left: 0px; display: none;}
+ul.submenu li {display: block!important; border-right: 0px!important;}
+ul.submenu li a {display: block; border-bottom: 1px solid #fff; background: #303030; text-align: center; color: #fff; text-decoration: none; text-transform: uppercase; height: 80px; padding-top: 30px; padding-bottom: 30px; }
+ul.submenu li a:first-child{border-top: 1px solid #fff;}
+ul.submenu li a:last-child{border-bottom: 0px;}
+
+ul#shows { width: 200px;}
+ul#shows li a{width: 200px;}
+ul#shows li{width: 100%!important;}
+
+ul#noticiasde {width: 215px;}
+ul#noticiasde li a{width: 215px;}
+ul#noticiasde li{width: 100%!important;}
 
 
 /*** INDEX ***/
@@ -176,7 +190,7 @@ nav ul.main-nav li.has-children img {margin-left: 20px; }
 .nota.post.square .play {position: absolute; top: 0px; width: 100px; top: 33%; left: 33%; z-index: 1000;}
 .nota.post.square .play:hover {cursor: pointer;}
 
-.tweets {width: 334px; height: 334px; margin-bottom: 10px; background: #2593c5; position: relative;}
+.tweets {width: 334px; height: 334px; margin-bottom: 10px; background: #2593c5; position: relative; display: block;}
 .tweets .date {display: block; position: absolute; top: auto!important; bottom: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
 .tweets .tweetie img {margin-right: 20px; margin-bottom: -5px;}
 .tweets .tweetie {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Medium; font-size: 14px; text-transform: uppercase;}

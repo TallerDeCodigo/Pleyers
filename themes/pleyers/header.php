@@ -47,8 +47,36 @@
 						</a>
 						<nav class="clearfix">
 							<ul class="main-nav">
-								<li class="has-children">SHOWS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" /></li>
-								<li class="has-children">NOTICIAS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" /></li>
+								<li data="shows" class="has-children">SHOWS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" />
+									<ul class="submenu" id="shows"> 
+										<?php
+											$args = array(
+										        'hide_empty'          => 1,
+										        'show_count'          => 0,
+										        'style'               => 'list',
+										        'taxonomy'            => 'shows',
+										        'title_li'            => __( '' ),
+										        'use_desc_for_title'  => 1,
+										    );
+										    wp_list_categories($args);
+										?>
+									</ul>
+								</li>
+								<li data="noticiasde" class="has-children">NOTICIAS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" />
+									<ul class="submenu" id="noticiasde"> 
+										<?php
+											$args = array(
+										        'hide_empty'          => 1,
+										        'show_count'          => 0,
+										        'style'               => 'list',
+										        'taxonomy'            => 'noticiasde',
+										        'title_li'            => __( '' ),
+										        'use_desc_for_title'  => 1,
+										    );
+										    wp_list_categories($args);
+										?>
+									</ul>
+								</li>
 								<li class=""><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
 								<li class=""><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
 								<li class=""><a href="">ACERCA DE</a></li>
