@@ -228,16 +228,32 @@ nav ul.main-nav li.has-children img {margin-left: 20px; }
 
 @media (max-width: 768px){
 
+	.social ul {margin-left: 0px;}
+	
+	.destacado .over {height: 100%!important;}
+	.nota .over {height: 100%!important;}
+
 	.logo {width: 90%; background-size: contain; margin : 0 auto 40px auto;} 
 	nav {display: none;}
 	.container {width: 100%;}
 	.wrapper-destacado {width: 90%; margin: 0 auto 10px auto;}
 	.posts-pool {width: 90%; margin: 0 auto;}
 	.posts-pool .nota {width: 100%!important; overflow: hidden; height: auto!important;}
-	.posts-pool .nota img {width: 100%!important; height: auto;}
+	.posts-pool .nota img {width: 100%!important; height: auto; vertical-align: top;}
 	.posts-pool .nota .post-info h3 {max-width: 80%;}
 	.posts-pool .nota .play {width: 25%!important; height: auto; top:25%; left: 37%;}
 	.posts-pool .frases, .posts-pool .tweets {width: 100%!important;}
+
+	.single_post .single_content {width: 90%; margin: 0 auto;}
+	.single_post .single_top {margin-bottom: 40px;}
+	.single_post .single_top img {margin-bottom: 0px;}
+	.related_posts {width: 90%; margin: 0 auto;}
+	.related_posts .nota {width: 100%!important; overflow: hidden; height: auto!important;}
+	.related_posts .nota img {width: 100%!important; height: auto;}
+	.related_posts .nota .post-info h3 {max-width: 80%;}
+	.related_posts .nota .play {width: 25%!important; height: auto; top:25%; left: 37%;}
+
+
 
 } 
 

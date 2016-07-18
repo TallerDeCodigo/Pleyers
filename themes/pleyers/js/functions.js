@@ -31,14 +31,7 @@
 			return result;
 		}
 
-		/*** ISOTOPE ***/
 
-		$('.posts-pool').isotope({
-			masonry: {
-				columnWidth: 334,
-				gutter: 10
-			}
-		});
 
 		/*** OVERLAY ***/
 
@@ -61,13 +54,42 @@
 		});
 
 
-		var alturapornota = $('.nota').find('img').height();
-		$('.nota .over').height(alturapornota);
+		
 
 
 		/*** FITVIDS ***/
 
-		//$('.container').fitvids();
+		$('.container').fitVids();
+
+
+
+		if($(window).width() < 769 ){
+
+			/*** POST THUMBNAIL SQUARE ***/
+
+			$('.thumbnota').each(function(){
+				var squareimage = $(this).data('square');
+				$(this).attr('src', squareimage);
+			});
+
+		} else {
+
+			/*** ISOTOPE ***/
+
+			$('.posts-pool').isotope({
+				masonry: {
+					columnWidth: 334,
+					gutter: 10
+				}
+			});
+
+			var alturapornota = $('.nota').find('img').height();
+			$('.nota .over').height(alturapornota);
+			
+		}
+
+
+
 
 	});
 

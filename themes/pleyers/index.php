@@ -12,11 +12,12 @@
 					foreach($destacado as $post): setup_postdata($post);
 					$destacado_id = $post->ID;
 					$permalink = get_the_permalink($destacado_id);
+					$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
 				?>
 				<div class="post destacado clearfix">
 					<div class="over"></div>
 					<?php $src = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?> 
-					<a href="<?php the_permalink(); ?>"><img class="thumb" src="<?php echo $src; ?>"></a>
+					<a href="<?php the_permalink(); ?>"><img class="thumb thumbnota" src="<?php echo $src; ?>" data-square="<?php echo $squareurl; ?>"></a>
 					<span class="date"><?php the_date(); ?></span>
 					<?php 
 						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
@@ -72,10 +73,11 @@
 
 				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
 					<div class="over"></div>
-					<?php 
-						$widescreen = get_the_post_thumbnail( $post->ID, 'grid_home_large' );
-						$square = get_the_post_thumbnail( $post->ID, 'grid_home_square' );
-						$bigsquare = get_the_post_thumbnail( $post->ID, 'grid_home_square_large' );
+					<?php
+						$square = get_the_post_thumbnail($post->ID, 'grid_home_square');
+						$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
+						$widescreen = get_the_post_thumbnail($post->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
+						$bigsquare = get_the_post_thumbnail($post->ID, 'grid_home_square_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
 					?>			
 					
 					<a href="<?php the_permalink(); ?>">
@@ -89,9 +91,7 @@
 								echo $square; 	
 							}
 						} elseif(get_post_type($post->ID) == 'graficos'){
-
-								echo $square; 	
-						
+							echo $square; 	
 						}
 					?>
 					</a>
