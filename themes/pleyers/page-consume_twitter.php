@@ -1,6 +1,6 @@
 <?php 
 	
-	$url = 'http://localhost/lospleyers/api_twitter/';
+	$url = 'http://lospleyers.com/api_twitter/';
 	$content = file_get_contents($url);
 	$tweets = json_decode($content, true);
 

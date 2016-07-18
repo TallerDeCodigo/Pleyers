@@ -224,4 +224,20 @@ nav ul.main-nav li.has-children img {margin-left: 20px; }
 
 .category_archive .tax_description h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 30px; color:#545454; text-align: center;} 
 
+/*** MOBILE ***/
+
+@media (max-width: 768px){
+
+	.logo {width: 90%; background-size: contain; margin : 0 auto 40px auto;} 
+	nav {display: none;}
+	.container {width: 100%;}
+	.wrapper-destacado {width: 90%; margin: 0 auto 10px auto;}
+	.posts-pool {width: 90%; margin: 0 auto;}
+	.posts-pool .nota {width: 100%!important; overflow: hidden; height: auto!important;}
+	.posts-pool .nota img {width: 100%!important; height: auto;}
+	.posts-pool .nota .post-info h3 {max-width: 80%;}
+	.posts-pool .nota .play {width: 25%!important; height: auto; top:25%; left: 37%;}
+	.posts-pool .frases, .posts-pool .tweets {width: 100%!important;}
+
+} 
 

@@ -50,7 +50,7 @@
 
 				<?php if(get_post_type($post->ID) == 'tweets') { ?>
 
-				<a target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix tweets">
+				<a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
 					
 					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
 					<div class="tweet_content"><?php the_content(); ?></div>
