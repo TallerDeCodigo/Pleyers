@@ -136,6 +136,8 @@ nav ul.main-nav li:last-child{border-right: none!important;}
 nav ul.main-nav li a {color: #fff; text-decoration: none;}
 nav ul.main-nav li.has-children img {margin-left: 20px; }
 
+.has-children:hover {cursor: pointer;}
+
 ul.submenu {position: absolute; z-index: 10000; margin:27px 0 0 0; padding-left: 0px; display: none;}
 ul.submenu li {display: block!important; border-right: 0px!important;}
 ul.submenu li a {display: block; border-bottom: 1px solid #fff; background: #303030; text-align: center; color: #fff; text-decoration: none; text-transform: uppercase; height: 80px; padding-top: 30px; padding-bottom: 30px; }
