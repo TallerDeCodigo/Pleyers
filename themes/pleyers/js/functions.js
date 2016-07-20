@@ -80,6 +80,22 @@
 				$(this).attr('src', squareimage);
 			});
 
+			$('.menu_control').on('click', function(){
+				var imagen_abrir = $(this).attr('data-opened');
+				var imagen_cerrar = $(this).attr('data-closed');
+				if($(this).hasClass('closed')){
+					$(this).addClass('opened');
+					$(this).removeClass('closed');
+					$(this).attr('src', imagen_cerrar);
+					$('.mobile-nav').slideDown();
+				} else {
+					$(this).addClass('closed');
+					$(this).removeClass('opened');
+					$(this).attr('src', imagen_abrir);
+					$('.mobile-nav').hide();
+				} 
+			});
+
 		} else {
 
 			/*** ISOTOPE ***/

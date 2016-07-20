@@ -152,6 +152,7 @@ ul#noticiasde {width: 215px;}
 ul#noticiasde li a{width: 215px;}
 ul#noticiasde li{width: 100%!important;}
 
+.menu_movil {display: none;}
 
 /*** INDEX ***/
 
@@ -230,7 +231,7 @@ ul#noticiasde li{width: 100%!important;}
 
 /*** SHOWS ***/
 
-.shows-pool .nota {width: 720px; overflow: hidden; margin: 0 auto;}
+.shows-pool .nota {width: 720px; overflow: hidden; margin: 0 auto 10px auto;}
 .shows-pool .nota img:not(.play) {width: 100%!important; height: auto;}
 
 .top_taxonomy {margin-bottom: 60px;}
@@ -244,6 +245,8 @@ ul#noticiasde li{width: 100%!important;}
 
 @media (max-width: 768px){
 
+	header {height: auto!important;}
+
 	.social ul {margin-left: 0px;}
 	
 	.destacado .over {height: 100%!important;}
@@ -251,8 +254,27 @@ ul#noticiasde li{width: 100%!important;}
 
 	.destacado .post-info h2 {font-size: 24px;}
 
+	.search {display: none;}
+	.social {margin: 0 auto; width: 161px; float: none!important;}
+	.social li:first-child {margin-left: 0px!important;}
+
+
 	.logo {width: 90%; background-size: contain; margin : 0 auto 40px auto;} 
 	nav {display: none;}
+
+	.menu_movil {display:block; width: 90%; text-align: center; margin: 0 auto; padding-top: 25px; border-top: 1px solid #f0f0f0;}
+	.menu_control {margin-bottom: 25px;}
+	.menu_movil .mobile-nav {margin:0px; padding: 0px; display: none;}
+	.menu_movil .mobile-nav li {width: 100%; text-align: center; text-transform: uppercase; display: block;}
+	.menu_movil .mobile-nav li.main_li {color: #fff;}
+	.menu_movil .mobile-nav li.main_li a {color: #fff; text-decoration: none;background: #303030; display: block; height: 70px; padding-top: 30px;border-bottom: 1px solid #fff;}
+	.menu_movil .mobile-nav li.main_li span {color: #fff; text-decoration: none;background: #303030; display: block; height: 70px; padding-top: 30px;}
+
+	.submenu-mobile {padding: 0px; margin: 0px;}
+	.submenu-mobile li {display: block; text-align: center; width: 50%!important; margin: 0 auto;}
+	.submenu-mobile li a {display: block; background: #fff!important; color: #303030!important; height: 35px!important; padding-top: 10px!important; }
+	
+
 	.container {width: 100%;}
 	.wrapper-destacado {width: 90%; margin: 0 auto 10px auto;}
 	.posts-pool {width: 90%; margin: 0 auto;}

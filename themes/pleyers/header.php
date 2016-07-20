@@ -82,6 +82,55 @@
 								<li class=""><a href="">ACERCA DE</a></li>
 							</ul>
 						</nav>
+
+						
+
+						<div class="menu_movil">
+							<img 
+								class="menu_control closed"
+								src="<?php echo THEMEPATH; ?>/images/menu_open.png" 
+								data-closed="<?php echo THEMEPATH; ?>/images/menu_close.png"
+								data-opened="<?php echo THEMEPATH; ?>/images/menu_open.png"
+								/>
+
+							<ul class="mobile-nav">
+								<li data="shows" class="has-children main_li">
+									<span>SHOWS</span>
+									<ul class="submenu-mobile" > 
+										<?php
+											$args = array(
+										        'hide_empty'          => 1,
+										        'show_count'          => 0,
+										        'style'               => 'list',
+										        'taxonomy'            => 'shows',
+										        'title_li'            => __( '' ),
+										        'use_desc_for_title'  => 1,
+										    );
+										    wp_list_categories($args);
+										?>
+									</ul>
+								</li>
+								<li data="noticiasde" class="has-children main_li">
+									<span>NOTICIAS</span>
+									<ul class="submenu-mobile" > 
+										<?php
+											$args = array(
+										        'hide_empty'          => 1,
+										        'show_count'          => 0,
+										        'style'               => 'list',
+										        'taxonomy'            => 'noticiasde',
+										        'title_li'            => __( '' ),
+										        'use_desc_for_title'  => 1,
+										    );
+										    wp_list_categories($args);
+										?>
+									</ul>
+								</li>
+								<li class="main_li"><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
+								<li class="main_li"><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
+								<li class="main_li"><a href="">ACERCA DE</a></li>
+							</ul>
+						</div>
 					</div><!-- container -->
 				</header>
 				<div class="container clearfix">
