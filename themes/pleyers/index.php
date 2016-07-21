@@ -44,7 +44,7 @@
 					$permalink = get_the_permalink($post->ID);
 
 					if(get_post_type($post->ID) == 'post'){
-						$random = rand(1,3);
+						$random = rand(1,10);
 					}
 					
 				?>
@@ -68,6 +68,19 @@
 					<span class="date">- <?php echo get_post_meta($post->ID, 'nombre_autor', true); ?></span>
 					
 				</div><!-- tweet -->
+
+				<?php } elseif(get_post_type($post->ID) == 'graficos') { ?>
+
+					<div class="nota clearfix grafico bigsquare">
+						
+					
+					<a target="_blank" href="http://cerocero.mx/?p=<?php echo get_post_meta($post->ID, 'id_cerocero', true); ?>">
+					<?php 
+						the_post_thumbnail('full');
+					?>
+					</a>
+					
+				</div><!-- post -->
 
 				<?php } else { ?> 
 

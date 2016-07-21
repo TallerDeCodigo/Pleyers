@@ -1,6 +1,6 @@
 <?php 
 	
-	$url = 'http://localhost/cerocero/api/';
+	$url = 'http://cerocero.mx/api/';
 	$graficos = file_get_contents($url);
 	$json = json_decode($graficos, true);
 
