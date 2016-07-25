@@ -210,10 +210,9 @@ ul#noticiasde li{width: 100%!important;}
 
 .single_post {width: 100%; color: #888888; margin-top: 10px;}
 .single_post .single_top img {width: 100%; height: auto;} 
-.single_post .single_top img {margin-bottom: 65px;} 
-.single_post .single_top iframe {margin-bottom: 65px;} 
+.single_post .single_top {margin-bottom: 65px;} 
 
-.single_post .single_content {width: 720px; margin: 0 auto;}
+.single_post .single_content {width: 720px; margin: 0 auto 65px auto;}
 .single_post .single_content .date {display: block; color: #545454; font-family: 'Gotham_Black', sans-serif; font-size: 12px; margin-bottom: 20px;}
 .single_post .single_content h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 0px; margin-bottom: 65px; color:#545454;}
 .single_post .single_content p {font-family: 'Roboto Condensed', sans-serif; font-size: 20px; line-height: 28px;}
