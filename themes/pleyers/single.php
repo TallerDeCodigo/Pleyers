@@ -22,7 +22,7 @@
 	<div class="related_posts clearfix">
 		<?php 
 			$args = array(
-					'post_type'			=> array('episodios', 'post', 'graficos'),
+					'post_type'			=> array('episodios', 'post'),
 					'posts_per_page' 	=> 3,
 					'order'				=> 'rand'
 				);
