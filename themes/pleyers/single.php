@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 	
-	<?php if(have_posts()): while(have_posts()): the_post(); ?>
+	<?php 
+		if(have_posts()): while(have_posts()): the_post(); 
+		$single_id = $post->ID;
+	?>
 	<div class="single_post clearfix">
 		<div class="single_top">
 			<?php 
@@ -26,7 +29,8 @@
 			$args = array(
 					'post_type'			=> array('episodios', 'post'),
 					'posts_per_page' 	=> 3,
-					'order'				=> 'rand'
+					'orderby'			=> 'rand',
+					'exclude'			=> $single_id
 				);
 			$related = get_posts($args);
 			foreach($related as $post): setup_postdata($post);
