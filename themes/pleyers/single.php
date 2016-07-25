@@ -14,6 +14,7 @@
 		<div class="single_content">
 			<span class="date"><?php echo get_the_date(); ?></span>
 			<h1><?php the_title(); ?></h1>
+			<div class="addthis_sharing_toolbox"></div>
 			<?php the_content(); ?>
 			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 		</div>
