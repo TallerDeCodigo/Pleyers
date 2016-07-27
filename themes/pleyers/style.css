@@ -135,6 +135,8 @@ nav ul.main-nav li {display: table-cell; vertical-align: middle; width: 1%; heig
 nav ul.main-nav li:last-child{border-right: none!important;}
 nav ul.main-nav li a {color: #fff; text-decoration: none;}
 nav ul.main-nav li.has-children img {margin-left: 20px; }
+nav ul.main-nav li.rio {background-image: url('images/rio.png'); background-size: contain; text-indent: -1000000000px}
+nav ul.main-nav li.rio a {color: #1c589c; display: block; width: 100%; height: 75px; }
 
 .has-children:hover {cursor: pointer;}
 
@@ -164,7 +166,7 @@ ul#noticiasde li{width: 100%!important;}
 .destacado {width: 100%;}
 .destacado .thumb { width: 100%; height: auto; vertical-align: top;}
 .destacado .post-info {}
-.destacado .play {position: absolute; top: 0px; width: 100px; top: 40%; left: 45%; z-index: 1000;}
+.destacado .play {position: absolute; top: 0px; width: 100px; top: 25%; left: 37%; z-index: 1000;}
 .destacado .play:hover {cursor: pointer;}
 .destacado .date {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
 .destacado .post-info {position: absolute; bottom: 30px; left: 30px; }
@@ -235,6 +237,7 @@ ul#noticiasde li{width: 100%!important;}
 
 .shows-pool .nota {width: 720px; overflow: hidden; margin: 0 auto 10px auto;}
 .shows-pool .nota img:not(.play) {width: 100%!important; height: auto;}
+.shows-pool .nota .over {height: 355px;}
 
 .top_taxonomy {margin-bottom: 60px;}
 .top_taxonomy .tax_description {width: 720px; margin: 0 auto;} 

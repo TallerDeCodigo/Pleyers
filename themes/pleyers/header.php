@@ -85,12 +85,15 @@
 										        'taxonomy'            => 'noticiasde',
 										        'title_li'            => __( '' ),
 										        'use_desc_for_title'  => 1,
+										        'exclude'			  => 84	
 										    );
 										    wp_list_categories($args);
 										?>
 									</ul>
 								</li>
+								<li class="rio"><a target="" href="http://lospleyers.com/noticiasde/rio-2016">RIO 2016</a></li>
 								<li class=""><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
+								
 								<li class=""><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
 								<li class=""><a href="">ACERCA DE</a></li>
 							</ul>
