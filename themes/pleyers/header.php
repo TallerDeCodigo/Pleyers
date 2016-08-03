@@ -60,6 +60,7 @@
 						</a>
 						<nav class="clearfix">
 							<ul class="main-nav">
+								<li class="rio"><a target="" href="http://lospleyers.com/noticiasde/rio-2016">RIO 2016</a></li>
 								<li data="shows" class="has-children">SHOWS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" />
 									<ul class="submenu" id="shows"> 
 										<?php
@@ -91,7 +92,6 @@
 										?>
 									</ul>
 								</li>
-								<li class="rio"><a target="" href="http://lospleyers.com/noticiasde/rio-2016">RIO 2016</a></li>
 								<li class=""><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
 								
 								<li class=""><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
