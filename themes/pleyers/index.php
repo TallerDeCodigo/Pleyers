@@ -34,7 +34,7 @@
 			<div class="posts-pool clearfix">
 				<?php
 					$args = array(
-							'post_type' 		=> array('graficos', 'post', 'episodios', 'tweets', 'frases'),
+							'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
 							'posts_per_page'	=>	-1,
 							'exclude'			=> $destacado_id
 							
