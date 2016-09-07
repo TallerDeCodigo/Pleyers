@@ -1,4 +1,4 @@
-	<?php get_header(); ?>
+<?php get_header(); ?>
 	<!-- Insert content here -->
 		<div class="content clearfix">
 			<div class="wrapper-destacado clearfix">
@@ -7,7 +7,7 @@
 							'post_type' 		=> array('post', 'episodios'),
 							'posts_per_page'	=>	1,
 							'category'			=> 17
-						);
+					);
 					$destacado = get_posts($args);
 					foreach($destacado as $post): setup_postdata($post);
 					$destacado_id = $post->ID;
@@ -31,88 +31,92 @@
 				</div><!-- destacadp -->
 				<?php endforeach; wp_reset_postdata(); ?>
 			</div><!-- wrapper-destacado -->
-
+			<?php
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+				$args = array(
+						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
+						'paged' 			=> $paged,
+						'exclude'			=> $destacado_id,
+						'order'    			=> 'DESC'
+				);
+				
+				$play = new WP_Query( $args );
+			?>
 			<div class="posts-pool clearfix">
-
-				<?php
-					$args = array(
-							'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
-							'posts_per_page'	=>	-1,
-							'exclude'			=> $destacado_id
-							
-						);
-					$posts = get_posts($args);
-					foreach($posts as $post): setup_postdata($post);
-					$permalink = get_the_permalink($post->ID);
-
-					if(get_post_type($post->ID) == 'post'){
-						$random = rand(1,10);
-					}
+				<?php			
+					while ( $play->have_posts() ) 
+					{
+						$play->the_post();
+						$permalink = get_the_permalink($play->ID);
+						if(get_post_type($play->ID) == 'post'){
+							$random = rand(1,10);
+						}		
 					
 				?>
 
-				<?php if(get_post_type($post->ID) == 'tweets') { ?>
+				<?php if(get_post_type($play->ID) == 'tweets') { ?>
 
-				<a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>">
-					<div class="clearfix">	
-						<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
-						<div class="tweet_content"><?php the_content(); ?></div>
+				
+					<!-- <a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
+					
+					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
+					<div class="tweet_content"><?php the_content(); ?></div>
 						<span class="date"><?php echo get_the_date(); ?></span>
-					</div>
-				</a><!-- tweet -->
-
-				<?php } elseif(get_post_type($post->ID) == 'frases') { ?>
-
-					<div class="clearfix frases">
-					
-					<span class="tweetie">#frasedeldía</span>
-					<div class="tweet_content">"<?php the_title(); ?>"</div>
-					<span class="date">- <?php echo get_post_meta($post->ID, 'nombre_autor', true); ?></span>
-					
-				</div><!-- tweet -->
-
-				<?php } elseif(get_post_type($post->ID) == 'graficos') { ?>
-
-					<div class="nota clearfix grafico bigsquare">
+					</div></a> --><!-- tweet -->
+				
+				<?php } elseif(get_post_type($play->ID) == 'frases') { ?>
+				
+					<!-- <div class="clearfix frases">
 						
+						<span class="tweetie">#frasedeldía</span>
+						<div class="tweet_content">"<?php the_title(); ?>"</div>
+						<span class="date">- <?php echo get_post_meta($play->ID, 'nombre_autor', true); ?></span>
+						
+					</div> --><!-- tweet -->
+				
+
+				<?php } elseif(get_post_type($play->ID) == 'graficos') { ?>
+
+					<!-- <div class="nota clearfix grafico bigsquare">
+						
+						
+						<a target="_blank" href="http://cerocero.mx/?p=<?php echo get_post_meta($play->ID, 'id_cerocero', true); ?>">
+						<?php 
+							the_post_thumbnail('full');
+						?>
+						</a>
 					
-					<a target="_blank" href="http://cerocero.mx/?p=<?php echo get_post_meta($post->ID, 'id_cerocero', true); ?>">
-					<?php 
-						the_post_thumbnail('full');
-					?>
-					</a>
-					
-				</div><!-- post -->
+					</div> --><!-- post -->
 
 				<?php } else { ?> 
 
-				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
+				<div class="nota clearfix <?php echo get_post_type($play->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
 					<div class="over"></div>
 					<?php
-						$square = get_the_post_thumbnail($post->ID, 'grid_home_square');
-						$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
-						$widescreen = get_the_post_thumbnail($post->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
-						$bigsquare = get_the_post_thumbnail($post->ID, 'grid_home_square_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
+						$square = get_the_post_thumbnail($play->ID, 'grid_home_square');
+						$squareurl = get_the_post_thumbnail_url($play->ID, 'grid_home_square');
+						$widescreen = get_the_post_thumbnail($play->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
+						$bigsquare = get_the_post_thumbnail($play->ID, 'grid_home_square_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
 					?>			
 					
 					<a href="<?php the_permalink(); ?>">
 					<?php 
-						if(get_post_type($post->ID) == 'episodios'){
+						if(get_post_type($play->ID) == 'episodios'){
 							echo $widescreen; 
-						} elseif(get_post_type($post->ID) == 'post'){
+						} elseif(get_post_type($play->ID) == 'post'){
 							if($random == 1 ){
 								echo $widescreen; 
 							} else {
 								echo $square; 	
 							}
-						} elseif(get_post_type($post->ID) == 'graficos'){
+						} elseif(get_post_type($play->ID) == 'graficos'){
 							echo $square; 	
 						}
 					?>
 					</a>
 					<span class="date"><?php echo get_the_date(); ?></span>
 					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
+						if(get_post_meta($play->ID, 'eg_sources_youtube', true)){
 							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
 						} 
 					?>
@@ -122,7 +126,15 @@
 					</div><!-- post-info -->
 				</div><!-- post -->
 				<?php } ?>
-				<?php endforeach; wp_reset_query(); ?>
+				<?php
+					} //End of while
+				?>
+				<?php next_posts_link( 'Older Entries', $play->max_num_pages ); ?>
+				<?php
+					wp_reset_postdata();
+				//End of if
+				?>
+				
 			</div><!-- posts-pool -->
 		</div><!-- content -->
 	<?php get_footer(); ?>
