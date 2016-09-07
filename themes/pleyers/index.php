@@ -31,7 +31,9 @@
 				</div><!-- destacadp -->
 				<?php endforeach; wp_reset_postdata(); ?>
 			</div><!-- wrapper-destacado -->
+
 			<div class="posts-pool clearfix">
+
 				<?php
 					$args = array(
 							'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
@@ -51,13 +53,13 @@
 
 				<?php if(get_post_type($post->ID) == 'tweets') { ?>
 
-				<a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
-					
-					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
-					<div class="tweet_content"><?php the_content(); ?></div>
-					<span class="date"><?php echo get_the_date(); ?></span>
-					
-				</div></a><!-- tweet -->
+				<a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>">
+					<div class="clearfix">	
+						<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
+						<div class="tweet_content"><?php the_content(); ?></div>
+						<span class="date"><?php echo get_the_date(); ?></span>
+					</div>
+				</a><!-- tweet -->
 
 				<?php } elseif(get_post_type($post->ID) == 'frases') { ?>
 
