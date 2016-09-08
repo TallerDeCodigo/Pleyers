@@ -1,4 +1,4 @@
-	<?php get_header(); ?>
+<?php get_header(); ?>
 	<!-- Insert content here -->
 		<div class="content clearfix">
 			<div class="wrapper-destacado clearfix">
@@ -32,9 +32,7 @@
 				<?php endforeach; wp_reset_postdata(); ?>
 			</div><!-- wrapper-destacado -->
 			<?php
-
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-
 				$args = array(
 						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
 						'paged' 			=> $paged,
@@ -48,11 +46,8 @@
 				<?php			
 					while ( $play->have_posts() ) 
 					{
-
 						$play->the_post();
-
 						$permalink = get_the_permalink($play->ID);
-
 						if(get_post_type($play->ID) == 'post'){
 							$random = rand(1,10);
 						}		
@@ -62,27 +57,27 @@
 				<?php if(get_post_type($play->ID) == 'tweets') { ?>
 
 				
-					<!-- <a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
+					 <a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
 					
 					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
 					<div class="tweet_content"><?php the_content(); ?></div>
 						<span class="date"><?php echo get_the_date(); ?></span>
-					</div></a> --><!-- tweet -->
+					</div></a> <!-- tweet -->
 				
 				<?php } elseif(get_post_type($play->ID) == 'frases') { ?>
 				
-					<!-- <div class="clearfix frases">
+					 <div class="clearfix frases">
 						
 						<span class="tweetie">#frasedeldía</span>
 						<div class="tweet_content">"<?php the_title(); ?>"</div>
 						<span class="date">- <?php echo get_post_meta($play->ID, 'nombre_autor', true); ?></span>
 						
-					</div> --><!-- tweet -->
+					</div> <!-- tweet -->
 				
 
 				<?php } elseif(get_post_type($play->ID) == 'graficos') { ?>
 
-					<!-- <div class="nota clearfix grafico bigsquare">
+					 <div class="nota clearfix grafico bigsquare">
 						
 						
 						<a target="_blank" href="http://cerocero.mx/?p=<?php echo get_post_meta($play->ID, 'id_cerocero', true); ?>">
@@ -91,7 +86,7 @@
 						?>
 						</a>
 					
-					</div> --><!-- post -->
+					</div> <!-- post -->
 
 				<?php } else { ?> 
 
