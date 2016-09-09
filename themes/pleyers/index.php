@@ -37,7 +37,8 @@
 						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
 						'paged' 			=> $paged,
 						'exclude'			=> $destacado_id,
-						'order'    			=> 'DESC'
+						'order'    			=> 'DESC',
+						'posts_per_page'	=> 20
 				);
 				
 				$play = new WP_Query( $args );
@@ -50,13 +51,11 @@
 						$permalink = get_the_permalink($play->ID);
 						if(get_post_type($play->ID) == 'post'){
 							$random = rand(1,10);
-						}		
-					
+						}
 				?>
 
 				<?php if(get_post_type($play->ID) == 'tweets') { ?>
 
-				
 					 <a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
 					
 					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>

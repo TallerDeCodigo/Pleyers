@@ -10,6 +10,10 @@
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 		<script src="https://use.fontawesome.com/1656c3d468.js"></script>
+
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-lazyload/lazyload.js"></script>
+
 		<?php wp_head(); ?>
 		<div id="fb-root"></div>
 		<script>

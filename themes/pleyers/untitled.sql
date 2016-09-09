@@ -1,0 +1,1 @@
+UPDATE sad_usuarios SET Nombre='Esmeralda',ApePaterno='Vega',ApeMaterno='',Mail='Esmeralda.Devega@nrfm.com.mx',Usuario='Elizabeth',Password=md5('12345'),Perfil=3,Dealer=0,Activo=1,subPerfiles= WHERE Id = 4603;

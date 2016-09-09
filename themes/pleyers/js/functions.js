@@ -7,6 +7,17 @@
 
 		console.log('hello from functions.js');
 
+		/*
+		holkan lazy load
+		*/
+
+		/*asigna la url de la imagen al atributo data-original*/
+		var img_address = $('div.nota a img').attr('src');
+		$('div.nota a img').attr('data-original', img_address );
+
+		// $('img.wp-post-image').lazyload({ 
+		// 	threshold : 200
+		// });
 
 		/**
 		 * Validación de emails
@@ -63,6 +74,18 @@
 			var datashow = $(this).attr('data');
 			$('#'+datashow).hide();
 		});
+
+		console.log('aqui');
+		// $('.posts-pool').infinitescroll({
+		 
+		//     navSelector  : ".internav",            
+		//                    // selector for the paged navigation (it will be hidden)
+		//     nextSelector : ".internav",    
+		//                    // selector for the NEXT link (to page 2)
+		//     itemSelector : ".posts-pool .nota",          
+		//                    // selector for all items you'll retrieve
+		//     debug: true
+		//   });
 
 
 		/*** FITVIDS ***/
