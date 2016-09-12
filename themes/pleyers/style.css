@@ -233,7 +233,8 @@ ul#noticiasde li{width: 100%!important;}
 .related_posts .nota .play {left: 35%;}
 .related_posts .nota:nth-child(3) {margin-right: 0px!important;}
 
-#infscr-loading img { text-align:center; }
+#infscr-loading { position:absolute; width:100%; bottom:-48px; left:0px; height:40px; text-align:center; }
+#infscr-loading img { display:inline-block; width:90px; height:auto; }
 
 /*** SHOWS ***/
 
