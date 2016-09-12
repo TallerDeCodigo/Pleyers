@@ -100,17 +100,23 @@
 
 			/*** ISOTOPE ***/
 
-			$('.posts-pool').isotope({
-				masonry: {
-					columnWidth: 334,
-					gutter: 10
-				}
-			});
 
 			var alturapornota = $('.nota').find('img').height();
-			$('.nota .over').height(alturapornota);
+			// $('.nota .over').height(alturapornota);
 			
 		}
+
+		var $grid = $('.posts-pool').isotope({
+			itemSelector: '.nota',
+			masonry: {
+				columnWidth: 334,
+				gutter: 10
+			}
+		});
+
+		// $grid.imagesLoaded().progress( function() {
+		//   $grid.isotope('layout');
+		// });
 
 
 

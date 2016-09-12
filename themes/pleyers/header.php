@@ -28,6 +28,7 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 			<div>
+			<div class="todo_el_header"></div>
 				<div class="top-header clearfix">
 					<div class="container clearfix">
 						<div class="search">

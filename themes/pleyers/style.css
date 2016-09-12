@@ -173,7 +173,7 @@ ul#noticiasde li{width: 100%!important;}
 .destacado .post-info h2 {font-weight: normal; font-family: 'Gotham_Black', 'sans-serif'; text-transform: uppercase; font-size: 36px; display: block; max-width: 70%;}
 .destacado .post-info h2 a{color: #fff; text-decoration: none;}
 .destacado .post-info a.mas {color: #fff; text-decoration: underline; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
-.destacado .over {position: absolute; width: 100%; height:100%!important; background: url('images/pattern.png') repeat;}
+.destacado .over {position:absolute;width:100%!important;height:100%!important;background:url('images/pattern.png') repeat;left:0px;top:0px;}
 
 .nota .thumb { width: 100%; height: auto; vertical-align: top;}
 .nota .date {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
@@ -181,9 +181,10 @@ ul#noticiasde li{width: 100%!important;}
 .nota .post-info h3 {font-family: 'Gotham_Medium', 'sans-serif'; text-transform: uppercase; font-size: 24px; display: block; max-width: 280px;}
 .nota .post-info h3 a{color: #fff; text-decoration: none;}
 .nota .post-info a.mas {color: #fff; text-decoration: underline; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
-.nota .over {position: absolute; width: 100%; background: url('images/pattern.png') repeat;}
+.nota .over {position: absolute; width:100%!important;height:100%!important; background: url('images/pattern.png') repeat;left:0px;top:0px;}
 
-.nota.post {position: relative; height: 334px; margin-bottom: 10px; width: auto;}
+.nota.post {position: relative; height: 334px; margin-bottom: 10px; width:auto;}
+/*.nota.post.square {width: 334px;}*/
 .nota.episodios {width: 678px; position: relative; height: 334px; margin-bottom: 10px;}
 .nota.grafico {position: relative; margin-bottom: 10px; width: 334px; height: 334px;}
 .nota.grafico img {width: 100%!important; height: auto; vertical-align: top;}
@@ -232,6 +233,7 @@ ul#noticiasde li{width: 100%!important;}
 .related_posts .nota .play {left: 35%;}
 .related_posts .nota:nth-child(3) {margin-right: 0px!important;}
 
+#infscr-loading img { text-align:center; }
 
 /*** SHOWS ***/
 
@@ -246,7 +248,7 @@ ul#noticiasde li{width: 100%!important;}
 
 .category_archive .tax_description h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 30px; color:#545454; text-align: center;} 
 
-.internav {display: none;}
+.internav {opacity:0;}
 
 /*** FOOTER ***/
 

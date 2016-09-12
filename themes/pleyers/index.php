@@ -129,9 +129,9 @@
 				<?php
 					} //End of while
 				?>
-				<?php next_posts_link( 'Older Entries', $play->max_num_pages ); ?>
+				
 				<?php
-					wp_reset_postdata();
+					// wp_reset_postdata();
 				//End of if
 				?>
 				
