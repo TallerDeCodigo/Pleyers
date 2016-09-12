@@ -173,7 +173,7 @@ ul#noticiasde li{width: 100%!important;}
 .destacado .post-info h2 {font-weight: normal; font-family: 'Gotham_Black', 'sans-serif'; text-transform: uppercase; font-size: 36px; display: block; max-width: 70%;}
 .destacado .post-info h2 a{color: #fff; text-decoration: none;}
 .destacado .post-info a.mas {color: #fff; text-decoration: underline; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
-.destacado .over {position: absolute; width: 100%; background: url('images/pattern.png') repeat;}
+.destacado .over {position: absolute; width: 100%; height:100%!important; background: url('images/pattern.png') repeat;}
 
 .nota .thumb { width: 100%; height: auto; vertical-align: top;}
 .nota .date {display: block; position: absolute; top: 30px; left: 30px; color: #fff; font-family: Gotham_Black; font-size: 12px; text-transform: uppercase;}
@@ -247,6 +247,7 @@ ul#noticiasde li{width: 100%!important;}
 .category_archive .tax_description h1 {font-family: 'Gotham_Black', sans-serif; font-weight: normal; font-size: 36px; text-transform: uppercase; margin-top: 30px; color:#545454; text-align: center;} 
 
 .internav {display: none;}
+
 /*** FOOTER ***/
 
 footer {margin-top: 65px;}

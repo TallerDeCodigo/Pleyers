@@ -1,0 +1,9 @@
+### Bower ###
+plugins/*
+
+### General ###
+.DS_Store
+
+### uploads ###
+uploads/*
+

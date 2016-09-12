@@ -21,37 +21,35 @@
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
-		
-
-
 	</head>
 
 	<body <?php body_class( $class ); ?> >
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-			<div class="top-header clearfix">
-				<div class="container clearfix">
-					<div class="search">
-						<form role="search" method="get" id="searchform" class="searchform" action="<?php echo site_url(); ?>">
-							<div>
-								<input type="text" value="" name="s" id="s" />
-								<input type="submit" id="searchsubmit" value="" />
-							</div>
-						</form>		
-					</div><!-- search -->
-					<div class="social clearfix">
-						<ul class="social-icons">
+			<div>
+				<div class="top-header clearfix">
+					<div class="container clearfix">
+						<div class="search">
+							<form role="search" method="get" id="searchform" class="searchform" action="<?php echo site_url(); ?>">
+								<div>
+									<input type="text" value="" name="s" id="s" />
+									<input type="submit" id="searchsubmit" value="" />
+								</div>
+							</form>		
+						</div><!-- search -->
+						<div class="social clearfix">
+							<ul class="social-icons">
 
-							<li class="tw"><a target="_blank" href="https://www.facebook.com/LosPleyers/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-							<li class="tw"><a target="_blank" href="https://twitter.com/los_pleyers/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li class="tw"><a target="_blank" href="https://www.instagram.com/lospleyers/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li class="tw"><a target="_blank" href="https://www.youtube.com/channel/UCbp3C3hELysSQkyamnpM2og"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-						</ul>
-					</div><!-- social -->
-				</div><!-- container -->
-			</div><!-- top-header -->
-				<header class="clearfix">
+								<li class="tw"><a target="_blank" href="https://www.facebook.com/LosPleyers/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="https://twitter.com/los_pleyers/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="https://www.instagram.com/lospleyers/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="https://www.youtube.com/channel/UCbp3C3hELysSQkyamnpM2og"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+							</ul>
+						</div><!-- social -->
+					</div><!-- container -->
+				</div><!-- top-header -->
+				<header class="header-nav clearfix">
 					<div class="container clearfix">
 						<a href="<?php echo site_url(); ?>">
 							<div class="logo">
@@ -149,5 +147,6 @@
 						</div>
 					</div><!-- container -->
 				</header>
-				<div class="container clearfix">
+			</div>
+			<div class="container clearfix">
 			
