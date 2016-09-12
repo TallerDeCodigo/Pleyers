@@ -35,12 +35,21 @@
 				<?php
 					$args = array(
 							'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
-							'posts_per_page'	=>	-1,
+							// 'posts_per_page'	=>	10,
 							'exclude'			=> $destacado_id
 							
 						);
 					$posts = get_posts($args);
-					foreach($posts as $post): setup_postdata($post);
+
+					$play = new WP_Query( $args );
+
+					if ( $play->have_posts() ) {
+						// The Loop
+						while ( $play->have_posts() ) {
+							the_post();
+							
+
+					// foreach($posts as $post): setup_postdata($post);
 					$permalink = get_the_permalink($post->ID);
 
 					if(get_post_type($post->ID) == 'post'){
@@ -120,7 +129,10 @@
 					</div><!-- post-info -->
 				</div><!-- post -->
 				<?php } ?>
-				<?php endforeach; wp_reset_query(); ?>
+
+				<?php }
+						next_posts_link();
+					}//endforeach; wp_reset_query(); ?>
 			</div><!-- posts-pool -->
 		</div><!-- content -->
 	<?php get_footer(); ?>
