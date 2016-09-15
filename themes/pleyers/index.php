@@ -41,6 +41,7 @@
 				);
 				
 				$play = new WP_Query( $args );
+
 			?>
 			<div class="posts-pool clearfix">
 				<?php			
@@ -50,7 +51,9 @@
 						$permalink = get_the_permalink($play->ID);
 						if(get_post_type($play->ID) == 'post'){
 							$random = rand(1,10);
-						}		
+						}
+						$_autor   = get_post_meta($post->ID, 'nombre_autor', array("fields"=>"all"));
+
 					
 				?>
 
@@ -64,18 +67,18 @@
 						<span class="date"><?php echo get_the_date(); ?></span>
 					</div></a> <!-- tweet -->
 				
-				<?php } elseif(get_post_type($play->ID) == 'frases') { ?>
+				<?php } else if(get_post_type($play->ID) == 'frases') { ?>
 				
-					 <div class="clearfix frases">
+					 <div class="nota clearfix frases">
 						
 						<span class="tweetie">#frasedeldía</span>
 						<div class="tweet_content">"<?php the_title(); ?>"</div>
-						<span class="date">- <?php echo get_post_meta($play->ID, 'nombre_autor', true); ?></span>
+						<span class="date">- <?php echo $_autor; ?></span>
 						
 					</div> <!-- tweet -->
 				
 
-				<?php } elseif(get_post_type($play->ID) == 'graficos') { ?>
+				<?php } else if(get_post_type($play->ID) == 'graficos') { ?>
 
 					 <div class="nota clearfix grafico bigsquare">
 						
@@ -103,13 +106,13 @@
 					<?php 
 						if(get_post_type($play->ID) == 'episodios'){
 							echo $widescreen; 
-						} elseif(get_post_type($play->ID) == 'post'){
+						} else if(get_post_type($play->ID) == 'post'){
 							if($random == 1 ){
 								echo $widescreen; 
 							} else {
 								echo $square; 	
 							}
-						} elseif(get_post_type($play->ID) == 'graficos'){
+						} else if(get_post_type($play->ID) == 'graficos'){
 							echo $square; 	
 						}
 					?>
