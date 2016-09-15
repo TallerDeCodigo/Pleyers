@@ -33,7 +33,6 @@
 			</div><!-- wrapper-destacado -->
 			<?php
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-				print_r($destacado_id);
 				$args = array(
 						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
 						'paged' 			=> $paged,
