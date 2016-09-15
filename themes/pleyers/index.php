@@ -34,7 +34,7 @@
 			<?php
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
-						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases'),
+						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases', 'tweets'),
 						'paged' 			=> $paged,
 						'category__not_in'	=> 17,
 						'order'    			=> 'DESC'
@@ -57,20 +57,18 @@
 					
 				?>
 
-				<?php if(get_post_type($play->ID) == 'tweets') { ?>
+				<?php $type = get_post_type($play->ID); if( $type == 'tweets') { ?>
 
-				
-					 <a class="tweets" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>"><div class="clearfix">
-					
-					<span class="tweetie"><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
-					<div class="tweet_content"><?php the_content(); ?></div>
+					 <a class="tweets nota" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>">
+					<div class="clearfix " >
+						<span class="tweetie "><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
+						<div class="tweet_content"><?php the_content(); ?></div>
 						<span class="date"><?php echo get_the_date(); ?></span>
 					</div></a> <!-- tweet -->
 				
 				<?php } else if(get_post_type($play->ID) == 'frases') { ?>
 				
 					 <div class="nota clearfix frases">
-						
 						<span class="tweetie">#frasedeldía</span>
 						<div class="tweet_content">"<?php the_title(); ?>"</div>
 						<span class="date">- <?php echo $_autor; ?></span>

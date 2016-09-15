@@ -108,19 +108,19 @@
 								<li data="blogs" class="has-children">BLOGS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" />
 									<ul class="submenu" id="blogs">
 										<li class="cat-item">
-											<a href=""> Tirando Guante</a>
+											<a href="">Tirando Guante</a>
 										</li>
 										<li class="cat-item">
-											<a href=""> The Devils Pub</a>
+											<a href="">The Devils Pub</a>
 										</li>
 										<li class="cat-item">
-											<a href=""> Bloxboro</a>
+											<a href="">Bloxboro</a>
 										</li>
 										<li class="cat-item">
-											<a href=""> Dodgers</a>
+											<a href="">Dodgers</a>
 										</li>
 										<li class="cat-item">
-											<a href=""> Atleti</a>
+											<a href="">Atleti</a>
 										</li>
 									</ul>
 								</li>
