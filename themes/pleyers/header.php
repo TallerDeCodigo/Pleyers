@@ -1,4 +1,5 @@
 <!doctype html>
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<meta property="fb:pages" content="890404164418411" />
@@ -8,6 +9,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="cleartype" content="on">
+		<meta name="geo.region" content="MX-DIF" />
+		<meta name="geo.position" content="23.634501;-102.552784" />
+		<meta name="ICBM" content="23.634501, -102.552784" />
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 		<script src="https://use.fontawesome.com/1656c3d468.js"></script>
@@ -69,7 +73,7 @@
 						</a>
 						<nav class="clearfix">
 							<ul class="main-nav">
-								<!-- <li class="rio"><a target="" href="http://lospleyers.com/noticiasde/rio-2016">RIO 2016</a></li> -->
+								<li class="rio"><a target="" href="http://lospleyers.com/noticiasde/rio-2016">RIO 2016</a></li>
 								<li data="shows" class="has-children">SHOWS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" />
 									<ul class="submenu" id="shows"> 
 										<?php
@@ -89,20 +93,38 @@
 									<ul class="submenu" id="noticiasde"> 
 										<?php
 											$args = array(
-										        'hide_empty'          => 1,
+										        'hide_empty'          => false,
 										        'show_count'          => 0,
 										        'style'               => 'list',
 										        'taxonomy'            => 'noticiasde',
 										        'title_li'            => __( '' ),
 										        'use_desc_for_title'  => 1,
-										        'exclude'			  => 84	
+										        'exclude'			  => array(84, 1313),
 										    );
 										    wp_list_categories($args);
 										?>
 									</ul>
 								</li>
+								<li data="blogs" class="has-children">BLOGS<img src="<?php echo THEMEPATH; ?>/images/dropdown.png" />
+									<ul class="submenu" id="blogs">
+										<li class="cat-item">
+											<a href=""> Tirando Guante</a>
+										</li>
+										<li class="cat-item">
+											<a href=""> The Devils Pub</a>
+										</li>
+										<li class="cat-item">
+											<a href=""> Bloxboro</a>
+										</li>
+										<li class="cat-item">
+											<a href=""> Dodgers</a>
+										</li>
+										<li class="cat-item">
+											<a href=""> Atleti</a>
+										</li>
+									</ul>
+								</li>
 								<li class=""><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
-								
 								<li class=""><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
 								<li class=""><a href="">ACERCA DE</a></li>
 							</ul>
@@ -151,6 +173,7 @@
 										?>
 									</ul>
 								</li>
+								<li class="main_li"><a href="">BLOGS</a></li>
 								<li class="main_li"><a target="_blank" href="https://medium.com/@ceroceromx">OPINIÓN</a></li>
 								<li class="main_li"><a target="_blank" href="http://cerocero.mx/">(0-0)</a></li>
 								<li class="main_li"><a href="">ACERCA DE</a></li>
