@@ -55,11 +55,10 @@
 						</div><!-- search -->
 						<div class="social clearfix">
 							<ul class="social-icons">
-
-								<li class="tw"><a target="_blank" href="https://www.facebook.com/LosPleyers/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-								<li class="tw"><a target="_blank" href="https://twitter.com/los_pleyers/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li class="tw"><a target="_blank" href="https://www.instagram.com/lospleyers/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								<li class="tw"><a target="_blank" href="https://www.youtube.com/channel/UCbp3C3hELysSQkyamnpM2og"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="http://cerocero.mx/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="http://cerocero.mx/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="http://cerocero.mx/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="tw"><a target="_blank" href="http://cerocero.mx/"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 							</ul>
 						</div><!-- social -->
 					</div><!-- container -->

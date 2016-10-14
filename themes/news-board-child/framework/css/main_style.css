@@ -74,7 +74,7 @@ body {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 h1,h2,h3,h4 { font-weight:300;}
 .mes_head_title { padding:10px; margin:0px; background:rgba(0,0,0,0.3); display:inline-block; color:#fff;}
 .mes_legend { font-weight:300 !important; line-height:40px; text-align:center; font-size:28px;color: #393939;}
-/*h1{font-size: 44px;line-height: 1.3125em;letter-spacing: 2px;font-weight: 700;text-transform: uppercase;color: #393939;margin-top: 0;}*/
+h1{font-size: 22px!important;font-weight: 700;text-transform: uppercase;color: #393939;margin-top: 0;}
 
 h2{font-size: 30px;line-height: 1.2em;letter-spacing: 2px;font-weight: 800;text-transform: uppercase;color: #393939;margin-top: 0;}
 h3{font-size: 20px;line-height: 1.285714285714286em;font-style: italic;font-weight: 400;color: #5d5d5d;font-family: 'Crete Round',sans-serif !important;margin-top: 0 !important;}

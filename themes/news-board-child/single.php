@@ -70,12 +70,12 @@ $mes_options['blog_sidebar_position'] = "Right Sidebar";
                             <?php };?>
                         <?php };?>-->
 
-                    <!--    <?php $insert = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
+                      <!-- <?php $insert = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>-->
                      <div class="comentarios">   
                         <p class="label_form">deja un comentario</p>
-                        <p class="regreso"><a href="http://localhost/pleyers">regreso &nbsp; &lt;</a></p>
+                        <p class="regreso"><a href="http://www.lospleyers.com">regreso &nbsp; &lt;</a></p>
                         <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"></div>
-                    </div> -->
+                    </div>
                 
                     </div>
                 
