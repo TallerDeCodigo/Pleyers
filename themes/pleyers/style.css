@@ -126,7 +126,7 @@ body {background: url('images/bg.png') repeat;}
 .top-header .social li i {font-size: 2.2rem; color: #303030; padding-top: .6rem;}
 
 header {width: 100%; background: #fff; height: 270px;}
-.logo {width: 470px; height: 105px; background: url('images/logo.png') no-repeat center; margin: 0 auto 40px auto;}
+.logo {width: 470px; height: 105px; background: url('images/new_logo.png') no-repeat center; margin: 0 auto 40px auto;}
 .logo h1 {text-indent: -100000px; margin-top: 50px; }
 
 nav {width: 100%;}
