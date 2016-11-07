@@ -34,10 +34,11 @@
 
 		ga('create', 'UA-65208621-1', 'auto');
 		ga('send', 'pageview');
+
 		</script>
 	</head>
 
-	<body <?php body_class( $class ); ?> >
+	<body <?php body_class(); ?> >
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->

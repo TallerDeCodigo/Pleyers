@@ -1,10 +1,13 @@
-	
-	<footer>
-		<?php next_posts_link( 'Older Entries', $play->max_num_pages ); ?>
-	</footer>
-		<?php wp_footer(); ?>
-		</div><!-- container -->
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796162956a62a02"></script>
+		<footer>
+			<?php wp_footer(); ?>
+			<!--<?php next_posts_link( 'Older Entries', $play->max_num_pages ); ?>-->
+			<div class="container clearfix">
+				<img src="">
+				<span>LOS PLEYERS © Derechos reservados 2016.</span>
+			</div>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5796162956a62a02"></script>
+		</footer>
+		<script type='text/javascript' src='js/functions.js'></script>
+		<script type='text/javascript' src='js/plugins.js'></script>
 	</body>
-
 </html>

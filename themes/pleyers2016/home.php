@@ -1,69 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Condensed' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/style.css">
-	<title>Los Pleyers</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-	<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-</head>
-<body>
-	<div class="overscreen" style="display:none">
-		<div class="_over"></div>
-		<div class="menu">
-			<nav>
-				<div>
-					<h3><a href="">Sprints</a></h3>
-				</div>
-				<div>
-					<h3><a href="">Historias</a></h3>
-					<a href="">Basquetbol</a>
-					<a href="">Futbol</a>
-					<a href="">Americano</a>
-					<a href="">Beisbol</a>
-					<a href="">Otros deportes</a>
-				</div>
-				<div>
-					<h3><a href="">Blogs</a></h3>
-					<a href="">Jiots Sports</a>
-					<a href="">Deportología</a>
-					<a href="">El Pechofrío</a>
-					<a href="">Tirando Guante</a>
-					<a href="">Apuntes de Rabona</a>
-					<a href="">Turismo Deportivo</a>
-					<a href="">Cultura Pop</a>
-					<a href="">Táctica</a>
-					<a href="">Lucha Libre</a>
-				</div>
-				<div>
-					<h3><a href="">Marcas</a></h3>
-					<a href="">Basquetbol</a>
-					<a href="">Futbol</a>
-				</div>
-				<div>
-					<h3><a href="">Quiénes Somos</a></h3>
-				</div>
-			</nav>
-		</div>
-	</div>
-	<header>
-		<div class="container clearfix">
-			<h1>LOS PLEYERS</h1>
-			<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
-			<a href=""><img class="header_logo" src="images/logo.png"></a>
-			<nav class="social">
-				<div class="search_bar"><input type="search" name="search" placeholder="Búsqueda" style="display:none"></div>
-				<a href="" class="fb"></a>
-				<a href="" class="tw"></a>
-				<a href="" class="in"></a>
-				<a href="" class="md"></a>
-				<a href="" class="yt"></a>
-			</nav>
-		</div>
-	</header>
+<?php get_header(); ?>
 	<section>
 		<div class="main_banner full_container clearfix">
 			<div class="img_frame">
@@ -369,13 +304,4 @@
 			</div>
 		</div>
 	</section>
-	<footer>
-		<div class="container clearfix">
-			<img src="">
-			<span>LOS PLEYERS © Derechos reservados 2016.</span>
-		</div>
-	</footer>
-	<script type='text/javascript' src='js/functions.js'></script>
-	<script type='text/javascript' src='js/plugins.js'></script>
-</body>
-</html>
+<?php get_footer(); ?>

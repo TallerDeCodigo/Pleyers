@@ -71,6 +71,41 @@
 		);
 		register_post_type( 'graficos', $args );
 
+
+		// SPRINTS
+		$labels = array(
+			'name'          => 'Sprints',
+			'singular_name' => 'Sprint',
+			'add_new'       => 'Nuevo Sprint',
+			'add_new_item'  => 'Nuevo Sprint',
+			'edit_item'     => 'Editar Sprint',
+			'new_item'      => 'Nuevo Sprint',
+			'all_items'     => 'Todos',
+			'view_item'     => 'Ver Sprint',
+			'search_items'  => 'Buscar Sprint',
+			'not_found'     => 'No se encontró',
+			'menu_name'     => 'Sprints'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'sprints' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'taxonomies'         => array( 'category' ),
+			'supports'           => array( 'title', 'editor', 'thumbnail' )
+		);
+		register_post_type( 'sprints', $args );
+
+
+
 		// TWEETS
 		$labels = array(
 			'name'          => 'Tweets',
