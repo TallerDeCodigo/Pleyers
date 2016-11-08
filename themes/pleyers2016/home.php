@@ -1,112 +1,171 @@
-<?php get_header(); ?>
+<?php 
+	get_header();
+	$var_expire=300;
+	$query = wp_cache_get('posts_cached');
+
+	if($query == false){
+		$args = array(
+					'post_type'=>'post',
+					'posts_per_page'=>4,
+					'post_status'=>'publish',
+					'orderby'=>'date',
+					'order'=>'DESC'
+					);
+		$posts = new WP_Query($args);
+		wp_cache_set('posts_cached', $posts, '', $var_expire);
+		$count = 0;
+		// echo "<pre>";
+		// 	print_r($posts->posts);
+		// echo "</pre>";
+?>
 	<section>
 		<div class="main_banner full_container clearfix">
-			<div class="img_frame">
-				<img class="post_picture" src="images/post.png" />
-			</div>
-			<div class="destacado nota1">
-				<a href=""><span>#NFL</span></a>
-				<a href=""><h3>Minnesota Vikings: el último invicto en la NFL en 2016</h3></a>
-			</div>
+
+			<?php 
+			if($posts->have_posts()): 
+				while($posts->have_posts()):
+					$posts->the_post(); setup_postdata($post);
+				if($count == 0){
+			?>
+				<div class="img_frame">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="destacado nota1">
+					<?php $tags = get_the_tags(); foreach($tags as $tag){ ?>
+						<a href=""><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
+					<?php } ?>
+					<a href="<?php the_permalink(); ?>">
+						<h3>
+							<?php the_title(); ?>
+						</h3>
+					</a>
+				</div>
+			
+			<?php		
+				}else if($count == 1 ){
+					$thumb = the_post_thumbnail_url();
+			?>
+
 			<div class="more_destacado">
-				<div class="destacado nota2" data-image="images/post1.png">
-					<a href=""><span>#Futbol</span></a>
-					<a href=""><h3>Cristiano Ronaldo: ¿El sufrimiento Real?</h3></a>
+				<div class="destacado" data-image="<?php $thumb?>">
+					
+					<a href="">
+						<h3>
+							<?php the_title(); ?>
+						</h3>
+					</a>
 				</div>
-				<div class="destacado nota3" data-image="images/post.png">
-					<a href=""><span>#Futbol</span></a>
-					<a href=""><h3>Andrés Iniesta “El Mago” no reconocido del futbol mundial</h3></a>
+				
+			<?php		
+				}else if($count > 1 ){
+			?>	
+				<div class="destacado" data-image="<?php $thumb?>">
+					<a href="">
+						<h3>
+							<?php the_title(); ?>
+						</h3>
+					</a>
 				</div>
-				<div class="destacado nota4" data-image="images/post1.png">
-					<a href=""><span>#Futbol</span></a>
-					<a href=""><h3>Cuauhtémoc Blanco sí firmó contrato para ser candidato</h3></a>
-				</div>
+			
+			<?php		
+				} $count ++; wp_reset_postdata(); endwhile; endif;
+			?>
 			</div>
 		</div>
 	</section>
+
 	<section>
 		<div class="container clearfix">
 			<div class="left_container">
+				<?php 
+					$query = wp_cache_get('all_pt_cached');
+					$types = get_all_posttypes();
+					if($query == false){
+
+					$args = array(
+								'post_type'=> $types,
+								'posts_per_page'=>-1,
+								'post_status'=>'publish',
+								'orderby'=>'date',
+								'order'=>'DESC'
+						);
+					$posts = new WP_Query($args);
+					wp_cache_set('all_pt_cached', $posts, '', $var_expire);
+					if($posts->have_posts()): 
+						while($posts->have_posts()):
+							$posts->the_post(); setup_postdata($post);
+							$tags = get_the_tags();
+				?>
 				<div class="post clearfix">
 					<a href="">
 						<div class="img_frame clearfix">
-							<img src="images/post.png">
+							<?php the_post_thumbnail(); ?>
+							<!-- <img src="images/post.png"> -->
 						</div>
 					</a>
-					<a href=""><span>#Baseball</span></a>
-					<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-					<a href=""><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam magna non erat semper consectetur.</p></a>
+					<?php 
+						if(!empty($tags)){
+							foreach($tags as $tag): ?>
+								<a href="<?php the_permalink(); ?>"><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
+					<?php 		
+							endforeach; 
+						} 
+					?>
+					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+					<!-- <a href=""><p><?php the_content(); ?></p></a> -->
 				</div>
-				<div class="post clearfix">
-					<a href="">
-						<div class="img_frame clearfix">
-							<img src="images/post.png">
-						</div>
-					</a>
-					<a href=""><span>#Baseball</span></a>
-					<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-					<a href=""><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam magna non erat semper consectetur.</p></a>
-				</div>
-				<div class="post clearfix">
-					<a href="">
-						<div class="img_frame clearfix">
-							<img src="images/post.png">
-						</div>
-					</a>
-					<a href=""><span>#Baseball</span></a>
-					<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-					<a href=""><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam magna non erat semper consectetur.</p></a>
-				</div>
+				<?php
+					wp_reset_postdata(); endwhile; endif; }
+				?>
 			</div>
 			<div class="sidebar clearfix">
 				<div class="sprints">
-					<h3 class="header_sprints">SPRINTS</h3>
-					<div class="sprints_container">
-						<div class="formato_b sprints_post clearfix">
-							<span class="post_time">2h</span>
-							<div class="sprints_post_content">
-								<a href=""><div class="img_frame"><img src="images/post.png" /></div></a>
-								<a href=""><p>Officials in Colombia on Monday declared an end to the Zika epidemic there. It was the first time that a South American country said that it had turned the tide on the disease.</p></a>
+					<?php 
+						$query = wp_cache_get('sprints_cached');
+						if($query == false){
+
+							$args = array(
+										'post_type'=>'sprints',
+										'posts_per_page'=>-1,
+										'post_status'=>'publish',
+										'orderby'=>'date',
+										'order'=>'DESC'
+										);
+							$posts = new WP_Query($args);
+							wp_cache_set('sprints_cached', $posts, '', $var_expire);
+							$pt = get_post_type();
+
+					?>
+							<h3 class="header_sprints"><?php echo esc_html($pt); ?></h3>
+							<div class="sprints_container">
+								<?php 
+									if($posts->have_posts()): 
+										while($posts->have_posts()):
+											$posts->the_post(); setup_postdata($post);
+								?>
+								<div class="formato_b sprints_post clearfix">
+									<span class="post_time">2h</span>
+									<div class="sprints_post_content">
+										<a href="">
+											<div class="img_frame">
+												<?php the_post_thumbnail(); ?>
+												<!-- <img src="images/post.png" /> -->
+											</div>
+										</a>
+										<a href="<?php the_permalink(); ?>">
+											<p>
+												<?php the_content(); ?>
+											</p>
+										</a>
+									</div>
+								</div>
+						<?php wp_reset_postdata(); endwhile; endif; } ?>
 							</div>
-						</div>
-						<div class="formato_b sprints_post clearfix">
-							<span class="post_time">10h</span>
-							<div class="sprints_post_content">
-								<a href=""><p>Officials in <strong>Colombia on Monday declared an end to the Zika</strong> epidemic there. It was the first time that a South American country said that it had turned the tide on the disease.</p></a>
-							</div>
-						</div>
-						<div class="formato_a sprints_post clearfix">
-							<span class="post_time">2d</span>
-							<div class="sprints_post_content">
-								<a href=""><div class="img_frame"><img src="images/post.png" /></div></a>
-								<a href=""><p>Officials in Colombia on Monday declared an end to the Zika epidemic there. It was the first time that a South American country said that it had turned the tide on the disease.</p></a>
-							</div>
-						</div>
-						<div class="formato_a sprints_post clearfix">
-							<span class="post_time">2d</span>
-							<div class="sprints_post_content">
-								<a href=""><div class="img_frame"><img src="images/post.png" /></div></a>
-								<a href=""><p>Officials in Colombia on Monday declared an end to the Zika epidemic there. It was the first time that a South American country said that it had turned the tide on the disease.</p></a>
-							</div>
-						</div>
-						<div class="formato_b sprints_post clearfix">
-							<span class="post_time">3d</span>
-							<div class="sprints_post_content">
-								<a href=""><div class="img_frame"><img src="images/post.png" /></div></a>
-								<a href=""><p>Officials in Colombia on Monday declared an end to the Zika epidemic there. It was the first time that a South American country said that it had turned the tide on the disease.</p></a>
-							</div>
-						</div>
-						<div class="formato_b sprints_post clearfix">
-							<span class="post_time">8d</span>
-							<div class="sprints_post_content">
-								<a href=""><p>Officials in Colombia on Monday declared an end to the Zika epidemic there. It was the first time that a South American country said that it had turned the tide on the disease.</p></a>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<section class="cerocero">
 		<div class="container clearfix">
 		<img src="images/00_logo.png">
@@ -117,6 +176,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section>
 		<div class="grid_videos container clearfix">
 			<h2>Blogs</h2>
@@ -304,4 +364,7 @@
 			</div>
 		</div>
 	</section>
+	<?php
+		}//end if cached 
+	?>
 <?php get_footer(); ?>

@@ -37,7 +37,7 @@
 		</script> -->
 	</head>
 
-	<body <?php body_class( $class ); ?> >
+	<body <?php body_class(); ?> >
 		
 	<div class="overscreen" style="display:none">
 		<div class="_over"></div>

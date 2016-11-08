@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+
+
+index
 	<!-- Insert content here -->
 		<div class="content clearfix">
 			<div class="wrapper-destacado clearfix">

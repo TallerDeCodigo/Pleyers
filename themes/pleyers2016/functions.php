@@ -307,3 +307,8 @@
 	}
 	add_action( 'pre_get_posts', 'wpdocs_five_posts_on_homepage' );
 
+	function get_all_posttypes(){
+		$pt = array('post', 'episodios', 'graficos', 'sprints', 'tweets');
+		return $pt;
+	}
+
