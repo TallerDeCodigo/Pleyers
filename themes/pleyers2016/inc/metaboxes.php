@@ -22,7 +22,6 @@
 // CUSTOM METABOXES CALLBACK FUNCTIONS ///////////////////////////////////////////////
 
 
-
 	function show_post_video_meta($post){
 		$eg_sources_youtube = get_post_meta($post->ID, 'eg_sources_youtube', true);
 		wp_nonce_field(__FILE__, 'post_video_meta_nonce');

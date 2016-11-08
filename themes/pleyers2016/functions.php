@@ -312,3 +312,9 @@
 		return $pt;
 	}
 
+	function add_tags_categories() {
+	// register_taxonomy_for_object_type('category', 'tilbud');
+	register_taxonomy_for_object_type('post_tag', 'episodios');
+	}
+	add_action('init', 'add_tags_categories');
+

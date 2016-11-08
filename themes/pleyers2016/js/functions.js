@@ -91,6 +91,16 @@
 			// }
 		});
 
+		$('.balloon').on('click', function(){
+			console.log('hey');
+			$('.globo').slideDown();
+			$('.balloon').append($('.globo'));
+		});
+		$('.globo').mouseleave(function(){
+			console.log('you');
+			$('.globo').slideUp();
+		});
+
 	});
 
 })(jQuery);

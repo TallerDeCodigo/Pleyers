@@ -1,9 +1,10 @@
-<?php get_header(); ?>
-	
-	<?php 
-		if(have_posts()): while(have_posts()): the_post(); 
-		$single_id = $post->ID;
-	?>
+<?php 
+	get_header(); 
+	$posts = get_queried_object();
+	// echo "<pre>";
+	// 	print_r($posts);
+	// echo "</pre>";
+?>
 	<div class="single_post clearfix">
 		<div class="single_top">
 			<?php 
@@ -14,47 +15,50 @@
 				<?php the_post_thumbnail('full'); ?>
 			<?php } ?>
 		</div>
+
 		<div class="single_content">
-			<span class="date"><?php echo get_the_date(); ?></span>
-			<h1><?php the_title(); ?></h1>
+			
+				<?php 
+					$tags = get_the_tags();
+					if($tags){
+						foreach($tags as $tag):
+							echo "<a href=''><span class='tags'>#".$tag->name." "."</span></a>";
+						endforeach;	
+					}
+				?>
+			<h2>
+				<?php the_title(); ?>
+			</h2>
 			<div class="addthis_sharing_toolbox"></div>
 			<?php the_content(); ?>
-			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-		</div>
-	</div>
-	<?php endwhile; endif; wp_reset_query(); ?>
+			<div class="addthis_sharing_toolbox"></div>
 
-	<div class="related_posts clearfix">
-		<?php 
-			$args = array(
-					'post_type'			=> array('episodios', 'post'),
-					'posts_per_page' 	=> 3,
-					'orderby'			=> 'rand',
-					'exclude'			=> $single_id
-				);
-			$related = get_posts($args);
-			foreach($related as $post): setup_postdata($post);
-			$permalink = get_the_permalink($post->ID);
-		?>
-		<div class="nota clearfix <?php echo get_post_type($post->ID); ?> square">
-			<div class="over"></div>
-			<?php $square = get_the_post_thumbnail( $post->ID, 'grid_home_square' ); ?>			
-			<a href="<?php the_permalink(); ?>">
-			<?php echo $square; ?>
-			</a>
-			<span class="date"><?php echo get_the_date(); ?></span>
 			<?php 
-				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-					echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-				} 
+				$author_mail = get_the_author_meta('user_email');
+				
 			?>
-			<div class="post-info">	
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-			</div><!-- post-info -->
-		</div><!-- post -->
-		<?php endforeach; ?>
-	
-	</div>
+				<?php
+					if($author_mail){
+						$email = $author_mail;
+						$hash = md5(strtolower($email));
+						$gravatar = get_home_url()."/".$hash;
+						$nme_author = get_the_author();
+					?>
+						<img src="<?php echo $gravatar; ?>">
+						<div><?php echo $nme_author; ?></div>
+						<div><?php echo $email; ?></div>
+				<?php								
+					}
+				?>
+			<div class="line_division"></div>
+			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+			<div class="globo" style="display:none;">
+				Lorem ipsum dolor sit amet consectetur adiscplicing elit
+			</div>
 
+			<?php get_template_part('templates/barra', 'mashistorias'); ?>
+
+		</div>
+
+	</div>
 <?php get_footer(); ?>

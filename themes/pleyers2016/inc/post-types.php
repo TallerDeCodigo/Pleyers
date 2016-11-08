@@ -169,6 +169,5 @@
 			'supports'           => array( 'title' )
 		);
 		register_post_type( 'frases', $args );
-
-
+		
 	});

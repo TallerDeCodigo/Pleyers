@@ -17,7 +17,7 @@
 		<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 	<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 		<?php wp_head(); ?>
-		<!-- <script>
+		<script>
 			(function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
@@ -34,7 +34,7 @@
 
 		ga('create', 'UA-65208621-1', 'auto');
 		ga('send', 'pageview');
-		</script> -->
+		</script>
 	</head>
 
 	<body <?php body_class(); ?> >
@@ -81,14 +81,24 @@
 		<div class="container clearfix">
 			<h1>LOS PLEYERS</h1>
 			<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
-			<a href=""><img class="header_logo" src="images/logo.png"></a>
+			<a href="<?php echo site_url(); ?>"><img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png"></a>
 			<nav class="social">
 				<div class="search_bar"><input type="search" name="search" placeholder="Búsqueda" style="display:none"></div>
-				<a href="" class="fb"></a>
-				<a href="" class="tw"></a>
-				<a href="" class="in"></a>
-				<a href="" class="md"></a>
-				<a href="" class="yt"></a>
+				<a href="">
+					<div class="fb"></div>
+				</a>
+				<a href="">
+					<div class="tw"></div>
+				</a>
+				<a href="" >
+					<div class="in"></div>
+				</a>
+				<a href="">
+					<div class="md"></div>
+				</a>
+				<a href="">
+					<div class="yt"></div>
+				</a>
 			</nav>
 		</div>
 	</header>
