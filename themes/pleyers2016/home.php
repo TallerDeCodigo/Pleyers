@@ -133,10 +133,9 @@
 										);
 							$posts = new WP_Query($args);
 							wp_cache_set('sprints_cached', $posts, '', $var_expire);
-							$pt = get_post_type();
 
 					?>
-							<h3 class="header_sprints"><?php echo esc_html($pt); ?></h3>
+							<h3 class="header_sprints">SPRINTS</h3>
 							<div class="sprints_container">
 								<?php 
 									if($posts->have_posts()): 
