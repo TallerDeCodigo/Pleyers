@@ -12,6 +12,8 @@
 					'order'=>'DESC'
 					);
 		$posts = new WP_Query($args);
+		$main_post_id = $posts->posts;
+		$main_post_id = $main_post_id[0]->ID;
 		wp_cache_set('posts_cached', $posts, '', $var_expire);
 		$count = 0;
 		// echo "<pre>";
@@ -87,10 +89,11 @@
 					$types = get_all_posttypes();
 					$args = array(
 								'post_type'=> $types,
-								'posts_per_page'=>10,
+								'posts_per_page'=>5,
 								'post_status'=>'publish',
 								'orderby'=>'date',
-								'order'=>'DESC'
+								'order'=>'DESC',
+								'post__not_in'=>array($main_post_id)
 						);
 					$posts = new WP_Query($args);
 					if($posts->have_posts()): 
