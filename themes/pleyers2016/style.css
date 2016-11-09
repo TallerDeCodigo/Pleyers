@@ -120,11 +120,11 @@ nav.social {float:right;}
 
 /*SOCIAL NETWORK*/
 .social a div{width:30px;height:30px;display:inline-block;margin-top:15px;}
-.fb{background:url(../pleyers/images/fb_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
-.tw{background:url(../pleyers/images/tw_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
-.in{background:url(../pleyers/images/in_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
-.md{background:url(../pleyers/images/md_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
-.yt{background:url(../pleyers/images/yt_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
+.fb{background:url(../pleyers2016/images/fb_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
+.tw{background:url(../pleyers2016/images/tw_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
+.in{background:url(../pleyers2016/images/in_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
+.md{background:url(../pleyers2016/images/md_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
+.yt{background:url(../pleyers2016/images/yt_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
 
 /*MENU*/
 
@@ -147,6 +147,7 @@ div.post div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px
 div.post span {font-size:90%;font-weight:700;color:#777;}
 div.post h3 {margin:5px 0px 10px;font-size:140%;}
 div.post p {line-height:160%;color:#777;}
+._logo{background: url(../pleyers2016/images/pleyers_logo.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
 
 /*SPRINTS*/
 
@@ -234,7 +235,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .single_content{padding-top:60px;}
 .single_content span.tags{color:#8b8b8b;font-size: 14px;}
 .single_top img{width:100%;height:auto;}
-.single_top h2{margin-top:-150px;margin-left:90px;font-size: 3em;color:#fff;}
+.single_top h2{margin-top:-270px;margin-left:90px;font-size: 3em;color:#fff;width: 40%;}
 .single_top span{display:inline-block;position:relative;top:110px;left:90px;font-size: 1.5em; color:yellow;}
 .single_sidebar{width:320px;float:left;}
 .single_content{width:50%;margin:0 auto;}

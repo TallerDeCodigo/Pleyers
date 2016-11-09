@@ -3,9 +3,6 @@
 			<h2>Blogs</h2>
 			<div class="videos_stack clearfix">
 				<?php
-					$var_expire = 300;
-					$query = wp_cache_get('blogs_cached');
-					if($query == false){
 						$args = array(
 									'post_type'=>'episodios',
 									'posts_per_page'=>7,
@@ -14,7 +11,6 @@
 									'order'=>'DESC'
 									);
 						$posts = new WP_Query($args);
-						wp_cache_set('blogs_cached', $posts, '', $var_expire);
 						$count = 0;
 						if($posts->have_posts()):
 							while($posts->have_posts()):
@@ -98,7 +94,6 @@
 						wp_reset_postdata();
 						endwhile; 
 					endif;
-				} 
 			?>
 			</div>
 		</div>

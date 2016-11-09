@@ -1,9 +1,7 @@
 <?php 
 	get_header(); 
 	$posts = get_queried_object();
-	// echo "<pre>";
-	// 	print_r($posts);
-	// echo "</pre>";
+	$aidi_exclude = $post->ID;
 ?>
 	<div class="single_post clearfix">
 		<div class="single_top clearfix">
@@ -11,12 +9,13 @@
 					$tags = get_the_tags();
 					if($tags){
 						foreach($tags as $tag):
-							$tags = $tag->slug;
-							// echo "<pre>";
-							// 	print_r($arr_tag);
-							// echo "</pre>";
+							$tag_url = $tag->slug;
 					?>
-							<span><?php echo "#".esc_html($tag->name)." "; ?></span>
+							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
+								<span>
+									<?php echo "#".esc_html($tag->name)." "; ?>
+								</span>
+							</a>	
 					<?php		
 						endforeach;
 					}
@@ -32,17 +31,20 @@
 				<?php the_title(); ?>
 			</h2>
 		</div>	
+		
 		<?php get_sidebar(); ?>
+
 		<div class="posts_pool clearfix">
 			<?php 
 				$types = get_all_posttypes();
 				$args = array(
 							'post_type'=> $types,
-							'posts_per_page'=>-1,
+							'posts_per_page'=>5,
 							'post_status'=>'publish',
 							'orderby'=>'date',
 							'order'=>'DESC',
-							'tag'=>$tags
+							'tag'=>$tag_url,
+							'post__not_in'=>array($aidi_exclude)
 					);
 				$posts = new WP_Query($args);
 				if($posts->have_posts()): 
@@ -54,19 +56,21 @@
 				<a href="">
 					<div class="img_frame clearfix">
 						<?php the_post_thumbnail(); ?>
-						<!-- <img src="images/post.png"> -->
 					</div>
 				</a>
 				<?php 
 					if(!empty($tags)){
-						foreach($tags as $tag): ?>
-							<a href="<?php the_permalink(); ?>"><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
+						foreach($tags as $tag): $tag_url = $tag->slug; ?>
+							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
+								<span>
+									<?php echo "#".esc_html($tag->name)." "; ?>
+								</span>
+							</a>
 				<?php 		
 						endforeach; 
 					} 
 				?>
 				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-				<!-- <a href=""><p><?php the_content(); ?></p></a> -->
 			</div>
 			<?php
 				wp_reset_postdata(); endwhile; endif; 

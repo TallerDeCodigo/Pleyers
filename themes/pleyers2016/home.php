@@ -33,8 +33,14 @@
 					<?php the_post_thumbnail(); ?>
 				</div>
 				<div class="destacado nota1">
-					<?php $tags = get_the_tags(); foreach($tags as $tag){ ?>
-						<a href=""><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
+					<?php $tags = get_the_tags(); foreach($tags as $tag){ 
+							$tag_url = $tag->slug;
+						?>
+						<a href="<?php echo 'tag/'.$tag_url;?>">
+							<span>
+								<?php echo "#".esc_html($tag->name)." "; ?>
+							</span>
+						</a>
 					<?php } ?>
 					<a href="<?php the_permalink(); ?>">
 						<h3>
@@ -64,8 +70,13 @@
 						<?php 
 								$tags = get_the_tags();
 								if($tags):foreach($tags as $tag): 
+									$tag_url = $tag->slug;
 							?>
-									<span ><?php echo "#".$tag->name; ?></span>
+									<a href="<?php echo 'tag/'.$tag_url; ?>">
+										<span >
+											<?php echo "#".$tag->name; ?>
+										</span>
+									</a>	
 						<?php 	endforeach; endif; ?>
 					<a href="<?php the_permalink(); ?>">
 						<h3>
@@ -102,22 +113,24 @@
 							$tags = get_the_tags();
 				?>
 				<div class="post clearfix">
-					<a href="">
+					<a href="<?php the_permalink(); ?>">
 						<div class="img_frame clearfix">
 							<?php the_post_thumbnail(); ?>
-							<!-- <img src="images/post.png"> -->
 						</div>
 					</a>
 					<?php 
 						if(!empty($tags)){
-							foreach($tags as $tag): ?>
-								<a href="<?php the_permalink(); ?>"><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
+							foreach($tags as $tag): $tag_url = $tag->slug; ?>
+								<a href="<?php echo 'tag/'.$tag_url; ?>"><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
 					<?php 		
 							endforeach; 
 						} 
 					?>
-					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-					<!-- <a href=""><p><?php the_content(); ?></p></a> -->
+					<a href="<?php the_permalink(); ?>">
+						<h3>
+							<?php the_title(); ?>
+						</h3>
+					</a>
 				</div>
 				<?php
 					wp_reset_postdata(); endwhile; endif;

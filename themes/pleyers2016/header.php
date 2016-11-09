@@ -67,12 +67,17 @@
 					<a href="">Lucha Libre</a>
 				</div>
 				<div>
-					<h3><a href="">Marcas</a></h3>
-					<a href="">Basquetbol</a>
-					<a href="">Futbol</a>
+					<h3><a href="">Publicaciones</a></h3>
+					<a href="">(0-0) cerocero</a>
+					<a href="">Jiots·TV</a>
 				</div>
 				<div>
 					<h3><a href="">Quiénes Somos</a></h3>
+				</div>
+				<div>
+					<div class="_logo"></div>
+					<a href="">Copyright &copy; 2010 Los Pleyers</a>
+					<a href="">Términos y condiciones</a>|<a href="">Políticas de privacidad</a>
 				</div>
 			</nav>
 		</div>
