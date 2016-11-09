@@ -30,18 +30,15 @@
 				if($count == 0){
 			?>
 				<div class="img_frame">
-					<?php the_post_thumbnail(); ?>
+					<img src="<?php echo the_post_thumbnail_url(); ?>" class="post_picture">
 				</div>
-				<div class="destacado nota1">
-					<?php $tags = get_the_tags(); foreach($tags as $tag){ 
-							$tag_url = $tag->slug;
-						?>
+				<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url(); ?>">
+					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
 						<a href="<?php echo 'tag/'.$tag_url;?>">
 							<span>
-								<?php echo "#".esc_html($tag->name)." "; ?>
+								<?php echo "#".esc_html($terms[0]->name)." "; ?>
 							</span>
 						</a>
-					<?php } ?>
 					<a href="<?php the_permalink(); ?>">
 						<h3>
 							<?php the_title(); ?>

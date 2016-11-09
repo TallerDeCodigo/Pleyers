@@ -1,112 +1,92 @@
 <?php 
 	get_header(); 
-	$objeto = get_queried_object();
-	// echo '<pre>';
-	// print_r($objeto);
-	// echo '</pre>';
+	$posts = get_queried_object();
+	print_r($posts);
+	$tax = $posts->taxonomy;
+	$tax_slug = $posts->slug;
+	$types = get_all_posttypes();
+	$aidi_exclude = $post->ID;
+
 ?>
-	<div class="content clearfix">
-		<div class="top_taxonomy category_archive">
-			<div class="tax_description">
-				<h1><?php echo $objeto->name; ?></h1>
+	<div class="single_post clearfix">
+		<div class="single_top clearfix">
 				<?php 
-					$content = $objeto->description;
-					$descripcion = apply_filters('the_content', $content);
-
-					echo $descripcion; 
-				?>
-			</div>
-			<div class="wrapper-destacado">
-
-				<?php 
-					$args = array(
-							'post_type'			=> array('post'),
-							'posts_per_page' 	=> 1,
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'noticiasde',
-									'field'    => 'id',
-									'terms'    => $objeto->term_id,
-								),
-							),
-						);
-				
-					$ultimo = get_posts($args);
-					foreach($ultimo as $post): setup_postdata($post);
-					$destacado_id = $post->ID;
-					$permalink = get_the_permalink($destacado_id);
-					$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
-				?>
-				<div class="post destacado clearfix">
-					<div class="over"></div>
-					<?php $src = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?> 
-					<a href="<?php the_permalink(); ?>"><img class="thumb thumbnota" src="<?php echo $src; ?>" data-square="<?php echo $squareurl; ?>"></a>
-					<span class="date"><?php the_date(); ?></span>
-					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
+					$tags = get_the_tags();
+					if($tags){
+						foreach($tags as $tag):
+							$tag_url = $tag->slug;
 					?>
-					<div class="post-info">	
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- destacadp -->
-
-				<?php endforeach; wp_reset_postdata(); ?>
-			</div><!-- wrapper destacado -->				
-
-
-			
+							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
+								<span>
+									<?php echo "#".esc_html($tag->name)." "; ?>
+								</span>
+							</a>	
+					<?php		
+						endforeach;
+					}
+				?>
+			<?php 
+				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
+					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
+					echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
+				} else { ?>
+				<?php the_post_thumbnail('full'); ?>
+			<?php } ?>
+			<h2>
+				<?php the_title(); ?>
+			</h2>
+		</div>	
 		
-		</div><!-- top_taxonomy -->
-		<div class="posts-pool clearfix">
+		<?php get_sidebar(); ?>
 
-				<?php
-					$args = array(
-						'post_type'			=> 'post',
-						'posts_per_page' 	=> -1,
-						'exclude'			=> $destacado_id,
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'noticiasde',
-								'field'    => 'id',
-								'terms'    => $objeto->term_id,
-							),
-						),
-					);
+		<div class="posts_pool clearfix">
+			<?php
+				$args = array(
+							'post_type'=>$types,
+							'posts_per_page'=>10,
+							'post_status'=>'publish',
+							'orderby'=>'date',
+							'order'=>'DESC',
+							'post__not_in'=>array($aidi_exclude),
+							'tax_query'=>array(
+											array(
+												'taxonomy'=>$tax,
+												'field'=>'slug',
+												'terms'=> $tax_slug
+												)
+											)
+						);
+				$posts = new WP_Query($args);
 
-					$episodios = get_posts($args);
-					foreach($episodios as $post): setup_postdata($post);
-
-					$permalink = get_the_permalink($post->ID);
-					$random = rand(1,3);
+				if($posts->have_posts()): 
+					while($posts->have_posts()):
+						$posts->the_post(); setup_postdata($post);
+						$tags = get_the_tags();
+			?>
+			<div class="post clearfix">
+				<a href="">
+					<div class="img_frame clearfix">
+						<?php the_post_thumbnail(); ?>
+					</div>
+				</a>
+				<?php 
+					if(!empty($tags)){
+						foreach($tags as $tag): $tag_url = $tag->slug; ?>
+							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
+								<span>
+									<?php echo "#".esc_html($tag->name)." "; ?>
+								</span>
+							</a>
+				<?php 		
+						endforeach; 
+					} 
 				?>
-
-				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen'; } else { echo 'square'; } ?>">
-					<div class="over"></div>
-
-					<?php 
-						$square = get_the_post_thumbnail($post->ID, 'grid_home_square');
-						$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
-						$widescreen = get_the_post_thumbnail( $post->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota') );
-					?>
-					<a href="<?php the_permalink(); ?>">
-					<?php  if($random == 1 ){ echo $widescreen; } else { echo $square; } ?>
-					</a>
-					<span class="date"><?php echo get_the_date(); ?></span>
-					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
-					?>
-					<div class="post-info">	
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- post -->
-				
-				<?php endforeach; wp_reset_query(); ?>
-			</div><!-- posts-pool -->
+				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+			</div>
+			<?php
+				wp_reset_postdata(); endwhile; endif; 
+			?>
+		</div>
 	</div>
+	
 <?php get_footer(); ?>

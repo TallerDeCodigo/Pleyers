@@ -46,7 +46,6 @@
 			.mouseout(function() {
 				$('body').css('overflow','auto');
 		});
-
 		$('.more_destacado .destacado').mouseover(function() {
 			var img = $(this).attr('data-image');
 		    $('img.post_picture').fadeOut(300, function() {
@@ -55,7 +54,7 @@
 		    });
 		}).mouseout(function() {
 			$('img.post_picture').fadeOut(300, function() {
-		        $('img.post_picture').attr("src","images/post.png");
+		        $('img.post_picture').attr("src",$('.destacado.nota1').attr('data-image'));
 		        $('img.post_picture').fadeIn(300);
 		    });
 		});

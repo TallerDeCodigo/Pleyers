@@ -151,7 +151,7 @@ div.post p {line-height:160%;color:#777;}
 
 /*SPRINTS*/
 
-div.sidebar {float:right;width:320px;}
+div.sidebar {float:right;width:25%;}
 div.sprints {width:100%;margin-top:20px;}
 h3.header_sprints {background:#000;color:#FFF;display:block;width:100%;font-size:150%;margin:0;padding:3px 0px 1px;padding-left:40px;}
 div.sprints_container {margin-top:15px;width:99%;height:620px;overflow-y:scroll;}
@@ -230,6 +230,14 @@ div.jiots_post div.img_frame {width:100%;height:0;background:#EEE;padding-bottom
 div.jiots_post div.img_frame img {position:absolute;height:auto;width:100%;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.jiots_post span {font-weight:700;color:#222;margin-bottom:1px;display:block;}
 div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
+
+/*ARCHIVES*/
+.post-type-archive article{border-bottom:2px solid rgba(127,127,127,0.5);padding-bottom: 40px;}
+.post-type-archive article.single_content h2{margin-bottom:0px;}
+.post-type-archive div.contenido{margin-top:90px;}
+.post-type-archive div.contenido img{display:none;}
+.post-type-archive div.sidebar{float:left;margin-top:40px;}
+.post-type-archive article.single_content{	width:50%;margin-left:35%;}
 
 /*SINGLE*/
 .single_content{padding-top:60px;}

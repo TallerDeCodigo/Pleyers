@@ -1,9 +1,9 @@
 <?php 
 	get_header(); 
 	$objeto = get_queried_object();
-	// echo '<pre>';
-	// print_r($objeto);
-	// echo '</pre>';
+	echo '<pre>';
+	print_r($objeto);
+	echo '</pre>';
 ?>
 	<div class="content clearfix">
 		<div class="top_taxonomy">

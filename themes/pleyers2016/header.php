@@ -44,7 +44,7 @@
 		<div class="menu">
 			<nav>
 				<div>
-					<h3><a href="">Sprints</a></h3>
+					<h3><a href="<?php echo bloginfo('url');?>/sprints">Sprints</a></h3>
 				</div>
 				<div>
 					<h3><a href="">Historias</a></h3>
