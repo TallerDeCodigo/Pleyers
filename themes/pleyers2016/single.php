@@ -56,9 +56,10 @@
 				Lorem ipsum dolor sit amet consectetur adiscplicing elit
 			</div>
 
-			<?php get_template_part('templates/barra', 'mashistorias'); ?>
 
 		</div>
+			<?php get_template_part('templates/barra', 'mashistorias'); ?>
+			<?php get_sidebar(); ?>
 
 	</div>
 <?php get_footer(); ?>

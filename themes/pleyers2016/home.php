@@ -79,10 +79,7 @@
 		<div class="container clearfix">
 			<div class="left_container">
 				<?php 
-					$query = wp_cache_get('all_pt_cached');
 					$types = get_all_posttypes();
-					if($query == false){
-
 					$args = array(
 								'post_type'=> $types,
 								'posts_per_page'=>10,
@@ -91,7 +88,6 @@
 								'order'=>'DESC'
 						);
 					$posts = new WP_Query($args);
-					wp_cache_set('all_pt_cached', $posts, '', $var_expire);
 					if($posts->have_posts()): 
 						while($posts->have_posts()):
 							$posts->the_post(); setup_postdata($post);
@@ -116,7 +112,7 @@
 					<!-- <a href=""><p><?php the_content(); ?></p></a> -->
 				</div>
 				<?php
-					wp_reset_postdata(); endwhile; endif; }
+					wp_reset_postdata(); endwhile; endif;
 				?>
 			</div>
 		<?php get_sidebar(); ?>

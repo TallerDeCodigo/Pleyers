@@ -233,9 +233,9 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 /*SINGLE*/
 .single_content{padding-top:60px;}
 .single_content span.tags{color:#8b8b8b;font-size: 14px;}
-.single_top img{width:100%;}
-.single_top span{color:yellow;position:relative;top:90px;left:20px;}
-/*.single_top h2{position:relative;top:680px;left:20px;color:#fff;font-size: 3rem;}*/
+.single_top img{width:100%;height:auto;}
+.single_top h2{margin-top:-150px;margin-left:90px;font-size: 3em;color:#fff;}
+.single_top span{display:inline-block;position:relative;top:110px;left:90px;font-size: 1.5em; color:yellow;}
 .single_sidebar{width:320px;float:left;}
 .single_content{width:50%;margin:0 auto;}
 .line_division{border-bottom:1px solid #fafafa;padding-bottom:40px;}
@@ -246,9 +246,17 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 blockquote{border-left:4px solid yellow;padding-left:20px;}
 blockquote p{color:#2c2c2c!important;font-size: 2em!important;}
 .twitter-tweet-rendered{margin:0 auto;}
+.mas_historias{width:55%;margin-left:10%;margin-top:20px;float:left;}
+.single div.sidebar{margin-right:10%;}
+
+
+
 
 
 /*TAGS PHP*/
+.posts_pool{width:50%;margin-left:10%;padding-top:100px;float:left;}
+.tag div.sprints{margin-top:30%;}
+.tag div.sidebar{margin-right:10%;}
 
 /*FOOTER*/
 
