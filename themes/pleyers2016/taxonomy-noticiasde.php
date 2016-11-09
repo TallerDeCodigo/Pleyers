@@ -11,19 +11,17 @@
 	<div class="single_post clearfix">
 		<div class="single_top clearfix">
 				<?php 
-					$tags = get_the_tags();
-					if($tags){
-						foreach($tags as $tag):
-							$tag_url = $tag->slug;
+					$terms = wp_get_post_terms($post->ID, 'noticiasde' ); 
+					if($terms){
+						foreach($terms as $term):
 					?>
-							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-								<span>
-									<?php echo "#".esc_html($tag->name)." "; ?>
-								</span>
-							</a>	
+						<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
+							<span>
+								<?php echo "#".esc_html($term->name)." "; ?>
+							</span>
+						</a>	
 					<?php		
-						endforeach;
-					}
+					endforeach; }
 				?>
 			<?php 
 				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
@@ -70,16 +68,17 @@
 					</div>
 				</a>
 				<?php 
-					if(!empty($tags)){
-						foreach($tags as $tag): $tag_url = $tag->slug; ?>
-							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-								<span>
-									<?php echo "#".esc_html($tag->name)." "; ?>
-								</span>
-							</a>
-				<?php 		
-						endforeach; 
-					} 
+					$terms = wp_get_post_terms($post->ID, 'noticiasde' ); 
+					if($terms){
+						foreach($terms as $term):
+					?>
+						<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
+							<span>
+								<?php echo "#".esc_html($term->name)." "; ?>
+							</span>
+						</a>	
+					<?php		
+					endforeach; }
 				?>
 				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 			</div>

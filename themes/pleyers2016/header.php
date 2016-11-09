@@ -48,28 +48,28 @@
 				</div>
 				<div>
 					<h3><a href="">Historias</a></h3>
-					<a href="">Basquetbol</a>
-					<a href="">Futbol</a>
-					<a href="">Americano</a>
-					<a href="">Beisbol</a>
-					<a href="">Otros deportes</a>
+					<a href="<?php bloginfo('url');?>/noticiasde/basquetbol">Basquetbol</a>
+					<a href="<?php bloginfo('url');?>/noticiasde/futbol">Futbol</a>
+					<a href="<?php bloginfo('url');?>/noticiasde/futbol-americano">Americano</a>
+					<a href="<?php bloginfo('url');?>/noticiasde/beisbol">Beisbol</a>
+					<a href="<?php bloginfo('url');?>/noticiasde/otros-deportes">Otros deportes</a>
 				</div>
 				<div>
 					<h3><a href="">Blogs</a></h3>
-					<a href="">Jiots Sports</a>
-					<a href="">Deportología</a>
-					<a href="">El Pechofrío</a>
-					<a href="">Tirando Guante</a>
-					<a href="">Apuntes de Rabona</a>
-					<a href="">Turismo Deportivo</a>
-					<a href="">Cultura Pop</a>
-					<a href="">Táctica</a>
-					<a href="">Lucha Libre</a>
+					<a href="<?php bloginfo('url'); ?>/shows/jiots-tv">Jiots Sports</a>
+					<a href="<?php bloginfo('url'); ?>/shows/deportologia">Deportología</a>
+					<a href="<?php bloginfo('url'); ?>/shows/el_pechofrio">El Pechofrío</a>
+					<a href="<?php bloginfo('url'); ?>/shows/">Tirando Guante</a>
+					<a href="<?php bloginfo('url'); ?>/shows/">Apuntes de Rabona</a>
+					<a href="<?php bloginfo('url'); ?>/shows/">Turismo Deportivo</a>
+					<a href="<?php bloginfo('url'); ?>/shows/">Cultura Pop</a>
+					<a href="<?php bloginfo('url'); ?>/shows/">Táctica</a>
+					<a href="<?php bloginfo('url'); ?>/shows/">Lucha Libre</a>
 				</div>
 				<div>
 					<h3><a href="">Publicaciones</a></h3>
-					<a href="">(0-0) cerocero</a>
-					<a href="">Jiots·TV</a>
+					<a href="http://cerocero.mx/">(0-0) cerocero</a>
+					<a href="http://jiots.tv/">Jiots·TV</a>
 				</div>
 				<div>
 					<h3><a href="">Quiénes Somos</a></h3>

@@ -37,9 +37,7 @@
 			?>
 		</div>
 		<!-- <div class="addthis_sharing_toolbox"></div> -->
-		<h2>
-			<?php the_title(); ?>
-		</h2>
+		<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2>
 		<div>
 			<?php echo get_the_date('H:m d/M/Y'); ?>
 		</div>

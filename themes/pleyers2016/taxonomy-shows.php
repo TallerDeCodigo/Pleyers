@@ -1,110 +1,135 @@
 <?php 
 	get_header(); 
 	$objeto = get_queried_object();
-	echo '<pre>';
-	print_r($objeto);
-	echo '</pre>';
+	$tax = $objeto->taxonomy;
+	$slug = $objeto->slug;
+
+	// echo '<pre>';
+	// print_r($objeto);
+	// echo '</pre>';
 ?>
-	<div class="content clearfix">
-		<div class="top_taxonomy">
-			<div class="wrapper-destacado">
-
-				<?php 
-					$args = array(
-							'post_type'			=> 'episodios',
-							'posts_per_page' 	=> 1,
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'shows',
-									'field'    => 'id',
-									'terms'    => $objeto->term_id,
-								),
-							),
-						);
-				
-					$ultimo = get_posts($args);
-					foreach($ultimo as $post): setup_postdata($post);
-					$destacado_id = $post->ID;
-					$permalink = get_the_permalink($destacado_id);
+<section class="tax_show">
+	<div class="tax_show_top clearfix">
+			<?php 
+				$terms = wp_get_post_terms($post->ID, 'noticiasde' ); 
+				if($terms){
+					foreach($terms as $term):
 				?>
-				<div class="post destacado clearfix">
-					<div class="over"></div>
-					<?php $src = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?> 
-					<a href="<?php the_permalink(); ?>"><img class="thumb" src="<?php echo $src; ?>"></a>
-					<span class="date"><?php the_date(); ?></span>
-					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
-					?>
-					<div class="post-info">	
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- destacadp -->
-
-				<?php endforeach; wp_reset_postdata(); ?>
-			</div><!-- wrapper destacado -->				
-
-
-			<div class="tax_description">
-				<h1><?php echo $objeto->name; ?></h1>
-				<?php 
-					$content = $objeto->description;
-					$descripcion = apply_filters('the_content', $content);
-
-					echo $descripcion; 
-				?>
-			</div>
-		
-		</div><!-- top_taxonomy -->
-		<div class="shows-pool clearfix">
-
+					<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
+						<span>
+							<?php echo "#".esc_html($term->name)." "; ?>
+						</span>
+					</a>	
+				<?php		
+				endforeach; }
+			?>
+		<?php 
+			if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
+				$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
+				echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
+			} else { ?>
+			<?php the_post_thumbnail('full'); ?>
+		<?php } ?>
+		<div class="titulo">
 				<?php
-					$args = array(
-						'post_type'			=> 'episodios',
-						'posts_per_page' 	=> -1,
-						'exclude'			=> $destacado_id,
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'shows',
-								'field'    => 'id',
-								'terms'    => $objeto->term_id,
-							),
-						),
-					);
-
-					$episodios = get_posts($args);
-					foreach($episodios as $post): setup_postdata($post);
-
-					$permalink = get_the_permalink($post->ID);
-					$random = rand(1,3);
+					$tags = get_the_tags();
+					if($tags): foreach($tags as $tag): 
 				?>
-
-				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
-					<div class="over"></div>
-					<?php 
-						$widescreen = get_the_post_thumbnail( $post->ID, 'grid_home_large' );
-						$square = get_the_post_thumbnail( $post->ID, 'grid_home_square' );
-					?>
-					<a href="<?php the_permalink(); ?>">
-					<?php 
-						echo $widescreen;
-					?>
-					</a>
-					<span class="date"><?php echo get_the_date(); ?></span>
-					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
-					?>
-					<div class="post-info">	
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- post -->
-				
-				<?php endforeach; wp_reset_query(); ?>
-			</div><!-- posts-pool -->
+						<a href="<?php echo bloginfo('url').'/tag/'.$tag->slug ?>">
+							<span>
+								<?php echo "#".$tag->name." "; ?>
+							</span>
+						</a>
+				<?php endforeach; endif; ?>
+			<h2>
+				<?php the_title(); ?>
+			</h2>
+		</div>
 	</div>
+	<?php
+		$types = get_all_posttypes();
+		$args = array(
+					'post_type'=>$types,
+					'posts_per_page'=>-1,
+					'post_status'=>'publish',
+					'orderby'=>'date',
+					'order'=>'DESC',
+					'tax_query'=>array(
+									array(
+										'taxonomy'=>$tax,
+										'field'=>'slug',
+										'terms'=>$slug
+										)
+									)
+			);
+		$posts = new WP_Query($args);
+		// echo "<pre>";
+		// 	print_r($posts);
+		// echo "</pre>";
+	?>
+		<div class="grid_videos container clearfix">
+			<h2>Blogs</h2>
+			<div class="videos_stack clearfix">
+				<?php
+				$count = 0;
+					if($posts->have_posts()): 
+						while($posts->have_posts()):
+							$posts->the_post(); setup_postdata($post);
+							if($count == 0 || $count == 3 || $count == 4 || $count == 8) {
+					?>
+							<div class="video_post same_size clearfix">
+								<a href="<?php the_permalink(); ?>">
+									<div class="img_frame clearfix">
+										<?php the_post_thumbnail(); ?>
+									</div>
+									<div class="video_info">
+										<?php 
+											$terms = wp_get_post_terms(); 
+											if($terms): foreach($terms as $term):
+											?>
+												<a href="">
+													<span><?php echo esc_html($term->name); ?></span>
+												</a>
+									<?php endforeach; endif;?>
+										<h3><?php the_title(); ?></h3>
+									</div>
+								</a>
+							</div>
+						<?php
+							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
+							?>
+								<div class="video_post small_video clearfix">
+									<a href="">
+									<div class="img_frame clearfix">
+										<?php the_post_thumbnail(); ?>
+									</div>
+									<div class="video_info">
+										<?php 
+											$terms = wp_get_post_terms(); 
+											if($terms): foreach($terms as $term):
+											?>
+												<a href="">
+													<span><?php echo esc_html($term->name); ?></span>
+												</a>
+									<?php endforeach; endif;?>
+										<h3><?php the_title(); ?></h3>
+									</div>
+								</a>
+								</div>
+						<?php 	
+							}
+							?>
+				<?php			
+							$count++;
+							wp_reset_postdata();
+						endwhile;
+					endif;	
+					?>
+				
+			</div>
+	
+		</div>	
+</section>
+
+
 <?php get_footer(); ?>

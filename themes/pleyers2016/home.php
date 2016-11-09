@@ -34,7 +34,7 @@
 				</div>
 				<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url(); ?>">
 					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-						<a href="<?php echo 'tag/'.$tag_url;?>">
+						<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
 							<span>
 								<?php echo "#".esc_html($terms[0]->name)." "; ?>
 							</span>
@@ -64,17 +64,12 @@
 				}else if($count > 1 ){
 			?>	
 				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
-						<?php 
-								$tags = get_the_tags();
-								if($tags):foreach($tags as $tag): 
-									$tag_url = $tag->slug;
-							?>
-									<a href="<?php echo 'tag/'.$tag_url; ?>">
+					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
 										<span >
-											<?php echo "#".$tag->name; ?>
+											<?php echo "#".esc_html($terms[0]->name); ?>
 										</span>
 									</a>	
-						<?php 	endforeach; endif; ?>
 					<a href="<?php the_permalink(); ?>">
 						<h3>
 							<?php the_title(); ?>
@@ -115,14 +110,16 @@
 							<?php the_post_thumbnail(); ?>
 						</div>
 					</a>
-					<?php 
-						if(!empty($tags)){
-							foreach($tags as $tag): $tag_url = $tag->slug; ?>
-								<a href="<?php echo 'tag/'.$tag_url; ?>"><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
-					<?php 		
-							endforeach; 
-						} 
-					?>
+					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+								<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+									<span>
+										<?php 
+											if($terms){
+												echo "#".esc_html($terms[0]->name);
+											} 
+										?>
+									</span>
+								</a>
 					<a href="<?php the_permalink(); ?>">
 						<h3>
 							<?php the_title(); ?>
