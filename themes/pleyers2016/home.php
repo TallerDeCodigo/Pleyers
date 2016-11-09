@@ -43,13 +43,12 @@
 			
 			<?php		
 				}else if($count == 1 ){
-					$thumb = the_post_thumbnail_url();
 			?>
 
 			<div class="more_destacado">
-				<div class="destacado" data-image="<?php $thumb?>">
+				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
 					
-					<a href="">
+					<a href="<?php the_permalink(); ?>">
 						<h3>
 							<?php the_title(); ?>
 						</h3>
@@ -59,8 +58,14 @@
 			<?php		
 				}else if($count > 1 ){
 			?>	
-				<div class="destacado" data-image="<?php $thumb?>">
-					<a href="">
+				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
+						<?php 
+								$tags = get_the_tags();
+								if($tags):foreach($tags as $tag): 
+							?>
+									<span ><?php echo "#".$tag->name; ?></span>
+						<?php 	endforeach; endif; ?>
+					<a href="<?php the_permalink(); ?>">
 						<h3>
 							<?php the_title(); ?>
 						</h3>
