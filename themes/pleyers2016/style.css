@@ -265,7 +265,22 @@ blockquote p{color:#2c2c2c!important;font-size: 2em!important;}
 .tax-shows div.titulo h2{margin-top:0px;}
 .tax-shows div.titulo span{font-size: 20px}
 
+/*QUIENES SOMOMS PAGE*/
+.txt_angosto{width:60%;margin:0 auto;}
+.txt_angosto div{border-bottom:2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
+.pubs{margin-top:90px;text-align: center;border-bottom: 2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
+.pubs h2{text-align: left}
+.pubs article{display:inline-block;width:49.5%;}
+.pub{overflow:auto;}
+.pub img{width:100%;border:1px solid black;padding:10px;}
+.pub p{text-align: left}
 
+.staff article.pub div{display:inline-block;vertical-align:middle;}
+.staff article.pub div:first-child{width:25%;}
+.staff article.pub div:last-child{width:74%;}
+.staff article.pub h2{margin-top:0px;}
+.staff article.pub div{border-bottom:none;}
+.staff article.pub div img{border:none;width:80%;border-radius: 74px}
 
 
 

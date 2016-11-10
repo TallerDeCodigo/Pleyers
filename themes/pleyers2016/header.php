@@ -72,7 +72,7 @@
 						<a href="http://jiots.tv/">Jiots·TV</a>
 					</div>
 					<div>
-						<h3><a href="">Quiénes Somos</a></h3>
+						<h3><a href="<?php bloginfo('url'); ?>/quienes-somos">Quiénes Somos</a></h3>
 					</div>
 					<div>
 						<div class="_logo"></div>
