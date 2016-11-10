@@ -258,6 +258,12 @@ blockquote p{color:#2c2c2c!important;font-size: 2em!important;}
 .twitter-tweet-rendered{margin:0 auto;}
 .mas_historias{width:55%;margin-left:10%;margin-top:20px;float:left;}
 .single div.sidebar{margin-right:10%;}
+article.pub div{display:inline-block;vertical-align:middle;}
+article.pub div:first-child{width:25%;}
+article.pub div:last-child{width:74%;}
+article.pub h2{margin-top:0px;}
+article.pub div{border-bottom:none;}
+article.pub div img{border:none;width:80%;border-radius: 74px}
 
 /*TAXONOMY SHOWS*/
 .tax_show iframe{width:100%;}
@@ -275,12 +281,14 @@ blockquote p{color:#2c2c2c!important;font-size: 2em!important;}
 .pub img{width:100%;border:1px solid black;padding:10px;}
 .pub p{text-align: left}
 
+
 .staff article.pub div{display:inline-block;vertical-align:middle;}
 .staff article.pub div:first-child{width:25%;}
 .staff article.pub div:last-child{width:74%;}
 .staff article.pub h2{margin-top:0px;}
 .staff article.pub div{border-bottom:none;}
 .staff article.pub div img{border:none;width:80%;border-radius: 74px}
+
 
 
 

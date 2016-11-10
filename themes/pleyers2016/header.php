@@ -89,19 +89,19 @@
 				<a href="<?php echo site_url(); ?>"><img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png"></a>
 				<nav class="social">
 					<div class="search_bar"><input type="search" name="search" placeholder="Búsqueda" style="display:none"></div>
-					<a href="">
+					<a href="https://www.facebook.com/Los-Pleyers-439793806182134/" target="_blank">
 						<div class="fb"></div>
 					</a>
-					<a href="">
+					<a href="https://twitter.com/los_pleyers" target="_blank">
 						<div class="tw"></div>
 					</a>
-					<a href="" >
+					<a href="https://www.instagram.com/lospleyers/"  target="_blank">
 						<div class="in"></div>
 					</a>
-					<a href="">
+					<a href="http://lospleyers.com/" target="_blank">
 						<div class="md"></div>
 					</a>
-					<a href="">
+					<a href="http://lospleyers.com/" target="_blank">
 						<div class="yt"></div>
 					</a>
 				</nav>
