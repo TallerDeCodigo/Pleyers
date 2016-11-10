@@ -100,6 +100,8 @@
 			$('.globo').slideUp();
 		});
 
-	});
+		$('input[type="submit"]').val('');
+
+	});//end funcition
 
 })(jQuery);

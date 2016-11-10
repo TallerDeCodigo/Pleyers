@@ -88,7 +88,10 @@
 				<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
 				<a href="<?php echo site_url(); ?>"><img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png"></a>
 				<nav class="social">
-					<div class="search_bar"><input type="search" name="search" placeholder="Búsqueda" style="display:none"></div>
+					<div class="search_bar">
+						<?php get_search_form(); ?>
+						<!-- <input type="search" name="search" placeholder="Búsqueda" style="display:block"> -->
+					</div>
 					<a href="https://www.facebook.com/Los-Pleyers-439793806182134/" target="_blank">
 						<div class="fb"></div>
 					</a>

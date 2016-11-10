@@ -290,12 +290,17 @@ article.pub div img{border:none;width:80%;border-radius: 74px}
 .staff article.pub div img{border:none;width:80%;border-radius: 74px}
 
 
-
-
 /*TAGS PHP*/
 .posts_pool{width:50%;margin-left:10%;padding-top:100px;float:left;}
 .tag div.sprints{margin-top:30%;}
 .tag div.sidebar{margin-right:10%;}
+
+/*SEARCH FORM*/
+.searchform label{display:none;}
+.searchform{position:absolute;top:25%;right:159px;}
+.searchform input{outline: none!important;vertical-align: middle;}
+.searchform input[type="text"]{background:rgba(0,0,0,0.5);border-style:none;border-radius: 15px;height:30px;margin-right:-14%;}
+.searchform input[type="submit"]{border-style:none;background:0,0,0,0.5;width:30px;height:30px;border-radius: 15px;background-image:url(images/search.png);}
 
 /*FOOTER*/
 
