@@ -1,47 +1,59 @@
 <?php 
 	get_header(); 
 	$query = $_GET['s'];
+	$total_results = $wp_query->found_posts;
 ?>
-	<div class="content clearfix">
-		<div class="top_taxonomy">
-			<div class="tax_description">
-				<h1>Resultados para: <?php 	echo $query; ?></h1>
-			</div>
-		
-		</div><!-- top_taxonomy -->
-		<div class="posts-pool clearfix">
+	<div class="container clearfix">
+		<section class="single_post">
+			<div class="top_taxonomy">
+				<div class="tax_description">
+					<span>Resultados de búsqueda para:</span>
+					<h2><?php echo ucfirst($query); ?></h2>
+				</div>
+			
+			</div><!-- top_taxonomy -->
+			<div class="posts_pool clearfix">
+			<?php
+				if(!empty($total_results)){
+					if(have_posts()): 
+						while(have_posts()):
+							the_post(); setup_postdata($post);
+							$tags = get_the_tags();
 
-				<?php
-					
-					if(have_posts()): while(have_posts()): the_post();
-					$permalink = get_the_permalink($post->ID);
-					$random = rand(1,3);
 				?>
-
-				<div class="nota clearfix <?php echo get_post_type($post->ID); ?> <?php  if($random == 1 ){ echo 'widescreen'; } else { echo 'square'; } ?>">
-					<div class="over"></div>
-	
-					<?php 
-						$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
-						$square = get_the_post_thumbnail( $post->ID, 'grid_home_square' );
-						$widescreen = get_the_post_thumbnail($post->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
-					?>
-					<a href="<?php the_permalink(); ?>">
-					<?php  if($random == 1 or get_post_type($post->ID) == 'episodios'){ echo $widescreen; } else { echo $square; } ?>
+				<div class="post clearfix">
+					<a href="">
+						<div class="img_frame clearfix">
+							<?php the_post_thumbnail(); ?>
+						</div>
 					</a>
-					<span class="date"><?php echo get_the_date(); ?></span>
 					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
+						$terms = wp_get_post_terms($post->ID, 'noticiasde' ); 
+						if($terms){
+							foreach($terms as $term):
+						?>
+							<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
+								<span>
+									<?php echo "#".esc_html($term->name)." "; ?>
+								</span>
+							</a>	
+						<?php		
+						endforeach; }
 					?>
-					<div class="post-info">	
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- post -->
-				
-				<?php endwhile; endif; wp_reset_query(); ?>
-			</div><!-- posts-pool -->
+					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				</div>
+			<?php
+							wp_reset_postdata(); 
+						endwhile; 
+					endif; 
+				}else{
+				?>
+					<h2>Ooops!</h2>
+					<p>No encontramos lo que estás buscando, inténtalo de nuevo por favor.</p>
+			<?php
+				}
+				?>
+			</div>
+		</section>
 	</div>
 <?php get_footer(); ?>

@@ -271,6 +271,9 @@ article.pub div img{border:none;width:80%;border-radius: 74px}
 .tax-shows div.titulo h2{margin-top:0px;}
 .tax-shows div.titulo span{font-size: 20px}
 
+/*TAXONOMY NOTICIAS DE*/
+.tax-noticiasde div.posts_pool{padding-top:0px;}
+
 /*QUIENES SOMOMS PAGE*/
 .txt_angosto{width:60%;margin:0 auto;}
 .txt_angosto div{border-bottom:2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
@@ -299,8 +302,15 @@ article.pub div img{border:none;width:80%;border-radius: 74px}
 .searchform label{display:none;}
 .searchform{position:absolute;top:25%;right:159px;}
 .searchform input{outline: none!important;vertical-align: middle;}
-.searchform input[type="text"]{background:rgba(0,0,0,0.5);border-style:none;border-radius: 15px;height:30px;margin-right:-14%;}
-.searchform input[type="submit"]{border-style:none;background:0,0,0,0.5;width:30px;height:30px;border-radius: 15px;background-image:url(images/search.png);}
+.searchform input[type="text"]{background:rgba(0,0,0,0.5);border-style:none;border-radius: 15px;height:30px;margin-right:-14%;color:#ffff00;}
+.searchform input[type="submit"]{border-style:none;background:0,0,0,0.5;width:30px;height:30px;border-radius: 15px;background-image:url(images/search.svg);background-repeat: no-repeat;background-position: center;background-size: 80%;background-color:transparent;}
+
+/*SEARCH TEMPLATE*/
+.search-results section.single_post{width:50%;margin:70px auto;}
+.search-results div.posts_pool{float:none;width:100%;margin:0px;border-top:2px solid rgba(0,0,0,0.1);}
+.tax_description span{color:#8c8c8c;font-size: 20px}
+.tax_description h2{margin-top:0px!important;margin-bottom:90px!important;}
+.nota img{width:100%;height:auto;}
 
 /*FOOTER*/
 
