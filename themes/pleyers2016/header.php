@@ -15,7 +15,7 @@
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-	<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+		<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 		<?php wp_head(); ?>
 		<script>
 			(function(d, s, id) {
@@ -27,84 +27,84 @@
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
 		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		ga('create', 'UA-65208621-1', 'auto');
-		ga('send', 'pageview');
+			ga('create', 'UA-65208621-1', 'auto');
+			ga('send', 'pageview');
 		</script>
 	</head>
 
 	<body <?php body_class(); ?> >
 		
-	<div class="overscreen" style="display:none">
-		<div class="_over"></div>
-		<div class="menu">
-			<nav>
-				<div>
-					<h3><a href="<?php echo bloginfo('url');?>/sprints">Sprints</a></h3>
-				</div>
-				<div>
-					<h3><a href="">Historias</a></h3>
-					<a href="<?php bloginfo('url');?>/noticiasde/basquetbol">Basquetbol</a>
-					<a href="<?php bloginfo('url');?>/noticiasde/futbol">Futbol</a>
-					<a href="<?php bloginfo('url');?>/noticiasde/futbol-americano">Americano</a>
-					<a href="<?php bloginfo('url');?>/noticiasde/beisbol">Beisbol</a>
-					<a href="<?php bloginfo('url');?>/noticiasde/otros-deportes">Otros deportes</a>
-				</div>
-				<div>
-					<h3><a href="">Blogs</a></h3>
-					<a href="<?php bloginfo('url'); ?>/shows/jiots-tv">Jiots Sports</a>
-					<a href="<?php bloginfo('url'); ?>/shows/deportologia">Deportología</a>
-					<a href="<?php bloginfo('url'); ?>/shows/el_pechofrio">El Pechofrío</a>
-					<a href="<?php bloginfo('url'); ?>/shows/">Tirando Guante</a>
-					<a href="<?php bloginfo('url'); ?>/shows/">Apuntes de Rabona</a>
-					<a href="<?php bloginfo('url'); ?>/shows/">Turismo Deportivo</a>
-					<a href="<?php bloginfo('url'); ?>/shows/">Cultura Pop</a>
-					<a href="<?php bloginfo('url'); ?>/shows/">Táctica</a>
-					<a href="<?php bloginfo('url'); ?>/shows/">Lucha Libre</a>
-				</div>
-				<div>
-					<h3><a href="">Publicaciones</a></h3>
-					<a href="http://cerocero.mx/">(0-0) cerocero</a>
-					<a href="http://jiots.tv/">Jiots·TV</a>
-				</div>
-				<div>
-					<h3><a href="">Quiénes Somos</a></h3>
-				</div>
-				<div>
-					<div class="_logo"></div>
-					<a href="">Copyright &copy; 2010 Los Pleyers</a>
-					<a href="">Términos y condiciones</a>|<a href="">Políticas de privacidad</a>
-				</div>
-			</nav>
+		<div class="overscreen" style="display:none">
+			<div class="_over"></div>
+			<div class="menu">
+				<nav>
+					<div>
+						<h3><a href="<?php echo bloginfo('url');?>/sprints">Sprints</a></h3>
+					</div>
+					<div>
+						<h3><a href="">Historias</a></h3>
+						<a href="<?php bloginfo('url');?>/noticiasde/basquetbol">Basquetbol</a>
+						<a href="<?php bloginfo('url');?>/noticiasde/futbol">Futbol</a>
+						<a href="<?php bloginfo('url');?>/noticiasde/futbol-americano">Americano</a>
+						<a href="<?php bloginfo('url');?>/noticiasde/beisbol">Beisbol</a>
+						<a href="<?php bloginfo('url');?>/noticiasde/otros-deportes">Otros deportes</a>
+					</div>
+					<div>
+						<h3><a href="">Blogs</a></h3>
+						<a href="<?php bloginfo('url'); ?>/shows/jiots-tv">Jiots Sports</a>
+						<a href="<?php bloginfo('url'); ?>/shows/deportologia">Deportología</a>
+						<a href="<?php bloginfo('url'); ?>/shows/el_pechofrio">El Pechofrío</a>
+						<a href="<?php bloginfo('url'); ?>/shows/tirando-guante">Tirando Guante</a>
+						<a href="<?php bloginfo('url'); ?>/shows/apuntes-de-rabona">Apuntes de Rabona</a>
+						<a href="<?php bloginfo('url'); ?>/shows/turismo-deportivo">Turismo Deportivo</a>
+						<a href="<?php bloginfo('url'); ?>/shows/cultura-pop">Cultura Pop</a>
+						<a href="<?php bloginfo('url'); ?>/shows/tactica">Táctica</a>
+						<a href="<?php bloginfo('url'); ?>/shows/lucha-libre">Lucha Libre</a>
+					</div>
+					<div>
+						<h3><a href="">Publicaciones</a></h3>
+						<a href="http://cerocero.mx/">(0-0) cerocero</a>
+						<a href="http://jiots.tv/">Jiots·TV</a>
+					</div>
+					<div>
+						<h3><a href="">Quiénes Somos</a></h3>
+					</div>
+					<div>
+						<div class="_logo"></div>
+						<a href="">Copyright &copy; 2010 Los Pleyers</a>
+						<a href="">Términos y condiciones</a>|<a href="">Políticas de privacidad</a>
+					</div>
+				</nav>
+			</div>
 		</div>
-	</div>
-	<header>
-		<div class="container clearfix">
-			<h1>LOS PLEYERS</h1>
-			<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
-			<a href="<?php echo site_url(); ?>"><img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png"></a>
-			<nav class="social">
-				<div class="search_bar"><input type="search" name="search" placeholder="Búsqueda" style="display:none"></div>
-				<a href="">
-					<div class="fb"></div>
-				</a>
-				<a href="">
-					<div class="tw"></div>
-				</a>
-				<a href="" >
-					<div class="in"></div>
-				</a>
-				<a href="">
-					<div class="md"></div>
-				</a>
-				<a href="">
-					<div class="yt"></div>
-				</a>
-			</nav>
-		</div>
-	</header>
+		<header>
+			<div class="container clearfix">
+				<h1>LOS PLEYERS</h1>
+				<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
+				<a href="<?php echo site_url(); ?>"><img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png"></a>
+				<nav class="social">
+					<div class="search_bar"><input type="search" name="search" placeholder="Búsqueda" style="display:none"></div>
+					<a href="">
+						<div class="fb"></div>
+					</a>
+					<a href="">
+						<div class="tw"></div>
+					</a>
+					<a href="" >
+						<div class="in"></div>
+					</a>
+					<a href="">
+						<div class="md"></div>
+					</a>
+					<a href="">
+						<div class="yt"></div>
+					</a>
+				</nav>
+			</div>
+		</header>
 			
