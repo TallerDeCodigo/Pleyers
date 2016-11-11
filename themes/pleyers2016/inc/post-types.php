@@ -105,6 +105,39 @@
 		register_post_type( 'sprints', $args );
 
 
+		// PARTIDOS
+		$labels = array(
+			'name'          => 'Calendaio Partidos',
+			'singular_name' => 'Calendario Partido',
+			'add_new'       => 'Nuevo Calendario Partido',
+			'add_new_item'  => 'Nuevo Calendario Partido',
+			'edit_item'     => 'Editar Calendario Partido',
+			'new_item'      => 'Nuevo Calendario Partido',
+			'all_items'     => 'Todos',
+			'view_item'     => 'Ver Calendario Partido',
+			'search_items'  => 'Buscar Calendario Partido',
+			'not_found'     => 'No se encontró',
+			'menu_name'     => 'Calendaio Partidos'
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'calendarios' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => 6,
+			'taxonomies'         => array( 'category', 'post_tag' ),
+			'supports'           => array( 'title', 'editor', 'thumbnail' )
+		);
+		register_post_type( 'calendarios', $args );
+
+
 
 		// TWEETS
 		$labels = array(

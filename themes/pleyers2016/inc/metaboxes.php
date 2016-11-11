@@ -15,6 +15,7 @@
 		add_meta_box( 'id_cerocero_meta', 'ID de CeroCero', 'show_id_cerocero', 'graficos', 'side', 'high' );
 		add_meta_box( 'nombre_autor_meta', 'Autor de la frase', 'show_nombre_autor_meta', 'frases', 'side', 'high' );
 		add_meta_box( 'id_pleyers_twitter_meta', 'ID de Twitter', 'show_id_pleyers_twitter_meta', 'tweets', 'side', 'high' );
+		add_meta_box( 'id_fecha_partido', 'Información del partido', 'show_get_match_calendar', 'calendarios', 'side', 'high');
 	});
 
 
@@ -44,6 +45,31 @@
 		$nombre_autor = get_post_meta($post->ID, 'nombre_autor', true);
 		wp_nonce_field(__FILE__, 'nombre_autor_meta_nonce');
 		echo "<input type='text' class='widefat' id='nombre_autor' name='nombre_autor' value='$nombre_autor'/>";
+	}
+
+	function show_get_match_calendar($post){
+		$fecha_match = get_post_meta($post->ID, '_fecha_match_meta', true);  
+		$hora_match = get_post_meta($post->ID, '_hora_match_meta', true); 
+		$liga_match = get_post_meta($post->ID, '_liga_match_meta', true); 
+		$equipo_uno_match = get_post_meta($post->ID, '_equipo_uno_match_meta', true); 
+		$equipo_dos_match = get_post_meta($post->ID, '_equipo_dos_match_meta', true); 
+
+		echo ("
+				<label for='fecha_match'>Fecha del partido</label><br>
+				<input type='text' id='fecha_match' name='fecha_match', value='$fecha_match' ><br>
+
+				<label for='hora_match'>Hora del partido</label><br>
+				<input type='text' id='hora_match' name='hora_match', value='$hora_match' ><br>
+
+				<label for='liga_match'>Liga donde se juega</label><br>
+				<input type='text' id='liga_match' name='liga_match', value='$liga_match' ><br>
+
+				<label for='equipo_uno_match'>Equipo uno</label><br>
+				<input type='text' id='equipo_uno_match' name='equipo_uno_match', value='$equipo_uno_match' ><br>
+
+				<label for='equipo_dos_match'>Equipo dos</label><br>
+				<input type='text' id='equipo_dos_match' name='equipo_dos_match', value='$equipo_dos_match' > <br>
+			");
 	}
 
 // SAVE METABOXES DATA ///////////////////////////////////////////////////////////////
@@ -81,6 +107,25 @@
 			update_post_meta($post_id, 'nombre_autor', $_POST['nombre_autor']);
 		}
 
+		if ( isset($_POST['fecha_match']) ){
+			update_post_meta($post_id, '_fecha_match_meta', $_POST['fecha_match']);
+		}
+
+		if ( isset($_POST['hora_match']) ){
+			update_post_meta($post_id, '_hora_match_meta', $_POST['hora_match']);
+		}
+
+		if ( isset($_POST['liga_match']) ){
+			update_post_meta($post_id, '_liga_match_meta', $_POST['liga_match']);
+		}
+
+		if ( isset($_POST['equipo_uno_match']) ){
+			update_post_meta($post_id, '_equipo_uno_match_meta', $_POST['equipo_uno_match']);
+		}
+
+		if ( isset($_POST['equipo_dos_match']) ){
+			update_post_meta($post_id, '_equipo_dos_match_meta', $_POST['equipo_dos_match']);
+		}
 		// Guardar correctamente los checkboxes
 		/*if ( isset($_POST['_checkbox_meta']) and check_admin_referer(__FILE__, '_checkbox_nonce') ){
 			update_post_meta($post_id, '_checkbox_meta', $_POST['_checkbox_meta']);

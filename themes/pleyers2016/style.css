@@ -190,6 +190,12 @@ div.more_destacado div.destacado {padding:20px 0px;padding-right:20px;border-bot
 div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
+/*BARRA BLOGS MENU*/
+.barra_blogs {text-align: justify;padding-top:20px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;}
+.barra_blogs:after {content: '';display: inline-block;width: 100%;}
+.barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
+.barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding-right:10px;}
+
 /*CERO-CERO*/
 
 section.cerocero {background:#ff574a;padding:25px 0px 20px;}
@@ -201,7 +207,7 @@ div.posts_cerocero img:nth-of-type(2){margin:0px 1.7%;}
 
 div.grid_videos {padding-bottom:40px;}
 div.videos_stack {width:100%;margin-bottom:10px;}
-div.grid_videos h2 {font-size:200%;margin:20px 0;}
+div.grid_videos h2 {font-size:200%;margin:20px 0;display: inline;}
 
 div.video_post {float:left;position:relative;overflow:hidden;height:360px;margin-right:10px;margin-top:10px;}
 div.video_post div.video_info {position:absolute;left:20px;bottom:20px;width:80%;max-width:300px;}
