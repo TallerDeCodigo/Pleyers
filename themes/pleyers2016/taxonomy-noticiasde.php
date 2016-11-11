@@ -1,7 +1,6 @@
 <?php 
 	get_header(); 
 	$posts = get_queried_object();
-	print_r($posts);
 	$tax = $posts->taxonomy;
 	$tax_slug = $posts->slug;
 	$types = get_all_posttypes();
@@ -29,7 +28,9 @@
 					echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
 				} else { ?>
 				<?php the_post_thumbnail('full'); ?>
+				<div class="grid"></div>
 			<?php } ?>
+
 			<h2>
 				<?php the_title(); ?>
 			</h2>

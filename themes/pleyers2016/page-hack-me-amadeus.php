@@ -43,6 +43,4 @@
 	 		set_featured_image($img, $post_id);
 	 	}
 	}
-
-
 ?>

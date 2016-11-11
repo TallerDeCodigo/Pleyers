@@ -1,4 +1,33 @@
 <section>
+	<section>
+		<nav>
+			<ul>
+				<?php 
+					$args = array(
+								'post_type'=>'episodios',
+								'posts_per_page'=>-1,
+								'post_status'=>'publish',
+								'orderby'=>'date',
+								'order'=>'DESC',
+								'tax_query'=>array(
+												array(
+													'taxonomy'=>'shows',
+													'field'=>'slug',
+													'terms'=>array('apuntes-de-rabona', 'cultura-pop', 'deportologia', 'jiots-tv', 'el_pechofrio', 'lucha-libre', 'tactica', 'tirando-guante', 'Malo	turismo-deportivo');
+													);
+												)
+						);
+					$posts = new WP_Query($args);
+					echo "<pre>";
+						print_r($posts);
+					echo "</pre>";
+				?>
+				<li>
+
+				</li>
+			</ul>
+		</nav>
+	</section>>
 		<div class="grid_videos container clearfix">
 			<h2>Blogs</h2>
 			<div class="videos_stack clearfix">

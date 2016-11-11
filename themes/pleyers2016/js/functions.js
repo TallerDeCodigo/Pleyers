@@ -102,6 +102,8 @@
 
 		$('input[type="submit"]').val('');
 
+		$('.single_content p').first().addClass('capital');
+
 	});//end funcition
 
 })(jQuery);

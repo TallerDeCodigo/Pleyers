@@ -84,7 +84,7 @@
 					<?php 
 						$usrs = get_users();
 						foreach($usrs as $usr):
-
+							
 							$nicename = $usr->user_nicename;
 							$usr_login = $usr->user_login;
 							$email =  $usr->user_email;

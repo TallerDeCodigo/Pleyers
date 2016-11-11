@@ -31,6 +31,7 @@
 			?>
 				<div class="img_frame">
 					<img src="<?php echo the_post_thumbnail_url(); ?>" class="post_picture">
+					<div class="grid"></div>
 				</div>
 				<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url(); ?>">
 					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
