@@ -75,9 +75,11 @@
 						<h3><a href="<?php bloginfo('url'); ?>/quienes-somos">Quiénes Somos</a></h3>
 					</div>
 					<div>
-						<div class="_logo"></div>
+						<figure class="_logo"></figure>
 						<a href="">Copyright &copy; 2010 Los Pleyers</a>
-						<a href="">Términos y condiciones</a>|<a href="">Políticas de privacidad</a>
+						<span>
+							<a href="<?php echo THEMEPATH; ?>/terminos-y-condiciones">Términos y condiciones</a><a href="<?php echo THEMEPATH; ?>/politicas-de-privacidad">Políticas de privacidad</a>&nbsp;
+						</span>
 					</div>
 				</nav>
 			</div>
