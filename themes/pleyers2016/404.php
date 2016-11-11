@@ -4,6 +4,7 @@
 
                 <div class="top_taxonomy">
                     <div class="tax_description">
+                        <img src="<?php echo THEMEPATH; ?>/images/venado_pleyers.png">
                         <h2>Error 404</h2>
                         <span>No encontramos lo que estas buscando<br>pero esto podría interesarte.</span>
                     </div>
