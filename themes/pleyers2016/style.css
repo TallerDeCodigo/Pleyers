@@ -306,11 +306,19 @@ article.pub div img{border:none;width:80%;border-radius: 74px}
 .searchform input[type="submit"]{border-style:none;background:0,0,0,0.5;width:30px;height:30px;border-radius: 15px;background-image:url(images/search.svg);background-repeat: no-repeat;background-position: center;background-size: 80%;background-color:transparent;}
 
 /*SEARCH TEMPLATE*/
-.search-results section.single_post{width:50%;margin:70px auto;}
-.search-results div.posts_pool{float:none;width:100%;margin:0px;border-top:2px solid rgba(0,0,0,0.1);}
+.search section.single_post{width:50%;margin:70px auto;}
+.search div.posts_pool{float:none;width:100%;margin:0px;border-top:2px solid rgba(0,0,0,0.1);}
 .tax_description span{color:#8c8c8c;font-size: 20px}
 .tax_description h2{margin-top:0px!important;margin-bottom:90px!important;}
 .nota img{width:100%;height:auto;}
+
+.search-no-results div.tax_description h2{margin-bottom:10px!important;font-size: 3em}
+
+/*404*/
+.error404 section.single_post{width:50%;margin:70px auto;}
+.error404 div.posts_pool{float:none;width:100%;margin:0px;border-top:2px solid rgba(0,0,0,0.1);}
+.error404 div.tax_description h2{margin-bottom:10px!important;font-size: 3em}
+.error404 div.tax_description{margin-bottom:90px;}
 
 /*FOOTER*/
 
