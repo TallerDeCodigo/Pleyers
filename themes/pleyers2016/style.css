@@ -190,6 +190,19 @@ div.more_destacado div.destacado {padding:20px 0px;padding-right:20px;border-bot
 div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
+/*BARRA DE PARTIDOS*/
+.match_calendar ul li div img{width:80px;height:80px;}
+.match_calendar ul li{display:inline-block;vertical-align: top;width:25%;}
+.match_calendar ul li div{color:#fff;}
+
+.match_list{margin-top: -38px;margin-left:0px;margin-right:0px;}
+.match_list:after {content: '';display: inline-block;width: 100%;}
+.match_list:before {content: '';display: block;margin-top: -1.25em;}
+.match_list li {display: inline-block;margin-right: -.25em;position: relative;top: 1.25em;background: #424242;}
+.match_list li div:first-child{background: #000;color:#fff;}
+body.home section:first-of-type {padding-top:0px;}
+.match_list li div span{color:#ffff00;}
+
 /*BARRA BLOGS MENU*/
 .barra_blogs {text-align: justify;padding-top:20px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;}
 .barra_blogs:after {content: '';display: inline-block;width: 100%;}
@@ -199,7 +212,7 @@ div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid 
 /*CERO-CERO*/
 
 section.cerocero {background:#ff574a;padding:25px 0px 20px;}
-div.posts_cerocero {width:100%;margin:20px auto;max-width:1080px;}
+div.posts_cerocero {width:90%;margin:20px auto;max-width:1920px;}
 div.posts_cerocero img {width:32.2%;height:auto;float:left;}
 div.posts_cerocero img:nth-of-type(2){margin:0px 1.7%;}
 
@@ -265,7 +278,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .single_content img{width:100%;height:auto;}
 .single_content h2{color:#2c2c2c;margin-top:0px;font-size: 36px;}
 .single_content p{color:#8b8b8b;font-size: 20px}
-.single_content div.globo{width:250px; height:150px; background:#ffffbf;position:absolute;left:50%;padding:10px;}
+.single_content div.globo{width:250px; height:150px; background:#ffffbf;position:absolute;left:50%;padding:10px;border:1px solid pink;}
 blockquote{border-left:4px solid yellow;padding-left:20px;}
 blockquote p{color:#2c2c2c!important;font-size: 2em!important;}
 .twitter-tweet-rendered{margin:0 auto;}

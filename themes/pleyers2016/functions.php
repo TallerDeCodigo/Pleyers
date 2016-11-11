@@ -318,3 +318,11 @@
 	}
 	add_action('init', 'add_tags_categories');
 
+
+	function multiexplode ($delimiters,$string) {
+	    
+	    $ready = str_replace($delimiters, $delimiters[0], $string);
+	    $launch = explode($delimiters[0], $ready);
+	    return  $launch;
+	}
+

@@ -2,8 +2,6 @@
 	
 		<div class="grid_videos container clearfix">
 			<h2>Blogs</h2>
-			
-
 			<nav>
 				<ul class="barra_blogs">
 					<?php 
