@@ -1,8 +1,8 @@
 <section>
 	
 		<div class="grid_videos container clearfix">
-			<h2>Blogs</h2>
 			<nav>
+				<h2>Blogs</h2>
 				<ul class="barra_blogs">
 					<?php 
 						$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -11,7 +11,8 @@
 					?>
 					<li>
 						<a href="">
-							<?php echo $term; ?>
+							<?php
+								echo $term; ?>
 						</a>
 					</li>
 				<?php endforeach; ?>
@@ -21,20 +22,12 @@
 
 			<div class="videos_stack clearfix">
 				<?php
-					echo $term;
 						$args = array(
 									'post_type'=>'episodios',
 									'posts_per_page'=>7,
 									'post_status'=>'publish',
 									'orderby'=>'date',
-									'order'=>'DESC',
-									'tax_query'=>array(
-													array(
-														'taxonomy'=>'shows',
-														'field'=>'slug',
-														'terms'=>$term
-														)
-													)
+									'order'=>'DESC'
 									);
 
 						$posts = new WP_Query($args);

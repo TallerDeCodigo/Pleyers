@@ -84,7 +84,7 @@
 			?>
 			</div>
 		</div>
-		<section>
+		<section >
 			<?php 
 				$args = array(
 							'post_type'=>'calendarios',
