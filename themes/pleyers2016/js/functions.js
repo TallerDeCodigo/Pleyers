@@ -109,6 +109,11 @@
 		var single_img_height = $('.single_top img').height();
 		$('.grid').css('height', single_img_height+32+"px");
 
+
+		$('.change').click(function(){
+			
+		});
+
 	});//end funcition
 
 })(jQuery);

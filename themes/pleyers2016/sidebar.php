@@ -18,7 +18,6 @@
 					<?php 
 						if($posts->have_posts()): 
 							while($posts->have_posts()):
-								setup_postdata($post);
 								$posts->the_post();
 								$post_date = get_the_date('U');
 								$resta = $hoy - $post_date;
@@ -60,13 +59,18 @@
 					</div>
 			<?php 				
 							endwhile; 
-						endif;
-						    if (function_exists('custom_pagination')) {
-						       	custom_pagination($posts->max_num_pages,"",$paged);
-						    }
-						    wp_reset_postdata();
-
+						endif; 
 			?>	
+			<?php if ($posts->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+			  <nav class="prev-next-posts">
+			    <div class="prev-posts-link">
+			      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
+			    </div>
+			    <div class="next-posts-link">
+			      <?php echo get_previous_posts_link( '' ); // display newer posts link ?>
+			    </div>
+			  </nav>
+			<?php } ?>
 				</div>
 	</div>
 </div>

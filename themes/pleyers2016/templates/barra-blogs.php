@@ -6,14 +6,16 @@
 				<ul class="barra_blogs">
 					<?php 
 						$terms = get_terms('shows', array('hide_empty'=>0) );
+						// echo "<pre>";
+						// 	print_r($terms);
+						// echo "</pre>";
 						foreach($terms as $term):
-							$term = $term->name;
+							$term_name = $term->name;
+							$class_slg = $term->slug
+
 					?>
-					<li>
-						<a href="">
-							<?php
-								echo $term; ?>
-						</a>
+					<li class="<?php echo $class_slg; ?> change">
+						<?php echo $term_name; ?>
 					</li>
 				<?php endforeach; ?>
 				</ul>

@@ -56,7 +56,7 @@
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 		$args = array(
 					'post_type'=>$types,
-					'posts_per_page'=>-1,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -130,17 +130,15 @@
 							$count++;
 							
 						endwhile;
-					endif;
-
-						if (function_exists('custom_pagination')) {
-						   	custom_pagination($posts->max_num_pages,"9",$paged);
-						}
-
-						wp_reset_postdata();
+					endif;						
 					?>
-				
 			</div>
-	
+				<?php 
+					if (function_exists('custom_pagination')) {
+					   	custom_pagination($posts->max_num_pages,"9",$paged);
+					}
+					wp_reset_postdata();
+				?>
 		</div>	
 </section>
 

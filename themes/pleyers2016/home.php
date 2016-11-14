@@ -94,7 +94,7 @@
 					$types = get_all_posttypes();
 					$args = array(
 								'post_type'=> $types,
-								'posts_per_page'=>10,
+								'posts_per_page'=>4,
 								'post_status'=>'publish',
 								'orderby'=>'rand',
 								'order'=>'DESC',
