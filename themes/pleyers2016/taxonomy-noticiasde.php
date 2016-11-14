@@ -40,6 +40,8 @@
 
 		<div class="posts_pool clearfix">
 			<?php
+
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
 							'post_type'=>$types,
 							'posts_per_page'=>10,
@@ -47,6 +49,7 @@
 							'orderby'=>'date',
 							'order'=>'DESC',
 							'post__not_in'=>array($aidi_exclude),
+							'paged'=>$paged,
 							'tax_query'=>array(
 											array(
 												'taxonomy'=>$tax,
@@ -83,9 +86,15 @@
 				?>
 				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 			</div>
+
 			<?php
-				wp_reset_postdata(); endwhile; endif; 
+					 endwhile; endif; 
+				if (function_exists('custom_pagination')) {
+				   	custom_pagination($posts->max_num_pages,"9",$paged);
+				}
+				wp_reset_postdata();
 			?>
+
 		</div>
 	</div>
 	

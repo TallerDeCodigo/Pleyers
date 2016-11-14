@@ -104,6 +104,11 @@
 
 		$('.single_content p').first().addClass('capital');
 
+		var image_frame_width = $('.img_frame').width();
+		$('.match_calendar').css({'width': image_frame_width, 'margin': '0 auto'});
+		var single_img_height = $('.single_top img').height();
+		$('.grid').css('height', single_img_height+32+"px");
+
 	});//end funcition
 
 })(jQuery);

@@ -11,6 +11,7 @@
 
 	$posts_in_db = get_posts($args);
 	$ids_in_db = array();
+	
 	foreach($posts_in_db as $post): setup_postdata($post);
 
 		$ids_in_db[] = get_post_meta($post->ID, 'id_cerocero', true);

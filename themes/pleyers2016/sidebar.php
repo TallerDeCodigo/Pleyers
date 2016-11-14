@@ -1,13 +1,14 @@
 <div class="sidebar clearfix">
 	<div class="sprints">
 		<?php 
-
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
 							'post_type'=>'post',//cambiar por el posttype -> sprints
-							'posts_per_page'=>15,
+							'posts_per_page'=>20,
 							'post_status'=>'publish',
-							'orderby'=>'date',
-							'order'=>'DESC'
+							'orderby'=>'rand',
+							'order'=>'DESC',
+							'paged'=>$paged
 							);
 				$posts = new WP_Query($args);
 				$hoy = date('U');
@@ -17,6 +18,7 @@
 					<?php 
 						if($posts->have_posts()): 
 							while($posts->have_posts()):
+								setup_postdata($post);
 								$posts->the_post();
 								$post_date = get_the_date('U');
 								$resta = $hoy - $post_date;
@@ -58,8 +60,13 @@
 					</div>
 			<?php 				
 							endwhile; 
-						endif; 
-			?>
+						endif;
+						    if (function_exists('custom_pagination')) {
+						       	custom_pagination($posts->max_num_pages,"",$paged);
+						    }
+						    wp_reset_postdata();
+
+			?>	
 				</div>
 	</div>
 </div>
