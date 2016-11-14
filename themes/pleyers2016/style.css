@@ -297,9 +297,10 @@ article.pub div img{border:none;width:80%;border-radius: 74px}
 
 /*TAXONOMY SHOWS*/
 .tax_show iframe{width:100%;}
-.tax_show div.titulo{position:absolute;top:50%;color:#fff;margin-left:5%;font-size: 2em}
+.tax_show div.titulo{position:absolute;top:40%;color:#fff;margin-left:5%;font-size: 2em}
 .tax-shows div.titulo h2{margin-top:0px;}
 .tax-shows div.titulo span{font-size: 20px}
+.img_play{position:relative;top:-350px;width:100px;height:auto;margin-left:5%;}
 
 /*TAXONOMY NOTICIAS DE*/
 .tax-noticiasde div.posts_pool{padding-top:0px;}

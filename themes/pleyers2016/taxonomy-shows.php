@@ -24,9 +24,14 @@
 				endforeach; }
 			?>
 		<?php 
-			if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
+			if( get_post_meta($post->ID, 'eg_sources_youtube', true) ){ 
 				$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
 				echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
+			?>
+			<div class="img_play">
+				<img src="<?php echo THEMEPATH; ?>/images/play.svg">
+			</div>
+		<?php		
 			} else { ?>
 			<?php the_post_thumbnail('full'); ?>
 		<?php } ?>
@@ -48,12 +53,14 @@
 	</div>
 	<?php
 		$types = get_all_posttypes();
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 		$args = array(
 					'post_type'=>$types,
 					'posts_per_page'=>-1,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
+					'paged'=>$paged,
 					'tax_query'=>array(
 									array(
 										'taxonomy'=>$tax,
@@ -121,9 +128,15 @@
 							?>
 				<?php			
 							$count++;
-							wp_reset_postdata();
+							
 						endwhile;
-					endif;	
+					endif;
+
+						if (function_exists('custom_pagination')) {
+						   	custom_pagination($posts->max_num_pages,"9",$paged);
+						}
+
+						wp_reset_postdata();
 					?>
 				
 			</div>
