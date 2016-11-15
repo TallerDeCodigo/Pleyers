@@ -3,10 +3,10 @@
 		<?php 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
-							'post_type'=>'post',//cambiar por el posttype -> sprints
+							'post_type'=>'sprints',//cambiar por el posttype -> sprints
 							'posts_per_page'=>20,
 							'post_status'=>'publish',
-							'orderby'=>'rand',
+							'orderby'=>'date',
 							'order'=>'DESC',
 							'paged'=>$paged
 							);
@@ -29,7 +29,9 @@
 
 								//echo "m> ".round($minutos)." h> ".round($horas)." d> ".round($dias)." M> ".round($meses)."<br>";
 								//echo date('F j, Y', $post_date);
-							if($segundos > 60 && $minutos < 60){
+							if($segundos>0 && $segundos<60){
+								$hace = round($segundos);
+							}else if($segundos > 60 && $minutos < 60){
 								$hace = round($minutos)."m";
 							}else if($minutos > 60 && $horas < 24){
 								$hace = round($horas)."h";
