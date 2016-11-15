@@ -11,7 +11,7 @@
 ?>
 <div class="cerocero full_container">
 	<div class="container clearfix">
-			<img src="images/00_logo.png">
+			<img src="<?php echo THEMEPATH; ?>/images/00_logo.png">
 		<div class="posts_cerocero clearfix">
 			<?php 
 				if($posts->have_posts()): while($posts->have_posts()):

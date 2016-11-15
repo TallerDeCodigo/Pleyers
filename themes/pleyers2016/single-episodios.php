@@ -11,6 +11,8 @@
 				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
 					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
 					echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
+					?>
+			<?php		
 				} else { ?>
 				<?php the_post_thumbnail('full'); ?>
 			<?php } ?>

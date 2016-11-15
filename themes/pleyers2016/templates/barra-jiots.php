@@ -22,7 +22,6 @@
 							);
 				$posts = new WP_Query($args);
 				wp_cache_set('jiots_cached', $posts, '', $var_expire);
-
 				// echo "<pre>";
 				// 	print_r($posts);
 				// echo "</pre>";
@@ -49,84 +48,11 @@
 							?>
 						</span>
 					</a>
-					<a href=""><h3><?php the_title(); ?></h3></a>
+					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 				</div>
-			
 			<?php	
 				wp_reset_postdata(); endwhile; endif; 
 				}
 			?>
-			<!-- <div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div>
-			<div class="jiots_post clearfix">
-				<a href="">
-					<div class="img_frame clearfix">
-						<img src="">
-					</div>
-				</a>
-				<a href=""><span>#Baseball</span></a>
-				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
-			</div> -->
 		</div>
 	</div>
