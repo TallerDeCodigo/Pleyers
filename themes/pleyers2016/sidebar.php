@@ -27,6 +27,10 @@
 								$dias = $horas / 24;
 								$meses = $dias / 30;
 
+								$time_ago = human_time_diff($post_date, $hoy);
+								$time_ago = substr($time_ago, 0, 3);
+								$time_ago = preg_replace('/\s+/', '', $time_ago);
+
 								//echo "m> ".round($minutos)." h> ".round($horas)." d> ".round($dias)." M> ".round($meses)."<br>";
 								//echo date('F j, Y', $post_date);
 							if($segundos>0 && $segundos<60){
@@ -44,7 +48,7 @@
 
 					?>
 					<div class="formato_b sprints_post clearfix">
-						<span class="post_time"><?php  echo $hace; ?></span>
+						<span class="post_time"><?php  echo $time_ago; ?></span>
 						<div class="sprints_post_content">
 							<a href="">
 								<div class="img_frame">

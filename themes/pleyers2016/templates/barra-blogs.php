@@ -15,7 +15,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -115,7 +115,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -215,7 +215,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -315,7 +315,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -414,7 +414,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -514,7 +514,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -614,7 +614,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -714,7 +714,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>
@@ -814,7 +814,7 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
+			
 		</li>
 	<?php endforeach; ?>
 	</ul>

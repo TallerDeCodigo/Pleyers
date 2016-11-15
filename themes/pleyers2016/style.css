@@ -211,7 +211,7 @@ body.home section:first-of-type {padding-top:0px;}
 .team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;}
 
 /*BARRA BLOGS MENU*/
-.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;margin:0px auto;}
+.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:100%;}
 .barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
 .barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding:20px 5px 20px 5px;}

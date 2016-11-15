@@ -176,6 +176,11 @@
 		});
 
 
+		/*SPRITE TIME*/
+		var hour_string = $('.post_time').html();
+		hour_string = hour_string.substring(0, 3);
+		console.log(hour_string);
+
 
 
 		// $('.change').click(function(){
