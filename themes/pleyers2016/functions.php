@@ -382,3 +382,50 @@
 	 }
 
 	}//custom pagination
+
+
+
+
+	/*AJAX FOR BLOGS*/
+	function get_blogset(){
+
+		$terms_data = $_POST['test'];
+		$args = array(	
+					'post_type'=>'episodios',
+					'posts_per_page'=>7,
+					'post_status'=>'publish',
+					'orderby'=>'date',
+					'order'=>'DESC',
+					'tax_query'=>array(
+									array(
+										'taxonomy'=>'shows',
+										'field'=> 'slug',
+										'terms'=>$terms_data
+										)
+									)
+					);
+		$results = new WP_Query($args);
+
+					$count = 0;
+					if($results->have_posts()):
+							$nueva = "juan"; 
+						while($results->have_posts()):
+							$results->the_post(); setup_postdata($post);
+
+						if($count == 0){
+							$_arr = '';
+							$tags = get_the_tags();if($tags){ foreach($tags as $tag): $_arr .= '<span>'.esc_html($tag->name).'</span>'; endforeach; }
+							$first = '<div class="video_post big_video clearfix"> <a href="'.get_post_permalink().'"><div class="img_frame clearfix">'.get_the_post_thumbnail().'</div><div class="video_info">'.$_arr.'<h3>'.get_the_title().'</h3></div></a></div>';
+						}
+					$count ++;
+					wp_reset_postdata();
+					endwhile; 
+				endif;
+
+		//print_r($first);
+		die();
+	}
+
+		add_action( 'wp_ajax_nopriv_get_blogset', 'get_blogset' );
+		add_action( 'wp_ajax_get_blogset', 'get_blogset' );
+?>

@@ -111,7 +111,24 @@
 
 
 		$('.change').click(function(){
+			var test = $(this).find('input[type="hidden"]').val();
 			
+			$.ajax({
+				type: 	'POST', 
+				url: 	'http://localhost/~programacion2/pleyers/wp-admin/admin-ajax.php',
+				data: 	{
+						action: 'get_blogset',
+						test: test,
+				},
+				success: function(data, textStatus, XMLHttpRequest){
+					console.log('success');
+					console.log(data);
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					console.log("error>>> ");
+					console.log(errorThrown);
+				}
+			});
 		});
 
 	});//end funcition

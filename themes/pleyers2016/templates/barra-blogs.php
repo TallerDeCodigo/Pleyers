@@ -6,16 +6,20 @@
 				<ul class="barra_blogs">
 					<?php 
 						$terms = get_terms('shows', array('hide_empty'=>0) );
+						$terms_arr = array();
 						// echo "<pre>";
 						// 	print_r($terms);
 						// echo "</pre>";
 						foreach($terms as $term):
-							$term_name = $term->name;
-							$class_slg = $term->slug
+							$term_name 		= $term->name;
+							$class_slg 		= $term->slug;
+							$terms_arr[] 	= $term->slug;
+							$trm_id 		= $term->term_id;
 
 					?>
 					<li class="<?php echo $class_slg; ?> change">
 						<?php echo $term_name; ?>
+						<input type="hidden" name="nombre" id="<?php echo  $trm_id; ?>" class="chval" value="<?php echo $class_slg; ?>">
 					</li>
 				<?php endforeach; ?>
 				</ul>
@@ -23,100 +27,7 @@
 
 
 			<div class="videos_stack clearfix">
-				<?php
-						$args = array(
-									'post_type'=>'episodios',
-									'posts_per_page'=>7,
-									'post_status'=>'publish',
-									'orderby'=>'date',
-									'order'=>'DESC'
-									);
-
-						$posts = new WP_Query($args);
-						$count = 0;
-						if($posts->have_posts()):
-							while($posts->have_posts()):
-								$posts->the_post(); setup_postdata($post);
-							if($count == 0){
-				?>
-								<div class="video_post big_video clearfix">
-									<a href="<?php the_permalink(); ?>">
-										<div class="img_frame clearfix">
-											<?php the_post_thumbnail(); ?>
-											<!-- <img src="images/post.png"> -->
-										</div>
-										<div class="video_info">
-											<?php 
-												$tags = get_the_tags();
-												if($tags){ foreach($tags as $tag): 
-												?>
-											<span>
-												<?php echo esc_html($tag->name); ?>
-											</span>
-											<?php endforeach; }	?>
-											<h3>
-												<?php echo $count; the_title(); ?>
-											</h3>
-										</div>
-									</a>
-								</div>
-						<?php
-							}else if($count == 1){
-						?>
-								<div class="video_post small_video clearfix">
-									<a href="<?php the_permalink(); ?>">
-										<div class="img_frame clearfix">
-											<?php the_post_thumbnail(); ?>
-											<!-- <img src="images/post.png"> -->
-										</div>
-										<div class="video_info">
-											<?php 
-												$tags = get_the_tags();
-												if($tags){ foreach($tags as $tag): 
-												?>
-											<span>
-												<?php echo esc_html($tag->name); ?>
-											</span>
-											<?php endforeach; }	?>
-											<h3>
-												<?php echo $count; the_title(); ?>
-											</h3>
-										</div>
-									</a>
-								</div>
-						<?php 		
-							}else if($count < 2){
-							?>
-								<div class="video_post same_size clearfix">
-									<a href="<?php the_permalink(); ?>">
-										<div class="img_frame clearfix">
-											<?php the_post_thumbnail(); ?>
-											<!-- <img src="images/post.png"> -->
-										</div>
-										<div class="video_info">
-											<?php 
-												$tags = get_the_tags();
-												if($tags){ foreach($tags as $tag): 
-												?>
-											<span>
-												<?php echo esc_html($tag->name); ?>
-											</span>
-											<?php endforeach; }	?>
-											<h3>
-												<?php echo $count; the_title(); ?>
-											</h3>
-										</div>
-									</a>
-								</div>	
-						<?php	
-							}
-						?>
-			<?php 		
-						$count ++;
-						wp_reset_postdata();
-						endwhile; 
-					endif;
-			?>
+				
 			</div>
 		</div>
 	</section>
