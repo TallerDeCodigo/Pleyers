@@ -1,4 +1,4 @@
-<section class="jiotstv">
+<div class="jiotstv full_container">
 		<div class="container clearfix">
 			<h2>Jiots.TV</h2>
 			<?php
@@ -129,4 +129,4 @@
 				<a href=""><h3>Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Integer</h3></a>
 			</div> -->
 		</div>
-	</section>
+	</div>

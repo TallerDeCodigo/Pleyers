@@ -90,7 +90,7 @@ h1   { font-size:28px;font-size:2.8rem;} /* =28px */
 /*** GENERAL ***/
 
 body {font-family:'Roboto';-webkit-font-smoothing:antialiased;}
-div.container {width:100%;max-width:1280px;margin:0 auto;padding:0 20px;}
+div.container {width:100%;max-width:1280px;margin:0 auto;/*padding:0 20px;*/}
 div.full_container {width:100%;max-width:1280px;margin:0 auto;}
 section {width:100%;}
 body section:first-of-type {padding-top:60px;}
@@ -194,7 +194,7 @@ div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
 /*BARRA DE PARTIDOS*/
-.match_calendar ul li div img{width:80px;height:80px;}
+.match_calendar ul li div img{width:60px;height:60px;}
 .match_calendar ul li{display:inline-block;vertical-align: top;width:25%;}
 .match_calendar ul li div{color:#fff;}
 
@@ -205,17 +205,18 @@ div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid 
 .match_list li div:first-child{background: #000;color:#fff;}
 body.home section:first-of-type {padding-top:0px;}
 .match_list li div span{color:#ffff00;}
+.team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;}
 
 /*BARRA BLOGS MENU*/
-.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;}
+.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;margin:0px auto;}
 .barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
-.barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding:20px 10px 20px 10px;}
+.barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding:20px 5px 20px 5px;}
 /*.change{border-bottom:4px solid #2c2c2c;}*/
 
 /*CERO-CERO*/
 
-section.cerocero {background:#ff574a;padding:25px 0px 20px;}
+div.cerocero {background:#ff574a;padding:25px 0px 20px;margin-bottom:60px;}
 div.posts_cerocero {width:90%;margin:20px auto;max-width:1920px;}
 div.posts_cerocero img {width:32.2%;height:auto;float:left;}
 div.posts_cerocero img:nth-of-type(2){margin:0px 1.7%;}

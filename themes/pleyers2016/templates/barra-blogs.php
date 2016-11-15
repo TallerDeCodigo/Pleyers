@@ -1,4 +1,4 @@
-<section id="apuntes-de-rabona">
+<div id="apuntes-de-rabona" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -95,10 +95,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="cultura-pop">
+<div id="cultura-pop" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -195,10 +195,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="deportologia">
+<div id="deportologia" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -295,10 +295,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="jiots-tv">
+<div id="jiots-tv" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -395,9 +395,9 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
-<section id="el_pechofrio">
+<div id="el_pechofrio" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -494,10 +494,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="lucha-libre">
+<div id="lucha-libre" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -594,10 +594,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="tactica">
+<div id="tactica" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -694,10 +694,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="tirando-guante">
+<div id="tirando-guante" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -794,10 +794,10 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>
 
 
-<section id="turismo-deportivo">
+<div id="turismo-deportivo" class="full_container">
 	<ul class="barra_blogs">
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
@@ -894,4 +894,4 @@
 				?>
 		</div>
 	</div>
-</section>
+</div>

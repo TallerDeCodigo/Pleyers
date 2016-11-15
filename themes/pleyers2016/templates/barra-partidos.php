@@ -30,11 +30,15 @@
 				</div>
 				<div>
 					<img src="<?php echo wp_get_attachment_url($clean_arr[1]); ?>">
-					<?php echo $team1_match; ?>
+					<span class="team_name">
+						<?php echo $team1_match; ?>
+					</span>
 				</div>
 				<div>
 					<img src="<?php echo wp_get_attachment_url($clean_arr[2]); ?>">
-					<?php echo $team2_match; ?>
+					<span class="team_name">
+						<?php echo $team2_match; ?>
+					</span>
 				</div>
 			</li>
 			<?php wp_reset_postdata(); endwhile; endif; ?>
