@@ -110,26 +110,93 @@
 		$('.grid').css('height', single_img_height+32+"px");
 
 
-		$('.change').click(function(){
-			var test = $(this).find('input[type="hidden"]').val();
-			
-			$.ajax({
-				type: 	'POST', 
-				url: 	'http://localhost/~programacion2/pleyers/wp-admin/admin-ajax.php',
-				data: 	{
-						action: 'get_blogset',
-						test: test,
-				},
-				success: function(data, textStatus, XMLHttpRequest){
-					console.log('success');
-					console.log(data);
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown){
-					console.log("error>>> ");
-					console.log(errorThrown);
-				}
-			});
+		$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+
+		$('.apuntes-de-rabona').click(function(){
+			$('.barra_blogs li.change').removeClass('change');
+			$(this).addClass('change');
+			$('#apuntes-de-rabona').show();
+			$('#cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
 		});
+
+		$('.cultura-pop').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#cultura-pop').show();
+			$('#apuntes-de-rabona, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+		});
+
+		$('.deportologia').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#deportologia').show();
+		});
+
+		$('.jiots-tv').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#apuntes-de-rabona, #cultura-pop, #deportologia, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#jiots-tv').show();
+		});
+
+		$('.el_pechofrio').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#el_pechofrio').show();
+		});
+
+		$('.lucha-libre').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#lucha-libre').show();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #tactica, #tirando-guante, #turismo-deportivo').hide();
+		});
+
+		$('.tactica').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#tactica').show();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tirando-guante, #turismo-deportivo').hide();
+		});
+
+		$('.tirando-guante').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#tirando-guante').show();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #turismo-deportivo').hide();
+		});
+
+		$('.turismo-deportivo').click(function(){
+			//$('.barra_blogs li.change').removeClass('change');
+			//$(this).addClass('change');
+			$('#turismo-deportivo').show();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante').hide();
+		});
+
+
+
+
+		// $('.change').click(function(){
+		// 	var test = $(this).find('input[type="hidden"]').val();
+		// 	$.ajax({
+		// 		type: 	'GET', 
+		// 		url: 	'http://localhost/~programacion2/pleyers/wp-admin/admin-ajax.php',
+		// 		data: 	{
+		// 				action: 'get_blogset',
+		// 				test: test,
+		// 		},
+		// 		success: function(data){
+		// 			console.log('success');
+		// 			console.log(data);
+		// 		},
+		// 		error: function(XMLHttpRequest, textStatus, errorThrown){
+		// 			console.log(errorThrown);
+		// 		}
+		// 	});ç
+
+		// }); //end click change
 
 	});//end funcition
 

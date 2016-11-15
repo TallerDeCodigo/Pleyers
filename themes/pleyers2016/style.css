@@ -207,10 +207,11 @@ body.home section:first-of-type {padding-top:0px;}
 .match_list li div span{color:#ffff00;}
 
 /*BARRA BLOGS MENU*/
-.barra_blogs {text-align: justify;padding-top:20px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;}
+.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;}
 .barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
-.barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding-right:10px;}
+.barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding:20px 10px 20px 10px;}
+/*.change{border-bottom:4px solid #2c2c2c;}*/
 
 /*CERO-CERO*/
 

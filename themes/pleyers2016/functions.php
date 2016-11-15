@@ -387,45 +387,53 @@
 
 
 	/*AJAX FOR BLOGS*/
-	function get_blogset(){
+	// function get_blogset(){
 
-		$terms_data = $_POST['test'];
-		$args = array(	
-					'post_type'=>'episodios',
-					'posts_per_page'=>7,
-					'post_status'=>'publish',
-					'orderby'=>'date',
-					'order'=>'DESC',
-					'tax_query'=>array(
-									array(
-										'taxonomy'=>'shows',
-										'field'=> 'slug',
-										'terms'=>$terms_data
-										)
-									)
-					);
-		$results = new WP_Query($args);
+	// 	$terms_data = $_GET['test'];
+	// 	$args = array(	
+	// 				'post_type'=>'episodios',
+	// 				'posts_per_page'=>7,
+	// 				'post_status'=>'publish',
+	// 				'orderby'=>'date',
+	// 				'order'=>'DESC',
+	// 				'tax_query'=>array(
+	// 								array(
+	// 									'taxonomy'=>'shows',
+	// 									'field'=> 'slug',
+	// 									'terms'=>$terms_data
+	// 									)
+	// 								)
+	// 				);
+	// 	$results = new WP_Query($args);
+	// 	$data_arr = array();
+	// 	$tags_arr = array();
+	// 		if($results->have_posts()){
+	// 			while($results->have_posts()){
+	// 				$results->the_post();
 
-					$count = 0;
-					if($results->have_posts()):
-							$nueva = "juan"; 
-						while($results->have_posts()):
-							$results->the_post(); setup_postdata($post);
+	// 				$_tags = get_the_tags();
+	// 				foreach($tags as $tag){
+	// 						$_tag = $tag->name;	
+	// 						$tags_arr[] = array(
+	// 										"tag_name"=>$_tag
+	// 										);
+	// 					}
+	// 					$_thumb = get_the_post_thumbnail_url();
+	// 					$_perma = get_post_permalink();
+	// 					$_title = get_the_title();
 
-						if($count == 0){
-							$_arr = '';
-							$tags = get_the_tags();if($tags){ foreach($tags as $tag): $_arr .= '<span>'.esc_html($tag->name).'</span>'; endforeach; }
-							$first = '<div class="video_post big_video clearfix"> <a href="'.get_post_permalink().'"><div class="img_frame clearfix">'.get_the_post_thumbnail().'</div><div class="video_info">'.$_arr.'<h3>'.get_the_title().'</h3></div></a></div>';
-						}
-					$count ++;
-					wp_reset_postdata();
-					endwhile; 
-				endif;
+	// 					$data_arr[] = array(
+	// 								"thumbnail" => $_thumb, 
+	// 								"liknk" => $_perma,
+	// 								"title" => $_title,
+	// 								"tags"	=> $_tags
+	// 						);
+	// 			}
+	// 		}
 
-		//print_r($first);
-		die();
-	}
+	// 	return json_decode($data_arr);
+	// }
 
-		add_action( 'wp_ajax_nopriv_get_blogset', 'get_blogset' );
-		add_action( 'wp_ajax_get_blogset', 'get_blogset' );
+	// 	add_action( 'wp_ajax_nopriv_get_blogset', 'get_blogset' );
+	// 	add_action( 'wp_ajax_get_blogset', 'get_blogset' );
 ?>
