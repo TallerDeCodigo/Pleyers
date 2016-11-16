@@ -15,7 +15,7 @@
 						foreach($terms as $term):
 					?>
 						<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
-							<span>
+							<span class="_noticiade">
 								<?php echo "#".esc_html($term->name)." "; ?>
 							</span>
 						</a>	
@@ -31,9 +31,11 @@
 				<div class="grid"></div>
 			<?php } ?>
 
-			<h2>
-				<?php the_title(); ?>
-			</h2>
+			<a href="<?php the_permalink(); ?>">
+				<h2>
+					<?php the_title(); ?>
+				</h2>
+			</a>
 		</div>	
 		
 		<?php get_sidebar(); ?>
@@ -66,9 +68,9 @@
 						$tags = get_the_tags();
 			?>
 			<div class="post clearfix">
-				<a href="">
+				<a href="<?php the_permalink(); ?>">
 					<div class="img_frame clearfix">
-						<?php the_post_thumbnail(); ?>
+						<?php the_post_thumbnail('full'); ?>
 					</div>
 				</a>
 				<?php 
@@ -85,6 +87,7 @@
 					endforeach; }
 				?>
 				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				<div><?php the_excerpt(); ?></div>
 			</div>
 
 			<?php

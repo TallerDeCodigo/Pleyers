@@ -31,8 +31,14 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="addthis_sharing_toolbox"></div>
-			<?php the_content(); ?>
-			<div class="addthis_sharing_toolbox"></div>
+			<?php 
+				$contenido = get_the_content();
+				the_content(); 
+				if($contenido){
+					echo '<div class="addthis_sharing_toolbox"></div>';
+				}else{}
+				?>
+			
 
 			<?php 
 				$author_mail = get_the_author_meta('user_email');
@@ -82,6 +88,5 @@
 		</div>
 			<?php get_template_part('templates/barra', 'mashistorias'); ?>
 			<?php get_sidebar(); ?>
-
 	</div>
 <?php get_footer(); ?>

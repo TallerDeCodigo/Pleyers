@@ -33,6 +33,7 @@
 
 
 		var height_screen = $(window).height();
+		$('div.sprints_container').css('height', height_screen-200+"px");
 		//$('.single_top').height(height_screen);
 
 

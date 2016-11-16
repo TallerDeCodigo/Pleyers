@@ -32,7 +32,7 @@
 			} 
 		?>
 		<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-		<!-- <a href=""><p><?php the_content(); ?></p></a> -->
+		<a href=""><p><?php the_excerpt(); ?></p></a>
 	</div>
 	<?php
 		wp_reset_postdata(); endwhile; endif; 

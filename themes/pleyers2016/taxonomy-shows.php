@@ -51,6 +51,7 @@
 			</h2>
 		</div>
 	</div>
+
 	<?php
 		$types = get_all_posttypes();
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -74,6 +75,7 @@
 		// 	print_r($posts);
 		// echo "</pre>";
 	?>
+
 		<div class="grid_videos container clearfix">
 			<h2>Blogs</h2>
 			<div class="videos_stack clearfix">
@@ -94,7 +96,7 @@
 											$terms = wp_get_post_terms(); 
 											if($terms): foreach($terms as $term):
 											?>
-												<a href="">
+												<a href="<?php the_permalink(); ?>">
 													<span><?php echo esc_html($term->name); ?></span>
 												</a>
 									<?php endforeach; endif;?>
@@ -106,7 +108,7 @@
 							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 							?>
 								<div class="video_post small_video clearfix">
-									<a href="">
+									<a href="<?php the_permalink(); ?>">
 									<div class="img_frame clearfix">
 										<?php the_post_thumbnail(); ?>
 									</div>

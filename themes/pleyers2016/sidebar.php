@@ -4,7 +4,7 @@
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
 							'post_type'=>'sprints',//cambiar por el posttype -> sprints
-							'posts_per_page'=>20,
+							'posts_per_page'=>5,
 							'post_status'=>'publish',
 							'orderby'=>'date',
 							'order'=>'DESC',
@@ -14,7 +14,10 @@
 				date_default_timezone_set('America/Mexico_City');
 				$hoy = date('U');
 		?>
-				<h3 class="header_sprints">SPRINTS</h3>
+				<div>
+					<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado-cabeza.svg" width="30px" height="30px">
+					<h3 class="header_sprints">SPRINTS</h3>
+				</div>
 				<div class="sprints_container">
 					<?php 
 						if($posts->have_posts()): 
@@ -23,8 +26,8 @@
 								$post_date = get_the_date('U');
 
 								$time_ago = human_time_diff($post_date, $hoy);
-								$time_ago = substr($time_ago, 0, 3);
 								$time_ago = preg_replace('/\s+/', '', $time_ago);
+								$time_ago = substr($time_ago, 0, 3);
 
 					?>
 					<div class="formato_b sprints_post clearfix">
@@ -51,6 +54,7 @@
 			  <nav class="prev-next-posts">
 			    <div class="prev-posts-link">
 			      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
+			      <img src="<?php echo THEMEPATH; ?>/images/right_arrow.png">
 			    </div>
 			    <div class="next-posts-link">
 			      <?php echo get_previous_posts_link( '' ); // display newer posts link ?>

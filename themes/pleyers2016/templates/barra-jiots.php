@@ -1,6 +1,6 @@
 <div class="jiotstv full_container">
 		<div class="container clearfix">
-			<h2>Jiots.TV</h2>
+			<h2>Jiots.TV | <span>Haciendo del internet un lugar peor</span></h2>
 			<?php
 				$var_expire = 300;
 				$query = wp_cache_get('jiots_cached');
