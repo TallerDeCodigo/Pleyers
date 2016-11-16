@@ -10,7 +10,7 @@
 		$posts = new WP_Query($args);
 	?>
 	
-	<nav class="match_calendar">
+	<div class="match_calendar full_container">
 		<ul class="match_list">
 			<?php 
 				if($posts->have_posts()): while($posts->have_posts()):
@@ -43,5 +43,5 @@
 			</li>
 			<?php wp_reset_postdata(); endwhile; endif; ?>
 		</ul>
-	</nav>
+	</div>
 </section>

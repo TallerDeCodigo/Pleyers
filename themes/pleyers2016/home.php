@@ -55,7 +55,7 @@
 				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
 					
 					<a href="<?php the_permalink(); ?>">
-						<h3>
+						<h3 class="el_titulo">
 							<?php the_title(); ?>
 						</h3>
 					</a>
@@ -67,12 +67,17 @@
 				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
 					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
 									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-										<span >
-											<?php echo "#".esc_html($terms[0]->name); ?>
+										<span class="el_tag">
+											<?php 
+												if($terms){
+													$trm_nme = $terms[0]->name;
+													echo "#".$trm_nme;
+												} 
+											?>
 										</span>
 									</a>	
 					<a href="<?php the_permalink(); ?>">
-						<h3>
+						<h3 class="el_titulo">
 							<?php the_title(); ?>
 						</h3>
 					</a>
@@ -114,10 +119,11 @@
 					</a>
 					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
 								<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-									<span>
+									<span class="el_tag">
 										<?php 
 											if($terms){
-												echo "#".esc_html($terms[0]->name);
+												$trm_nme = $terms[0]->name;
+												echo "#".$trm_nme;
 											} 
 										?>
 									</span>
