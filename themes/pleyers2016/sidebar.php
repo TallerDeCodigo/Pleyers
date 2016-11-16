@@ -33,7 +33,7 @@
 					<div class="formato_b sprints_post clearfix">
 						<span class="post_time"><?php  echo $time_ago; ?></span>
 						<div class="sprints_post_content">
-							<a href="">
+							<a href="<?php the_permalink(); ?>">
 								<div class="img_frame">
 									<?php the_post_thumbnail(); ?>
 									<!-- <img src="images/post.png" /> -->

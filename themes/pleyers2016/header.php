@@ -68,8 +68,8 @@
 					</div>
 					<div>
 						<h3><a href="">Publicaciones</a></h3>
-						<a href="http://cerocero.mx/">(0-0) cerocero</a>
-						<a href="http://jiots.tv/">Jiots·TV</a>
+						<a href="http://cerocero.mx/" target="_blank">(0-0) cerocero</a>
+						<a href="http://jiots.tv/" target="_blank">Jiots·TV</a>
 					</div>
 					<div>
 						<h3><a href="<?php bloginfo('url'); ?>/quienes-somos">Quiénes Somos</a></h3>
@@ -78,7 +78,7 @@
 						<figure class="_logo"></figure>
 						<a href="">Copyright &copy; 2010 Los Pleyers</a>
 						<span>
-							<a href="<?php echo THEMEPATH; ?>/terminos-y-condiciones">Términos y condiciones</a><a href="<?php echo THEMEPATH; ?>/politicas-de-privacidad">Políticas de privacidad</a>&nbsp;
+							<a href="<?php echo bloginfo('url'); ?>/terminos-y-condiciones">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad">Políticas de privacidad</a>&nbsp;
 						</span>
 					</div>
 				</nav>

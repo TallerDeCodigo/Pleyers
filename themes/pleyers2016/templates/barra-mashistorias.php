@@ -17,7 +17,7 @@
 				$tags = get_the_tags();
 	?>
 	<div class="post clearfix">
-		<a href="">
+		<a href="<?php the_permalink(); ?>">
 			<div class="img_frame clearfix">
 				<?php the_post_thumbnail(); ?>
 				<!-- <img src="images/post.png"> -->
@@ -32,7 +32,7 @@
 			} 
 		?>
 		<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-		<a href=""><p><?php the_excerpt(); ?></p></a>
+		<p><?php the_excerpt(); ?></p>
 	</div>
 	<?php
 		wp_reset_postdata(); endwhile; endif; 

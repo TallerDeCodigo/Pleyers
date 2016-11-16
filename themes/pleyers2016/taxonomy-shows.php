@@ -77,7 +77,7 @@
 	?>
 
 		<div class="grid_videos container clearfix">
-			<h2>Blogs</h2>
+
 			<div class="videos_stack clearfix">
 				<?php
 				$count = 0;
