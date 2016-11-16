@@ -31,6 +31,11 @@
 			return result;
 		}
 
+
+		var height_screen = $(window).height();
+		$('.single_top').height(height_screen);
+
+
 		$( "div.sprints" )
 			.mouseover(function() {
 				$('body').css('overflow','hidden');

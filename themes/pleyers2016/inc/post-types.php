@@ -107,7 +107,7 @@
 
 		// PARTIDOS
 		$labels = array(
-			'name'          => 'Calendaio Partidos',
+			'name'          => 'Calendario Partidos',
 			'singular_name' => 'Calendario Partido',
 			'add_new'       => 'Nuevo Calendario Partido',
 			'add_new_item'  => 'Nuevo Calendario Partido',

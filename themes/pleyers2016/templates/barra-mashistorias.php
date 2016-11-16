@@ -7,7 +7,7 @@
 					'post_type'=> $types,
 					'posts_per_page'=>3,
 					'post_status'=>'publish',
-					'orderby'=>'date',
+					'orderby'=>'rand',
 					'order'=>'DESC'
 			);
 		$posts = new WP_Query($args);

@@ -11,6 +11,7 @@
 							'paged'=>$paged
 							);
 				$posts = new WP_Query($args);
+				date_default_timezone_set('America/Mexico_City');
 				$hoy = date('U');
 		?>
 				<h3 class="header_sprints">SPRINTS</h3>
@@ -20,31 +21,10 @@
 							while($posts->have_posts()):
 								$posts->the_post();
 								$post_date = get_the_date('U');
-								$resta = $hoy - $post_date;
-								$segundos = $resta;
-								$minutos = $segundos / 60;
-								$horas = $minutos / 60;
-								$dias = $horas / 24;
-								$meses = $dias / 30;
 
 								$time_ago = human_time_diff($post_date, $hoy);
 								$time_ago = substr($time_ago, 0, 3);
 								$time_ago = preg_replace('/\s+/', '', $time_ago);
-
-								//echo "m> ".round($minutos)." h> ".round($horas)." d> ".round($dias)." M> ".round($meses)."<br>";
-								//echo date('F j, Y', $post_date);
-							if($segundos>0 && $segundos<60){
-								$hace = round($segundos);
-							}else if($segundos > 60 && $minutos < 60){
-								$hace = round($minutos)."m";
-							}else if($minutos > 60 && $horas < 24){
-								$hace = round($horas)."h";
-							}else if($horas > 24 && $dias < 30){
-								$hace = round($dias)."d";
-							}else if($dias > 30 && $meses < 12){
-								$hace = round($meses)."M";
-							}
-								
 
 					?>
 					<div class="formato_b sprints_post clearfix">

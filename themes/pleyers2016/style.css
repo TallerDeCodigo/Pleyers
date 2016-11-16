@@ -148,7 +148,7 @@ div.overscreen div.menu nav div:last-child{text-align: center;}
 div.overscreen div.menu nav div:last-child span a{font-size: 16px;/*display:inline-block;width:50%;*/margin-bottom:0px;margin-top:0px;}
 div.overscreen div.menu nav div:last-child span a:first-child{margin-top:10px;}
 
-div.left_container {width:calc(100% - 340px);float:left;padding:20px 40px 20px 0px;}
+div.left_container {width:calc(100% - 340px);float:left;padding:32px 40px 20px 0px;}
 
 div.post {margin-bottom:20px;}
 div.post div.img_frame {width:210px;height:210px;background:#EEE;float:left;margin-right:20px;}
@@ -162,7 +162,7 @@ div.post p {line-height:160%;color:#777;}
 
 div.sidebar {float:right;width:25%;}
 div.sprints {width:100%;margin-top:20px;}
-h3.header_sprints {background:#000;color:#FFF;display:block;width:100%;font-size:150%;margin:0;padding:3px 0px 1px;padding-left:40px;}
+h3.header_sprints {background:#000;color:#FFF;display:block;width:100%;font-size:150%;margin:0px 0px 20px 0px;padding:3px 0px 1px;padding-left:40px;}
 div.sprints_container {margin-top:15px;width:99%;height:830px;overflow-y:scroll;}
 .sprints .sprints_post {width:95%;margin-bottom:15px;border-bottom:1px solid #CCC;padding-bottom:10px;}
 .sprints .sprints_post:last-of-type {border:none;margin-bottom:0px;}
@@ -211,15 +211,15 @@ body.home section:first-of-type {padding-top:0px;}
 .team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;}
 
 /*BARRA BLOGS MENU*/
-.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:100%;}
+.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:100%;margin:0px;}
 .barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
-.barra_blogs li{display:inline-block;margin-right: -.25em;position: relative;top: 1.25em;border-right:1px solid rgba(0,0,0,0.2);padding:20px 5px 20px 5px;}
+.barra_blogs li{display:inline-block;position: relative;top: 1.25em;padding:20px 5px 20px 5px;}
 /*.change{border-bottom:4px solid #2c2c2c;}*/
 
 /*CERO-CERO*/
 
-div.cerocero {background:#ff574a;padding:25px 0px 20px;margin-bottom:60px;}
+div.cerocero {background:#ff574a;padding:25px 10px 20px;margin-bottom:50px;margin-top:10px;}
 div.posts_cerocero {width:90%;margin:20px auto;max-width:1920px;}
 div.posts_cerocero img {width:32.2%;height:auto;float:left;}
 div.posts_cerocero img:nth-of-type(2){margin:0px 1.7%;}
@@ -256,8 +256,8 @@ div.video_post:hover div.img_frame:after {content:"";position:absolute;left:0px;
 
 /*JIOTS-TV*/
 
-.jiotstv {background:#FF8300;}
-.jiotstv div.container {padding-bottom:15px;}
+.jiotstv {background:#FF8300;margin-bottom:50px!important;}
+.jiotstv div.container {padding-bottom:15px;padding-left:10px; padding-right:10px;}
 div.jiots_post {width:32.2%;float:left;margin-right:1.7%;margin-bottom:40px;}
 div.jiots_post:nth-of-type(3n) {margin-right:0;}
 div.jiots_post div.img_frame {width:100%;height:0;background:#EEE;padding-bottom:55%;margin-bottom:10px;}
@@ -298,8 +298,9 @@ article.pub div:last-child{width:74%;}
 article.pub h2{margin-top:0px;}
 article.pub div{border-bottom:none;}
 article.pub div img{border:none;width:80%;border-radius: 50%}
-
 .capital:first-letter{font-size: 8rem;color:#2c2c2c;line-height: 20px;}
+
+/*.single_top img{position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}*/
 
 /*TAXONOMY SHOWS*/
 .tax_show iframe{width:100%;}

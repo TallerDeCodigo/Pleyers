@@ -15,9 +15,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -115,9 +117,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+	<!-- 	<li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -215,9 +219,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -315,9 +321,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -414,9 +422,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -514,9 +524,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -614,9 +626,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -714,9 +728,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	
@@ -814,9 +830,11 @@
 		?>
 		<li class="<?php echo $class_slg; ?> change">
 			<?php echo $term_name; ?>
-			
 		</li>
 	<?php endforeach; ?>
+		<!-- <li>
+			&gt;
+		</li> -->
 	</ul>
 	<?php 
 		$args = array(	

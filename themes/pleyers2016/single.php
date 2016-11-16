@@ -69,6 +69,9 @@
 				<?php								
 					}
 				?>
+				<?php if (function_exists('get_pollquestions')): ?>
+				  <?php //do_shortcode(['poll id="1"']); ?>
+				<?php endif; ?>
 			<div class="line_division"></div>
 			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 			<div class="globo" style="display:none;">
