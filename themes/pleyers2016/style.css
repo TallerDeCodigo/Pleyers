@@ -197,18 +197,18 @@ div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
 /*BARRA DE PARTIDOS*/
-.match_calendar ul li div img{width:60px;height:60px;}
-.match_calendar ul li{display:inline-block;vertical-align: top;width:25%;}
+.match_calendar ul li{display:inline-block;background: #424242;position:relative;}
 .match_calendar ul li div{color:#fff;}
-
-.match_list{margin-top: -38px;margin-left:0px;margin-right:0px;}
+.match_list div span{color:#ffff00;}
+.match_list div img{width:60px;height:60px;}
+.match_list li div:first-child{background: #000;color:#fff;height:44px;width:114%;}
+.match_list{margin-left:0px;margin-right:0px;text-align: justify;width:100%;margin-top:22px;background: #424242}
 .match_list:after {content: '';display: inline-block;width: 100%;}
 .match_list:before {content: '';display: block;margin-top: -1.25em;}
-.match_list li {display: inline-block;margin-right: -.25em;position: relative;top: 1.25em;background: #424242;}
-.match_list li div:first-child{background: #000;color:#fff;}
-body.home section:first-of-type {padding-top:0px;}
-.match_list li div span{color:#ffff00;}
+.navs{height:176px;width:50px;vertical-align:top;padding-top:80px;color:#fff;padding-left: 20px}
 .team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;}
+
+body.home section:first-of-type {padding-top:0px;}
 
 /*BARRA BLOGS MENU*/
 .barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:100%;margin:0px;}
@@ -277,7 +277,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .single_content{padding-top:60px;}
 .single_content span.tags{color:#8b8b8b;font-size: 14px;}
 .archive div.single_top{margin-bottom:90px;}
-/*.single_top img{width:100%;height:100%;}*/
+.single_top img{width:100%;height:auto;}
 .single_top h2{position:absolute;margin-left:90px;font-size: 3em;color:#fff;width: 50%;top:50%;z-index: 9}
 .single_top span{display:inline-block;position:relative;top:110px;left:90px;font-size: 1.5em; color:yellow;z-index: 9}
 .single_sidebar{width:320px;float:left;}
@@ -300,7 +300,7 @@ article.pub div{border-bottom:none;}
 article.pub div img{border:none;width:80%;border-radius: 50%}
 .capital:first-letter{font-size: 8rem;color:#2c2c2c;line-height: 20px;}
 
-.single_top img{position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
+/*.single_top img{position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}*/
 
 /*TAXONOMY SHOWS*/
 .tax_show iframe{width:100%;}

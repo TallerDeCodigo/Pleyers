@@ -12,6 +12,8 @@
 	
 	<div class="match_calendar full_container">
 		<ul class="match_list">
+			<!-- <li class="nots">Calendario <br>deportivo</li> -->
+			<li class="nots navs left">&lt;</li>
 			<?php 
 				if($posts->have_posts()): while($posts->have_posts()):
 					$posts->the_post(); setup_postdata($post);
@@ -42,6 +44,9 @@
 				</div>
 			</li>
 			<?php wp_reset_postdata(); endwhile; endif; ?>
+			<li class="nots navs right">
+				&gt;
+			</li>
 		</ul>
 	</div>
 </section>

@@ -33,7 +33,7 @@
 
 
 		var height_screen = $(window).height();
-		$('.single_top').height(height_screen);
+		//$('.single_top').height(height_screen);
 
 
 		$( "div.sprints" ).mouseover(function() {
