@@ -60,7 +60,7 @@
 			                    <div class="tax_description">
 			                    	<img src="<?php echo THEMEPATH; ?>/images/venado_pleyers.png">
 			                        <h2>Error 404</h2>
-			                        <span>No encontramos lo que estas buscando<br>pero esto podría interesarte.</span>
+			                        <span>No encontramos lo que estas buscando</span><br><span>pero esto podría interesarte.</span>
 			                    </div>
 			                
 			                </div><!-- top_taxonomy -->

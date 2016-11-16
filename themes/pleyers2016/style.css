@@ -202,7 +202,7 @@ div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid 
 .match_calendar ul li div{color:#fff;}
 .match_list div span{color:#ffff00;}
 .match_list div img{width:60px;height:60px;}
-.match_list li div:first-child{background: #000;color:#fff;height:44px;width:114%;}
+.match_list li div:first-child{background: #000;color:#fff;height:44px;width:128%;}
 .match_list{margin-left:0px;margin-right:0px;text-align: justify;width:100%;margin-top:22px;background: #424242;height: 176px}
 .match_list:after {content: '';display: inline-block;width: 100%;}
 .match_list:before {content: '';display: block;margin-top: -1.25em;}
@@ -374,12 +374,15 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .prev-next-posts div img{width:20px;height:20px;vertical-align: middle;}
 .prev-next-posts div{color:#8b8b8b;}
 /*404*/
-.error404 section.single_post{width:50%;margin:70px auto;}
+.error404 section.single_post{width:70%;margin:70px auto;}
 .error404 div.posts_pool{float:none;width:100%;margin:0px;border-top:2px solid rgba(0,0,0,0.1);}
-.error404 div.tax_description h2{margin-bottom:10px!important;font-size: 3em}
+.error404 div.tax_description h2{margin-bottom:10px!important;font-size: 3em;margin-left: 40%}
+.error404 div.tax_description span{margin-left: 20%}
 div.tax_description{margin-bottom:90px;}
 div.tax_description img{width:20%;float:left;}
 
+.search-no-results div.tax_description h2{margin-bottom:10px!important;font-size: 3em;margin-left: 40%}
+.search-no-results div.tax_description span{margin-left: 20%}
 /*FOOTER*/
 
 footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;}

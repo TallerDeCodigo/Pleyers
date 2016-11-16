@@ -13,7 +13,9 @@
 ?>
 <div class="clearfix full_container">
 	<div class="content_col  inline">
-		<?php the_post_thumbnail(); ?>
+		<a href="<?php the_permalink(); ?>">
+			<?php the_post_thumbnail(); ?>
+		</a>
 		<div class="single_content">
 			
 				<?php 
@@ -25,9 +27,11 @@
 						endforeach;	
 					}
 				?>
-			<h2>
-				<?php the_title(); ?>
-			</h2>
+				<a href="<?php the_permalink(); ?>">
+					<h2>
+						<?php the_title(); ?>
+					</h2>
+				</a>
 			<span class="the_date">
 				<?php echo get_the_date('H:m - d/j/Y'); ?>
 			</span>
@@ -54,7 +58,7 @@
 	<?php 
 		$args = array(
 					'post_type'=>'episodios',
-					'posts_per_page'=>10,
+					'posts_per_page'=>6,
 					'post_status'=>'piublish',
 					'orderby'=>'data',
 					'order'=>'DESC',
@@ -73,7 +77,9 @@
 			$mas_posts->the_post(); setup_postdata($post);
 	?>
 		<div class="content_col  inline">
-			<?php the_post_thumbnail(); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
 			<div class="single_content">
 				
 					<?php 
@@ -85,9 +91,11 @@
 							endforeach;	
 						}
 					?>
-				<h2>
-					<?php the_title(); ?>
-				</h2>
+					<a href="<?php the_permalink(); ?>">
+						<h2>
+							<?php the_title(); ?>
+						</h2>
+					</a>
 				<span class="the_date">
 					<?php echo get_the_date('H:m - d/j/Y'); ?>
 				</span>
