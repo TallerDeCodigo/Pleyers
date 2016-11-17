@@ -16,7 +16,9 @@
 		?>
 				<div>
 					<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado-cabeza.svg" width="30px" height="30px">
-					<h3 class="header_sprints">SPRINTS</h3>
+					<a href="<?php bloginfo('url'); ?>/sprints">
+						<h3 class="header_sprints">SPRINTS</h3>
+					</a>
 				</div>
 				<div class="sprints_container">
 					<?php 

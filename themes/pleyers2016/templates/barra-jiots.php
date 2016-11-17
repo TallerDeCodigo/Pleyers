@@ -37,16 +37,14 @@
 						</div>
 					</a>
 					<a href="<?php the_permalink(); ?>">
-						<span>
 							<?php
 								$tags = get_the_tags();
 								if($tags){
-									foreach($tags as $tag){
-										echo "#".esc_html($tag->name)." ";
-									}
+										echo "<span style='display:inline-block;'>";
+											echo "#".esc_html($tags[0]->name)." ";
+										echo "</span>";
 								}
 							?>
-						</span>
 					</a>
 					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 				</div>

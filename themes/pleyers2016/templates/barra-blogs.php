@@ -25,7 +25,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -128,7 +128,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -231,7 +231,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -334,7 +334,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -539,7 +539,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -642,7 +642,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -745,7 +745,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -848,7 +848,7 @@
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
