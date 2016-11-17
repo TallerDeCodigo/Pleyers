@@ -1,5 +1,6 @@
 <div id="apuntes-de-rabona" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -17,9 +18,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -102,6 +103,7 @@
 
 <div id="cultura-pop" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -119,9 +121,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-	<!-- 	<li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -204,6 +206,7 @@
 
 <div id="deportologia" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -221,9 +224,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -306,6 +309,7 @@
 
 <div id="jiots-tv" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -323,9 +327,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -407,6 +411,7 @@
 
 <div id="el_pechofrio" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -424,9 +429,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -509,6 +514,7 @@
 
 <div id="lucha-libre" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -526,9 +532,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -611,6 +617,7 @@
 
 <div id="tactica" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -628,9 +635,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -713,6 +720,7 @@
 
 <div id="tirando-guante" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -730,9 +738,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	
@@ -815,6 +823,7 @@
 
 <div id="turismo-deportivo" class="full_container">
 	<ul class="barra_blogs">
+		<li>&lt;</li>
 		<?php 
 			$terms = get_terms('shows', array('hide_empty'=>0) );
 			$terms_arr = array();
@@ -832,9 +841,9 @@
 			<?php echo $term_name; ?>
 		</li>
 	<?php endforeach; ?>
-		<!-- <li>
+		<li>
 			&gt;
-		</li> -->
+		</li>
 	</ul>
 	<?php 
 		$args = array(	

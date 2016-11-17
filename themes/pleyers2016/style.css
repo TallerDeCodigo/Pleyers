@@ -238,7 +238,7 @@ div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid 
 body.home section:first-of-type {padding-top:0px;}
 
 /*BARRA BLOGS MENU*/
-.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:100%;margin:0px 0px 40px 0px;}
+.barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:90%;margin:0px 0px 40px 0px;float:right;}
 .barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
 .barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs li{display:inline-block;position: relative;top: 1.25em;padding:20px 5px 20px 5px;}
@@ -250,6 +250,8 @@ div.cerocero {background:#ff574a;padding:25px 10px 20px;margin-bottom:50px;margi
 div.posts_cerocero {width:90%;margin:20px auto;max-width:1920px;}
 div.posts_cerocero img {width:32.2%;height:auto;float:left;}
 div.posts_cerocero img:nth-of-type(2){margin:0px 1.7%;}
+.cerocero div.container span img{width:25px;height:25px;vertical-align: middle;margin-left:10px;}
+.cerocero div.container span.vermas{float:right;cursor:pointer;}
 
 /*GRID VIDEOS*/
 
@@ -283,7 +285,7 @@ div.video_post:hover div.img_frame:after {content:"";position:absolute;left:0px;
 
 /*JIOTS-TV*/
 
-.jiotstv {background:#FF8300;margin-bottom:50px!important;}
+.jiotstv {background:#FF8300;}
 .jiotstv div.container {padding-bottom:15px;padding-left:10px; padding-right:10px;}
 .jiotstv div.container h2 span{font-size: 0.6em;}
 div.jiots_post {width:32.2%;float:left;margin-right:1.7%;margin-bottom:40px;}
