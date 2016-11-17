@@ -16,6 +16,7 @@
 		add_meta_box( 'nombre_autor_meta', 'Autor de la frase', 'show_nombre_autor_meta', 'frases', 'side', 'high' );
 		add_meta_box( 'id_pleyers_twitter_meta', 'ID de Twitter', 'show_id_pleyers_twitter_meta', 'tweets', 'side', 'high' );
 		add_meta_box( 'id_fecha_partido', 'Información del partido', 'show_get_match_calendar', 'calendarios', 'side', 'high');
+		add_meta_box( 'id_tipo_sprint', 'Tipos de sprint', 'show_get_sprint_type', 'sprints', 'side', 'high' ); 
 	});
 
 
@@ -72,6 +73,40 @@
 			");
 	}
 
+
+	function show_get_sprint_type($post){
+		$sprint_type = get_post_meta($post->ID, 'sprint_type_meta', true);
+
+		if($sprint_type == 'sin_foto'){
+			$sel1 = 'selected';
+			$sel2 = '';
+			$sel3 = '';
+		}else if($sprint_type == 'foto_chica'){
+			$sel1 = '';
+			$sel2 = 'selected';
+			$sel3 = '';
+		}else if($sprint_type == 'foto_grande'){
+			$sel1 = '';
+			$sel2 = '';
+			$sel3 = 'selected';
+		}
+
+		echo ("	
+
+				<select id='image_type' name='option_selected'>
+				    <option  if( $sprint_type == 'sin_foto'){ 		$sel = 'selected'; }  value='sin_foto' $sel1> 	Sin Fotografía   </option>
+				    <option  if( $sprint_type == 'foto_chica'){ 	$sel = 'selected'; }  value='foto_chica' $sel2>	Fotografía chica </option>
+				    <option  if( $sprint_type == 'foto_grande'){	$sel = 'selected'; }  value='foto_grande' $sel3> Fotografía gande </option>
+				</select>
+
+				<label for='image_type'>Sprint type</label>
+				<em>Selecciona una opción de imagen para el sprint</em>
+
+			");
+
+		wp_nonce_field(__FILE__, 'sprint_type_meta_nonce');
+	}
+
 // SAVE METABOXES DATA ///////////////////////////////////////////////////////////////
 
 
@@ -126,6 +161,15 @@
 		if ( isset($_POST['equipo_dos_match']) ){
 			update_post_meta($post_id, '_equipo_dos_match_meta', $_POST['equipo_dos_match']);
 		}
+
+
+		if ( isset($_POST['option_selected'] )   ){
+			update_post_meta($post_id, 'sprint_type_meta', $_POST['option_selected']);
+		}else{
+			delete_post_meta($post_id, 'sprint_type_meta');
+		}
+
+
 		// Guardar correctamente los checkboxes
 		/*if ( isset($_POST['_checkbox_meta']) and check_admin_referer(__FILE__, '_checkbox_nonce') ){
 			update_post_meta($post_id, '_checkbox_meta', $_POST['_checkbox_meta']);

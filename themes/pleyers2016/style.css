@@ -355,6 +355,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 /*QUIENES SOMOMS PAGE*/
 .txt_angosto{width:60%;margin:0 auto;}
 .txt_angosto div{border-bottom:2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
+.txt_angosto p{font-size: 2.8rem;line-height: 38px;color:#8b8b8b;}
 .pubs{margin-top:90px;text-align: center;border-bottom: 2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
 .pubs h2{text-align: left}
 .pubs article{display:inline-block;width:49.5%;}
