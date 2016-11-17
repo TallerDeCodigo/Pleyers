@@ -9,7 +9,7 @@
 	$posts = new WP_Query($args);
 
 ?>
-<div class="cerocero full_container">
+<div class="cerocero ">
 	<div class="container clearfix">
 			<img src="<?php echo THEMEPATH; ?>/images/00_logo.png">
 		<div class="posts_cerocero clearfix">

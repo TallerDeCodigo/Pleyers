@@ -11,9 +11,15 @@
 	?>
 	
 	<div class="match_calendar full_container">
+			<div class="sport_calendar">
+				Calendario Deportivo
+			</div>
+			<div class="first_li navs left">
+				&lt;
+			</div>
 		<ul class="match_list">
 			<!-- <li class="nots">Calendario <br>deportivo</li> -->
-			<li class="nots navs left">&lt;</li>
+
 			<?php 
 				if($posts->have_posts()): while($posts->have_posts()):
 					$posts->the_post(); setup_postdata($post);
@@ -26,27 +32,34 @@
 					$exploded = multiexplode(array( '"', ',' ), $content);
 					$clean_arr = array_diff_key($exploded, [0=>'xy', 3=>'xy'] );
 			?>
-			<li>
-				<div>
-					<?php echo "<span>".$liga_match."</span>"." ".$fecha_match." @ ".$hora_match; ?>
-				</div>
-				<div>
-					<img src="<?php echo wp_get_attachment_url($clean_arr[1]); ?>">
-					<span class="team_name">
-						<?php echo $team1_match; ?>
-					</span>
-				</div>
-				<div>
-					<img src="<?php echo wp_get_attachment_url($clean_arr[2]); ?>">
-					<span class="team_name">
-						<?php echo $team2_match; ?>
-					</span>
-				</div>
+
+			<li class="first_li">
+				<ul class="single_match">
+					<li class="inner_li">
+						<?php echo "<span>".$liga_match."</span>"." ".$fecha_match." @ ".$hora_match; ?>
+					</li>
+					<li class="inner_li">
+						<img src="<?php echo wp_get_attachment_url($clean_arr[1]); ?>">
+						<span class="team_name">
+							<?php echo $team1_match; ?>
+						</span>
+					</li>
+					<li class="inner_li">
+						<img src="<?php echo wp_get_attachment_url($clean_arr[2]); ?>">
+						<span class="team_name">
+							<?php echo $team2_match; ?>
+						</span>
+					</li>
+				</ul>
 			</li>
+
+
 			<?php wp_reset_postdata(); endwhile; endif; ?>
-			<li class="nots navs right">
-				&gt;
-			</li>
+
+
 		</ul>
+			<div class="first_li navs right">
+				&gt;
+			</div>
 	</div>
 </section>

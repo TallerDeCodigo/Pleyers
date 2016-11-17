@@ -184,7 +184,7 @@ img.header_sprints{position:relative;top:38px;margin-left:3px;}
 
 /*MAIN BANNER*/
 
-.full_container.main_banner  {width:100%;background:#000;height:500px;margin-top:20px;margin-bottom:15px;overflow:hidden;position:relative;}
+.full_container.main_banner  {width:100%;background:#000;height:500px;margin-top:20px;margin-bottom:0px;overflow:hidden;position:relative;}
 div.main_banner div.img_frame {width:100%;height:100%;position:absolute;left:0px;top:0px;}
 div.main_banner div.img_frame img {position:absolute;height:auto;width:100%;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.main_banner div.img_frame:after {content:"";position:absolute;left:0px;top:0px;width:100%;height:100%;background: url(../pleyers2016/images/grid.svg);background-repeat: repeat;background-size: 5px;opacity:0.4;}
@@ -198,23 +198,49 @@ div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
 /*BARRA DE PARTIDOS*/
-.match_calendar ul li{display:inline-block;background: #424242;position:relative;}
+.match_calendar{margin-bottom:90px!important;}
+.first_li{display:inline-block;position:relative;}
 .match_calendar ul li div{color:#fff;}
-.match_list div span{color:#ffff00;}
-.match_list div img{width:60px;height:60px;}
-.match_list li div:first-child{background: #000;color:#fff;height:44px;width:128%;}
-.match_list{margin-left:0px;margin-right:0px;text-align: justify;width:100%;margin-top:22px;background: #424242;height: 176px}
+.inner_li span{color:#ffff00;font-weight: bold;}
+.inner_li img{width:60px;height:60px;}
+.inner_li{background: #424242;border-bottom:1px solid black;}
+.single_match li:first-child{background: #000;color:#fff;width:100%;}
+.match_list{width:90%;margin:-216px 90px;list-style: none;text-align: justify;background: #000;height:157px;}
+.single_match{list-style: none;margin:0px;}
+.match_list:before {content: '';display: block;margin-top: 0em;}
 .match_list:after {content: '';display: inline-block;width: 100%;}
-.match_list:before {content: '';display: block;margin-top: -1.25em;}
-.navs{height:176px;width:50px;vertical-align:top;padding-top:80px;color:#fff;padding-left: 20px}
-.team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;}
+
+.navs{vertical-align:top;position:relative;vertical-align: middle;padding:66px 15px; background: grey}
+/*.navs:first-child{left:65px;}
+.navs:last-child{right:65px;}*/
+.team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;font-weight: normal!important;}
+.inner_li{width:100%;}
+.first_li:not(.navs){width:24.5%;}
+.left{border:1px solid black;left:58px;top:-59px;background: #000;color:#fff;}
+.right{border:1px solid black;left:1240px;top:60px;}
+
+.sport_calendar{
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: bold;
+	width:156px;
+	color:#fff;
+	background: #000;
+	border:1px solid grey;
+	position:relative;
+	left:-3.8%;
+	top:48px;
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
 
 body.home section:first-of-type {padding-top:0px;}
 
 /*BARRA BLOGS MENU*/
 .barra_blogs {text-align: justify;border-bottom:1px solid rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);width:100%;margin:0px 0px 40px 0px;}
-.barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs:before {content: '';display: block;margin-top: -1.25em;}
+.barra_blogs:after {content: '';display: inline-block;width: 100%;}
 .barra_blogs li{display:inline-block;position: relative;top: 1.25em;padding:20px 5px 20px 5px;}
 /*.change{border-bottom:4px solid #2c2c2c;}*/
 

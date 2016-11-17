@@ -1,4 +1,4 @@
-<div class="jiotstv full_container">
+<div class="jiotstv ">
 		<div class="container clearfix">
 			<h2>Jiots.TV | <span>Haciendo del internet un lugar peor</span></h2>
 			<?php
