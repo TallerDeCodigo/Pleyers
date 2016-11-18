@@ -1,6 +1,9 @@
 <div class="jiotstv ">
-		<div class="container clearfix">
-			<h2>Jiots.TV | <span>Haciendo del internet un lugar peor</span></h2>
+		<div class="container clearfix"> 
+			<div>
+				<img src="<?php echo THEMEPATH; ?>/images/jiotstv.png">
+				<span>Haciendo del internet un lugar peor</span>
+			</div>
 			<?php
 				$var_expire = 300;
 				$query = wp_cache_get('jiots_cached');
