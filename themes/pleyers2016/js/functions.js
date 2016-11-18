@@ -33,7 +33,7 @@
 
 
 		var height_screen = $(window).height();
-		$('div.sprints_container').css('height', height_screen-200+"px");
+		$('div.sprints_container').css('height', height_screen-300+"px");
 		//$('.single_top').height(height_screen);
 
 
@@ -201,7 +201,7 @@
 		/*SPRITE TIME*/
 		var hour_string = $('.post_time').html();
 		hour_string = hour_string.substring(0, 3);
-		
+
 
 
 		// $('.change').click(function(){

@@ -1,7 +1,7 @@
 <?php 
 	get_header(); 
 	$user = get_queried_object();
-	$usrid = $user->ID; 
+	$usrid = $user->ID;
 	$nicename = $user->user_nicename;
 	$user_login = $user->user_login;
 	$email =  $user->user_email;
