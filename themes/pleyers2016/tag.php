@@ -10,6 +10,7 @@
 					if($tags){
 						foreach($tags as $tag):
 							$tag_url = $tag->slug;
+						endforeach;
 					?>
 							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
 								<span>
@@ -17,7 +18,6 @@
 								</span>
 							</a>	
 					<?php		
-						endforeach;
 					}
 				?>
 			<?php 
@@ -60,14 +60,16 @@
 				</a>
 				<?php 
 					if(!empty($tags)){
-						foreach($tags as $tag): $tag_url = $tag->slug; ?>
+						foreach($tags as $tag): 
+							$tag_url = $tag->slug; 
+						endforeach; 
+						?>
 							<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
 								<span>
 									<?php echo "#".esc_html($tag->name)." "; ?>
 								</span>
 							</a>
 				<?php 		
-						endforeach; 
 					} 
 				?>
 				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>

@@ -17,25 +17,29 @@
 			<?php the_post_thumbnail(); ?>
 		</a>
 		<div class="single_content">
-			
+			<div class="addthis_inline_share_toolbox"></div>
+			<div>
 				<?php 
 					$tags = get_the_tags();
 					if($tags){
 						foreach($tags as $tag):
 							$tag_slug = $tag->slug;
-							echo "<span class='tags'>#".$tag->name." "."</span>";
+							$tag_nme = $tag->name;
 						endforeach;	
+							echo "<span class='tags'>#".$tag_nme." "."</span>";
 					}
 				?>
+
 				<a href="<?php the_permalink(); ?>">
 					<h2>
 						<?php the_title(); ?>
 					</h2>
 				</a>
-			<span class="the_date">
-				<?php echo get_the_date('H:m - d/j/Y'); ?>
-			</span>
-			<div class="addthis_sharing_toolbox"></div>
+				<span class="the_date">
+					<?php echo get_the_date('H:m - d/j/Y'); ?>
+				</span>
+
+			</div>
 			<?php 
 				$contenido = get_the_content();
 				the_content(); 
@@ -44,7 +48,7 @@
 				}else{ }
 				?>
 			<div class="line_division"></div>
-			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+			<!-- <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> -->
 			<div class="globo" style="display:none;">
 				Lorem ipsum dolor sit amet consectetur adiscplicing elit
 			</div>
@@ -81,7 +85,8 @@
 				<?php the_post_thumbnail(); ?>
 			</a>
 			<div class="single_content">
-				
+				<div class="addthis_inline_share_toolbox"></div>
+				<div>
 					<?php 
 						$tags = get_the_tags();
 						if($tags){
@@ -96,10 +101,11 @@
 							<?php the_title(); ?>
 						</h2>
 					</a>
-				<span class="the_date">
-					<?php echo get_the_date('H:m - d/j/Y'); ?>
-				</span>
-				<div class="addthis_sharing_toolbox"></div>
+					<span class="the_date">
+						<?php echo get_the_date('H:m - d/j/Y'); ?>
+					</span>
+				</div>
+
 				<?php 
 					$contenido = get_the_content();
 					the_content(); 
@@ -110,7 +116,7 @@
 				
 
 				<div class="line_division"></div>
-				<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+				<!-- <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> -->
 				<div class="globo" style="display:none;">
 					Lorem ipsum dolor sit amet consectetur adiscplicing elit
 				</div>

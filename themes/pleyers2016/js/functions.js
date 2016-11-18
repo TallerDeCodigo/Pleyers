@@ -127,7 +127,6 @@
 
 		$('input[type="submit"]').val('');
 
-		$('.single_content p').first().addClass('capital');
 
 		var single_img_height = $('.single_top img').height();
 		$('.grid').css('height', single_img_height+32+"px");
@@ -202,8 +201,7 @@
 		/*SPRITE TIME*/
 		var hour_string = $('.post_time').html();
 		hour_string = hour_string.substring(0, 3);
-		console.log(hour_string);
-
+		
 
 
 		// $('.change').click(function(){

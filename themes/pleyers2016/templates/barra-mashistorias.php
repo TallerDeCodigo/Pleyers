@@ -25,10 +25,12 @@
 		</a>
 		<?php 
 			if(!empty($tags)){
-				foreach($tags as $tag): ?>
-					<a href="<?php the_permalink(); ?>"><span><?php echo "#".esc_html($tag->name)." "; ?></span></a>
-		<?php 		
+				foreach($tags as $tag): 
+					$tag_nme = $tag->name;
 				endforeach; 
+					?>
+					<a href="<?php the_permalink(); ?>"><span><?php echo "#".$tag_nme; ?></span></a>
+		<?php 		
 			} 
 		?>
 		<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>

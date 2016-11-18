@@ -29,23 +29,32 @@
 
 								$time_ago = human_time_diff($post_date, $hoy);
 								$time_ago = preg_replace('/\s+/', '', $time_ago);
-								$time_ago = substr($time_ago, 0, 3);
+								$time_ago = substr($time_ago, 0, 2);
+								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
 					?>
 					<div class="formato_b sprints_post clearfix">
 						<span class="post_time"><?php  echo $time_ago; ?></span>
 						<div class="sprints_post_content">
-							<a href="<?php the_permalink(); ?>">
-								<div class="img_frame">
-									<?php the_post_thumbnail(); ?>
-									<!-- <img src="images/post.png" /> -->
-								</div>
-							</a>
-							<a href="<?php the_permalink(); ?>">
-								<p>
-									<?php the_title(); //the_content(); ?>
-								</p>
-							</a>
+								<?php 
+									if(has_post_thumbnail() ){
+									?>
+									<div class="<?php echo $img_size; ?>">
+										<a href="<?php the_permalink(); ?>">
+											<div class="img_frame">
+												<?php the_post_thumbnail(); ?>
+											</div>
+										</a>
+										<a href="<?php the_permalink(); ?>"><p><?php the_title(); //the_content(); ?> </p></a>
+										<?php the_excerpt(); ?>
+									</div>
+								<?php 
+									}else{
+									?>
+										<div><?php the_excerpt(); ?></div>
+									<?php	
+									} 
+								?>
 						</div>
 					</div>
 			<?php 				

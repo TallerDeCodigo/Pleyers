@@ -18,26 +18,33 @@
 
 		<div class="single_content">
 			
-				<?php 
-					$tags = get_the_tags();
-					if($tags){
-						foreach($tags as $tag):
-							$tag_slug = $tag->slug;
-							echo "<span class='tags'>#".$tag->name." "."</span>";
-						endforeach;	
-					}
-				?>
-			<h2>
-				<?php the_title(); ?>
-			</h2>
-			<div class="addthis_sharing_toolbox"></div>
-			<?php 
-				$contenido = get_the_content();
-				the_content(); 
-				if($contenido){
-					echo '<div class="addthis_sharing_toolbox"></div>';
-				}else{}
-				?>
+			<div class="addthis_inline_share_toolbox"></div>
+				<div>
+					<?php 
+						$tags = get_the_tags();
+						if($tags){
+							foreach($tags as $tag):
+								$tag_slug = $tag->slug;
+								$tag_nme = $tag->name;
+							endforeach;
+							?>
+							<a href='<?php echo $tag_slug; ?> '><span class='tags'># <?php echo $tag_nme; ?> </span>
+					<?php		
+						}
+					?>
+
+				<h2>
+					<?php the_title(); ?>
+				</h2>
+				</div><br>
+
+				<div class="single_excerpt">
+					<?php the_excerpt(); ?>
+				</div>
+
+				<div class="contenido capital">
+				<?php the_content(); ?>
+				</div>
 			
 
 			<?php 
@@ -51,9 +58,14 @@
 						$nme_author = get_the_author();
 						$default = "https://lh3.googleusercontent.com/ZMepV1eSMYHg1Rc-EAXScjutJDJwq6e7RzjtuR_HN8cqXv99R6U_aExOk72DlTTk7hwxWk52H5xjkoSserEWKmvf2yNhgQNlSd-RIUiEGLsZ-NP9pPyeNfo3ekzNlR8mHVD_UUNY74pPGddWDTGRQHaqfvVI1vhvdz73XXAxC-K7yqntznVAI85XR3y1W_xlpBGNOpUQNp0SFyWexdN4cdt3-NqWA4cE0w17wSsx6SS58VDh8eyhLi6oSlpfWxJSstz0IcDccsbqRiKg0wtzSYUIgX1PCij3gKSDD3k93nBrKAAR9_XhvOMhVGGg8OYB6x-vqeFwvgFOMFScQr2SNoCQnrwAIS9zvunaOWWSfMc8IldmY4bibf4NcGhsWIhbOA3-6MCmcObLeF3RwUekDPNF_P4WhO20BjHkGRekc5gPOEW9bqC7UkcLtbvGkr1BUWUnZiaI1Hg_VqV8yhvwqKtAl6YWSuEYmER_qaQ-Pmj0llwFWQhRNnDMmcWWrB9xOZABIFiQJdPhFhg8KnulgQ801nsA4V2sj7GVf2K9kx7pU4sBHUUWigEKBF2wqwL4d8qtM03bL_vErA_idjlpBz0As-3gwg85UqHp_49Ho2wIoQo=s200-no";
 						$author_slug = get_the_author_meta('user_login');
+						$usrid = $user->ID;
+						$usr_description = get_user_meta($usrid, 'description', true);
+						$usr_meta = get_user_meta($usrid);
+						$usr_meta = $usr_meta['twitter'];
+						$twtt = $usr_meta[0];
 					?>
 						<article class="pub">
-							<div>
+							<div class="img_pub">
 								<?php
 									$hash =md5(strtolower(trim($email)))."?d=".urlencode($default);
 								?>
@@ -65,9 +77,12 @@
 								<a href="<?php echo bloginfo('url')."/author/".$author_slug; ?>">
 									<h2><?php echo esc_html($nme_author); ?></h2>
 								</a>
+								<p>
+									<?php echo $usr_description; ?>
+								</p>
 								<span>
 									<a href="mailto:<?php $email; ?>" target="_top">
-										<?php echo esc_html($email); ?>
+										<?php echo "@".esc_html($twtt); ?>
 									</a>
 								</span>
 							</div>
