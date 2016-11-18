@@ -16,7 +16,7 @@
 		add_meta_box( 'nombre_autor_meta', 'Autor de la frase', 'show_nombre_autor_meta', 'frases', 'side', 'high' );
 		add_meta_box( 'id_pleyers_twitter_meta', 'ID de Twitter', 'show_id_pleyers_twitter_meta', 'tweets', 'side', 'high' );
 		add_meta_box( 'id_fecha_partido', 'Información del partido', 'show_get_match_calendar', 'calendarios', 'side', 'high');
-		add_meta_box( 'id_tipo_sprint', 'Tipos de sprint', 'show_get_sprint_type', 'sprints', 'side', 'high' ); 
+		add_meta_box( 'id_tipo_sprint', 'Tipos de sprint', 'show_get_sprint_type', array('sprints', 'episodios'), 'side', 'high' ); 
 	});
 
 

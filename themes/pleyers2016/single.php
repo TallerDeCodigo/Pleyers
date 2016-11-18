@@ -29,7 +29,7 @@
 								$tag_nme = $tag->name;
 							endforeach;
 							?>
-							<a href='<?php echo $tag_slug; ?> '><span class='tags'># <?php echo $tag_nme; ?> </span> </a>
+							<a href='<?php echo bloginfo('url')."/tag/".$tag_slug; ?> '><span class='tags'># <?php echo $tag_nme; ?> </span> </a>
 					<?php } ?>
 
 					<h2>

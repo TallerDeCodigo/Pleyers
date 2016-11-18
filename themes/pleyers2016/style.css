@@ -165,7 +165,7 @@ div.post div.img_frame {width:210px;height:210px;background:#EEE;float:left;marg
 div.post div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.post span {font-size:90%;font-weight:700;color:#777;}
 div.post h3 {margin:5px 0px 10px;font-size:140%;}
-div.post p {line-height:160%;color:#777;font-size: 2.4rem;}
+div.post p {line-height:32px;color:#777;font-size: 1.8rem;}
 ._logo{background: url(../pleyers2016/images/venado-cabeza.svg);background-repeat: no-repeat;background-position: center;background-size: 50%;height:200px;width:200px;margin:0 auto;}
 
 /*SPRINTS*/
@@ -300,6 +300,8 @@ div.video_post:hover div.img_frame:after {content:"";position:absolute;left:0px;
 
 .jiotstv {background:#FF8300;}
 .jiotstv div.container {padding-bottom:15px;padding-left:10px; padding-right:10px;}
+.jiotstv div.container div{margin-top:10px;}
+.jiotstv div.container div img{width:10%;}
 .jiotstv div.container h2 span{font-size: 0.6em;}
 div.jiots_post {width:32.2%;float:left;margin-right:1.7%;margin-bottom:40px;}
 div.jiots_post:nth-of-type(3n) {margin-right:0;}
@@ -321,7 +323,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .single_content{padding-top:50px;}
 .single_content span.tags{color:#8b8b8b;font-size: 14px;}
 .single_content p iframe{width:100%;height:550px;}
-.single_content div.contenido{padding-bottom:30px;border-bottom:1px solid rgba(0,0,0,0.2);margin-bottom:90px;}
+.single_content div.contenido{padding-bottom:30px;border-bottom:1px solid rgba(0,0,0,0.2);margin-bottom:90px;color:grey;}
 
 
 .archive div.single_top{margin-bottom:90px;}
@@ -337,7 +339,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .single_content p{color:#8b8b8b;font-size: 23px;margin-top: 60px;line-height: 33px}
 .single_content div.globo{width:250px; height:150px; background:#ffffbf;position:absolute;left:50%;padding:10px;border:1px solid pink;}
 blockquote{border-left:4px solid yellow;padding-left:20px;}
-blockquote p{color:#2c2c2c!important;font-size: 2em!important;}
+blockquote p{color:#2c2c2c!important;}
 .twitter-tweet-rendered{margin:0 auto;}
 .mas_historias{width:50%;margin-left:10%;margin-top:55px;float:left;}
 .single div.sidebar{margin-right:10%;}
@@ -348,6 +350,8 @@ article.pub h2{margin-top:0px;}
 article.pub div{border-bottom:none;}
 .img_pub{width:30%;}
 article.pub div img{border:none;width:80%;border-radius: 50%}
+.single-post div.single_post div.single_top{position:relative;width:100%;height:600px;overflow:hidden;}
+.single-post div.single_post div.single_top img{position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 
 
 
@@ -367,7 +371,17 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .single-sprints div.sidebar{margin-top:20px;}
 .single-sprints div.single_top {position:relative;width:100%;height:600px;overflow:hidden;}
 .single-sprints div.single_top img {position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
-.post-type-archive-sprints div.sidebar{position:fixed;}
+.post-type-archive-sprints div.sidebar{position:fixed;top:10%;}
+
+/*SINGLE EPISODIOS*/
+.single-episodios div.sidebar{position:fixed;top:10%;}
+.single-episodios div.foto_chica div.content_single_episodio a{float:left;width:30%;margin-right:20px;}
+.single-episodios div.content_side div.sidebar{width:24%;}
+
+/*SINGLE GRAFICOS*/
+.single-graficos div.single_post div.single_top{position:relative;width:100%;height:600px;overflow:hidden;}
+.single-graficos div.single_post div.single_top img{position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
+
 
 /*TAXONOMY SHOWS*/
 .tax_show iframe{width:100%;}
@@ -384,6 +398,10 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 /*TAXONOMY SHOWS*/
 .tax_show_top{margin-top: 20px;}
 
+/*SINGLE TAG*/
+.tag div.single_post div.single_top{position:relative;width:100%;height:700px;overflow:hidden;}
+.tag div.single_post div.single_top img{position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
+
 /*QUIENES SOMOMS PAGE*/
 .txt_angosto{width:60%;margin:0 auto;}
 .txt_angosto div{border-bottom:2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
@@ -391,11 +409,12 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .pubs{margin-top:90px;text-align: center;border-bottom: 2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
 .pubs h2{text-align: left}
 .pubs article{display:inline-block;width:49.5%;}
-.pub{overflow:auto;}
+/*.pub{overflow:auto;}*/
 .pub img{width:100%;border:1px solid black;padding:10px;}
 .pub p{text-align: left;font-size: 1.5em;color:#8b8b8b;}
 
 .page-template-default section.container{width:50%;margin:0 auto;margin-bottom: 90px}
+.page-template-default section.container p{color:#8b8b8b;line-height: 36px;font-size: 2.4rem}
 
 
 .staff article.pub div{display:inline-block;vertical-align:middle;}
@@ -423,7 +442,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .searchform label{display:none;}
 .searchform{position:absolute;top:31%;right:100%;margin-right:10px;}
 .searchform input{outline: none!important;vertical-align: middle;}
-.searchform input[type="text"]{background:rgba(0,0,0,0.5);border-style:none;border-radius: 15px;height:30px;margin-right:-14%;color:#ffff00;width:200px;}
+.searchform input[type="text"]{background:rgba(0,0,0,0.5);border-style:none;border-radius: 15px;height:30px;margin-right:-14%;color:#ffff00;width:200px;padding-left:10px;}
 .searchform input[type="submit"]{border-style:none;background:0,0,0,0.5;width:30px;height:30px;border-radius: 15px;background-image:url(images/search.svg);background-repeat: no-repeat;background-position: center;background-size: 70%;background-color:transparent;position:absolute;}
 
 /*SEARCH TEMPLATE*/
