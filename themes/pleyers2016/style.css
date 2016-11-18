@@ -361,7 +361,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .pubs article{display:inline-block;width:49.5%;}
 .pub{overflow:auto;}
 .pub img{width:100%;border:1px solid black;padding:10px;}
-.pub p{text-align: left}
+.pub p{text-align: left;font-size: 1.5em;color:#8b8b8b;}
 
 .page-template-default section.container{width:50%;margin:0 auto;margin-bottom: 90px}
 
@@ -375,6 +375,8 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 
 /*SINGLE AUTOR*/
 .author section{padding:0% 25%;}
+.author section.single_post{padding:0%!important;}
+.author section.single_post div.posts_pool{width:70%;margin:0 auto; float:none;}
 .author article.staff{border-bottom:2px solid rgba(0,0,0,0.2);padding:20px 0px 80px 0px;}
 .author div.posts_pool{width:100%;padding-top:80px;}
 

@@ -1,13 +1,18 @@
 <?php 
 	get_header(); 
 	$user = get_queried_object();
-	echo "<pre>";
-		print_r($user->user_nicename);
-	echo "</pre>";
+	$usrid = $user->ID; 
 	$nicename = $user->user_nicename;
 	$user_login = $user->user_login;
 	$email =  $user->user_email;
 	$default = "https://lh3.googleusercontent.com/ZMepV1eSMYHg1Rc-EAXScjutJDJwq6e7RzjtuR_HN8cqXv99R6U_aExOk72DlTTk7hwxWk52H5xjkoSserEWKmvf2yNhgQNlSd-RIUiEGLsZ-NP9pPyeNfo3ekzNlR8mHVD_UUNY74pPGddWDTGRQHaqfvVI1vhvdz73XXAxC-K7yqntznVAI85XR3y1W_xlpBGNOpUQNp0SFyWexdN4cdt3-NqWA4cE0w17wSsx6SS58VDh8eyhLi6oSlpfWxJSstz0IcDccsbqRiKg0wtzSYUIgX1PCij3gKSDD3k93nBrKAAR9_XhvOMhVGGg8OYB6x-vqeFwvgFOMFScQr2SNoCQnrwAIS9zvunaOWWSfMc8IldmY4bibf4NcGhsWIhbOA3-6MCmcObLeF3RwUekDPNF_P4WhO20BjHkGRekc5gPOEW9bqC7UkcLtbvGkr1BUWUnZiaI1Hg_VqV8yhvwqKtAl6YWSuEYmER_qaQ-Pmj0llwFWQhRNnDMmcWWrB9xOZABIFiQJdPhFhg8KnulgQ801nsA4V2sj7GVf2K9kx7pU4sBHUUWigEKBF2wqwL4d8qtM03bL_vErA_idjlpBz0As-3gwg85UqHp_49Ho2wIoQo=s200-no";
+
+	$usr_meta = get_user_meta($usrid);
+	$usr_meta = $usr_meta['twitter'];
+	$twtt = $usr_meta[0];
+
+	$usr_description = get_user_meta($usrid, 'description', true);
+
 	?>
 	<section>
 		<article class="staff">
@@ -24,9 +29,14 @@
 					<a href="<?php echo bloginfo('url')."/author/".$usr_login; ?>">
 						<h2><?php echo esc_html($nicename); ?></h2>
 					</a>
+					<p>
+						<?php echo $usr_description; ?>
+					</p>
 					<span>
-						<a href="mailto:<?php echo $email; ?>" target="_top">
-							<?php echo esc_html($email); ?>
+						<a href="https://twitter.com/<?php echo $twtt; ?>">
+							<p>
+								<?php echo "@".esc_html($twtt); ?>
+							</p>
 						</a>
 					</span>
 				</div>
@@ -35,7 +45,7 @@
 	</section>
 
 		<div class="container clearfix">
-			<section class="single_post">
+			<section class="single_post clearfix">
 				<div class="posts_pool clearfix">
 					<?php
 						$types = get_all_posttypes();
@@ -69,7 +79,7 @@
 													<span>
 														<?php echo "#".esc_html($term->name)." "; ?>
 													</span>
-												</a>	
+												</a>
 											<?php		
 											endforeach; }
 										?>
