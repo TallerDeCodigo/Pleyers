@@ -45,7 +45,7 @@
 												<?php the_post_thumbnail(); ?>
 											</div>
 										</a>
-										<a href="<?php the_permalink(); ?>"><p><?php the_title(); //the_content(); ?> </p></a>
+										<a href="<?php the_permalink(); ?>"><p><?php the_title(); //the_content(); ?></p></a>
 										<?php the_excerpt(); ?>
 									</div>
 								<?php 
@@ -62,15 +62,18 @@
 						endif; 
 			?>	
 			<?php if ($posts->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-			  <nav class="prev-next-posts">
-			    <div class="prev-posts-link">
-			      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-			      <img src="<?php echo THEMEPATH; ?>/images/right_arrow.png">
-			    </div>
-			    <div class="next-posts-link">
-			      <?php echo get_previous_posts_link( '' ); // display newer posts link ?>
-			    </div>
-			  </nav>
+					<nav class="prev-next-posts">
+
+					    <div class="prev-posts-link">
+					      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
+					      <img src="<?php echo THEMEPATH; ?>/images/right_arrow.png">
+					    </div>
+
+					    <div class="next-posts-link">
+					      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
+					    </div>
+
+					</nav>
 			<?php } ?>
 				</div>
 	</div>

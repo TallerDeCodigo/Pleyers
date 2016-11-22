@@ -16,7 +16,7 @@
 			<?php } ?>
 		</div>
 
-		<div class="single_content">
+		<div class="single_content smart_scroll_container smart_ajax_container">
 			
 			<div class="addthis_inline_share_toolbox"></div>
 

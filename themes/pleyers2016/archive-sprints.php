@@ -10,7 +10,7 @@
 	$posts = new WP_Query($args);
 ?>
 <div class="full_container">
-<section class="container clearfix">
+<section class="container clearfix smart_scroll_container">
 	<?php get_sidebar(); ?>
 	<?php 
 		if($posts->have_posts()): while($posts->have_posts()):

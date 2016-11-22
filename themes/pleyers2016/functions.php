@@ -1,5 +1,5 @@
 <?php
-
+add_theme_support('auto-load-next-post');
 
 // DEFINIR LOS PATHS A LOS DIRECTORIOS DE JAVASCRIPT Y CSS ///////////////////////////
 
@@ -389,7 +389,6 @@
 	        return 25;
 	    }
 	    add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
 
 
 

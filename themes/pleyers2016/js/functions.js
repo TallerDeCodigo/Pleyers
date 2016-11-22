@@ -203,6 +203,13 @@
 		hour_string = hour_string.substring(0, 3);
 
 
+		var ul = $('.single_content a').attr('data-link')
+		console.log(ul);
+
+		history.replaceState(null, null, ul);
+
+
+
 
 		// $('.change').click(function(){
 		// 	var test = $(this).find('input[type="hidden"]').val();

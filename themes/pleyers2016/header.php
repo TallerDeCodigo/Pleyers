@@ -35,6 +35,7 @@
 			ga('create', 'UA-65208621-1', 'auto');
 			ga('send', 'pageview');
 		</script>
+		<script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/jquery.clever-infinite-scroll.js"></script>
 	</head>
 
 	<body <?php body_class(); ?> >
@@ -84,7 +85,7 @@
 				</nav>
 			</div>
 		</div>
-		<header>
+		<header class="todo_el_header">
 			<div class="container clearfix">
 				<h1>LOS PLEYERS</h1>
 				<div id="nav_icon"><span></span><span></span><span></span><span></span></div>

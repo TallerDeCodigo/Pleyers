@@ -3,7 +3,7 @@
 		<?php 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
-							'post_type'=>'sprints',//cambiar por el posttype -> sprints
+							'post_type'=>'episodios',
 							'posts_per_page'=>5,
 							'post_status'=>'publish',
 							'orderby'=>'date',
@@ -11,6 +11,7 @@
 							'paged'=>$paged
 							);
 				$posts = new WP_Query($args);
+
 				date_default_timezone_set('America/Mexico_City');
 				$hoy = date('U');
 		?>
@@ -55,16 +56,19 @@
 							endwhile; 
 						endif; 
 			?>	
-			<?php if ($posts->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-			  <nav class="prev-next-posts">
-			    <div class="prev-posts-link">
-			      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-			      <img src="<?php echo THEMEPATH; ?>/images/right_arrow.png">
-			    </div>
-			    <div class="next-posts-link">
-			      <?php echo get_previous_posts_link( '' ); // display newer posts link ?>
-			    </div>
-			  </nav>
+			<?php if ($posts->max_num_pages > 1) { ?>
+				  	<nav class="prev-next-posts">
+
+					    <div class="prev-posts-link">
+					      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
+					      <img src="<?php echo THEMEPATH; ?>/images/right_arrow.png">
+					    </div>
+
+					    <div class="next-posts-link">
+					      <?php echo get_previous_posts_link( '' ); // display newer posts link ?>
+					    </div>
+
+				  	</nav>
 			<?php } ?>
 				</div>
 	</div>
