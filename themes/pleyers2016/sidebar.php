@@ -45,7 +45,7 @@
 												<?php the_post_thumbnail(); ?>
 											</div>
 										</a>
-										<a href="<?php the_permalink(); ?>"><p><?php the_title(); //the_content(); ?></p></a>
+										<a href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
 										<?php the_excerpt(); ?>
 									</div>
 								<?php 

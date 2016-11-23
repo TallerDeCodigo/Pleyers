@@ -1,5 +1,5 @@
 <?php
-add_theme_support('auto-load-next-post');
+	add_theme_support('auto-load-next-post');
 
 // DEFINIR LOS PATHS A LOS DIRECTORIOS DE JAVASCRIPT Y CSS ///////////////////////////
 

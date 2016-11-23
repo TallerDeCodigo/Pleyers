@@ -203,10 +203,14 @@
 		hour_string = hour_string.substring(0, 3);
 
 
-		var ul = $('.single_content a').attr('data-link')
-		console.log(ul);
+		if($('body').hasClass('single-episodios') ){
+			
+			console.log('has class');
+			var height = $(window).height();
+			var ul = $('.single_content a').attr('data-link');
 
-		history.replaceState(null, null, ul);
+			
+		}
 
 
 

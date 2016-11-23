@@ -63,7 +63,7 @@
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 		$args = array(
 					'post_type'=>'episodios',
-					'posts_per_page'=>3,
+					'posts_per_page'=>1,
 					'post_status'=>'piublish',
 					'orderby'=>'data',
 					'order'=>'DESC',
@@ -127,17 +127,6 @@
 							<div class="line_division"></div>
 							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
 						</div>
-						<nav class="prev-next-posts">
-
-						    <div class="prev-posts-link">
-						      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-						    </div>
-
-						    <div class="next-posts-link">
-						      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
-						    </div>
-
-						</nav>
 					</div>
 		
 			<?php
@@ -183,17 +172,6 @@
 							<div class="line_division"></div>
 							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
 						</div>
-						<nav class="prev-next-posts">
-
-						    <div class="prev-posts-link">
-						      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-						    </div>
-
-						    <div class="next-posts-link">
-						      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
-						    </div>
-
-						</nav>
 					</div>
 			<?php
 				} //end fotochica
@@ -240,24 +218,63 @@
 							<div class="line_division"></div>
 							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 						</div>
-						<nav class="prev-next-posts">
-
-						    <div class="prev-posts-link">
-						      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-						    </div>
-
-						    <div class="next-posts-link">
-						      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
-						    </div>
-
-						</nav>
 					</div>
 		<?php		
 			}
 	?>
-		
-
-
 	<?php wp_reset_postdata(); endwhile; endif;?>
+	<nav class="prev-next-posts">
+
+	    <div class="prev-posts-link">
+	      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
+	    </div>
+
+	    <div class="next-posts-link">
+	      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
+	    </div>
+
+	</nav>
+	<div class="paginaqueva">1</div>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	var pag_next=0;
+	
+	$(document).ready(function(){
+		$(window).scroll(function() {
+			if($(window).scrollTop() + $(window).height() == $(document).height() ) {
+				loader();		      
+				}
+		});
+
+		function loader() {
+			       console.log("bottom!");
+
+			       pag_next = parseInt($('.paginaqueva:first-of-type').html());
+			       pag_next = pag_next+1;
+
+			       $('.paginaqueva').html(pag_next);
+			       $('.loader').addClass('active');
+
+			       $.ajax({
+		               type: "POST",
+		               dataType: "html",
+		               url: '<?php echo site_url(); ?>/episodios/page/'+pag_next+'/',
+		               data: '',
+		               success: function(data){
+		                   var $data = $(data);
+		                   $("body").append($data);
+		                   $('.paginaqueva').html($('.paginaqueva:first-of-type').html());
+		                   $('.loader').removeClass('active');
+		               },
+		               error : function(jqXHR, textStatus, errorThrown) {
+		                   // $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+		               }
+			        });
+			}
+	});
+</script>
+
+
 <?php get_footer(); ?>
