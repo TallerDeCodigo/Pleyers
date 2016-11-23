@@ -200,17 +200,7 @@
 
 		/*SPRITE TIME*/
 		var hour_string = $('.post_time').html();
-		hour_string = hour_string.substring(0, 3);
-
-
-		if($('body').hasClass('single-episodios') ){
-			
-			console.log('has class');
-			var height = $(window).height();
-			var ul = $('.single_content a').attr('data-link');
-
-			
-		}
+		//hour_string = hour_string.substring(0, 3);
 
 
 

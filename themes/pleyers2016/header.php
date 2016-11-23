@@ -14,8 +14,6 @@
 		<meta name="ICBM" content="23.634501, -102.552784" />
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-		<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-		<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
 		<?php wp_head(); ?>
 		<script>
 			(function(d, s, id) {
@@ -35,7 +33,7 @@
 			ga('create', 'UA-65208621-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-		<script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/jquery.clever-infinite-scroll.js"></script>
+
 	</head>
 
 	<body <?php body_class(); ?> >

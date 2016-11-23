@@ -11,270 +11,230 @@
 		$term_slug = $term->slug;
 	}
 ?>
-<div id="contentsWrapper" class="clearfix full_container">
+<section class="smart_content_wrapper">
+	<div id="contentsWrapper" class="clearfix full_container smart_scroll_container">
 
-	<div class="content_col  inline">
-		<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail(); ?>
-		</a>
-		<div class="single_content">
-			<div class="addthis_inline_share_toolbox"></div>
-			<div>
+		<div class="content_col smart_ajax_container  inline">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+			<div class="single_content">
+				<div class="addthis_inline_share_toolbox"></div>
+				<div>
+					<?php 
+						$tags = get_the_tags();
+						if($tags){
+							foreach($tags as $tag):
+								$tag_slug = $tag->slug;
+								$tag_nme = $tag->name;
+							endforeach;	
+								echo "<span class='tags'>#".$tag_nme." "."</span>";
+						}
+					?>
+
+					<a href="<?php the_permalink(); ?>">
+						<h2>
+							<?php the_title(); ?>
+						</h2>
+					</a>
+					<span class="the_date">
+						<?php echo get_the_date('H:m - d/j/Y'); ?>
+					</span>
+
+				</div>
 				<?php 
-					$tags = get_the_tags();
-					if($tags){
-						foreach($tags as $tag):
-							$tag_slug = $tag->slug;
-							$tag_nme = $tag->name;
-						endforeach;	
-							echo "<span class='tags'>#".$tag_nme." "."</span>";
-					}
-				?>
+					$contenido = get_the_content();
+					the_content(); 
+					if($contenido){
+						//echo '<div class="addthis_sharing_toolbox"></div>';
+					}else{ }
+					?>
+				<div class="line_division"></div>
+				<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
 
-				<a href="<?php the_permalink(); ?>">
-					<h2>
-						<?php the_title(); ?>
-					</h2>
-				</a>
-				<span class="the_date">
-					<?php echo get_the_date('H:m - d/j/Y'); ?>
-				</span>
 
 			</div>
-			<?php 
-				$contenido = get_the_content();
-				the_content(); 
-				if($contenido){
-					//echo '<div class="addthis_sharing_toolbox"></div>';
-				}else{ }
-				?>
-			<div class="line_division"></div>
-			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
+		</div>
+
+		<div class="content_side inline"><?php get_template_part('templates/barra', 'shows'); ?></div>
+
+		<div id="content_post">
+		<?php 
+			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+			$args = array(
+						'post_type'=>'episodios',
+						'posts_per_page'=>5,
+						'post_status'=>'piublish',
+						'orderby'=>'data',
+						'order'=>'DESC',
+						'paged'=> $paged,
+						'post__not_in'=>array($pId),
+						'tax_query'=>array(
+										array(
+											'taxonomy'=>'shows',
+											'field'=>'slug',
+											'terms'=>$term_slug
+											)
+										)
+						);
+			$mas_posts = new WP_Query($args);
+
+			if($mas_posts->have_posts()): 
+				while($mas_posts->have_posts()):
+					$mas_posts->the_post(); setup_postdata($post);
+					$img_type = get_post_meta($post->ID, 'sprint_type_meta', true);
+
+					if($img_type == 'foto_grande'){
+			?>
+						<div id="post-<?php the_ID(); ?>" class="content_col smart_ajax_container post_wrap inline <?php echo $img_type; ?>">
+							<?php 
+								if(has_post_thumbnail() ):
+							?>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail(); ?>
+									</a>
+							<?php endif; ?>
+							<div class="single_content">
+								<div class="addthis_inline_share_toolbox"></div>
+								<div>
+									<?php 
+										$tags = get_the_tags();
+										if($tags){
+											foreach($tags as $tag):
+												$tag_slug = $tag->slug;
+												echo "<span class='tags'>#".$tag->name." "."</span>";
+											endforeach;	
+										}
+									?>
+									<a href="<?php the_permalink(); ?>">
+										<h2 class="_title">
+											<?php the_title(); ?>
+										</h2>
+									</a>
+									<span class="the_date">
+										<?php echo get_the_date('H:m - d/j/Y'); ?>
+									</span>
+								</div>
+
+								<?php 
+									$contenido = get_the_content();
+									the_content(); 
+									if($contenido){
+									}else{}
+							
+									?>
+							
+								<div class="line_division"></div>
+								<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
+							</div>
+						</div>
+			
+				<?php
+					} //end fotogrande
+
+					if($img_type == 'foto_chica'){
+
+					?>	
+
+						<div id="post-<?php the_ID(); ?>" class="content_col smart_ajax_container post_wrap inline <?php echo $img_type; ?>">
+							<div class="single_content">
+								<div class="addthis_inline_share_toolbox"></div>
+								<div>
+									<?php 
+										$tags = get_the_tags();
+										if($tags){
+											foreach($tags as $tag):
+												$tag_slug = $tag->slug;
+												echo "<span class='tags'>#".$tag->name." "."</span>";
+											endforeach;	
+										}
+									?>
+									<a href="<?php the_permalink(); ?>">
+										<h2 class="_title">
+											<?php the_title(); ?>
+										</h2>
+									</a>
+									<span class="the_date">
+										<?php echo get_the_date('H:m - d/j/Y'); ?>
+									</span>
+								</div>
+								<div class="content_single_episodio">
+									<?php 
+										if(has_post_thumbnail() ):
+									?>
+										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+									<?php endif; 
+										the_content(); 
+										?>
+								</div>
+								
+
+								<div class="line_division"></div>
+								<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
+							</div>
+						</div>
+				<?php
+					} //end fotochica
 
 
+					if($img_type == 'sin_foto'){
+					?>
+						<div id="post-<?php the_ID(); ?>" class="content_col smart_ajax_container post_wrap inline <?php echo $img_type; ?>">
+
+							<?php if(has_post_thumbnail() ): endif; ?>
+
+							<div class="single_content">
+								<div class="addthis_inline_share_toolbox"></div>
+								<div>
+									<?php 
+										$tags = get_the_tags();
+										if($tags){
+											foreach($tags as $tag):
+												$tag_slug = $tag->slug;
+												$tag_nme = $tag->name;
+											endforeach;	
+												echo "<span class='tags'>#".$tag_nme." "."</span>";
+										}
+									?>
+									<a href="<?php the_permalink(); ?>">
+										<h2 class="_title">
+											<?php the_title(); ?>
+										</h2>
+									</a>
+									<span class="the_date">
+										<?php echo get_the_date('H:m - d/j/Y'); ?>
+									</span>
+								</div>
+
+								<?php 
+									$contenido = get_the_content();
+									the_content(); 
+									if($contenido){
+										//echo '<div class="addthis_sharing_toolbox"></div>';
+									}else{  }
+									?>
+								
+
+								<div class="line_division"></div>
+
+								<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+
+							</div>
+							<nav class="prev-next-posts">
+								<?php 
+									$next_post = get_next_post();
+									if (!empty( $next_post )): 
+									?>
+										<a href="<?php echo get_permalink( $next_post->ID ); ?>" rel="next"><?php echo $next_post->post_title; ?></a>
+									<?php  endif; ?>
+							</nav>
+						</div>
+			<?php		
+				}
+		?>
+		<?php wp_reset_postdata(); endwhile; endif;?>
 		</div>
 	</div>
-
-	<div class="content_side inline">
-		<?php get_template_part('templates/barra', 'shows'); ?>
-	</div>
-	
-	<?php 
-		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-		$args = array(
-					'post_type'=>'episodios',
-					'posts_per_page'=>1,
-					'post_status'=>'piublish',
-					'orderby'=>'data',
-					'order'=>'DESC',
-					'paged'=> $paged,
-					'post__not_in'=>array($pId),
-					'tax_query'=>array(
-									array(
-										'taxonomy'=>'shows',
-										'field'=>'slug',
-										'terms'=>$term_slug
-										)
-									)
-					);
-		$mas_posts = new WP_Query($args);
-
-		if($mas_posts->have_posts()): 
-			while($mas_posts->have_posts()):
-				$mas_posts->the_post(); setup_postdata($post);
-				$img_type = get_post_meta($post->ID, 'sprint_type_meta', true);
-
-				if($img_type == 'foto_grande'){
-		?>
-					<div class="content_col post_wrap inline <?php echo $img_type; ?>">
-						<?php 
-							if(has_post_thumbnail() ):
-						?>
-								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail(); ?>
-								</a>
-						<?php endif; ?>
-						<div class="single_content">
-							<div class="addthis_inline_share_toolbox"></div>
-							<div>
-								<?php 
-									$tags = get_the_tags();
-									if($tags){
-										foreach($tags as $tag):
-											$tag_slug = $tag->slug;
-											echo "<span class='tags'>#".$tag->name." "."</span>";
-										endforeach;	
-									}
-								?>
-								<a href="<?php the_permalink(); ?>">
-									<h2 class="_title">
-										<?php the_title(); ?>
-									</h2>
-								</a>
-								<span class="the_date">
-									<?php echo get_the_date('H:m - d/j/Y'); ?>
-								</span>
-							</div>
-
-							<?php 
-								$contenido = get_the_content();
-								the_content(); 
-								if($contenido){
-								}else{}
-						
-								?>
-						
-							<div class="line_division"></div>
-							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
-						</div>
-					</div>
-		
-			<?php
-				} //end fotogrande
-
-				if($img_type == 'foto_chica'){
-
-				?>	
-
-					<div class="content_col post_wrap inline <?php echo $img_type; ?>">
-						<div class="single_content">
-							<div class="addthis_inline_share_toolbox"></div>
-							<div>
-								<?php 
-									$tags = get_the_tags();
-									if($tags){
-										foreach($tags as $tag):
-											$tag_slug = $tag->slug;
-											echo "<span class='tags'>#".$tag->name." "."</span>";
-										endforeach;	
-									}
-								?>
-								<a href="<?php the_permalink(); ?>">
-									<h2 class="_title">
-										<?php the_title(); ?>
-									</h2>
-								</a>
-								<span class="the_date">
-									<?php echo get_the_date('H:m - d/j/Y'); ?>
-								</span>
-							</div>
-							<div class="content_single_episodio">
-								<?php 
-									if(has_post_thumbnail() ):
-								?>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-								<?php endif; 
-									the_content(); 
-									?>
-							</div>
-							
-
-							<div class="line_division"></div>
-							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
-						</div>
-					</div>
-			<?php
-				} //end fotochica
-
-
-				if($img_type == 'sin_foto'){
-				?>
-					<div class="content_col post_wrap inline <?php echo $img_type; ?>">
-
-						<?php if(has_post_thumbnail() ): endif; ?>
-
-						<div class="single_content">
-							<div class="addthis_inline_share_toolbox"></div>
-							<div>
-								<?php 
-									$tags = get_the_tags();
-									if($tags){
-										foreach($tags as $tag):
-											$tag_slug = $tag->slug;
-											$tag_nme = $tag->name;
-										endforeach;	
-											echo "<span class='tags'>#".$tag_nme." "."</span>";
-									}
-								?>
-								<a href="<?php the_permalink(); ?>">
-									<h2 class="_title">
-										<?php the_title(); ?>
-									</h2>
-								</a>
-								<span class="the_date">
-									<?php echo get_the_date('H:m - d/j/Y'); ?>
-								</span>
-							</div>
-
-							<?php 
-								$contenido = get_the_content();
-								the_content(); 
-								if($contenido){
-									//echo '<div class="addthis_sharing_toolbox"></div>';
-								}else{  }
-								?>
-							
-
-							<div class="line_division"></div>
-							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-						</div>
-					</div>
-		<?php		
-			}
-	?>
-	<?php wp_reset_postdata(); endwhile; endif;?>
-	<nav class="prev-next-posts">
-
-	    <div class="prev-posts-link">
-	      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-	    </div>
-
-	    <div class="next-posts-link">
-	      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
-	    </div>
-
-	</nav>
-	<div class="paginaqueva">1</div>
-</div>
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script type="text/javascript">
-	var pag_next=0;
-	
-	$(document).ready(function(){
-		$(window).scroll(function() {
-			if($(window).scrollTop() + $(window).height() == $(document).height() ) {
-				loader();		      
-				}
-		});
-
-		function loader() {
-			       console.log("bottom!");
-
-			       pag_next = parseInt($('.paginaqueva:first-of-type').html());
-			       pag_next = pag_next+1;
-
-			       $('.paginaqueva').html(pag_next);
-			       $('.loader').addClass('active');
-
-			       $.ajax({
-		               type: "POST",
-		               dataType: "html",
-		               url: '<?php echo site_url(); ?>/episodios/page/'+pag_next+'/',
-		               data: '',
-		               success: function(data){
-		                   var $data = $(data);
-		                   $("body").append($data);
-		                   $('.paginaqueva').html($('.paginaqueva:first-of-type').html());
-		                   $('.loader').removeClass('active');
-		               },
-		               error : function(jqXHR, textStatus, errorThrown) {
-		                   // $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-		               }
-			        });
-			}
-	});
-</script>
-
+</section>
 
 <?php get_footer(); ?>

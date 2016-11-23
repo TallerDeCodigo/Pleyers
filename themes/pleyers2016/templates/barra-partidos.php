@@ -14,9 +14,7 @@
 			<div class="sport_calendar">
 				Calendario Deportivo
 			</div>
-			<div class="first_li navs left">
-				&lt;
-			</div>
+			<div class="first_li navs left"></div>
 		<ul class="match_list">
 			<!-- <li class="nots">Calendario <br>deportivo</li> -->
 
@@ -58,8 +56,6 @@
 
 
 		</ul>
-			<div class="first_li navs right">
-				&gt;
-			</div>
+			<div class="first_li navs right"></div>
 	</div>
 </section>
