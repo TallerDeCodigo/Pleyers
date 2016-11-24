@@ -56,9 +56,9 @@
 
 			<div class="contenido capital">
 				<?php the_content(); ?>
+				<div class="addthis_inline_share_toolbox_dvmh"></div>
 			</div>
-
-			<div class="addthis_sharing_toolbox"></div>
+			<!-- <div class="addthis_sharing_toolbox"></div> -->
 
 		</article>
 		<?php wp_reset_postdata(); endwhile; endif; ?>

@@ -63,7 +63,7 @@
 			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 			$args = array(
 						'post_type'=>'episodios',
-						'posts_per_page'=>5,
+						'posts_per_page'=>2,
 						'post_status'=>'piublish',
 						'orderby'=>'data',
 						'order'=>'DESC',

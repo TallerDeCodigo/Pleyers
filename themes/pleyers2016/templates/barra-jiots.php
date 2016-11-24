@@ -3,6 +3,12 @@
 			<div class="head_jiots">
 				<img src="<?php echo THEMEPATH; ?>/images/jiotstv.png">
 				<span>Haciendo del internet un lugar peor</span>
+				<a href="http://jiots.tv/" target="_blank">
+					<span class="vermas">
+						Ver Más
+						<img src="<?php echo THEMEPATH; ?>/images/right_arrow_black.png">
+					</span>
+				</a>
 			</div>
 			<?php
 				$var_expire = 300;

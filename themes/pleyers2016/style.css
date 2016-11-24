@@ -107,12 +107,16 @@ header {width:100%;background:yellow;height:60px;box-shadow:0px 5px 5px rgba(0,0
 h1 {position:absolute;left:0px;top:0px;width:0px;height:0px;overflow:hidden;opacity:0;}
 img.header_logo {height:56px;margin-top:2px;float:left;}
 nav.social {float:right;position:relative;}
+
 /*SOCIAL SINGLE*/
 .at-share-btn-elements{float:left;overflow:auto;margin-right:20px;padding-bottom:20px;padding-top:10px;}
 .at-resp-share-element .at-share-btn{border-radius: 50%!important; display:block!important;width:40px!important;}
 .single-post a.at-share-btn-elements {display:inline-block!important;}
 .single-post div.sprints{margin-top:20px;}
-.addthis_inline_share_toolbox{clear:none!important;}
+
+.addthis_inline_share_toolbox_dvmh div.at-share-btn-elements a.at-share-btn{display:inline-block!important;}
+.addthis_inline_share_toolbox_dvmh div.at-share-btn-elements{margin:0px 243px!important;}
+/*.addthis_inline_share_toolbox{clear:none!important;}*/
 .post_head{margin-top:40px;}
 .sprint_excerpt{padding-top:10px;}
 .single_excerpt{border-bottom:1px solid rgba(0,0,0,0.2);padding-bottom:30px;}
@@ -296,6 +300,8 @@ div.video_post:hover div.img_frame:after {content:"";position:absolute;left:0px;
 .jiotstv div.container div.head_jiots img{width:10%;margin-right: 1.2%;vertical-align: middle;border-right:1px solid white;padding-right:1.2%;}
 .jiotstv div.container div img{width:10%;margin-right: 1.2%;vertical-align: middle;border-right:1px solid white;}
 .head_jiots span{font-family: 'Montserrat';}
+.head_jiots span.vermas{float:right;display:block;text-align: right}
+.head_jiots span.vermas img{width:10%!important;border-right:none!important;}
 .jiotstv div.container h2 span{font-size: 0.6em;}
 div.jiots_post {width:24.2%;float:left;margin-right:1%;margin-bottom:40px;}
 div.jiots_post:nth-of-type(5) {margin-right:0;}
@@ -310,7 +316,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .post-type-archive div.contenido{margin-top:90px;}
 .post-type-archive div.contenido img{display:none;}
 .post-type-archive div.sidebar{float:left;margin-top:15px;}
-.post-type-archive article.single_content{	width:50%;margin-left:35%;}
+.post-type-archive article.single_content{	width:50%;margin-left:35%;padding:0px;}
 
 /*SINGLE*/
 
@@ -331,7 +337,7 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:140%;}
 .single_content img{width:100%;height:auto;}
 .single_content h2{color:#2c2c2c;margin-top:0px;font-size: 36px;}
 .single_content p{color:#8b8b8b;font-size: 23px;margin-top: 60px;line-height: 33px}
-.single_content div.globo{width:250px; height:150px; background:#ffffbf;position:absolute;left:50%;padding:10px;border:1px solid pink;}
+.single_content div.globo{width:250px; height:150px; background:#ffffbf;position:absolute;left:50%;padding:10px;}
 blockquote{border-left:4px solid yellow;padding-left:20px;}
 blockquote p{color:#2c2c2c!important;}
 .twitter-tweet-rendered{margin:0 auto;}
@@ -349,7 +355,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 
 
 
-.capital:first-letter{font-size: 8rem;color:#2c2c2c;line-height: 20px;}
+/*.capital:first-letter{font-size: 8rem;color:#2c2c2c;line-height: 20px;}*/
 .content_side{float:left;width:23%;margin}
 .content_side div.sidebar{width:100%;}
 .content_col div.inline{display:inline-block;vertical-align: top;}
