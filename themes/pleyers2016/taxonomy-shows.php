@@ -3,6 +3,7 @@
 	$objeto = get_queried_object();
 	$tax = $objeto->taxonomy;
 	$slug = $objeto->slug;
+	$show_name = $objeto->name;
 
 	// echo '<pre>';
 	// print_r($objeto);
@@ -10,19 +11,9 @@
 ?>
 <section class="tax_show">
 	<div class="tax_show_top clearfix">
-			<?php 
-				$terms = wp_get_post_terms($post->ID, 'noticiasde' ); 
-				if($terms){
-					foreach($terms as $term):
-				?>
-					<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
-						<span>
-							<?php echo "#".esc_html($term->name)." "; ?>
-						</span>
-					</a>	
-				<?php		
-				endforeach; }
-			?>
+		<h2 id="show_name">
+			<?php echo $show_name; ?>
+		</h2>
 		<?php 
 			if( get_post_meta($post->ID, 'eg_sources_youtube', true) ){ 
 				$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
@@ -32,25 +23,34 @@
 				<img src="<?php echo THEMEPATH; ?>/images/play.svg">
 			</div>
 		<?php		
-			} else { ?>
-			<?php the_post_thumbnail('full'); ?>
-		<?php } ?>
+				}else{ 
+
+			 	the_post_thumbnail('full'); 
+
+				} 
+			?>
 		<div class="titulo">
 				<?php
 					$tags = get_the_tags();
-					if($tags): foreach($tags as $tag): 
+					if($tags): foreach($tags as $tag): endforeach; 
 				?>
 						<a href="<?php echo bloginfo('url').'/tag/'.$tag->slug ?>">
 							<span>
 								<?php echo "#".$tag->name." "; ?>
 							</span>
 						</a>
-				<?php endforeach; endif; ?>
+				<?php endif; ?>
+
 			<h2>
 				<?php the_title(); ?>
-			</h2>
+			</h2>	
 		</div>
-	</div>
+	</div><!--END TAX SHOW TOP-->
+
+
+
+
+
 
 	<?php
 		$types = get_all_posttypes();

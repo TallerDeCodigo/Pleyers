@@ -1,27 +1,5 @@
 <div id="apuntes-de-rabona" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
 
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -102,29 +80,7 @@
 
 
 <div id="cultura-pop" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
 
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -205,36 +161,16 @@
 
 
 <div id="deportologia" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
-
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
+	
 	<?php 
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 		$args = array(	
 					'post_type'=>'episodios',
 					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
+					'paged'=>$paged,
 					'tax_query'=>array(
 									array(
 										'taxonomy'=>'shows',
@@ -304,33 +240,24 @@
 				?>
 		</div>
 	</div>
+	<nav class="prev-next-posts">
+
+	    <div class="prev-posts-link">
+	    	<?php //next_post_link('Ver más','<img src="images/right_arrow.png"/>'); ?>
+	      <?php echo get_next_posts_link( 'Ver más <img src="wp-content/themes/pleyers2016/images/right_arrow.png"/>', $posts->max_num_pages ); // display older posts link ?>
+	      <!-- <img src="<?php //echo THEMEPATH; ?>/images/right_arrow.png"> -->
+	    </div>
+
+	    <div class="next-posts-link">
+	      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
+	    </div>
+
+	</nav>
 </div>
 
 
 <div id="jiots-tv" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
-
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
+	
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -410,33 +337,11 @@
 </div>
 
 <div id="el_pechofrio" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
 
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
-					'posts_per_page'=>9,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
@@ -513,29 +418,7 @@
 
 
 <div id="lucha-libre" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
-
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
+	
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -616,29 +499,7 @@
 
 
 <div id="tactica" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
-
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
+	
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -719,29 +580,6 @@
 
 
 <div id="tirando-guante" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
-
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -822,29 +660,6 @@
 
 
 <div id="turismo-deportivo" class="full_container">
-	<ul class="barra_blogs">
-		<li>&lt;</li>
-		<?php 
-			$terms = get_terms('shows', array('hide_empty'=>0) );
-			$terms_arr = array();
-			// echo "<pre>";
-			// 	print_r($terms);
-			// echo "</pre>";
-			foreach($terms as $term):
-				$term_name 		= $term->name;
-				$class_slg 		= $term->slug;
-				$terms_arr[] 	= $term->slug;
-				$trm_id 		= $term->term_id;
-
-		?>
-		<li class="<?php echo $class_slg; ?> change">
-			<?php echo $term_name; ?>
-		</li>
-	<?php endforeach; ?>
-		<li>
-			&gt;
-		</li>
-	</ul>
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',

@@ -65,8 +65,9 @@
 					<nav class="prev-next-posts">
 
 					    <div class="prev-posts-link">
-					      <?php echo get_next_posts_link( 'Ver más', $posts->max_num_pages ); // display older posts link ?>
-					      <img src="<?php echo THEMEPATH; ?>/images/right_arrow.png">
+					    	<?php //next_post_link('Ver más','<img src="images/right_arrow.png"/>'); ?>
+					      <?php echo get_next_posts_link( 'Ver más <img src="wp-content/themes/pleyers2016/images/right_arrow.png"/>', $posts->max_num_pages ); // display older posts link ?>
+					      <!-- <img src="<?php //echo THEMEPATH; ?>/images/right_arrow.png"> -->
 					    </div>
 
 					    <div class="next-posts-link">

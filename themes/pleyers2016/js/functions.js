@@ -33,7 +33,18 @@
 
 
 		var height_screen = $(window).height();
+
+
 		$('div.sprints_container').css('height', height_screen-300+"px");
+
+		if( $('body').hasClass('home') ){
+			$('div.sprints_container').css('height', height_screen-90+"px");
+		}
+
+		// $('.internav').append(
+		// 	'<img src="wp-content/themes/pleyers2016/images/right_arrow.png">'
+		// 	);
+		
 		//$('.single_top').height(height_screen);
 
 
@@ -132,40 +143,40 @@
 		$('.grid').css('height', single_img_height+32+"px");
 
 
-		$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+		$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #deportologia').hide();
 
 		$('.apuntes-de-rabona').click(function(){
 			$('.barra_blogs li.change').removeClass('change');
 			$(this).addClass('change');
 			$('#apuntes-de-rabona').show();
-			$('#cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 		});
 
 		$('.cultura-pop').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
 			$('#cultura-pop').show();
-			$('#apuntes-de-rabona, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 		});
 
 		$('.deportologia').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
-			$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 			$('#deportologia').show();
 		});
 
 		$('.jiots-tv').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
-			$('#apuntes-de-rabona, #cultura-pop, #deportologia, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona, #cultura-pop, #deportologia, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 			$('#jiots-tv').show();
 		});
 
 		$('.el_pechofrio').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
-			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 			$('#el_pechofrio').show();
 		});
 
@@ -173,34 +184,65 @@
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
 			$('#lucha-libre').show();
-			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #tactica, #tirando-guante, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 		});
 
 		$('.tactica').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
 			$('#tactica').show();
-			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tirando-guante, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tirando-guante, #turismo-deportivo, #todos').hide();
 		});
 
 		$('.tirando-guante').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
 			$('#tirando-guante').show();
-			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #turismo-deportivo').hide();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #turismo-deportivo, #todos').hide();
 		});
 
 		$('.turismo-deportivo').click(function(){
 			//$('.barra_blogs li.change').removeClass('change');
 			//$(this).addClass('change');
 			$('#turismo-deportivo').show();
-			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante').hide();
+			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #todos').hide();
 		});
 
 
 		/*SPRITE TIME*/
 		var hour_string = $('.post_time').html();
 		//hour_string = hour_string.substring(0, 3);
+
+
+		/*AJAX FOR BLOGS*/
+		/*
+		jQuery.ajax({
+			type: 'POST',
+			url: 'http://localhost/~programacion2/pleyers/wp-admin/admin-ajax.php',
+			data: {
+				action: 'my_get_posts' // this must be the same with your ajax function name
+			},
+				success: function(data, textStatus, XMLHttpRequest)
+			{
+				for (var entry in data)
+				{ 
+				// get post's attributes
+				var postID = data[entry].id;
+				var title = data[entry].title;
+
+				// append new post into some list
+				$(".videos_stack").append("<li>" + title + "</li>");
+
+				}
+			},
+				error: function(MLHttpRequest, textStatus, errorThrown)
+				{
+				},
+				complete: function(XMLHttpRequest, textStatus)
+				{
+				},
+			dataType: 'json'
+		});*/
 
 
 

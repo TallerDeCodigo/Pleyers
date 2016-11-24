@@ -53,7 +53,17 @@
 
 			<div class="more_destacado">
 				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
-					
+					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+										<span class="el_tag">
+											<?php 
+												if($terms){
+													$trm_nme = $terms[0]->name;
+													echo "#".$trm_nme;
+												} 
+											?>
+										</span>
+									</a>	
 					<a href="<?php the_permalink(); ?>">
 						<h3 class="el_titulo">
 							<?php the_title(); ?>
@@ -145,6 +155,107 @@
 		</div>
 	</section>
 	<?php get_template_part('templates/barra', 'cerocero'); ?>
+
+	<div class="full_container">
+		<ul class="barra_blogs">
+			<li></li><!--NAVIGATION ARROW-->
+			<?php 
+				$terms = get_terms('shows', array('hide_empty'=>0) );
+				$terms_arr = array();
+				// echo "<pre>";
+				// 	print_r($terms);
+				// echo "</pre>";
+				foreach($terms as $term):
+					$term_name 		= $term->name;
+					$class_slg 		= $term->slug;
+					$terms_arr[] 	= $term->slug;
+					$trm_id 		= $term->term_id;
+
+			?>
+			<li class="<?php echo $class_slg; ?> change">
+				<?php echo $term_name; ?> 
+			</li>
+		<?php endforeach; ?>
+			<li></li><!--NAVIGATION ARROW-->
+		</ul>
+	</div>
+
+	<div id="todos" class="full_container">
+
+		<?php 
+			$args = array(	
+						'post_type'=>'episodios',
+						'posts_per_page'=>5,
+						'post_status'=>'publish',
+						'orderby'=>'rand',
+						'order'=>'DESC'
+						);
+			$posts = new WP_Query($args);
+		?>
+		<div class="grid_videos container clearfix">
+			<h2>Blogs</h2>
+			<div class="videos_stack clearfix">
+				<?php
+				$count = 0;
+					if($posts->have_posts()): 
+						while($posts->have_posts()):
+							$posts->the_post(); setup_postdata($post);
+							if($count == 0 || $count == 3 || $count == 4 || $count == 8) {
+					?>
+							<div class="video_post same_size clearfix">
+								<a href="<?php the_permalink(); ?>">
+									<div class="img_frame clearfix">
+										<?php the_post_thumbnail(); ?>
+									</div>
+									<div class="video_info">
+										<?php 
+											$terms = wp_get_post_terms(); 
+											if($terms): foreach($terms as $term):
+											?>
+												<a href="">
+													<span><?php echo esc_html($term->name); ?></span>
+												</a>
+									<?php endforeach; endif;?>
+										<h3><?php the_title(); ?></h3>
+									</div>
+								</a>
+							</div>
+						<?php
+							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
+							?>
+								<div class="video_post small_video clearfix">
+									<a href="">
+									<div class="img_frame clearfix">
+										<?php the_post_thumbnail(); ?>
+									</div>
+									<div class="video_info">
+										<?php 
+											$terms = wp_get_post_terms(); 
+											if($terms): foreach($terms as $term):
+											?>
+												<a href="">
+													<span><?php echo esc_html($term->name); ?></span>
+												</a>
+									<?php endforeach; endif;?>
+										<h3><?php the_title(); ?></h3>
+									</div>
+								</a>
+								</div>
+						<?php 	
+							}
+							?>
+				<?php			
+							$count++;
+							
+						endwhile;
+					endif;						
+					?>
+			</div>
+		</div>
+	</div>
+
+
+
 	<?php get_template_part('templates/barra', 'blogs'); ?>
 	<?php get_template_part('templates/barra', 'jiots'); ?>
 <?php get_footer(); ?>

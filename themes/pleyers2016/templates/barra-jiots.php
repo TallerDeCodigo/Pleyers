@@ -1,6 +1,6 @@
 <div class="jiotstv ">
 		<div class="container clearfix"> 
-			<div>
+			<div class="head_jiots">
 				<img src="<?php echo THEMEPATH; ?>/images/jiotstv.png">
 				<span>Haciendo del internet un lugar peor</span>
 			</div>

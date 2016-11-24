@@ -1,7 +1,7 @@
 <?php 
 	$args = array(
 				'post_type'=>'graficos',
-				'posts_per_page'=>3,
+				'posts_per_page'=>4,
 				'post_status'=>'publish',
 				'orderby'=>'date',
 				'order'=>'DESC'

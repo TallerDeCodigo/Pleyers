@@ -390,6 +390,59 @@
 	    }
 	    add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+	    /*AJAX FOR BLOGS 2*/
+	    // ajax: generate a list of posts from a list of post types
+	    function my_get_posts()
+	    {
+		    //permission_check(); <-- check nonce and permissions here
+
+		    // show only published posts
+		    $args = array(	
+					'post_type'=>'episodios',
+					'posts_per_page'=>5,
+					'post_status'=>'publish',
+					'orderby'=>'date',
+					'order'=>'DESC',
+					'paged'=>$paged,
+					'tax_query'=>array(
+									array(
+										'taxonomy'=>'shows',
+										'field'=> 'slug',
+										'terms'=>'deportologia'										)
+									)
+					);
+
+		    $posts = get_posts($args);
+
+		    // put the posts into an array
+		    $arr = array();
+		    foreach ($posts as $post)
+		    {
+		    	$entry = array();
+
+			    // get the post's attributes here
+			    $entry['id'] = $post->ID;
+			    $entry['title'] = $post->post_title;
+			    $arr[] = $entry;
+
+	    	}
+
+		    // then output in json format
+		    header("Content-Type: application/json");
+		    echo json_encode($arr);
+
+		    // make sure you have "exit" here
+		    exit;
+	    }
+
+	    // add into the ajax action chains
+
+	    // this is for logged in users
+	    add_action('wp_ajax_my_get_posts', 'my_get_posts');
+
+	    // this is for the rest
+	    add_action('wp_ajax_nopriv_my_get_posts', 'my_get_posts');
+
 
 
 	/*AJAX FOR BLOGS*/
