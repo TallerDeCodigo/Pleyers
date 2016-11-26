@@ -4,7 +4,7 @@
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
 							'post_type'=>'sprints',//cambiar por el posttype -> sprints
-							'posts_per_page'=>5,
+							'posts_per_page'=>10,
 							'post_status'=>'publish',
 							'orderby'=>'date',
 							'order'=>'DESC',
