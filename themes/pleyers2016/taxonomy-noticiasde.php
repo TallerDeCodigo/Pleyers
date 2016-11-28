@@ -37,7 +37,7 @@
 					</h2>
 				</a>
 		</div>	
-		<div class="full_container">
+		<div class="full_container clearfix">
 			<?php get_sidebar(); ?>
 
 			<div class="posts_pool clearfix">
@@ -64,7 +64,8 @@
 
 					if($posts->have_posts()): 
 						while($posts->have_posts()):
-							$posts->the_post(); setup_postdata($post);
+							$posts->the_post(); 
+							setup_postdata($post);
 							$tags = get_the_tags();
 				?>
 				<div class="post clearfix">
@@ -91,13 +92,19 @@
 				</div>
 
 				<?php
-						 endwhile; endif; 
-					if (function_exists('custom_pagination')) {
-					   	custom_pagination($posts->max_num_pages,"9",$paged);
-					}
-					wp_reset_postdata();
+						wp_reset_postdata();
+						endwhile; 
+					endif; 
+
 				?>
 			</div>
+		</div>
+		<div class="container clearfix">
+			<?php
+				if (function_exists('custom_pagination')) {
+					custom_pagination($posts->max_num_pages,"9",$paged);
+				}
+				?>	
 		</div>
 	</div>
 	

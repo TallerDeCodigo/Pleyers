@@ -365,8 +365,8 @@
 	  'end_size'        => 1,
 	  'mid_size'        => $pagerange,
 	  'prev_next'       => True,
-	  'prev_text'       => __('&laquo;'),
-	  'next_text'       => __('&raquo;'),
+	  'prev_text'       => __('<img src="'.THEMEPATH.'/images/left_nav.png" width="15px" height="15px">'),
+	  'next_text'       => __('<img src="'.THEMEPATH.'/images/right_nav.png" width="15px" height="15px">'),
 	  'type'            => 'plain',
 	  'add_args'        => false,
 	  'add_fragment'    => ''
@@ -382,6 +382,8 @@
 	 }
 
 	}//custom pagination
+
+
 
 	/*LIMIT FOR EXCERPT 20 WORDS*/
 

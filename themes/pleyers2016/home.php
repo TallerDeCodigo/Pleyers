@@ -172,7 +172,7 @@
 					$trm_id 		= $term->term_id;
 
 			?>
-			<li class="<?php echo $class_slg; ?> change">
+			<li class="<?php echo $class_slg; ?> ">
 				<?php echo $term_name; ?> 
 			</li>
 		<?php endforeach; ?>
@@ -180,7 +180,7 @@
 		</ul>
 	</div>
 
-	<div id="todos" class="full_container">
+	<div id="todos" class="full_container clearfix">
 
 		<?php 
 			$args = array(	
