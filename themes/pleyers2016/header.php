@@ -13,7 +13,7 @@
 		<meta name="geo.position" content="23.634501;-102.552784" />
 		<meta name="ICBM" content="23.634501, -102.552784" />
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,900' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>
 		<script>
 			(function(d, s, id) {

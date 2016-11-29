@@ -15,7 +15,7 @@
 				$hoy = date('U');
 		?>
 				<div>
-					<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado-cabeza.svg" width="30px" height="30px">
+					<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado_head.svg" width="30px" height="30px">
 					<a href="<?php bloginfo('url'); ?>/sprints">
 						<h3 class="header_sprints">SPRINTS</h3>
 					</a>
@@ -38,29 +38,59 @@
 						<span class="post_time"><?php  echo $time_ago; ?></span>
 						<div class="sprints_post_content">
 								<?php 
-									if(has_post_thumbnail() ){
+									if($img_size == 'foto_grande'){
 									?>
-									<div class="<?php echo $img_size; ?>">
-										<a href="<?php the_permalink(); ?>">
-											<div class="img_frame">
-												<?php the_post_thumbnail(); ?>
-											</div>
-										</a>
+										<div class="<?php echo $img_size; ?>">
+											<a href="<?php the_permalink(); ?>">
+												<div class="img_frame">
+													<?php the_post_thumbnail(); ?>
+												</div>
+											</a>
 
-										<a href="<?php the_permalink(); ?>">
-											<p>
-												<?php the_title(); ?>
-											</p>
-										</a>
-										<?php the_excerpt(); ?>
-									</div>
+											<a href="<?php the_permalink(); ?>">
+												<p>
+													<?php the_title(); ?>
+												</p>
+											</a>
+											<?php the_excerpt(); ?>
+										</div>
 								<?php 
-									}else{
+									}else if($img_size == 'foto_chica'){
 									?>
-										<div><?php the_excerpt(); ?></div>
-									<?php	
-									} 
-								?>
+										<div class="<?php echo $img_size; ?>">
+											<a href="<?php the_permalink(); ?>">
+												<div class="img_frame">
+													<?php the_post_thumbnail(); ?>
+												</div>
+											</a>
+
+											<a href="<?php the_permalink(); ?>">
+												<p>
+													<?php the_title(); ?>
+												</p>
+											</a>
+											<?php the_excerpt(); ?>
+										</div>	
+								<?php	
+									}else if($img_size == 'sin_foto'){
+									?>
+										<div class="<?php echo $img_size; ?>">
+											<!-- <a href="<?php the_permalink(); ?>">
+												<div class="img_frame">
+													<?php the_post_thumbnail(); ?>
+												</div>
+											</a> -->
+
+											<a href="<?php the_permalink(); ?>">
+												<p>
+													<?php the_title(); ?>
+												</p>
+											</a>
+											<?php the_excerpt(); ?>
+										</div>	
+								<?php	
+									}
+									?>	
 						</div>
 					</div>
 			<?php 				

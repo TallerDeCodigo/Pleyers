@@ -11,7 +11,7 @@
 		foreach($types as $posttype){
 			add_meta_box( 'post_video_meta', 'ID de Youtube', 'show_post_video_meta', $posttype, 'side', 'high' );
 		}
-
+		add_meta_box( 'id_poll', 'Liga para encuesta', 'show_id_poll_question', 'post', 'side', 'high');
 		add_meta_box( 'id_cerocero_meta', 'ID de CeroCero', 'show_id_cerocero', 'graficos', 'side', 'high' );
 		add_meta_box( 'nombre_autor_meta', 'Autor de la frase', 'show_nombre_autor_meta', 'frases', 'side', 'high' );
 		add_meta_box( 'id_pleyers_twitter_meta', 'ID de Twitter', 'show_id_pleyers_twitter_meta', 'tweets', 'side', 'high' );
@@ -107,6 +107,16 @@
 		wp_nonce_field(__FILE__, 'sprint_type_meta_nonce');
 	}
 
+
+	function show_id_poll_question($post){
+		$poll_question = get_post_meta($post->ID, 'poll_question_meta', true);
+
+		echo ("
+				<input class='widefat' type='text' id='poll_question_meta' name='poll_question_meta' value='".$poll_question."'> 
+			");
+
+	}
+
 // SAVE METABOXES DATA ///////////////////////////////////////////////////////////////
 
 
@@ -167,6 +177,12 @@
 			update_post_meta($post_id, 'sprint_type_meta', $_POST['option_selected']);
 		}else{
 			delete_post_meta($post_id, 'sprint_type_meta');
+		}
+
+		if ( isset($_POST['poll_question_meta'] )   ){
+			update_post_meta($post_id, 'poll_question_meta', $_POST['poll_question_meta']);
+		}else{
+			delete_post_meta($post_id, 'poll_question_meta');
 		}
 
 

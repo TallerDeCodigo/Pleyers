@@ -447,6 +447,37 @@
 
 
 
+	    /*SHORT CODE*/
+	    function sc_dato($params, $content = null) {
+
+			// default parameters
+			extract(shortcode_atts(array(
+				'style' => ''
+			), $params));
+
+		  return
+			"<div class='sc_dato'><h4>DATO</h4>" . do_shortcode($content) . "</div>";
+		}
+
+		add_shortcode('dato','sc_dato');
+
+
+
+		function sc_referencia($params, $content = null) {
+
+			// default parameters
+			extract(shortcode_atts(array(
+				'style' => ''
+			), $params));
+
+		  return
+			"<span class='sc_referencia' data='" . do_shortcode($content) . "'>i</span>";
+		}
+
+		add_shortcode('referencia','sc_referencia');
+
+
+
 	/*AJAX FOR BLOGS*/
 	// function get_blogset(){
 

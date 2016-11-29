@@ -159,7 +159,7 @@
 	<div class="full_container">
 		<ul class="barra_blogs">
 
-			<li class="anterior"></li><!--NAVIGATION ARROW-->
+			<!--<li class="anterior"></li>NAVIGATION ARROW-->
 			<?php 
 				$terms = get_terms('shows', array('hide_empty'=>0) );
 				$terms_arr = array();
@@ -180,7 +180,7 @@
 			</li>
 
 		<?php $count++; endforeach; ?>
-			<li class="siguiente"></li><!--NAVIGATION ARROW-->
+			<!--<li class="siguiente"></li>NAVIGATION ARROW-->
 
 		</ul>
 	</div>

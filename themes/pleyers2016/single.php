@@ -4,10 +4,10 @@
 	// echo "<pre>";
 	// 	print_r($posts);
 	// echo "</pre>";
+
 ?>
 	<div class="single_post clearfix smart_content_wrapper">
 		<div class="single_top">
-			post
 			<?php 
 				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
 					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
@@ -48,8 +48,9 @@
 
 				<div class="contenido capital">
 					<?php the_content(); ?>
+					<div class="addthis_inline_share_toolbox_dvmh"></div>
 				</div>
-			
+				
 
 			<?php 
 				$author_mail = get_the_author_meta('user_email');
@@ -76,7 +77,6 @@
 								<?php
 									$hash =md5(strtolower(trim($email)))."?d=".urlencode($default);
 								?>
-
 								<img src="https://www.gravatar.com/avatar/<?php echo $hash; ?>">
 							</div>
 
@@ -97,6 +97,15 @@
 				<?php								
 					}
 				?>
+				
+				<div class="container clearfix full_container poll_container">
+					<?php 
+						$poll = get_post_meta($post->ID, 'poll_question_meta', true);
+							echo($poll);
+						?>
+				</div>
+				<!-- <iframe src="//renderer.qmerce.com/interaction/582ba51cba00a998079fde54" width="100%" height="350" frameborder="0" scrolling="no"></iframe> -->
+
 				<?php if (function_exists('get_pollquestions')): ?>
 				  <?php //do_shortcode(['poll id="1"']); ?>
 				<?php endif; ?>
