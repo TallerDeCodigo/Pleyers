@@ -156,6 +156,7 @@
 				<?php
 					wp_reset_postdata(); endwhile; endif;
 				?>
+				<a href="<?php echo bloginfo(); ?>/ver-mas">Ver más</a>
 			</div>
 		<?php get_sidebar(); ?>
 		</div>
