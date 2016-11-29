@@ -9,7 +9,14 @@
 					'posts_per_page'=>4,
 					'post_status'=>'publish',
 					'orderby'=>'date',
-					'order'=>'DESC'
+					'order'=>'DESC',
+					'tax_query'=>array(
+									array(
+										'taxonomy'=>'category',
+										'field'=>'slug',
+										'terms'=>'destacado'
+										)
+									)
 					);
 		$posts = new WP_Query($args);
 		$main_post_id = $posts->posts;
@@ -106,12 +113,11 @@
 		<div class="container clearfix">
 			<div class="left_container">
 				<?php 
-					$types = get_all_posttypes();
 					$args = array(
-								'post_type'=> $types,
-								'posts_per_page'=>4,
+								'post_type'=> array('post', 'episodios', 'graficos'),
+								'posts_per_page'=>5,
 								'post_status'=>'publish',
-								'orderby'=>'rand',
+								'orderby'=>'date',
 								'order'=>'DESC',
 								'post__not_in'=>array($main_post_id)
 						);
