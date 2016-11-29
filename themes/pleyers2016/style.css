@@ -146,6 +146,7 @@ nav.social {float:right;position:relative;}
 
 /*HOME*/
 .grid{width:100%;height: 98.5%;background: url(../pleyers2016/images/grid.svg);position:absolute;top:0;background-repeat: repeat;background-size: 5px;opacity: 0.4;}
+.ver_mas_home{text-align: center;cursor: pointer;}
 
 /*MENU*/
 
@@ -492,6 +493,11 @@ div.tax_description img{width:20%;float:left;}
 
 .search-no-results div.tax_description h2{margin-bottom:10px!important;font-size: 3em;margin-left: 40%}
 .search-no-results div.tax_description span{margin-left: 20%}
+/*PAGE MAS POSTS*/
+
+.page-id-5070 div.posts_pool{float: none;margin:0 auto;}
+
+
 /*FOOTER*/
 
 footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;}

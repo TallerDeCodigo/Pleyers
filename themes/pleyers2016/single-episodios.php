@@ -75,7 +75,7 @@
 						);
 			$mas_posts = new WP_Query($args);
 
-			$mas_posts = $mas_posts->posts;
+			// $mas_posts = $mas_posts->posts;
 
 
 
