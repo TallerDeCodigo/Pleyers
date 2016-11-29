@@ -1,9 +1,5 @@
 <?php 
 	get_header(); 
-	$posts = get_queried_object();
-	// echo "<pre>";
-	// 	print_r($posts->ID);
-	// echo "</pre>";
 	$pId = $post->ID;
 	$terms = get_the_terms($post->ID, 'shows'); 
 	$term_slug;
@@ -12,7 +8,7 @@
 	}
 ?>
 <section class="smart_content_wrapper">
-	<div id="contentsWrapper" class="clearfix full_container smart_scroll_container">
+	<div id="contentsWrapper" class="clearfix full_container">
 
 		<div class="content_col smart_ajax_container  inline">
 			<a href="<?php the_permalink(); ?>">
@@ -63,7 +59,7 @@
 			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 			$args = array(
 						'post_type'=>'episodios',
-						'posts_per_page'=>2,
+						'posts_per_page'=>100,
 						'post_status'=>'piublish',
 						'orderby'=>'data',
 						'order'=>'DESC',
@@ -78,6 +74,10 @@
 										)
 						);
 			$mas_posts = new WP_Query($args);
+
+			$mas_posts = $mas_posts->posts;
+
+
 
 			if($mas_posts->have_posts()): 
 				while($mas_posts->have_posts()):
@@ -116,13 +116,7 @@
 									</span>
 								</div>
 
-								<?php 
-									$contenido = get_the_content();
-									the_content(); 
-									if($contenido){
-									}else{}
-							
-									?>
+								<?php the_content(); ?>
 							
 								<div class="line_division"></div>
 								<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div> 
@@ -220,14 +214,14 @@
 								<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 
 							</div>
-							<nav class="prev-next-posts">
+							<!-- <nav class="prev-next-posts">
 								<?php 
 									$next_post = get_next_post();
 									if (!empty( $next_post )): 
 									?>
 										<a href="<?php echo get_permalink( $next_post->ID ); ?>" rel="next"><?php echo $next_post->post_title; ?></a>
 									<?php  endif; ?>
-							</nav>
+							</nav> -->
 						</div>
 			<?php		
 				}

@@ -1,7 +1,7 @@
 <?php 
 	get_header(); 
 	$args = array(
-				'post_type'=>'post',
+				'post_type'=>'sprints',
 				'posts_per_page'=>5,
 				'post_status'=>'publish',
 				'orderby'=>'rand',
@@ -23,9 +23,11 @@
 				<?php 
 					if($img_size == 'foto_grande'){
 						?>
+
 						<div class="<?php echo $img_size; ?>">
 							<?php the_post_thumbnail(); ?>
 						</div>
+
 						<div class="post_head">
 
 							<div class="addthis_inline_share_toolbox"></div>
@@ -104,10 +106,7 @@
 						</div>
 
 						<div class="contenido capital">
-							<?php 
-								the_post_thumbnail();
-								the_content(); 
-								?>	
+							<?php the_content(); ?>	
 							<div class="addthis_inline_share_toolbox_dvmh"></div>
 						</div>
 
@@ -146,13 +145,13 @@
 
 						</div><br>
 						
-						<!-- <div class="sprint_excerpt">
+						<div class="sprint_excerpt">
 							<?php the_excerpt(); ?>
-						</div> -->
+						</div> 
 
-						<!-- <div class="<?php echo $img_size; ?>">
+						<div class="<?php echo $img_size; ?>">
 							<?php the_post_thumbnail(); ?>
-						</div> -->
+						</div>
 
 						<div class="contenido capital">
 							<?php the_content(); ?>

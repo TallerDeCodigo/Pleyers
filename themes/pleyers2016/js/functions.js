@@ -41,15 +41,10 @@
 		if( $('body').hasClass('home') ){
 			$('div.sprints_container').css('height', height_screen-90+"px");
 		}
-		// if($('body').hasClass('archive') ){
-		// 	$('div.sprints_container').css('height', height_container-100+"px");	
-		// }
-
-		// $('.internav').append(
-		// 	'<img src="wp-content/themes/pleyers2016/images/right_arrow.png">'
-		// 	);
+		if( $('body').hasClass('post-type-archive-sprints') ){
+			$('div.sprints_container').css('height', height_screen-250+"px");	
+		}
 		
-		//$('.single_top').height(height_screen);
 
 
 		$( "div.sprints" ).mouseover(function() {
@@ -146,12 +141,12 @@
 		var single_img_height = $('.single_top img').height();
 		$('.grid').css('height', single_img_height+32+"px");
 
+		var blogs_arr = ['.apuntes-de-rabona', '.cultura-pop', '.deportologia', '.jiots-tv', '.el_pechofrio', '.lucha-libre', '.tactica', '.tirando-guante', '.turismo-deportivo'];
+
 
 		$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #deportologia').hide();
 
 		$('.apuntes-de-rabona').click(function(){
-			// $('.barra_blogs li.change').removeClass('change');
-
 			$(this).addClass('change');
 			$('.cultura-pop, .deportologia, .jiots-tv, .el_pechofrio, .lucha-libre, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
 			$('#apuntes-de-rabona').show();
@@ -223,6 +218,73 @@
 			$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #todos').hide();
 		});
 
+		$('.anterior').click(function(){
+			var data_id = $('.barra_blogs').find('.change').attr('data-id');
+
+			if( $('.barra_blogs').find('.change').attr('data-id') == data_id){
+				data_id--;
+				$('.barra_blogs').find('.change').removeClass('change');
+
+				$('.barra_blogs li[data-id='+data_id+']').addClass('change');
+
+			};
+
+		});
+
+		$('.siguiente').click(function(){
+			var data_id = $('.barra_blogs').find('.change').attr('data-id');
+
+			if( $('.barra_blogs').find('.change').attr('data-id') == data_id){
+				data_id++;
+
+				$('.barra_blogs').find('.change').removeClass('change');
+				$('.barra_blogs li[data-id='+data_id+']').addClass('change');
+
+			};
+		})
+
+
+		/*FNUCION MANUEL SCROLL*/
+		var pag_next=0;
+		// $(window).on("load", function() {
+		// 	if ($('body').height() < document.documentElement.clientHeight) {
+		// 		loader();
+		// 	}
+		// });
+
+		$(window).scroll(function() {
+		   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+		       loader();
+		   }
+		});
+
+
+		function loader() {
+	       console.log("bottom!");
+	       pag_next = parseInt($('.paginaqueva:first-of-type').html());
+	       pag_next = pag_next+1;
+	       $('.paginaqueva').html(pag_next);
+	       $('.loader').addClass('active');
+	       var code_var = $('code').html();
+	       // code_var = JSON.stringify(code_var);
+	       console.log(code_var);
+
+	       // $.ajax({
+        //        type: "POST",
+        //        dataType: "html",
+        //        url: '<?php echo esc_url(site_url()); ?>/breaking/page/'+pag_next+'/' ,
+        //        data: '',
+        //        success: function(data){
+        //            var $data = $(data);
+        //            $("body").append($data);
+        //            $('.paginaqueva').html($('.paginaqueva:first-of-type').html());
+        //            $('.loader').removeClass('active');
+        //        },
+        //        error : function(jqXHR, textStatus, errorThrown) {
+        //            // $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+        //        }
+	       //  });
+		}
 
 
 
@@ -230,59 +292,8 @@
 		var hour_string = $('.post_time').html();
 		//hour_string = hour_string.substring(0, 3);
 
+		
 
-		/*AJAX FOR BLOGS*/
-		/*
-		jQuery.ajax({
-			type: 'POST',
-			url: 'http://localhost/~programacion2/pleyers/wp-admin/admin-ajax.php',
-			data: {
-				action: 'my_get_posts' // this must be the same with your ajax function name
-			},
-				success: function(data, textStatus, XMLHttpRequest)
-			{
-				for (var entry in data)
-				{ 
-				// get post's attributes
-				var postID = data[entry].id;
-				var title = data[entry].title;
-
-				// append new post into some list
-				$(".videos_stack").append("<li>" + title + "</li>");
-
-				}
-			},
-				error: function(MLHttpRequest, textStatus, errorThrown)
-				{
-				},
-				complete: function(XMLHttpRequest, textStatus)
-				{
-				},
-			dataType: 'json'
-		});*/
-
-
-
-
-		// $('.change').click(function(){
-		// 	var test = $(this).find('input[type="hidden"]').val();
-		// 	$.ajax({
-		// 		type: 	'GET', 
-		// 		url: 	'http://localhost/~programacion2/pleyers/wp-admin/admin-ajax.php',
-		// 		data: 	{
-		// 				action: 'get_blogset',
-		// 				test: test,
-		// 		},
-		// 		success: function(data){
-		// 			console.log('success');
-		// 			console.log(data);
-		// 		},
-		// 		error: function(XMLHttpRequest, textStatus, errorThrown){
-		// 			console.log(errorThrown);
-		// 		}
-		// 	});ç
-
-		// }); //end click change
 
 	});//end funcition
 

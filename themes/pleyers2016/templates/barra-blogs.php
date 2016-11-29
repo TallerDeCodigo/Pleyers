@@ -1,4 +1,4 @@
-<div id="apuntes-de-rabona" class="full_container">
+<div id="apuntes-de-rabona" class="full_container"  >
 
 	<?php 
 		$args = array(	
@@ -79,7 +79,7 @@
 </div>
 
 
-<div id="cultura-pop" class="full_container">
+<div id="cultura-pop" class="full_container" >
 
 	<?php 
 		$args = array(	
@@ -160,7 +160,7 @@
 </div>
 
 
-<div id="deportologia" class="full_container">
+<div id="deportologia" class="full_container" >
 	
 	<?php 
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -256,7 +256,7 @@
 </div>
 
 
-<div id="jiots-tv" class="full_container">
+<div id="jiots-tv" class="full_container" >
 	
 	<?php 
 		$args = array(	
@@ -336,7 +336,7 @@
 	</div>
 </div>
 
-<div id="el_pechofrio" class="full_container">
+<div id="el_pechofrio" class="full_container" >
 
 	<?php 
 		$args = array(	
@@ -417,7 +417,7 @@
 </div>
 
 
-<div id="lucha-libre" class="full_container">
+<div id="lucha-libre" class="full_container" >
 	
 	<?php 
 		$args = array(	
@@ -498,7 +498,7 @@
 </div>
 
 
-<div id="tactica" class="full_container">
+<div id="tactica" class="full_container" >
 	
 	<?php 
 		$args = array(	
@@ -579,7 +579,7 @@
 </div>
 
 
-<div id="tirando-guante" class="full_container">
+<div id="tirando-guante" class="full_container" >
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -659,7 +659,7 @@
 </div>
 
 
-<div id="turismo-deportivo" class="full_container">
+<div id="turismo-deportivo" class="full_container" >
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',

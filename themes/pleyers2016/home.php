@@ -158,25 +158,30 @@
 
 	<div class="full_container">
 		<ul class="barra_blogs">
-			<li></li><!--NAVIGATION ARROW-->
+
+			<li class="anterior"></li><!--NAVIGATION ARROW-->
 			<?php 
 				$terms = get_terms('shows', array('hide_empty'=>0) );
 				$terms_arr = array();
 				// echo "<pre>";
 				// 	print_r($terms);
 				// echo "</pre>";
+
+				$count =0;
+
 				foreach($terms as $term):
 					$term_name 		= $term->name;
 					$class_slg 		= $term->slug;
 					$terms_arr[] 	= $term->slug;
 					$trm_id 		= $term->term_id;
-
 			?>
-			<li class="<?php echo $class_slg; ?> ">
+			<li class="<?php echo $class_slg; ?> " data-id="<?php echo $count; ?>">
 				<?php echo $term_name; ?> 
 			</li>
-		<?php endforeach; ?>
-			<li></li><!--NAVIGATION ARROW-->
+
+		<?php $count++; endforeach; ?>
+			<li class="siguiente"></li><!--NAVIGATION ARROW-->
+
 		</ul>
 	</div>
 

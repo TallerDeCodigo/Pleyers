@@ -5,8 +5,9 @@
 	// 	print_r($posts);
 	// echo "</pre>";
 ?>
-	<div class="single_post clearfix">
+	<div class="single_post clearfix smart_content_wrapper">
 		<div class="single_top">
+			post
 			<?php 
 				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
 					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);

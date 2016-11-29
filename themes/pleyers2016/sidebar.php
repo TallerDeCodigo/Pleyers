@@ -20,6 +20,7 @@
 						<h3 class="header_sprints">SPRINTS</h3>
 					</a>
 				</div>
+				
 				<div class="sprints_container">
 					<?php 
 						if($posts->have_posts()): 
@@ -45,7 +46,12 @@
 												<?php the_post_thumbnail(); ?>
 											</div>
 										</a>
-										<a href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
+
+										<a href="<?php the_permalink(); ?>">
+											<p>
+												<?php the_title(); ?>
+											</p>
+										</a>
 										<?php the_excerpt(); ?>
 									</div>
 								<?php 
@@ -61,20 +67,19 @@
 							endwhile; 
 						endif; 
 			?>	
+
 			<?php if ($posts->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-					<nav class="prev-next-posts">
+					 <nav class="prev-next-posts">
 
 					    <div class="prev-posts-link">
-					    	<?php //next_post_link('Ver más','<img src="images/right_arrow.png"/>'); ?>
-					      <?php echo get_next_posts_link( 'Ver más <img src="'.THEMEPATH.'/images/right_arrow.png"/>', $posts->max_num_pages ); // display older posts link ?>
-					      <!-- <img src="<?php //echo THEMEPATH; ?>/images/right_arrow.png"> -->
+					      <?php echo get_next_posts_link( 'Ver más <img src="'.THEMEPATH.'/images/right_arrow.png"/>', $posts->max_num_pages ); ?>
 					    </div>
 
 					    <div class="next-posts-link">
-					      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
+					      <?php echo get_previous_posts_link( 'Regresar' ); ?>
 					    </div>
 
-					</nav>
+					</nav> 
 			<?php } ?>
 				</div>
 	</div>

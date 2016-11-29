@@ -15,13 +15,21 @@
 			<a href="http://cerocero.mx/" target="_blank">
 				<span class="vermas">Ver Más<img src="<?php echo THEMEPATH; ?>/images/right_arrow_black.png"></span>
 			</a>
-		<div class="posts_cerocero clearfix">
+		<ul class="posts_cerocero clearfix">
 			<?php 
-				if($posts->have_posts()): while($posts->have_posts()):
+				if($posts->have_posts()): 
+					while($posts->have_posts()):
 					$posts->the_post();
-					the_post_thumbnail();
-			?>
-			<?php endwhile; endif; ?>
-		</div>
+					setup_postdata($post);
+				?>
+					<li>
+						<?php the_post_thumbnail();?>
+					</li>
+			<?php 
+					wp_reset_postdata();
+					endwhile; 
+				endif; 
+				?>
+		</ul>
 	</div>
 </div>
