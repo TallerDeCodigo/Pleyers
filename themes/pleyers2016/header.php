@@ -14,7 +14,24 @@
 		<meta name="ICBM" content="23.634501, -102.552784" />
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,900' rel='stylesheet' type='text/css'>
+		<?php wp_enqueue_script('jquery'); ?>
 		<?php wp_head(); ?>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('.carousel').bxSlider({
+				    mode: 'horizontal',
+				    infiniteLoop: true,
+				    minSlides: 4,
+				    maxSlides: 4,
+				    moveSlides: 4,
+				    speed: 1000,
+				    pause: 0,
+				    auto: false,
+				    pager: false,
+				    controls: true
+				  });
+			});
+		</script>
 		<script>
 			(function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0];

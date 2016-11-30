@@ -23,6 +23,17 @@
 	add_action( 'init' , 'wptp_add_categories_to_attachments' );
 
 
+	// LOAD BX SLIDER
+	// *********************************************************
+	function loadbxslider()
+	{
+	    wp_enqueue_style('bxstyle', '/wp-content/themes/pleyers2016/bx_styles/bx_styles.css');
+	    wp_enqueue_script('bxscript', '/wp-content/themes/pleyers2016/js/jquery.bxSlider.min.js', array('jquery'));
+	}
+	add_action('init', 'loadbxslider');
+
+
+
 // FRONT END SCRIPTS AND STYLES //////////////////////////////////////////////////////
 
 

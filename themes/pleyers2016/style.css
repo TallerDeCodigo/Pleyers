@@ -232,6 +232,8 @@ div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid 
 .match_list:before {content: '';display: block;margin-top: 0em;}
 .match_list:after {content: '';display: inline-block;width: 100%;}
 
+
+
 .navs{vertical-align:top;position:relative;padding:83.5px 0px; background: grey}
 /*.navs:first-child{left:65px;}
 .navs:last-child{right:65px;}*/
@@ -242,7 +244,7 @@ div.left{background-color:#000;background-image: url(../pleyers2016/images/left_
 .right{left:1240px;top:58px;padding-left:40px;}
 div.right{background-color:#8c8c8c;background-image: url(../pleyers2016/images/right_nav.png);background-position: center;background-repeat: no-repeat;background-size: 50%;}
 
-.sport_calendar{font-family: 'Montserrat';z-index: 9;text-align: center;font-size: 1.3em;font-weight: bold;width:169px;color:#fff;background: #000;border:1px solid grey;position:relative;left:-4.3%;top:54px;-ms-transform: rotate(-90deg); /* IE 9 */-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */transform: rotate(-90deg);}
+.sport_calendar{font-family: 'Montserrat';z-index: 9;text-align: center;font-size: 1.3em;font-weight: bold;width:157px;color:#fff;background: #000;border:1px solid grey;position:relative;left:-3.9%;top:50px;-ms-transform: rotate(-90deg); /* IE 9 */-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */transform: rotate(-90deg);}
 
 body.home section:first-of-type {padding-top:0px;}
 
@@ -504,3 +506,10 @@ div.tax_description img{width:20%;float:left;}
 footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;}
 footer img {height:50px;width:auto;float:left;margin-right:15px;}
 
+.bx-wrapper{margin-top:-76px!important;}
+.bx_sl_li{width:300px!important;}
+.bx-viewport{height:177px!important;width:95.5%!important;margin:0% 0% 0% 4.5%;}
+.bx-controls-direction{position:relative;top:-100px;color:#fff;}
+.bx-controls-direction  .bx-next{float:right;margin-right:15px;}
+.bx-controls-direction  .bx-prev{margin-left:70px;}
+.carousel{margin-left:3.5em;}

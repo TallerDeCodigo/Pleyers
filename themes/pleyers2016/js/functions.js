@@ -30,8 +30,6 @@
 			});
 			return result;
 		}
-
-
 		var height_screen = $(window).height();
 		var height_container = $('.archive div.full_container').height();
 
