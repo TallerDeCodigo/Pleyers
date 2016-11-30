@@ -221,6 +221,7 @@ div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid 
 /*BARRA DE PARTIDOS*/
 .match_calendar{margin-bottom:90px!important;}
 .first_li{display:inline-block;position:relative;}
+.second_li{display:none;}
 .match_calendar ul li div{color:#fff;}
 .inner_li span{color:#ffff00;font-weight: bold;}
 .inner_li img{width:60px;height:60px;}

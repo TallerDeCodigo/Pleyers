@@ -243,6 +243,11 @@
 			};
 		})
 
+		/*NAVIGATION PARTIDOS*/
+		$('.right').click(function(){
+
+		});
+
 
 		/*FNUCION MANUEL SCROLL*/
 		var pag_next=0;
