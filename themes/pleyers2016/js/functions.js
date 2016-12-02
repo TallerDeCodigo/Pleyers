@@ -48,11 +48,11 @@
 				
 
 
-				$( "div.sprints" ).mouseover(function() {
-						$('body').css('overflow','hidden');
-					}).mouseout(function() {
-						$('body').css('overflow','auto');
-				});
+				// $( "div.sprints" ).mouseover(function() {
+				// 		$('body').css('overflow','hidden');
+				// 	}).mouseout(function() {
+				// 		$('body').css('overflow','auto');
+				// });
 
 				$( "div.menu nav" )
 					.mouseover(function() {

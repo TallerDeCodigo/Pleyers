@@ -175,14 +175,14 @@
 
 
 
-	/*add_filter('excerpt_length', function($length){
-		return 20;
-	});*/
+	// add_filter('excerpt_length', function($length){
+	// 	return 25;
+	// });
 
 
-	/*add_filter('excerpt_more', function(){
-		return ' &raquo;';
-	});*/
+	add_filter('excerpt_more', function(){
+		return '...';
+	});
 
 
 

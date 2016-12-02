@@ -41,6 +41,7 @@
 										endforeach; }
 									?>
 									<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+									<span><?php the_excerpt(); ?></span>
 								</div>
 				<?php
 								wp_reset_postdata(); 

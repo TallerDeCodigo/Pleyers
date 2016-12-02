@@ -4,7 +4,7 @@
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
 							'post_type'=>'sprints',//cambiar por el posttype -> sprints
-							'posts_per_page'=>10,
+							'posts_per_page'=>6,
 							'post_status'=>'publish',
 							'orderby'=>'date',
 							'order'=>'DESC',
@@ -49,7 +49,7 @@
 
 											<a href="<?php the_permalink(); ?>">
 												<p>
-													<?php the_title(); ?>
+													<?php //the_title(); ?>
 												</p>
 											</a>
 											<?php the_excerpt(); ?>
@@ -66,7 +66,7 @@
 
 											<a href="<?php the_permalink(); ?>">
 												<p>
-													<?php the_title(); ?>
+													<?php //the_title(); ?>
 												</p>
 											</a>
 											<?php the_excerpt(); ?>
@@ -83,7 +83,7 @@
 
 											<a href="<?php the_permalink(); ?>">
 												<p>
-													<?php the_title(); ?>
+													<?php //the_title(); ?>
 												</p>
 											</a>
 											<?php the_excerpt(); ?>

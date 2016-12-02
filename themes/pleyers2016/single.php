@@ -8,13 +8,15 @@
 ?>
 	<div class="single_post clearfix smart_content_wrapper">
 		<div class="single_top">
+			<div class="_imagen" style="background:url(<?php the_post_thumbnail_url(); ?>) no-repeat center center fixed;">
 			<?php 
 				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
 					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
 					echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
 				} else { ?>
-				<?php the_post_thumbnail('full'); ?>
+				<?php //the_post_thumbnail('full'); ?>
 			<?php } ?>
+			</div>
 		</div>
 
 		<div class="single_content smart_scroll_container smart_ajax_container">
