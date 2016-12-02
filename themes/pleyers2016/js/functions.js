@@ -34,12 +34,13 @@
 				}
 				var height_screen = $(window).height();
 				var height_container = $('.archive div.full_container').height();
+				var _left_container = $('.left_container').height();
 
 
 				$('div.sprints_container').css('height', height_screen-100+"px");
 
 				if( $('body').hasClass('home') ){
-					$('div.sprints_container').css('height', height_screen-90+"px");
+					$('div.sprints_container').css('height', _left_container-90+"px");
 				}
 				if( $('body').hasClass('post-type-archive-sprints') ){
 					$('div.sprints_container').css('height', height_screen-250+"px");	

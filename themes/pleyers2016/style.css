@@ -164,10 +164,10 @@ div.overscreen div.menu nav div:last-child{text-align: center;}
 div.overscreen div.menu nav div:last-child span a{font-size: 16px;/*display:inline-block;width:50%;*/margin-bottom:0px;margin-top:0px;}
 div.overscreen div.menu nav div:last-child span a:first-child{margin-top:10px;}
 
-div.left_container {width:calc(100% - 600px);float:left;padding:32px 40px 20px 0px;margin-left:160px;}
+div.left_container {width:calc(100% - 550px);float:left;padding:32px 40px 20px 0px;margin-left:160px;}
 
 div.post {margin-bottom:20px;}
-div.post div.img_frame {width:210px;height:210px;background:#EEE;float:left;margin-right:20px;}
+div.post div.img_frame {width:240px;height:240px;background:#EEE;float:left;margin-right:20px;}
 div.post div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.post span {font-size:90%;font-weight:700;color:#777;}
 div.post h3 {margin:5px 0px 10px;font-size:140%;}
@@ -214,12 +214,12 @@ div.destacado h3 {margin:0;color:#FFF;line-height:115%;}
 div.destacado.nota1 {position:absolute;left:20px;bottom:10px;width:42%;}
 div.destacado.nota1 h3 {font-size:240%;}
 div.more_destacado {position:absolute;right:20px;top:50%;width:22%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}
-div.more_destacado div.destacado {padding-top:2%;padding-right:2%;padding-bottom:2%;padding-left:0%;border-bottom: 2px solid rgba(255,255,255, 0.5)	}
+div.more_destacado div.destacado {padding-top:2%;padding-right:2%;padding-bottom:2%;padding-left:0%;border-bottom: 2px solid rgba(255,255,255, 0.5); height:160px;}
 div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
 /*BARRA DE PARTIDOS*/
-.match_calendar{margin-bottom:90px!important;}
+.match_calendar{margin-bottom:30px!important;}
 .first_li{display:inline-block;position:relative;}
 .second_li{display:none;}
 .match_calendar ul li div{color:#fff;}
