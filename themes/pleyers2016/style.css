@@ -185,7 +185,7 @@ div.sprints_container {margin-top:15px;width:99%;overflow-y:scroll;}
 .sprints .sprints_post span.post_time {display:block;float:left;width:10%;text-align:right;font-size:14px;font-family:'Roboto Condensed';font-weight:bold;margin-bottom:5px;padding-right:8px;}
 .sprints .sprints_post .sprints_post_content {float:left;width:90%;}
 .sprints .sprints_post .sprints_post_content a {color:#333e48;text-decoration:none;font-family:'Roboto Condensed';}
-.sprints .sprints_post .sprints_post_content div p {margin-bottom:1px;font-size:1.6rem;line-height:140%;color:#777;font-family: 'Roboto';text-align: justify;}
+.sprints .sprints_post .sprints_post_content div p {margin-bottom:1px;font-size:1.6rem;line-height:140%;color:#777;font-family: 'Roboto';}
 .sprints .sprints_post .sprints_post_content div p:first-child{font-size: 2rem; font-weight: bold;color:#212121;}
 .sprints .formato_a .sprints_post_content div.img_frame {margin-bottom:5px;width:100%;height:auto;background:#EEE;}
 .sprints .formato_a .sprints_post_content div.img_frame img {width:100%;height:auto;margin-bottom:-5px;}
@@ -379,9 +379,9 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .content_side{float:left;width:23%;margin}
 .content_side div.sidebar{width:100%;}
 .content_col div.inline{display:inline-block;vertical-align: top;}
-.content_col{float:right;width:70%;margin-top:100px;}
+.content_col{float:right;width:70%;margin-top:100px;padding:0% 5%;}
 .content_col img{width:100%;height:auto;}
-.content_col div.single_content{width:90%;margin:0 auto;}
+.content_col div.single_content{width:100%;}
 .content_side{margin-top:60px;}
 .the_date{color:#8b8b8b;}
 
@@ -392,7 +392,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .single-sprints div.single_top {position:relative;width:100%;height:600px;overflow:hidden;}
 .single-sprints div.single_top img {position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 .post-type-archive-sprints div.sidebar{position:fixed;top:6.5%;}
-.post-type-archive-sprints div.post_head{margin-top:0px;position: relative;}
+.post-type-archive-sprints div.post_head{margin-top:0px;position: relative;padding-top:50px;}
 .left_title{padding-left:60px;}
 .sprint_top div.foto_chica{width:45%;float:left;margin-right:30px;margin-top:90px;/*margin-left:-64px;*/}
 .sprint_top article.single_content div.head_tag{margin-top:10px;}
@@ -400,7 +400,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .sprint_top div.post_head div._the_date{position:relative;top:45px;}
 
 /*SINGLE EPISODIOS*/
-.single-episodios div.sidebar{position:fixed;top:10%;}
+.single-episodios div.sidebar{float:left;}
 .single-episodios div.foto_chica div.content_single_episodio a{float:left;width:30%;margin-right:20px;}
 .single-episodios div.content_side div.sidebar{width:24%;z-index:-9;}
 
@@ -506,10 +506,12 @@ div.tax_description img{width:20%;float:left;}
 footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;}
 footer img {height:50px;width:auto;float:left;margin-right:15px;}
 
-.bx-wrapper{margin-top:-76px!important;}
-.bx_sl_li{width:300px!important;}
+.bx-wrapper{margin-top:-76px!important;position:relative;}
+.bx_sl_li{width:300px!important;border-right:1px solid black;}
 .bx-viewport{height:177px!important;width:95.5%!important;margin:0% 0% 0% 4.5%;}
-.bx-controls-direction{position:relative;top:-100px;color:#fff;}
-.bx-controls-direction  .bx-next{float:right;margin-right:15px;}
-.bx-controls-direction  .bx-prev{margin-left:70px;}
+.bx-controls-direction{position:relative;color:#fff;height:100%;}
+.bx-controls-direction a {display: block;height: 100%;width: 30px;position: absolute;text-align: center;line-height: 150px;font-size: 30px;font-weight: bold;opacity: .9;}
+.bx-controls-direction  .bx-next{right: 0px;background: gray;}
+.bx-controls-direction  .bx-prev{margin-left:57px;background:#111}
+.bx-controls.bx-has-controls-direction {position:absolute;width:100%;height:157px;left:0px;bottom:2px;}
 .carousel{margin-left:3.5em;}
