@@ -380,7 +380,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 body.ltr .en{max-width: 620px;}
 
 
-.content_side{float:left;width:23%;margin}
+.content_side{float:left;width:30%;margin}
 .content_side div.sidebar{width:100%;}
 .content_col div.inline{display:inline-block;vertical-align: top;}
 .content_col{float:right;width:70%;margin-top:100px;padding:0% 5%;}
@@ -398,15 +398,17 @@ body.ltr .en{max-width: 620px;}
 .post-type-archive-sprints div.sidebar{position:fixed;top:6.5%;z-index:-9;}
 .post-type-archive-sprints div.post_head{margin-top:0px;position: relative;padding-top:50px;}
 .left_title{padding-left:60px;}
-.sprint_top div.foto_chica{width:45%;float:left;margin-right:30px;margin-top:90px;/*margin-left:-64px;*/}
+.sprint_top div.foto_chica{width:45%;float:left;margin-right:30px;margin-top:90px;}
 .sprint_top article.single_content div.head_tag{margin-top:10px;}
 
 .sprint_top div.post_head div._the_date{position:relative;top:45px;}
 
 /*SINGLE EPISODIOS*/
+.single-episodios div.content_side{margin-top:15px;position:fixed;z-index:0;}
+.single-episodios div.content_col{margin-top:30px;}
 .single-episodios div.sidebar{float:left;}
 .single-episodios div.foto_chica div.content_single_episodio a{float:left;width:30%;margin-right:20px;}
-.single-episodios div.content_side div.sidebar{width:24%;z-index:-9;}
+.single-episodios div.content_side div.sidebar{width:100%;z-index:0;}
 
 /*SINGLE GRAFICOS*/
 .single-graficos div.single_post div.single_top{position:relative;width:100%;height:600px;overflow:hidden;}
