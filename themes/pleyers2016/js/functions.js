@@ -36,15 +36,22 @@
 				var height_container = $('.archive div.full_container').height();
 				var _left_container = $('.left_container').height();
 
+				if( $('body').hasClass('post-type-archive-sprints') ){
 
-				$('div.sprints_container').css('height', height_screen-100+"px");
+					$('div.sprints_container').css('height', 'auto');	
+
+				}else{
+
+					$('div.sprints_container').css('height', height_screen-100+"px");
+
+				}
 
 				if( $('body').hasClass('home') ){
 					$('div.sprints_container').css('height', _left_container-90+"px");
 				}
-				if( $('body').hasClass('post-type-archive-sprints') ){
-					$('div.sprints_container').css('height', height_screen-250+"px");	
-				}
+				// if( $('body').hasClass('post-type-archive-sprints') ){
+				// 	$('div.sprints_container').css('height', 'auto');	
+				// }
 				
 
 
