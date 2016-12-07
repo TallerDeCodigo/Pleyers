@@ -145,7 +145,7 @@ nav.social {float:right;position:relative;}
 .yt{background:url(../pleyers2016/images/yt_ks.svg);background-repeat: no-repeat;background-position: center;background-size: 100%;}
 
 /*HOME*/
-.grid{width:100%;height: 98.5%;background: url(../pleyers2016/images/grid.svg);position:absolute;top:0;background-repeat: repeat;background-size: 5px;opacity: 0.4;}
+/*.grid{width:100%;height: 98.5%;background: url(../pleyers2016/images/grid.svg);position:absolute;top:0;background-repeat: repeat;background-size: 5px;opacity: 0.4;}*/
 .ver_mas_home{text-align: center;cursor: pointer;}
 
 /*MENU*/

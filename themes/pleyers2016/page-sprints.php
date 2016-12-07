@@ -1,19 +1,17 @@
+<?php get_header(); ?>
 <?php 
-	get_header(); 
-	$pId = $post->ID;
-	$terms = get_the_terms($post->ID, 'shows'); 
-	$term_slug;
-	foreach($terms as $term){
-		$term_slug = $term->slug;
-	}
-	echo $term_slug;
+	$args = array(
+				'post_type'=>'sprints',
+				'posts_per_page'=>10,
+				'post_status'=>'publish',
+				'orderby'=>'date',
+				'order'=>'DESC',
+		);
+	$posts = new WP_Query($args);
 ?>
 <section class="smart_content_wrapper">
-
 	<div id="contentsWrapper" class="clearfix full_container smart_scroll_container">
-
 		<div class="content_col smart_ajax_container  inline">
-
 			<article id="<?php echo $pId; ?>">
 				<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail(); ?>
@@ -52,7 +50,6 @@
 						?>
 					<div class="line_division"></div>
 					<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-				</div>	
 					<div class="inlink">
 
 						<?php 
@@ -110,46 +107,16 @@
 							?>
 
 
+						<?php //next_post_link(); ?>
 						<div class="next_art_container">
-							<div class="addthis_inline_share_toolbox"></div>
-							<div>
-								<?php 
-									$tags = get_the_tags();
-									if($tags){
-										foreach($tags as $tag):
-											$tag_slug = $tag->slug;
-											$tag_nme = $tag->name;
-										endforeach;	
-											echo "<span class='tags'>#".$tag_nme." "."</span>";
-									}
-								?>
 
-								<a href="<?php the_permalink(); ?>">
-									<h2>
-										<?php the_title(); ?>
-									</h2>
-								</a>
-								<span class="the_date">
-									<?php echo get_the_date('H:m - d/j/Y'); ?>
-								</span>
-
-							</div>
-							<?php 
-								$contenido = get_the_content();
-								the_content(); 
-								if($contenido){
-									//echo '<div class="addthis_sharing_toolbox"></div>';
-								}else{ }
-								?>
-							<div class="line_division"></div>
-							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 						</div>
 					</div>
 			</article>
 			
 		</div>
 
-		<div class="content_side inline" >
+		<div class="content_side inline" style="position:fixed;">
 			<div class="sidebar clearfix">
 				<div class="sprints">
 					<?php 
@@ -234,8 +201,5 @@
 			</div>
 		</div>
 	</div>
-
-	
 </section>
-
 <?php get_footer(); ?>
