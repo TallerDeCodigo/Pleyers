@@ -6,21 +6,40 @@
 	foreach($terms as $term){
 		$term_slug = $term->slug;
 	}
-	echo $term_slug;
+	// echo $term_slug;
 ?>
 <section class="smart_content_wrapper">
 
 	<div id="contentsWrapper" class="clearfix full_container smart_scroll_container">
 
-		<div class="content_col smart_ajax_container  inline">
 
+
+		<div class="content_col smart_ajax_container  inline">
 			<article id="<?php echo $pId; ?>">
 				<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail(); ?>
 				</a>
 				
 				<div class="single_content">
-					<div class="addthis_inline_share_toolbox"></div>
+					<!-- <div class="addthis_inline_share_toolbox"></div> -->
+
+					<div class="shares">
+
+						<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+						<a class="copylink">
+							<div class="share_link" aria-hidden="true"></div> 
+						</a>
+
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+							<div class="share_fb" aria-hidden="true"></div> 
+						</a>
+
+						<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+							<div class="share_tw" aria-hidden="true"></div> 
+						</a>
+
+					</div>
+
 					<div>
 						<?php 
 							$tags = get_the_tags();
@@ -50,6 +69,22 @@
 							//echo '<div class="addthis_sharing_toolbox"></div>';
 						}else{ }
 						?>
+						<div class="shares horizontal_share clearfix">
+
+							<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+							<a class="copylink">
+								<div class="share_link" aria-hidden="true"></div> 
+							</a>
+
+							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+								<div class="share_fb" aria-hidden="true"></div> 
+							</a>
+
+							<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+								<div class="share_tw" aria-hidden="true"></div> 
+							</a>
+
+						</div>
 					<div class="line_division"></div>
 					<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 				</div>	
@@ -111,7 +146,22 @@
 
 
 						<div class="next_art_container">
-							<div class="addthis_inline_share_toolbox"></div>
+							<div class="shares">
+
+								<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+								<a class="copylink">
+									<div class="share_link" aria-hidden="true"></div> 
+								</a>
+
+								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+									<div class="share_fb" aria-hidden="true"></div> 
+								</a>
+
+								<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+									<div class="share_tw" aria-hidden="true"></div> 
+								</a>
+
+							</div>
 							<div>
 								<?php 
 									$tags = get_the_tags();
@@ -141,13 +191,31 @@
 									//echo '<div class="addthis_sharing_toolbox"></div>';
 								}else{ }
 								?>
+								<div class="shares horizontal_share clearfix">
+
+									<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+									<a class="copylink">
+										<div class="share_link" aria-hidden="true"></div> 
+									</a>
+
+									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+										<div class="share_fb" aria-hidden="true"></div> 
+									</a>
+
+									<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+										<div class="share_tw" aria-hidden="true"></div> 
+									</a>
+
+								</div>
 							<div class="line_division"></div>
 							<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 						</div>
 					</div>
 			</article>
-			
 		</div>
+
+
+
 
 		<div class="content_side inline" >
 			<div class="sidebar clearfix">

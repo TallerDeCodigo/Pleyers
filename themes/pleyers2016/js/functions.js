@@ -20,6 +20,21 @@
 
 
 
+
+				 $(document).on('click', '.copylink', function() {
+		        	var copyTextarea = $(this).parent().find('textarea');
+		        	  copyTextarea.focus().select();
+		        	  try {
+		        	    var successful = document.execCommand('copy');
+		        	    var msg = successful ? 'successful' : 'unsuccessful';
+		        	    console.log('Copying text command was ' + msg);
+		        	    $(this).parent().toggle();
+		        	  } catch (err) {
+		        	    console.log('Oops, unable to copy');
+		        	  }
+		        });
+
+
 				/**
 				 * Regresa todos los valores de un formulario como un associative array 
 				 */
@@ -251,10 +266,6 @@
 					};
 				})
 
-				/*NAVIGATION PARTIDOS*/
-				$('.right').click(function(){
-
-				});
 
 				/*FNUCION MANUEL SCROLL*/
 				var pag_next=0;
@@ -304,41 +315,68 @@
 				var hour_string = $('.post_time').html();
 				//hour_string = hour_string.substring(0, 3);
 
-		/*** NAVEGACIÓN */
+				/*** NAVEGACIÓN */
 
-		var newHash = '';
+				var newHash = '';
 
-		$(document).on('click', '.inlink a', function(e) {
+				$(document).on('click', '.inlink a', function(e) {
 
-		 	e.preventDefault();
-		 	var newHash = $(this).attr('href');
-		 	console.log(newHash);
-		 	$(this).parent().find('.next_art_container').empty();
-		 	$(this).parent().find('.next_art_container').addClass('contenido_mas');
- 	 	    $(this).parent().find('.next_art_container').load(newHash+' article', function() {
- 				
- 			});
+				 	e.preventDefault();
+				 	var newHash = $(this).attr('href');
+				 	console.log(newHash);
+				 	$(this).parent().find('.next_art_container').empty();
+				 	$(this).parent().find('.next_art_container').addClass('contenido_mas');
+		 	 	    $(this).parent().find('.next_art_container').load(newHash+' article', function() {
+		 				
+		 			});
 
-		 	var myNewState = {
-		     data: {
-		 	        a: 1,
-		 	        b: 2
-		 	    },
-		 	    title: '',
-		 	    url: newHash
-		 	};
+				 	var myNewState = {
+				     data: {
+				 	        a: 1,
+				 	        b: 2
+				 	    },
+				 	    title: '',
+				 	    url: newHash
+				 	};
 
-		 	history.pushState(myNewState.data, myNewState.title, myNewState.url);
-		 	window.onpopstate = function(event){
-		 	    console.log(myNewState.url); // previous 
-		 	    console.log(window.location.href); // actual
-		 	    var newHash = window.location.href;
-		 	    $(this).parent().find('.next_art_container').load(newHash+' article', function() {
-					// SCROLL HACIA ARRIBA O ABAJO AL TARGET
+				 	history.pushState(myNewState.data, myNewState.title, myNewState.url);
+				 	window.onpopstate = function(event){
+				 	    console.log(myNewState.url); // previous 
+				 	    console.log(window.location.href); // actual
+				 	    var newHash = window.location.href;
+				 	    $(this).parent().find('.next_art_container').load(newHash+' article', function() {
+							// SCROLL HACIA ARRIBA O ABAJO AL TARGET
+						});
+				 	}
+
 				});
-		 	}
 
-		});
+
+
+				/*HISTORY URL HKN*/
+				$(function () {
+				    var currentHash = "initial_hash";
+
+				    $(document).scroll(function () {
+				        $('.anchor_tags').each(function () {
+				            var top = window.pageYOffset;
+				            var distance = top - $(this).offset().top;
+				            var hash = $(this).attr('href');
+				            // 30 is an arbitrary padding choice, 
+				            // if you want a precise check then use distance===0
+				            if (distance < 150 && distance > -150 && currentHash != hash) {
+				            	// window.location.hash = (hash);
+				            	if(history.pushState) { history.pushState(null, null, "/"+hash); } else { window.location.hash = hash; }
+				                currentHash = hash;
+
+				            }
+
+				        });
+				    });
+				});
+
+
+
 
 	});
 
