@@ -524,7 +524,7 @@ div.tax_description img{width:20%;float:left;}
 
 /*FOOTER*/
 
-footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;}
+footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;z-index: 9;}
 footer img {height:50px;width:auto;float:left;margin-right:15px;}
 
 .bx-wrapper{margin-top:-76px!important;position:relative;}
