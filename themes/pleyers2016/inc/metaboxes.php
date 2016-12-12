@@ -73,7 +73,6 @@
 			");
 	}
 
-
 	function show_get_sprint_type($post){
 		$sprint_type = get_post_meta($post->ID, 'sprint_type_meta', true);
 

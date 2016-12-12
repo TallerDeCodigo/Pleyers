@@ -135,7 +135,6 @@
 	}
 
 
-
 // POST TYPES, METABOXES, TAXONOMIES AND CUSTOM PAGES ////////////////////////////////
 
 
