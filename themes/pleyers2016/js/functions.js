@@ -354,27 +354,40 @@
 
 
 				/*HISTORY URL HKN*/
+				var aidi = 0;
 				$(function () {
 				    var currentHash = "initial_hash";
+				    var es;
 
-				    $(document).scroll(function () {
+				    $(window).scroll(function () {
 				        $('.anchor_tags').each(function () {
 				            var top = window.pageYOffset;
 				            var distance = top - $(this).offset().top;
 				            var hash = $(this).attr('href');
-				            // 30 is an arbitrary padding choice, 
-				            // if you want a precise check then use distance===0
 				            if (distance < 150 && distance > -150 && currentHash != hash) {
-				            	// window.location.hash = (hash);
-				            	if(history.pushState) { history.pushState(null, null, "/"+hash); } else { window.location.hash = hash; }
+
+				            	aidi = $(this).attr('data');
+				            	console.log(aidi);
+
+				            	if(history.pushState) { 
+				            		history.pushState(null, null, "/"+hash); 
+					            	
+				            	}else { 
+				            		window.location.hash = hash; 
+				            	}
 				                currentHash = hash;
 
-				            }
+				                es = $('.sprints_container div#'+aidi);
+				                $('.sprints_container div').removeClass('selected');
+				                es.addClass('selected');
 
+				            }
 				        });
+
+			        	
+
 				    });
 				});
-
 
 
 

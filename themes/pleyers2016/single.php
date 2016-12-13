@@ -100,7 +100,6 @@
 				<?php								
 					}
 				?>
-				
 				<div class="container clearfix full_container poll_container">
 					<?php 
 						$poll = get_post_meta($post->ID, 'poll_question_meta', true);

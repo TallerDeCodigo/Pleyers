@@ -34,65 +34,70 @@
 								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
 					?>
-					<div class="formato_b sprints_post clearfix">
-						<span class="post_time"><?php  echo $time_ago; ?></span>
-						<div class="sprints_post_content">
-								<?php 
-									if($img_size == 'foto_grande'){
-									?>
-										<div class="<?php echo $img_size; ?>">
-											<a href="<?php the_permalink(); ?>">
-												<div class="img_frame">
-													<?php the_post_thumbnail(); ?>
-												</div>
-											</a>
+								
 
-											<a href="<?php the_permalink(); ?>">
-												<p>
-													<?php //the_title(); ?>
-												</p>
-											</a>
-											<?php the_excerpt(); ?>
-										</div>
-								<?php 
-									}else if($img_size == 'foto_chica'){
-									?>
-										<div class="<?php echo $img_size; ?>">
-											<a href="<?php the_permalink(); ?>">
-												<div class="img_frame">
-													<?php the_post_thumbnail(); ?>
-												</div>
-											</a>
+								<a href="<?php the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
 
-											<a href="<?php the_permalink(); ?>">
-												<p>
-													<?php //the_title(); ?>
-												</p>
-											</a>
-											<?php the_excerpt(); ?>
-										</div>	
-								<?php	
-									}else if($img_size == 'sin_foto'){
-									?>
-										<div class="<?php echo $img_size; ?>">
-											<!-- <a href="<?php the_permalink(); ?>">
-												<div class="img_frame">
-													<?php the_post_thumbnail(); ?>
-												</div>
-											</a> -->
 
-											<a href="<?php the_permalink(); ?>">
-												<p>
-													<?php //the_title(); ?>
-												</p>
-											</a>
-											<?php the_excerpt(); ?>
-										</div>	
-								<?php	
-									}
-									?>	
-						</div>
-					</div>
+								<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">
+									<span class="post_time"><?php  echo $time_ago; ?></span>
+									<div class="sprints_post_content">
+											<?php 
+												if($img_size == 'foto_grande'){
+												?>
+													<div class="<?php echo $img_size; ?>">
+														<a href="<?php the_permalink(); ?>">
+															<div class="img_frame">
+																<?php the_post_thumbnail(); ?>
+															</div>
+														</a>
+
+														<a href="<?php the_permalink(); ?>">
+															<p>
+																<?php //the_title(); ?>
+															</p>
+														</a>
+														<?php the_excerpt(); ?>
+													</div>
+											<?php 
+												}else if($img_size == 'foto_chica'){
+												?>
+													<div class="<?php echo $img_size; ?>">
+														<a href="<?php the_permalink(); ?>">
+															<div class="img_frame">
+																<?php the_post_thumbnail(); ?>
+															</div>
+														</a>
+
+														<a href="<?php the_permalink(); ?>">
+															<p>
+																<?php //the_title(); ?>
+															</p>
+														</a>
+														<?php the_excerpt(); ?>
+													</div>	
+											<?php	
+												}else if($img_size == 'sin_foto'){
+												?>
+													<div class="<?php echo $img_size; ?>">
+														<!-- <a href="<?php the_permalink(); ?>">
+															<div class="img_frame">
+																<?php the_post_thumbnail(); ?>
+															</div>
+														</a> -->
+
+														<a href="<?php the_permalink(); ?>">
+															<p>
+																<?php //the_title(); ?>
+															</p>
+														</a>
+														<?php the_excerpt(); ?>
+													</div>	
+											<?php	
+												}
+												?>	
+									</div>
+								</div>
 			<?php 				
 							endwhile; 
 						endif; 

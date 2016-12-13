@@ -4,18 +4,17 @@
 		
 		<section class="sprint_top">
 			<?php 
-				$count = 0;
 				if(have_posts()): 
 					while(have_posts()):
 						the_post(); setup_postdata($post);
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 			?>
-						<article class="single_content" id="<?php echo $count; ?>" >
+						<article class="single_content" >
 							<?php 
 								$link = get_the_permalink(); 
 								$link = substr($link, 17);
 							?>
-							<a href="<?php echo $link; ?>" class="anchor_tags"></a>
+							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>"></a>
 
 							<?php 
 								if($img_size == 'foto_grande'){
@@ -271,7 +270,6 @@
 
 						</article>
 			<?php  	
-					$count++;
 					endwhile; 
 					wp_reset_postdata();
 				endif; ?>
