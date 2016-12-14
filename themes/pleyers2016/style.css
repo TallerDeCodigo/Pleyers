@@ -215,6 +215,9 @@ img.header_sprints{position:relative;top:38px;margin-left:3px;}
 .foto_grande div.img_frame{width:99%!important;height:150px!important;}
 .foto_grande div.img_frame img{width:100%!important;}
 
+
+
+
 /*MAIN BANNER*/
 
 .full_container.main_banner  {width:100%;background:#000;height:600px;margin-top:60px;margin-bottom:0px;overflow:hidden;position:relative;}
@@ -423,10 +426,17 @@ body.ltr .en{max-width: 620px;}
 
 /*SINGLE EPISODIOS*/
 .single-episodios div.content_side{margin-top:15px;position:fixed;z-index:0;}
-.single-episodios div.content_col{margin-top:30px;}
+.single-episodios section.content_col{margin-top:30px;}
+.single-episodios section.content_col article.single_content{width:100%;}
 .single-episodios div.sidebar{float:left;}
 .single-episodios div.foto_chica div.content_single_episodio a{float:left;width:30%;margin-right:20px;}
 .single-episodios div.content_side div.sidebar{width:100%;z-index:0;}
+
+.single-episodios iframe{width:100%;display:none;}
+
+
+
+
 
 /*SINGLE GRAFICOS*/
 .single-graficos div.single_post div.single_top{position:relative;width:100%;height:600px;overflow:hidden;}

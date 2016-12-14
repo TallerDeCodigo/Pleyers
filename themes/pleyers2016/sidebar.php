@@ -1,5 +1,5 @@
 <div class="sidebar clearfix">
-	<div class="sprints">
+	<div class="sprints" style="overflow:scroll;">
 		<?php 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
@@ -37,7 +37,6 @@
 								
 
 								<a href="<?php the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
-
 
 								<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">
 									<span class="post_time"><?php  echo $time_ago; ?></span>

@@ -269,11 +269,7 @@
 
 				/*FNUCION MANUEL SCROLL*/
 				var pag_next=0;
-				// $(window).on("load", function() {
-				// 	if ($('body').height() < document.documentElement.clientHeight) {
-				// 		loader();
-				// 	}
-				// });
+				
 
 				$(window).scroll(function() {
 				   if($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -292,21 +288,6 @@
 			       // code_var = JSON.stringify(code_var);
 			       console.log(code_var);
 
-			       // $.ajax({
-		        //        type: "POST",
-		        //        dataType: "html",
-		        //        url: '<?php echo esc_url(site_url()); ?>/breaking/page/'+pag_next+'/' ,
-		        //        data: '',
-		        //        success: function(data){
-		        //            var $data = $(data);
-		        //            $("body").append($data);
-		        //            $('.paginaqueva').html($('.paginaqueva:first-of-type').html());
-		        //            $('.loader').removeClass('active');
-		        //        },
-		        //        error : function(jqXHR, textStatus, errorThrown) {
-		        //            // $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-		        //        }
-			       //  });
 				}
 
 
@@ -380,6 +361,7 @@
 				                es = $('.sprints_container div#'+aidi);
 				                $('.sprints_container div').removeClass('selected');
 				                es.addClass('selected');
+				                es.fadeOut('slow');
 
 				            }
 				        });
@@ -387,6 +369,13 @@
 			        	
 
 				    });
+				});
+
+
+				$('.single-episodios div.foto_grande img').click(function(){
+					$(this).hide();
+					$(this).parent().find('iframe').show();
+					console.log("click");
 				});
 
 
