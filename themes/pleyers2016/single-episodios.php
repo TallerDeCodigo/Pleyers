@@ -35,7 +35,6 @@
 	<script type="text/javascript">
 		location.href = "#";
 		location.href = "#p<?php echo $pId; ?>";
-
 	</script>
 	
 <div class="full_container">
@@ -316,12 +315,12 @@
 
 
 						</article>
+
 			<?php  		
 					$count++;
 					endwhile; 
 					wp_reset_postdata();
 				endif; ?>
-
 		</section>
 
 

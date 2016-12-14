@@ -482,68 +482,67 @@
 
 
 		function sc_referencia($params, $content = null) {
-
-			// default parameters
 			extract(shortcode_atts(array(
 				'style' => ''
 			), $params));
-
 		  return
 			"<span class='sc_referencia' data='" . do_shortcode($content) . "'>i</span>";
 		}
-
 		add_shortcode('referencia','sc_referencia');
 
 
 
-	/*AJAX FOR BLOGS*/
-	// function get_blogset(){
 
-	// 	$terms_data = $_GET['test'];
-	// 	$args = array(	
-	// 				'post_type'=>'episodios',
-	// 				'posts_per_page'=>7,
-	// 				'post_status'=>'publish',
-	// 				'orderby'=>'date',
-	// 				'order'=>'DESC',
-	// 				'tax_query'=>array(
-	// 								array(
-	// 									'taxonomy'=>'shows',
-	// 									'field'=> 'slug',
-	// 									'terms'=>$terms_data
-	// 									)
-	// 								)
-	// 				);
-	// 	$results = new WP_Query($args);
-	// 	$data_arr = array();
-	// 	$tags_arr = array();
-	// 		if($results->have_posts()){
-	// 			while($results->have_posts()){
-	// 				$results->the_post();
 
-	// 				$_tags = get_the_tags();
-	// 				foreach($tags as $tag){
-	// 						$_tag = $tag->name;	
-	// 						$tags_arr[] = array(
-	// 										"tag_name"=>$_tag
-	// 										);
-	// 					}
-	// 					$_thumb = get_the_post_thumbnail_url();
-	// 					$_perma = get_post_permalink();
-	// 					$_title = get_the_title();
+		/**
+		 * Load javascripts used by the theme
+		 */
 
-	// 					$data_arr[] = array(
-	// 								"thumbnail" => $_thumb, 
-	// 								"liknk" => $_perma,
-	// 								"title" => $_title,
-	// 								"tags"	=> $_tags
-	// 						);
-	// 			}
-	// 		}
+		function custom_theme_js(){
+			wp_register_script( 'infinite_scroll',  get_template_directory_uri() . '/js/infinite_scroll.js', array('jquery'),null,true );
+			if( ! is_singular() ) {
+				wp_enqueue_script('infinite_scroll');
+			}
+		}
+		add_action('wp_enqueue_scripts', 'custom_theme_js');
 
-	// 	return json_decode($data_arr);
-	// }
 
-	// 	add_action( 'wp_ajax_nopriv_get_blogset', 'get_blogset' );
-	// 	add_action( 'wp_ajax_get_blogset', 'get_blogset' );
+
+		/**
+		 * Infinite Scroll
+		 */
+		function custom_infinite_scroll_js() {
+			if( ! is_singular() ) { ?>
+			<script>
+				var infinite_scroll = {
+					loading: {
+						img: "<?php echo get_template_directory_uri(); ?>/images/loading.gif",
+						msgText: "",
+						finishedMsg: ""
+					},
+					"nextSelector":".nav_container a",
+					"navSelector":".nav_container",
+					"itemSelector":".single_content",
+					"contentSelector":".sprint_top"
+				};
+				jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+			</script>
+			<?php
+			}
+		}
+		add_action( 'wp_footer', 'custom_infinite_scroll_js',100 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

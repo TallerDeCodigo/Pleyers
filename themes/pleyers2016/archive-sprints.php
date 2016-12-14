@@ -99,6 +99,11 @@
 										</div>
 									</div>
 
+									<div class="nav_container">
+										<a  class="next_p">
+											next >
+										</a>
+									</div>
 
 
 								<?php 		
@@ -179,6 +184,11 @@
 										</div>
 									</div>
 
+									<div class="nav_container">
+										<a  class="next_p">
+											next >
+										</a>
+									</div>
 
 
 								<?php
@@ -262,6 +272,11 @@
 											</div>
 										</div>
 
+										<div class="nav_container">
+											<a  class="next_p">
+												next >
+											</a>
+										</div>
 
 								<?php		
 									}

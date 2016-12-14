@@ -21,7 +21,21 @@
 
 		<div class="single_content smart_scroll_container smart_ajax_container">
 			
-			<div class="addthis_inline_share_toolbox"></div>
+			<div class="shares">
+				<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+
+				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+					<div class="share_fb" aria-hidden="true"></div> 
+				</a>
+
+				<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+					<div class="share_tw" aria-hidden="true"></div> 
+				</a>
+
+				<a class="copylink">
+					<div class="share_link" aria-hidden="true"></div> 
+				</a>
+			</div>
 
 				<div>
 					<?php 
@@ -50,7 +64,22 @@
 
 				<div class="contenido capital">
 					<?php the_content(); ?>
-					<div class="addthis_inline_share_toolbox_dvmh"></div>
+					<div class="shares horizontal_share clearfix">
+
+						<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+							<div class="share_fb" aria-hidden="true"></div> 
+						</a>
+
+						<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+							<div class="share_tw" aria-hidden="true"></div> 
+						</a>
+
+						<a class="copylink">
+							<div class="share_link" aria-hidden="true"></div> 
+						</a>
+					</div>
 				</div>
 				
 

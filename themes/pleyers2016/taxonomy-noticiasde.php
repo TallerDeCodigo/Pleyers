@@ -36,7 +36,8 @@
 						<?php the_title(); ?>
 					</h2>
 				</a>
-		</div>	
+		</div>
+
 		<div class="full_container clearfix">
 			<?php get_sidebar(); ?>
 
@@ -99,6 +100,7 @@
 				?>
 			</div>
 		</div>
+
 		<div class="container clearfix">
 			<?php
 				if (function_exists('custom_pagination')) {
@@ -106,6 +108,7 @@
 				}
 				?>	
 		</div>
+		
 	</div>
 	
 <?php get_footer(); ?>

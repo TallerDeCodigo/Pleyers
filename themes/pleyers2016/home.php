@@ -33,78 +33,79 @@
 			<?php 
 			if($posts->have_posts()): 
 				while($posts->have_posts()):
-					$posts->the_post(); setup_postdata($post);
-				if($count == 0){
+					$posts->the_post(); 
+					setup_postdata($post);
+					if($count == 0){
 			?>
-				<div class="img_frame">
-					<img src="<?php echo the_post_thumbnail_url(); ?>" class="post_picture">
-					<div class="grid"></div>
-				</div>
-				<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url(); ?>">
-					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-						<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-							<span>
-								<?php echo "#".esc_html($terms[0]->name)." "; ?>
-							</span>
-						</a>
-					<a href="<?php the_permalink(); ?>">
-						<h3>
-							<?php the_title(); ?>
-						</h3>
-					</a>
-				</div>
+						<div class="img_frame">
+							<img src="<?php echo the_post_thumbnail_url(); ?>" class="post_picture">
+							<div class="grid"></div>
+						</div>
+						<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url(); ?>">
+							<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+								<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+									<span>
+										<?php echo "#".esc_html($terms[0]->name)." "; ?>
+									</span>
+								</a>
+							<a href="<?php the_permalink(); ?>">
+								<h3>
+									<?php the_title(); ?>
+								</h3>
+							</a>
+						</div>
 			
 			<?php		
-				}else if($count == 1 ){
+					}else if($count == 1 ){
 			?>
 
-			<div class="more_destacado">
-				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
-					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-										<span class="el_tag">
-											<?php 
-												if($terms){
-													$trm_nme = $terms[0]->name;
-													echo "#".$trm_nme;
-												} 
-											?>
-										</span>
-									</a>	
-					<a href="<?php the_permalink(); ?>">
-						<h3 class="el_titulo">
-							<?php the_title(); ?>
-						</h3>
-					</a>
-				</div>
+						<div class="more_destacado">
+							<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
+								<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+												<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+													<span class="el_tag">
+														<?php 
+															if($terms){
+																$trm_nme = $terms[0]->name;
+																echo "#".$trm_nme;
+															} 
+														?>
+													</span>
+												</a>	
+								<a href="<?php the_permalink(); ?>">
+									<h3 class="el_titulo">
+										<?php the_title(); ?>
+									</h3>
+								</a>
+							</div>
 				
 			<?php		
 				}else if($count > 1 ){
 			?>	
-				<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
-					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-										<span class="el_tag">
-											<?php 
-												if($terms){
-													$trm_nme = $terms[0]->name;
-													echo "#".$trm_nme;
-												} 
-											?>
-										</span>
-									</a>	
-					<a href="<?php the_permalink(); ?>">
-						<h3 class="el_titulo">
-							<?php the_title(); ?>
-						</h3>
-					</a>
-				</div>
+						<div class="destacado" data-image="<?php echo the_post_thumbnail_url(); ?>">
+							<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+											<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+												<span class="el_tag">
+													<?php 
+														if($terms){
+															$trm_nme = $terms[0]->name;
+															echo "#".$trm_nme;
+														} 
+													?>
+												</span>
+											</a>	
+							<a href="<?php the_permalink(); ?>">
+								<h3 class="el_titulo">
+									<?php the_title(); ?>
+								</h3>
+							</a>
+						</div>
 			
 			<?php		
 				} $count ++; wp_reset_postdata(); endwhile; endif;
 			}
 			?>
-			</div>
+						</div>
 		</div>
 		<?php get_template_part('templates/barra', 'partidos'); ?>
 	</section>
@@ -124,7 +125,8 @@
 					$posts = new WP_Query($args);
 					if($posts->have_posts()): 
 						while($posts->have_posts()):
-							$posts->the_post(); setup_postdata($post);
+							$posts->the_post(); 
+							setup_postdata($post);
 							$tags = get_the_tags();
 				?>
 							<div class="post clearfix">
@@ -154,7 +156,10 @@
 								</a>
 							</div>
 				<?php
-					wp_reset_postdata(); endwhile; endif;
+					 
+						endwhile; 
+						wp_reset_postdata();
+					endif;
 				?>
 				<!-- <div class="ver_mas_home">
 					<a href="<?php //echo bloginfo(); ?>/ver-mas">Ver más</a>
@@ -172,9 +177,6 @@
 			<?php 
 				$terms = get_terms('shows', array('hide_empty'=>0) );
 				$terms_arr = array();
-				// echo "<pre>";
-				// 	print_r($terms);
-				// echo "</pre>";
 
 				$count =0;
 
@@ -272,8 +274,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 	<?php get_template_part('templates/barra', 'blogs'); ?>
 	<?php get_template_part('templates/barra', 'jiots'); ?>
