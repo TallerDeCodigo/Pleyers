@@ -36,7 +36,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -48,7 +48,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -57,7 +57,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -117,7 +117,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -129,7 +129,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -138,7 +138,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -200,7 +200,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -212,7 +212,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -221,7 +221,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -294,7 +294,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -306,7 +306,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -315,7 +315,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -374,7 +374,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -386,7 +386,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -395,7 +395,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -455,7 +455,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -467,7 +467,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -476,7 +476,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -536,7 +536,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -548,7 +548,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -557,7 +557,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -616,7 +616,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -628,7 +628,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -637,7 +637,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -696,7 +696,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>
@@ -708,7 +708,7 @@
 						}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 						?>
 							<div class="video_post small_video clearfix">
-								<a href="">
+								<a href="<?php the_permalink(); ?>">
 								<div class="img_frame clearfix">
 									<?php the_post_thumbnail(); ?>
 								</div>
@@ -717,7 +717,7 @@
 										$terms = wp_get_post_terms(); 
 										if($terms): foreach($terms as $term):
 										?>
-											<a href="">
+											<a href="<?php the_permalink(); ?>">
 												<span><?php echo esc_html($term->name); ?></span>
 											</a>
 								<?php endforeach; endif;?>

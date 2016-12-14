@@ -347,6 +347,8 @@
 				            var hash = $(this).attr('href');
 				            if (distance < 150 && distance > -150 && currentHash != hash) {
 
+				            	
+
 				            	aidi = $(this).attr('data');
 				            	console.log(aidi);
 
@@ -362,8 +364,8 @@
 				                $('.sprints_container div').removeClass('selected');
 				                es.addClass('selected');
 				                es.fadeOut('slow');
-
 				            }
+
 				        });
 
 			        	

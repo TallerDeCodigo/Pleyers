@@ -127,38 +127,38 @@
 							$posts->the_post(); setup_postdata($post);
 							$tags = get_the_tags();
 				?>
-				<div class="post clearfix">
-					<a href="<?php the_permalink(); ?>">
-						<div class="img_frame clearfix">
-							<?php the_post_thumbnail(); ?>
-						</div>
-					</a>
-					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-								<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-									<span class="el_tag">
-										<?php 
-											if($terms){
-												$trm_nme = $terms[0]->name;
-												echo "#".$trm_nme;
-											} 
-										?>
-									</span>
+							<div class="post clearfix">
+								<a href="<?php the_permalink(); ?>">
+									<div class="img_frame clearfix">
+										<?php the_post_thumbnail(); ?>
+									</div>
 								</a>
-					<a href="<?php the_permalink(); ?>">
-						<h3>
-							<?php the_title(); ?>
-						</h3>
-						<div>
-							<?php the_excerpt(); ?>
-						</div>
-					</a>
-				</div>
+								<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+											<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+												<span class="el_tag">
+													<?php 
+														if($terms){
+															$trm_nme = $terms[0]->name;
+															echo "#".$trm_nme;
+														} 
+													?>
+												</span>
+											</a>
+								<a href="<?php the_permalink(); ?>">
+									<h3>
+										<?php the_title(); ?>
+									</h3>
+									<div>
+										<?php the_excerpt(); ?>
+									</div>
+								</a>
+							</div>
 				<?php
 					wp_reset_postdata(); endwhile; endif;
 				?>
-				<div class="ver_mas_home">
-					<a href="<?php echo bloginfo(); ?>/ver-mas">Ver más</a>
-				</div>
+				<!-- <div class="ver_mas_home">
+					<a href="<?php //echo bloginfo(); ?>/ver-mas">Ver más</a>
+				</div> -->
 			</div>
 		<?php get_sidebar(); ?>
 		</div>
@@ -238,22 +238,27 @@
 							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 							?>
 								<div class="video_post small_video clearfix">
-									<a href="">
-									<div class="img_frame clearfix">
-										<?php the_post_thumbnail(); ?>
-									</div>
-									<div class="video_info">
+									<a href="<?php the_permalink(); ?>">
+										<div class="img_frame clearfix">
+											<?php the_post_thumbnail(); ?>
+										</div>
+										<div class="video_info">
+											<?php 
+												$terms = wp_get_post_terms(); 
+												if($terms): 
+													foreach($terms as $term):
+												?>
+														<a href="">
+															<span><?php echo esc_html($term->name); ?></span>
+														</a>
 										<?php 
-											$terms = wp_get_post_terms(); 
-											if($terms): foreach($terms as $term):
-											?>
-												<a href="">
-													<span><?php echo esc_html($term->name); ?></span>
-												</a>
-									<?php endforeach; endif;?>
-										<h3><?php the_title(); ?></h3>
-									</div>
-								</a>
+													endforeach; 
+												endif;?>
+											<h3>
+												<?php the_title(); ?>
+											</h3>
+										</div>
+									</a>
 								</div>
 						<?php 	
 							}

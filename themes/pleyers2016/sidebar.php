@@ -106,11 +106,15 @@
 					 <nav class="prev-next-posts">
 
 					    <div class="prev-posts-link">
-					      <?php echo get_next_posts_link( 'Ver más <img src="'.THEMEPATH.'/images/right_arrow.png"/>', $posts->max_num_pages ); ?>
+					    	<a href="<?php bloginfo('url'); ?>/ver-mas">
+					    		Ver más
+					    		<img src="<?php echo THEMEPATH; ?>/images/right_arrow.png"/>
+					    	</a>
+					      <?php //echo get_next_posts_link( 'Ver más <img src="'.THEMEPATH.'/images/right_arrow.png"/>', $posts->max_num_pages ); ?>
 					    </div>
 
 					    <div class="next-posts-link">
-					      <?php echo get_previous_posts_link( 'Regresar' ); ?>
+					      <?php //echo get_previous_posts_link( 'Regresar' ); ?>
 					    </div>
 
 					</nav> 

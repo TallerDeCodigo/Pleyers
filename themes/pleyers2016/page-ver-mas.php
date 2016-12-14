@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php 
 	$args = array(
-				'post_type'=> array('post', 'episodios', 'graficos'),
-				'posts_per_page'=>-1,
+				'post_type'=> array('sprints'),
+				'posts_per_page'=>200,
 				'post_status'=>'publish',
 				'orderby'=>'date',
 				'order'=>'DESC',
@@ -14,7 +14,8 @@
 	// 	print_r($posts);
 	// echo "</pre>";
 ?>
-	<div class="posts_pool clearfix">
+<div class="container clearfix full_container">
+	<div class="posts_pool clearfix" style="padding-top:90px;">
 
 		<?php	
 			if($posts->have_posts()):
@@ -49,4 +50,5 @@
 			endif;	
 		?>
 	</div>
+</div>
 <?php get_footer(); ?>
