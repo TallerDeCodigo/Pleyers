@@ -5,7 +5,6 @@
 	$tax_slug = $posts->slug;
 	$types = get_all_posttypes();
 	$aidi_exclude = $post->ID;
-
 ?>
 	<div class="single_post clearfix">
 		<div class="single_top clearfix">
@@ -88,7 +87,11 @@
 						<?php		
 						endforeach; }
 					?>
-					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+							<a href="<?php the_permalink(); ?>">
+								<h3>
+									<?php the_title(); ?>
+								</h3>
+							</a>
 					<div><?php the_excerpt(); ?></div>
 				</div>
 
@@ -104,7 +107,7 @@
 		<div class="container clearfix">
 			<?php
 				if (function_exists('custom_pagination')) {
-					custom_pagination($posts->max_num_pages,"9",$paged);
+					custom_pagination($posts->max_num_pages,"3",$paged);
 				}
 				?>	
 		</div>

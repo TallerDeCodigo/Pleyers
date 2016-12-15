@@ -564,10 +564,60 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 }
 
 @media (max-width: 800px){
+	/*HEADER*/
+	nav.social{display:none;}
+
+
 	/*HOME*/
 	div.main_banner div.img_frame img{position:absolute;height: 100%;width: auto;top: -9999px;bottom: -9999px;left: -9999px;right: -9999px;margin: auto;}
 	.more_destacado{display:none;}
 	div.destacado.nota1{width:90%;}
 	div.sidebar{float:none!important;width:100%;margin-left: 0%;}
+
+		/*TAXONOMY NOTICIAS DE*/
+	.single_top h2{width:90%;top:55%;}
+
+	.tax-noticiasde div.full_container div.posts_pool{position:relative;}
+	.tax-noticiasde div.full_container div.sidebar{display:none;}
+	.tax-noticiasde div.post{height:auto;width:90%;}
+	.tax-noticiasde div.post div.img_frame{width:94px;height: 94px;}
+	.tax-noticiasde div.post h3{font-size: 22px;}
+	.tax-noticiasde div.post div p{display:none;}
+}
+
+@media(max-width:720px){
+	.tax-noticiasde div.single_top img{height: 100%!important;width:auto!important;}
+}
+
+@media(max-width: 360px){
+	div.post span{font-family:14px;}
+
+	/*TAXONIMY NOTICIAS DE*/
+	.tax-noticiasde div.single_top{width:100%;height: 360px;}
+	.tax-noticiasde div .single_top span{top:70px;left:10px;}
+	.tax-noticiasde div.single_top h2{font-size: 1.3em;width:90%;}
+	.tax-noticiasde div.single_top img{height:100%!important;width:auto!important;}
+
+	.tax-noticiasde div.post{width:100%;}
+	.tax-noticiasde div.posts_pool{padding-left: 4%;}
+
+	.tax-noticiasde div.post h3{font-size: 18px;padding-right:2%;}
+
+	/*archive sprints*/
+	.post-type-archive div.full_container section.container div.sidebar{display:none;}
+	.post-type-archive article.single_content{width:100%;margin:0 auto;padding:0% 2%;}
+	.post-type-archive article.single_content img{width:100%;height:auto;}
+	div.post_head div.shares{display:none;}
+	div.post_head div.left_title{padding-left: 0;}
+	.post-type-archive-sprints div.post_head{padding-top: 0;}
+
+	.single_content{width:90%;}
+	.single_excerpt{display:none;}
+	.horizontal_share{margin:0% 30%;}
+	.sprint_excerpt{display:none;}
+
+	#nav_icon{margin-left: 3%}
+	footer{line-height: 25px}
+	footer div.container span{display:block;}
 }
 

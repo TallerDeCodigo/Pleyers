@@ -100,9 +100,9 @@
 									</div>
 
 									<div class="nav_container">
-										<a  class="next_p">
+										<!-- <a  class="next_p">
 											next >
-										</a>
+										</a> -->
 									</div>
 
 
@@ -185,9 +185,9 @@
 									</div>
 
 									<div class="nav_container">
-										<a  class="next_p">
+										<!-- <a  class="next_p">
 											next >
-										</a>
+										</a> -->
 									</div>
 
 
@@ -273,9 +273,9 @@
 										</div>
 
 										<div class="nav_container">
-											<a  class="next_p">
+											<!-- <a  class="next_p">
 												next >
-											</a>
+											</a> -->
 										</div>
 
 								<?php		

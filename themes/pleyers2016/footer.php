@@ -2,7 +2,8 @@
 			<?php wp_footer(); ?>
 			<div class="container clearfix">
 				<img src="<?php echo THEMEPATH; ?>images/venado-cabeza.svg">
-				<span>LOS PLEYERS © Derechos reservados 2016.</span>
+				<span>LOS PLEYERS </span>
+				<span>© Derechos reservados 2016.</span>
 			</div>
 		</footer>
 
