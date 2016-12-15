@@ -1,5 +1,7 @@
 <?php 
 	get_header(); 
+	$pid = $post->ID;
+	echo $pid;
 	$args = array(
 				'post_type'=>'sprints',
 				'posts_per_page'=>10,
@@ -9,6 +11,11 @@
 		);
 	$posts = new WP_Query($args);
 	?>
+	<script type="text/javascript">
+		location.href = "#";
+		location.href = "#p<?php echo $pid; ?>";
+	</script>
+	
 <div class="full_container">
 	<section class="container clearfix smart_scroll_container">
 		
@@ -20,7 +27,7 @@
 						setup_postdata($post);
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 			?>
-						<article class="single_content" >
+						<article class="single_content" id="p<?php echo $post->ID; ?>">
 							<?php 
 								$link = get_the_permalink(); 
 								$link = substr($link, 17);
