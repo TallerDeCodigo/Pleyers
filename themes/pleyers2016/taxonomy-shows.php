@@ -137,7 +137,7 @@
 			</div>
 				<?php 
 					if (function_exists('custom_pagination')) {
-					   	custom_pagination($posts->max_num_pages,"9",$paged);
+					   	custom_pagination($posts->max_num_pages,"3",$paged);
 					}
 					wp_reset_postdata();
 				?>
