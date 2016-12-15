@@ -47,6 +47,7 @@
 					});
 					return result;
 				}
+				var width_screen = $(window).width();
 				var height_screen = $(window).height();
 				var height_container = $('.archive div.full_container').height();
 				var _left_container = $('.left_container').height();
@@ -335,49 +336,54 @@
 
 
 				/*HISTORY URL HKN*/
-				var aidi = 0;
-				$(function () {
-				    var currentHash = "initial_hash";
-				    var es;
 
-				    $(window).scroll(function () {
-				        $('.anchor_tags').each(function () {
-				            var top = window.pageYOffset;
-				            var distance = top - $(this).offset().top;
-				            var hash = $(this).attr('href');
-				            if (distance < 150 && distance > -150 && currentHash != hash) {
+				if(width_screen > 800){
 
-				            	
+					var aidi = 0;
+					$(function () {
+					    var currentHash = "initial_hash";
+					    var es;
 
-				            	aidi = $(this).attr('data');
-				            	console.log(aidi);
+					    $(window).scroll(function () {
+					        $('.anchor_tags').each(function () {
+					            var top = window.pageYOffset;
+					            var distance = top - $(this).offset().top;
+					            var hash = $(this).attr('href');
+					            if (distance < 150 && distance > -150 && currentHash != hash) {
 
-				            	if(history.pushState) { 
-				            		history.pushState(null, null, "/"+hash); 
 					            	
-				            	}else { 
-				            		window.location.hash = hash; 
-				            	}
-				                currentHash = hash;
 
-				                es = $('.sprints_container div#'+aidi);
-				                $('.sprints_container div').removeClass('selected');
-				                es.addClass('selected');
-				                es.fadeOut('slow');
-				            }
+					            	aidi = $(this).attr('data');
+					            	console.log(aidi);
 
-				        });
+					            	if(history.pushState) { 
+					            		history.pushState(null, null, "/"+hash); 
+						            	
+					            	}else { 
+					            		window.location.hash = hash; 
+					            	}
+					                currentHash = hash;
 
-			        	
+					                es = $('.sprints_container div#'+aidi);
+					                $('.sprints_container div').removeClass('selected');
+					                es.addClass('selected');
+					                es.fadeOut('slow');
+					            }
 
-				    });
-				});
+					        });
+
+				        	
+
+					    });
+					});
+
+				}
 
 
 				$('.single-episodios div.foto_grande img').click(function(){
 					$(this).hide();
 					$(this).parent().find('iframe').show();
-					console.log("click");
+
 				});
 
 

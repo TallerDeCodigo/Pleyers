@@ -591,6 +591,7 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 
 @media(max-width: 360px){
 	div.post span{font-family:14px;}
+	body section:first-of-type{padding-top:50px;}
 
 	/*TAXONIMY NOTICIAS DE*/
 	.tax-noticiasde div.single_top{width:100%;height: 360px;}
@@ -604,12 +605,21 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 	.tax-noticiasde div.post h3{font-size: 18px;padding-right:2%;}
 
 	/*archive sprints*/
-	.post-type-archive div.full_container section.container div.sidebar{display:none;}
+	.post-type-archive div.full_container section.sprint_top{display:none!important;}
+	.post-type-archive-sprints div.sidebar{position:relative;}
 	.post-type-archive article.single_content{width:100%;margin:0 auto;padding:0% 2%;}
 	.post-type-archive article.single_content img{width:100%;height:auto;}
 	div.post_head div.shares{display:none;}
 	div.post_head div.left_title{padding-left: 0;}
 	.post-type-archive-sprints div.post_head{padding-top: 0;}
+
+	/*SINGLE SPRINTS*/
+	.single-sprints div.full_container article.single_content{width:100%;padding-top:0px;}
+	.single-sprints div.full_container article.single_content img{width:100%;height:auto;}
+	.single-sprints div.full_container article.single_content div.post_head{padding:0% 3%;}
+	.single-sprints div.full_container article.single_content div.contenido{padding:0% 3% 20% 3%;}
+	.sprint_top div.foto_chica{margin-left:3%;margin-right:4%;}
+
 
 	.single_content{width:90%;}
 	.single_excerpt{display:none;}
@@ -626,6 +636,9 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 	div.same_size{width:100%;}
 	div.same_size div.img_frame img{height:100%;width:auto;}
 	div.small_video{width:100%;}
+
+	/*SINGLE EPISODIOS*/
+	.single-episodios div.full_container div.content_side{display:none;}
 
 	#nav_icon{margin-left: 3%}
 	footer{line-height: 25px}
