@@ -39,7 +39,7 @@
 			'orderby' => $orderby,
 			'order' => $order,
 			'number' => $limit,
-			'hide_empty' => 0,
+			'hide_empty' => 1,
 		);
 		$terms = get_terms( $taxonomy, $args );
 		$name = ( $name ) ? $name : $taxonomy;
