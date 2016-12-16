@@ -1,4 +1,4 @@
-<div class="sidebar clearfix">
+<section class="sidebar clearfix">
 	<div class="sprints" >
 		<?php 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -121,4 +121,4 @@
 			<?php } ?>
 				</div>
 	</div>
-</div>
+</section>

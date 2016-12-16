@@ -1,4 +1,4 @@
-<?php get_header('sprints'); ?>
+<?php get_header(); ?>
 
 <div class="paginaqueva">1</div>
 
@@ -282,12 +282,9 @@
 												next >
 											</a> -->
 										</div>
-
 								<?php		
 									}
 									?>
-
-
 						</article>
 			<?php  	
 					// $count++;
@@ -296,8 +293,8 @@
 				endif; ?>
 
 		</section>	
-		<?php //get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 	</section>
 </div>
 
-<?php get_footer('sprints'); ?>
+<?php get_footer(); ?>
