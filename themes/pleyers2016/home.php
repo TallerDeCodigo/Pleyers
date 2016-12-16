@@ -171,10 +171,13 @@
 	<?php get_template_part('templates/barra', 'cerocero'); ?>
 
 	<div class="full_container">
-		<ul class="barra_blogs">
+		<?php 
+				pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '5', 'shows', 'Selecciona uno', '' );
+			 ?>
+		<!-- <ul class="barra_blogs">
 
-			<!--<li class="anterior"></li>NAVIGATION ARROW-->
-			<?php 
+			<li class="anterior"></li>NAVIGATION ARROW-->
+			<?php /*
 				$terms = get_terms('shows', array('hide_empty'=>0) );
 				$terms_arr = array();
 
@@ -190,10 +193,10 @@
 				<?php echo $term_name; ?> 
 			</li>
 
-		<?php $count++; endforeach; ?>
+		<?php $count++; endforeach; */?>
 			<!--<li class="siguiente"></li>NAVIGATION ARROW-->
 
-		</ul>
+		<!--</ul> -->
 	</div>
 
 	<div id="todos" class="full_container clearfix">
@@ -210,6 +213,7 @@
 		?>
 		<div class="grid_videos container clearfix">
 			<h2>Blogs</h2>
+
 			<div class="videos_stack clearfix">
 				<?php
 				$count = 0;
