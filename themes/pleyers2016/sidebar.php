@@ -45,52 +45,52 @@
 												if($img_size == 'foto_grande'){
 												?>
 													<div class="<?php echo $img_size; ?>">
-														<a href="<?php the_permalink(); ?>">
+														<a href="#<?php echo $post->ID."h"; ?>">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
 															</div>
 														</a>
 
-														<a href="<?php the_permalink(); ?>">
+														<a href="#<?php echo $post->ID."h"; ?>">
 															<p>
-																<?php //the_title(); ?>
+																<?php the_title(); ?>
 															</p>
 														</a>
-														<?php the_excerpt(); ?>
+														<?php //the_excerpt(); ?>
 													</div>
 											<?php 
 												}else if($img_size == 'foto_chica'){
 												?>
 													<div class="<?php echo $img_size; ?>">
-														<a href="<?php the_permalink(); ?>">
+														<a href="#<?php echo $post->ID."h"; ?>">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
 															</div>
 														</a>
 
-														<a href="<?php the_permalink(); ?>">
+														<a href="#<?php echo $post->ID."h"; ?>">
 															<p>
-																<?php //the_title(); ?>
+																<?php the_title(); ?>
 															</p>
 														</a>
-														<?php the_excerpt(); ?>
+														<?php //the_excerpt(); ?>
 													</div>	
 											<?php	
 												}else if($img_size == 'sin_foto'){
 												?>
 													<div class="<?php echo $img_size; ?>">
-														<!-- <a href="<?php the_permalink(); ?>">
+														<!-- <a href="#<?php echo $post->ID."h"; ?>">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
 															</div>
 														</a> -->
 
-														<a href="<?php the_permalink(); ?>">
+														<a href="#<?php echo $post->ID."h"; ?>">
 															<p>
-																<?php //the_title(); ?>
+																<?php the_title(); ?>
 															</p>
 														</a>
-														<?php the_excerpt(); ?>
+														<?php //the_excerpt(); ?>
 													</div>	
 											<?php	
 												}

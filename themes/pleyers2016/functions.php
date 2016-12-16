@@ -167,6 +167,21 @@
 
 	});
 
+	function news_get_invitados( $query ) {
+	    if ( is_admin() || ! $query->is_main_query() )
+	        return;
+
+	    if ( is_post_type_archive( 'sprints' ) ) {
+	        // Display 50 posts for a custom post type called 'movie'
+	        $query->set( 'posts_per_page', 50 );
+	        $query->set('orderby', 'date');
+	        $query->set('order', 'DESC');
+
+	        return;
+	    }
+	}
+	add_action( 'pre_get_posts', 'news_get_invitados', 1 );
+
 		
 
 

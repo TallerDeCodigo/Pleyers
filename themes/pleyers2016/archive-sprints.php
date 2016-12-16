@@ -4,13 +4,16 @@
 		
 		<section class="sprint_top">
 			<?php 
+			$count = 0;
 				if(have_posts()): 
 					while(have_posts()):
-						the_post(); setup_postdata($post);
+						the_post();
+						setup_postdata($post);
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 			?>
-						<article class="single_content" >
+						<article class="single_content" id="<?php echo $post->ID."h"; ?>">
 							<?php 
+								echo $count;
 								$link = get_the_permalink(); 
 								$link = substr($link, 17);
 							?>
@@ -285,6 +288,7 @@
 
 						</article>
 			<?php  	
+					$count++;
 					endwhile; 
 					wp_reset_postdata();
 				endif; ?>
