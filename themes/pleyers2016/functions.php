@@ -199,7 +199,7 @@
 
 	    if ( is_post_type_archive( 'sprints' ) ) {
 	        // Display 50 posts for a custom post type called 'movie'
-	        $query->set( 'posts_per_page', 50 );
+	        $query->set( 'posts_per_page', 6 );
 	        $query->set('orderby', 'date');
 	        $query->set('order', 'DESC');
 
@@ -530,60 +530,4 @@
 			"<span class='sc_referencia' data='" . do_shortcode($content) . "'>i</span>";
 		}
 		add_shortcode('referencia','sc_referencia');
-
-
-
-
-
-		/**
-		 * Load javascripts used by the theme
-		 */
-
-		function custom_theme_js(){
-			wp_register_script( 'infinite_scroll',  get_template_directory_uri() . '/js/infinite_scroll.js', array('jquery'),null,true );
-			if( ! is_singular() ) {
-				wp_enqueue_script('infinite_scroll');
-			}
-		}
-		add_action('wp_enqueue_scripts', 'custom_theme_js');
-
-
-
-		/**
-		 * Infinite Scroll
-		 */
-		function custom_infinite_scroll_js() {
-			if( ! is_singular() ) { ?>
-			<script>
-				var infinite_scroll = {
-					loading: {
-						img: "<?php echo get_template_directory_uri(); ?>/images/loading.gif",
-						msgText: "",
-						finishedMsg: ""
-					},
-					"nextSelector":".nav_container a",
-					"navSelector":".nav_container",
-					"itemSelector":".single_content",
-					"contentSelector":".sprint_top"
-				};
-				jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
-			</script>
-			<?php
-			}
-		}
-		add_action( 'wp_footer', 'custom_infinite_scroll_js',100 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

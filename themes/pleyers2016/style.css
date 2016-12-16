@@ -126,9 +126,9 @@ nav.social {float:right;position:relative;}
 /*DROP DOWN*/
 
 
-.postform{width: 15%;height: 40px;position: relative;top: -10px;left: 30px;border-style: none;box-shadow: 1px 1px 1px #888888;}
+.postform{width: 15%;height: 40px;position: relative;top: -10px;left: 30px;border-style: none;box-shadow: 1px 1px 1px #888888;overflow: hidden; }
 select{border-radius: 0px;appearance:none;-moz-appearance:none;-webkit-appearance:none;outline: none;}
-select:after{content:"h";}
+.postform:after {content:"▼";padding: 12px 8px;position: absolute; right: 10px; top: 0;z-index: 1;text-align: center;width: 10%;height: 100%;pointer-events: none;box-sizing: border-box;}
 /*
 .addthis_sharing_toolbox{float:left;margin-right: 20px}*/
 
@@ -736,4 +736,3 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 @media(max-width: 340px){
 	img.header_logo{width:80%;height:auto;}
 }
-

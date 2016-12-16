@@ -1,5 +1,5 @@
 <div class="sidebar clearfix">
-	<div class="sprints" style="overflow:scroll;">
+	<div class="sprints" >
 		<?php 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
