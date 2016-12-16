@@ -367,7 +367,7 @@
 					                es = $('.sprints_container div#'+aidi);
 					                $('.sprints_container div').removeClass('selected');
 					                es.addClass('selected');
-					                es.fadeOut('slow');
+					                // es.fadeOut('slow');
 					            }
 
 					        });
@@ -384,6 +384,12 @@
 					$(this).hide();
 					$(this).parent().find('iframe').show();
 
+				});
+
+				$('.ytp-icon').click(function(){
+					$('#show_name').hide();
+					$('.img_play').hide();
+					console.log('hola');
 				});
 
 

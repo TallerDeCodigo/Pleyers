@@ -12,6 +12,7 @@
 <section class="tax_show">
 	<div class="tax_show_top clearfix">
 		<h2 id="show_name">
+
 			<?php echo $show_name; ?>
 		</h2>
 		<?php 
