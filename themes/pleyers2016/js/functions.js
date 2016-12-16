@@ -65,9 +65,11 @@
 				if( $('body').hasClass('home') ){
 					$('div.sprints_container').css('height', _left_container-90+"px");
 				}
+
 					var val = "";
 				$('.postform').change(function(){
-					val = $(this).val();
+					val = $(this).find('option:selected').attr('value');
+					console.log(val);
 					switch(val){
 						case 0:
 							$('#todos').show();
