@@ -72,7 +72,6 @@
 				  var id = $(this).find("option:selected").attr("value");
 
 				  switch (id){
-
 				  	case 0:
 				      	$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #deportologia').hide();
 				  		$('#todos').show();
@@ -95,7 +94,6 @@
 				    	$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
 				    	$('#deportologia').show();
 				    break;
-
 				  }
 				});
 
