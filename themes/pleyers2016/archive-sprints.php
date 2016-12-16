@@ -1,10 +1,12 @@
-<?php get_header(); ?>
+<?php get_header('sprints'); ?>
+
+<div class="paginaqueva">1</div>
+
 <div class="full_container">
 	<section class="container clearfix smart_scroll_container">
-		
 		<section class="sprint_top">
 			<?php 
-			$count = 0;
+				// $count = 0;
 				if(have_posts()): 
 					while(have_posts()):
 						the_post();
@@ -13,7 +15,7 @@
 			?>
 						<article class="single_content" id="<?php echo $post->ID."h"; ?>">
 							<?php 
-								echo $count;
+								// echo $count;
 								$link = get_the_permalink(); 
 								$link = substr($link, 17);
 							?>
@@ -288,7 +290,7 @@
 
 						</article>
 			<?php  	
-					$count++;
+					// $count++;
 					endwhile; 
 					wp_reset_postdata();
 				endif; ?>
@@ -297,4 +299,5 @@
 		<?php get_sidebar(); ?>
 	</section>
 </div>
-<?php get_footer(); ?>
+
+<?php get_footer('sprints'); ?>

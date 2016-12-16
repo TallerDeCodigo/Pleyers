@@ -18,6 +18,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -99,6 +100,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -182,6 +184,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -276,6 +279,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -356,6 +360,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -437,6 +442,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -518,6 +524,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -598,6 +605,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
@@ -678,6 +686,7 @@
 	?>
 	<div class="grid_videos container clearfix">
 		<h2>Blogs</h2>
+		<?php pleyers_custom_taxonomy_dropdown( 'shows', 'date', 'DESC', '', 'shows', 'Todos', '' ); ?>
 		<div class="videos_stack clearfix">
 			<?php
 			$count = 0;
