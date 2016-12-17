@@ -1,3 +1,4 @@
+		</section>
 		<footer>
 			<?php wp_footer(); ?>
 			<div class="container clearfix">

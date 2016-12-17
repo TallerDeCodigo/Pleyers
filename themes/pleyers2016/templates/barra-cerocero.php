@@ -9,7 +9,7 @@
 	$posts = new WP_Query($args);
 
 ?>
-<section class="cerocero ">
+<section id="cerocero" class="cerocero ">
 	<div class="container clearfix">
 			<img src="<?php echo THEMEPATH; ?>/images/00_logo.png">
 			<a href="http://cerocero.mx/" target="_blank">

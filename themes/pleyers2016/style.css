@@ -93,11 +93,13 @@ body {font-family:'Roboto Condensed';-webkit-font-smoothing:antialiased;}
 div.container {width:100%;max-width:1280px;margin:0 auto;/*padding:0 20px;*/}
 div.full_container {width:100%;max-width:1280px;margin:0 auto;}
 section {width:100%;}
-body section:first-of-type {padding-top:60px;}
+body section:first-of-type {padding-top:36px;}
 h1, h2, h3 {font-family:'Montserrat';}
 div.img_frame {position:relative;overflow:hidden;}
 a {text-decoration:none;color:inherit;}
 div.container h2 {font-size:200%;margin:20px 0;}
+#todo_el_contenido{position:relative;top:0; left:0; right:0;bottom:0;}
+
 
 
 
@@ -677,6 +679,21 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 	body section:first-of-type{padding-top:50px;}
 
 	.full_container.main_banner{height:360px;}
+
+	/*HOME*/
+	section.cerocero{position:absolute;top:4300px;}
+	#todos{position:absolute;top:4600px;}
+	#apuntes-de-rabona{position:absolute;top:4600px;}
+	#cultura-pop{position:absolute;top:4600px;}
+	#deportologia{position:absolute;top:4600px;}
+	#jiots-tv{position:absolute;top:4600px;}
+	#el_pechofrio{position:absolute;top:4600px;}
+	#lucha-libre{position:absolute;top:4600px;}
+	#tactica{position:absolute;top:4600px;}
+	#tirando-guante{position:absolute;top:4600px;}
+	#turismo-deportivo{position:absolute;top:4600px;}
+	#jiotstv{position:absolute;top:6200px;}
+	footer{position:fixed;bottom:0;left:0;right:0;}
 
 	/*TAXONIMY NOTICIAS DE*/
 	.tax-noticiasde div.single_top{width:100%;height: 360px;}
