@@ -26,6 +26,7 @@
 						if($posts->have_posts()): 
 							while($posts->have_posts()):
 								$posts->the_post();
+								setup_postdata($post);
 								$post_date = get_the_date('U');
 
 								$time_ago = human_time_diff($post_date, $hoy);
@@ -99,6 +100,7 @@
 								</div>
 			<?php 				
 							endwhile; 
+							wp_reset_postdata();
 						endif; 
 			?>	
 

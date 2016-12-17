@@ -97,25 +97,6 @@
 				  }
 				});
 
-
-				// switch( $('.postform option').val() ){
-				// 	case 'el_pechofrio':
-				// 	console.log('cero');
-				// 	break;
-
-				// 	case 'jiots-tv':
-				// 	console.log('uno');
-				// 	break;
-
-				// 	case 'deportologia':
-				// 	console.log('dos');
-				// 	break;
-
-				// }
-
-
-
-
 				$( "div.menu nav" )
 					.mouseover(function() {
 						$('body').css('overflow','hidden');
@@ -148,14 +129,6 @@
 
 				    });
 				});
-
-
-
-
-
-
-
-
 
 				$('#nav_icon').click(function(){
 					if ($('.overscreen').hasClass('open')) {
@@ -304,30 +277,6 @@
 				})
 
 
-				/*FNUCION MANUEL SCROLL*/
-				var pag_next=0;
-				
-
-				$(window).scroll(function() {
-				   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-				       $('.inlink').last().find('a').trigger('click');
-				   }
-				});
-
-
-				function loader() {
-			       console.log("bottom!");
-			       pag_next = parseInt($('.paginaqueva:first-of-type').html());
-			       pag_next = pag_next+1;
-			       $('.paginaqueva').html(pag_next);
-			       $('.loader').addClass('active');
-			       var code_var = $('code').html();
-			       // code_var = JSON.stringify(code_var);
-			       console.log(code_var);
-
-				}
-
-
 
 				/*SPRITE TIME*/
 				var hour_string = $('.post_time').html();
@@ -369,52 +318,42 @@
 
 				});
 
-
-
 				/*HISTORY URL HKN*/
 
 				if(width_screen > 800){
-
 					var aidi = 0;
 					$(function () {
 					    var currentHash = "initial_hash";
 					    var es;
-
 					    $(window).scroll(function () {
 					        $('.anchor_tags').each(function () {
 					            var top = window.pageYOffset;
 					            var distance = top - $(this).offset().top;
 					            var hash = $(this).attr('href');
 					            if (distance < 150 && distance > -150 && currentHash != hash) {
-
-					            	
-
 					            	aidi = $(this).attr('data');
 					            	console.log(aidi);
-
 					            	if(history.pushState) { 
 					            		history.pushState(null, null, "/"+hash); 
-						            	
 					            	}else { 
 					            		window.location.hash = hash; 
 					            	}
 					                currentHash = hash;
-
 					                es = $('.sprints_container div#'+aidi);
 					                $('.sprints_container div').removeClass('selected');
 					                es.addClass('selected');
-					                // es.fadeOut('slow');
 					            }
-
 					        });
-
-				        	
-
 					    });
 					});
-
 				}
 
+				if( $('body').hasClass('post-type-archive-sprints') ){
+					console.log('aqui nadamas');
+					if( $('.sprints_post').hasClass('selected') ){
+						$('.sprints_post.selected').hide();
+					}
+				}
 
 				$('.single-episodios div.foto_grande img').click(function(){
 					$(this).hide();

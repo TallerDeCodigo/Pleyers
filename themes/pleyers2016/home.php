@@ -27,7 +27,7 @@
 		// 	print_r($posts->posts);
 		// echo "</pre>";
 ?>
-	<section>
+	<section id="uno">
 		<div class="main_banner full_container clearfix">
 
 			<?php 
@@ -110,7 +110,7 @@
 		<?php get_template_part('templates/barra', 'partidos'); ?>
 	</section>
 
-	<section>
+	<section id="dos">
 		<div class="container clearfix">
 			<div class="left_container">
 				<?php 
@@ -168,9 +168,10 @@
 		<?php get_sidebar(); ?>
 		</div>
 	</section>
+
 	<?php get_template_part('templates/barra', 'cerocero'); ?>
 
-	<div id="todos" class="full_container clearfix">
+	<section id="todos" class="full_container clearfix">
 
 		<?php 
 			$args = array(	
@@ -249,7 +250,7 @@
 					?>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<?php get_template_part('templates/barra', 'blogs'); ?>
 	<?php get_template_part('templates/barra', 'jiots'); ?>

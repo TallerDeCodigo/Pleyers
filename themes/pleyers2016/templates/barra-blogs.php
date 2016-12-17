@@ -1,4 +1,4 @@
-<div id="apuntes-de-rabona" class="full_container"  >
+<section id="apuntes-de-rabona" class="full_container"  >
 
 	<?php 
 		$args = array(	
@@ -77,10 +77,10 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div id="cultura-pop" class="full_container" >
+<section id="cultura-pop" class="full_container" >
 
 	<?php 
 		$args = array(	
@@ -159,10 +159,10 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div id="deportologia" class="full_container" >
+<section id="deportologia" class="full_container" >
 	
 	<?php 
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -243,23 +243,10 @@
 				?>
 		</div>
 	</div>
-	<nav class="prev-next-posts">
-
-	    <div class="prev-posts-link">
-	    	<?php //next_post_link('Ver más','<img src="images/right_arrow.png"/>'); ?>
-	      <?php echo get_next_posts_link( 'Ver más <img src="wp-content/themes/pleyers2016/images/right_arrow.png"/>', $posts->max_num_pages ); // display older posts link ?>
-	      <!-- <img src="<?php //echo THEMEPATH; ?>/images/right_arrow.png"> -->
-	    </div>
-
-	    <div class="next-posts-link">
-	      <?php echo get_previous_posts_link( 'Regresar' ); // display newer posts link ?>
-	    </div>
-
-	</nav>
-</div>
+</section>
 
 
-<div id="jiots-tv" class="full_container" >
+<section id="jiots-tv" class="full_container" >
 	
 	<?php 
 		$args = array(	
@@ -338,9 +325,9 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
-<div id="el_pechofrio" class="full_container" >
+<section id="el_pechofrio" class="full_container" >
 
 	<?php 
 		$args = array(	
@@ -419,10 +406,10 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div id="lucha-libre" class="full_container" >
+<section id="lucha-libre" class="full_container" >
 	
 	<?php 
 		$args = array(	
@@ -501,10 +488,10 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div id="tactica" class="full_container" >
+<section id="tactica" class="full_container" >
 	
 	<?php 
 		$args = array(	
@@ -583,10 +570,10 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div id="tirando-guante" class="full_container" >
+<section id="tirando-guante" class="full_container" >
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -664,10 +651,10 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>
 
 
-<div id="turismo-deportivo" class="full_container" >
+<section id="turismo-deportivo" class="full_container" >
 	<?php 
 		$args = array(	
 					'post_type'=>'episodios',
@@ -745,4 +732,4 @@
 				?>
 		</div>
 	</div>
-</div>
+</section>

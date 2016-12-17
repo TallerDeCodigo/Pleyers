@@ -1,4 +1,4 @@
-<div class="jiotstv ">
+<section class="jiotstv ">
 		<div class="container clearfix"> 
 			<div class="head_jiots">
 				<img src="<?php echo THEMEPATH; ?>/images/jiotstv.png">
@@ -62,4 +62,4 @@
 				}
 			?>
 		</div>
-	</div>
+</section>

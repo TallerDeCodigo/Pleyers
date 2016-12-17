@@ -9,7 +9,7 @@
 	$posts = new WP_Query($args);
 
 ?>
-<div class="cerocero ">
+<section class="cerocero ">
 	<div class="container clearfix">
 			<img src="<?php echo THEMEPATH; ?>/images/00_logo.png">
 			<a href="http://cerocero.mx/" target="_blank">
@@ -32,4 +32,4 @@
 				?>
 		</ul>
 	</div>
-</div>
+</section>
