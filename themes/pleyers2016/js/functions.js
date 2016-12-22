@@ -322,17 +322,19 @@
 
 				if(width_screen > 800){
 					var aidi = 0;
+					var es;
 					$(function () {
 					    var currentHash = "initial_hash";
-					    var es;
 					    $(window).scroll(function () {
 					        $('.anchor_tags').each(function () {
 					            var top = window.pageYOffset;
 					            var distance = top - $(this).offset().top;
 					            var hash = $(this).attr('href');
+								var elem = $('.post-type-archive-sprints section.sidebar div.sprints');
+
 					            if (distance < 150 && distance > -150 && currentHash != hash) {
 					            	aidi = $(this).attr('data');
-					            	console.log(aidi);
+					            	//console.log(aidi);
 					            	if(history.pushState) { 
 					            		history.pushState(null, null, "/"+hash); 
 					            	}else { 
@@ -342,11 +344,17 @@
 					                es = $('.sprints_container div#'+aidi);
 					                $('.sprints_container div').removeClass('selected');
 					                es.addClass('selected');
+
+
 					            }
 					        });
 					    });
 					});
+
 				}
+
+
+
 
 				if( $('body').hasClass('post-type-archive-sprints') ){
 					console.log('aqui nadamas');
@@ -360,6 +368,11 @@
 					$(this).parent().find('iframe').show();
 
 				});
+
+				
+
+
+
 
 
 

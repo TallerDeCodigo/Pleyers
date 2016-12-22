@@ -52,7 +52,7 @@
 															</div>
 														</a>
 
-														<a href="#<?php echo $post->ID."h"; ?>">
+														<a href="<?php the_permalink(); ?>">
 															<p>
 																<?php the_title(); ?>
 															</p>
@@ -69,7 +69,7 @@
 															</div>
 														</a>
 
-														<a href="#<?php echo $post->ID."h"; ?>">
+														<a href="<?php the_permalink(); ?>">
 															<p>
 																<?php the_title(); ?>
 															</p>
@@ -108,7 +108,7 @@
 					 <nav class="prev-next-posts">
 
 					    <div class="prev-posts-link">
-					    	<a href="<?php bloginfo('url'); ?>/ver-mas">
+					    	<a href="<?php bloginfo('url'); ?>/sprints">
 					    		Ver más
 					    		<img src="<?php echo THEMEPATH; ?>/images/right_arrow.png"/>
 					    	</a>
