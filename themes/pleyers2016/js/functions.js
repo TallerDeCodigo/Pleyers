@@ -323,6 +323,9 @@
 				if(width_screen > 800){
 					var aidi = 0;
 					var es;
+					var scroll_num = 0;
+					var lastScrollTop = 0; 
+					var cero = 0;
 					$(function () {
 					    var currentHash = "initial_hash";
 					    $(window).scroll(function () {
@@ -345,6 +348,23 @@
 					                $('.sprints_container div').removeClass('selected');
 					                es.addClass('selected');
 
+									var st = $(window).scrollTop();
+									   if (st > lastScrollTop){
+									   		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 500);
+									   		scroll_num += 250;
+									   		console.log('down'+scroll_num);
+									   } else {
+									   	if(cero == 0){
+									   		scroll_num-=250;
+									   		cero++;
+									   	}
+		      					            scroll_num -= 250;
+									      	$('#sidebar_scroll').animate({scrollTop: scroll_num }, 500);
+									   		console.log('up'+scroll_num);
+									   }
+									   lastScrollTop = st;
+
+
 
 					            }
 					        });
@@ -355,12 +375,14 @@
 
 
 
-
 				if( $('body').hasClass('post-type-archive-sprints') ){
-					console.log('aqui nadamas');
-					if( $('.sprints_post').hasClass('selected') ){
-						$('.sprints_post.selected').hide();
-					}
+					
+
+					// $(window).on('scroll', function () {
+					//     $('#sidebar_scroll').scrollTop( $(this).scrollTop() );
+
+					// });
+
 				}
 
 				$('.single-episodios div.foto_grande img').click(function(){

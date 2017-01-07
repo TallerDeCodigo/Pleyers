@@ -1,5 +1,5 @@
-<section class="sidebar clearfix">
-	<div class="sprints" >
+<section id="sidebar_sprints" class="sidebar clearfix">
+	<div id="sidebar_scroll" class="sprints clearfix" >
 		<?php 
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
@@ -14,14 +14,14 @@
 				date_default_timezone_set('America/Mexico_City');
 				$hoy = date('U');
 		?>
-				<div>
+				<div class="clearfix">
 					<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado_head.svg" width="30px" height="30px">
 					<a href="<?php bloginfo('url'); ?>/sprints">
 						<h3 class="header_sprints">SPRINTS</h3>
 					</a>
 				</div>
 				
-				<div class="sprints_container">
+				<div class="sprints_container clearfix">
 					<?php 
 						if($posts->have_posts()): 
 							while($posts->have_posts()):
@@ -41,19 +41,19 @@
 
 								<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">
 									<span class="post_time"><?php  echo $time_ago; ?></span>
-									<div class="sprints_post_content">
+									<div class="sprints_post_content clearfix">
 											<?php 
 												if($img_size == 'foto_grande'){
 												?>
-													<div class="<?php echo $img_size; ?>">
+													<div class="<?php echo $img_size; ?> clearfix">
 														<a href="#<?php echo $post->ID."h"; ?>">
-															<div class="img_frame">
+															<div class="img_frame clearfix">
 																<?php the_post_thumbnail(); ?>
 															</div>
 														</a>
 
 														<a href="<?php the_permalink(); ?>">
-															<p>
+															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
 														</a>
@@ -62,7 +62,7 @@
 											<?php 
 												}else if($img_size == 'foto_chica'){
 												?>
-													<div class="<?php echo $img_size; ?>">
+													<div class="<?php echo $img_size; ?> clearfix">
 														<a href="#<?php echo $post->ID."h"; ?>">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
@@ -70,7 +70,7 @@
 														</a>
 
 														<a href="<?php the_permalink(); ?>">
-															<p>
+															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
 														</a>
@@ -79,7 +79,7 @@
 											<?php	
 												}else if($img_size == 'sin_foto'){
 												?>
-													<div class="<?php echo $img_size; ?>">
+													<div class="<?php echo $img_size; ?> clearfix">
 														<!-- <a href="#<?php echo $post->ID."h"; ?>">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
@@ -87,7 +87,7 @@
 														</a> -->
 
 														<a href="#<?php echo $post->ID."h"; ?>">
-															<p>
+															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
 														</a>
