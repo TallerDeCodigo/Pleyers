@@ -380,7 +380,6 @@
 				$('.single-episodios div.foto_grande img').click(function(){
 					$(this).hide();
 					$(this).parent().find('iframe').show();
-
 				});
 
 				

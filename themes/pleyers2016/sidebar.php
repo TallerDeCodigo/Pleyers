@@ -48,12 +48,11 @@
 															</div>
 														</a>
 
-														<a href="<?php the_permalink(); ?>">
+														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
 														</a>
-														<?php //the_excerpt(); ?>
 													</div>
 											<?php 
 												}else if($img_size == 'foto_chica'){
@@ -65,29 +64,22 @@
 															</div>
 														</a>
 
-														<a href="<?php the_permalink(); ?>">
+														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
 														</a>
-														<?php //the_excerpt(); ?>
 													</div>	
 											<?php	
 												}else{
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
-														<!-- <a href="<?php bloginfo('url'); ?>/sprints">
-															<div class="img_frame">
-																<?php the_post_thumbnail(); ?>
-															</div>
-														</a> -->
 
 														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
 														</a>
-														<?php //the_excerpt(); ?>
 													</div>	
 											<?php	
 												}
@@ -100,7 +92,7 @@
 						endif; 
 			?>	
 
-			<?php if ($posts->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+			<?php if ($posts->max_num_pages > 1) { ?>
 					 <nav class="prev-next-posts">
 
 					    <div class="prev-posts-link">

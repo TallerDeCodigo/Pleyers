@@ -5,19 +5,18 @@
 <div class="full_container">
 	<section class="container clearfix smart_scroll_container">
 		<section id="sprints_scroll" class="sprint_top">
-			<?php 
-
+			<?php
 				if(have_posts()): 
 					while(have_posts()):
 						the_post();
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
-			?>
+				?>
 						<article class="single_content" id="<?php echo $post->ID."h"; ?>">
 							<?php 
 
 								$link = get_the_permalink(); 
-								$link = substr($link, 23);
-								// $link = str_replace('/s.com/', '/', $link);
+								// $link = substr($link, 23); 	//Productivo
+								$link = substr($link, 17);		//Local
 
 							?>
 
