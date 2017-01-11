@@ -341,8 +341,8 @@
 					            if (distance < 150 && distance > -150 && currentHash != hash) {
 					            	aidi = $(this).attr('data');
 					            	//console.log(aidi);
-					            	if(history.pushState) { 
-					            		history.pushState(null, null, "/"+hash); 
+					            	if(history.pushState) {
+					            		history.pushState(null, null, "/"+hash);
 					            	}else { 
 					            		window.location.hash = hash; 
 					            	}

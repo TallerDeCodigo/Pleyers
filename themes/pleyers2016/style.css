@@ -106,7 +106,7 @@ div.container h2 {font-size:200%;margin:20px 0;}
 
 /*HEADER*/
 
-header {width:100%;background:yellow;height:60px;box-shadow:0px 5px 5px rgba(0,0,0,0.1);position:fixed;left:0;top:0;z-index:999999;padding:0px 15px;}
+header {width:100%; position:fixed; left:0; top:0; right:0; background:yellow; height:60px; box-shadow:0px 5px 5px rgba(0,0,0,0.1); padding:0px 15px;z-index: 1;}
 h1 {position:absolute;left:0px;top:0px;width:0px;height:0px;overflow:hidden;opacity:0;}
 img.header_logo {height:56px;margin-top:2px;float:left;}
 nav.social {float:right;position:relative;}
@@ -131,7 +131,7 @@ nav.social {float:right;position:relative;}
 
 .postform{width: 15%;height: 40px;position: relative;top: -10px;left: 30px;border-style: none;box-shadow: 1px 1px 1px #888888;overflow: hidden; }
 select{border-radius: 0px;appearance:none;-moz-appearance:none;-webkit-appearance:none;outline: none;}
-.postform:after {content:"▼";padding: 12px 8px;position: absolute; right: 10px; top: 0;z-index: 1;text-align: center;width: 10%;height: 100%;pointer-events: none;box-sizing: border-box;}
+.postform:after {content:"▼";padding: 12px 8px;position: absolute; right: 10px; top: 0;/*z-index: 1;*/text-align: center;width: 10%;height: 100%;pointer-events: none;box-sizing: border-box;}
 /*
 .addthis_sharing_toolbox{float:left;margin-right: 20px}*/
 
@@ -173,7 +173,7 @@ select{border-radius: 0px;appearance:none;-moz-appearance:none;-webkit-appearanc
 
 /*MENU*/
 
-div.overscreen {position:fixed;top:0px;left:0px;width:100%;height:100%;overflow:hidden;z-index:99999;}
+div.overscreen {position:fixed;top:0px;left:0px;width:100%;height:100%;overflow:hidden;z-index:1;}
 div.overscreen ._over {position:absolute;top:0px;left:0px;width:100%;height:100%;background:rgba(0,0,0,0);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out;}
 div.overscreen.open ._over {background:rgba(0,0,0,0.5);}
 
@@ -270,7 +270,7 @@ div.left{background-color:#000;background-image: url(../pleyers2016/images/left_
 .right{left:1240px;top:58px;padding-left:40px;}
 div.right{background-color:#8c8c8c;background-image: url(../pleyers2016/images/right_nav.png);background-position: center;background-repeat: no-repeat;background-size: 50%;}
 
-.sport_calendar{font-family: 'Montserrat';z-index: 9;text-align: center;font-size: 1.3em;font-weight: bold;width:157px;color:#fff;background: #000;border:1px solid grey;position:relative;left:-3.9%;top:50px;-ms-transform: rotate(-90deg); /* IE 9 */-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */transform: rotate(-90deg);}
+.sport_calendar{font-family: 'Montserrat';z-index:1;text-align: center;font-size: 1.3em;font-weight: bold;width:157px;color:#fff;background: #000;border:1px solid grey;position:relative;left:-3.9%;top:50px;-ms-transform: rotate(-90deg); /* IE 9 */-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */transform: rotate(-90deg);}
 
 body.home section:first-of-type {padding-top:0px;}
 
@@ -373,11 +373,11 @@ div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:125%;}
 ._imagen{width:100%;height: 100%; position:relative;background-size: cover!important;}
 .archive div.single_top{margin-bottom:30px;}
 .single_top img{width:100%;height:auto;}
-.single_top h2{position:absolute;margin-left:2%;font-size: 3em;color:#fff;width: 50%;top:44%;z-index: 9}
-.single_top span{display:inline-block;position:relative;top:100px;left:20px;font-size: 2em; color:yellow;z-index: 9;font-weight:bold;}
+.single_top h2{position:absolute;margin-left:2%;font-size: 3em;color:#fff;width: 50%;top:44%;/*z-index: 9*/}
+.single_top span{display:inline-block;position:relative;top:100px;left:20px;font-size: 2em; color:yellow;/*z-index: 9*/;font-weight:bold;}
 
 .single_sidebar{width:320px;float:left;}
-.single_content{width:50%;margin:0 auto;}
+.single_content{width:50%;margin:0 auto;max-width: 700px}
 .line_division{border-bottom:1px solid #fafafa;padding-bottom:40px;}
 .single_content img{width:93%;height:auto;}
 .single_content h2{color:#2c2c2c;margin-top:0px;font-size: 3.7rem;}
@@ -396,7 +396,7 @@ article.pub h2{margin-top:0px;}
 article.pub div{border-bottom:none;}
 .img_pub{width:30%;}
 article.pub div img{border:none;width:80%;border-radius: 50%}
-.single-post div.single_content{width:48.4%;}
+.single-post div.single_content{width:48.4%;max-width: 700px;}
 .single-post div.single_post div.single_top{position:relative;width:100%;height:600px;overflow:hidden;}
 .single-post div.single_post div.single_top img{position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 body.ltr .en{max-width: 620px;}
@@ -423,7 +423,7 @@ body.ltr .en{max-width: 620px;}
 
 /*ARCHIVE SPRINTS*/
 .selected{border-right:3px solid black;}
-.post-type-archive-sprints section.sidebar{position:absolute;top:6.5%;z-index:0;}
+.post-type-archive-sprints section.sidebar{position:absolute;top:6.5%;/*z-index:0;*/}
 .post-type-archive-sprints section.sidebar div.sprints {overflow-y:scroll;height: 770px!important;position: fixed;width: 30%;max-width: 360px;top:10%;bottom:0;}
 
 .post-type-archive-sprints div.post_head{margin-top:0px;position: relative;padding-top:50px;}
@@ -454,12 +454,12 @@ body.ltr .en{max-width: 620px;}
 
 
 /*SINGLE EPISODIOS*/
-.single-episodios div.content_side{margin-top:15px;position:fixed;z-index:0;}
+.single-episodios div.content_side{margin-top:15px;position:fixed;/*z-index:0;*/}
 .single-episodios section.content_col{margin-top:30px;}
 .single-episodios section.content_col article.single_content{width:100%;}
 .single-episodios section.sidebar{float:left;}
 .single-episodios div.foto_chica div.content_single_episodio a{float:left;width:30%;margin-right:20px;}
-.single-episodios div.content_side section.sidebar{width:100%;z-index:0;}
+.single-episodios div.content_side section.sidebar{width:100%;/*z-index:0;*/}
 
 .single-episodios iframe{width:100%;display:none;}
 
@@ -570,14 +570,14 @@ div.tax_description img{width:20%;float:left;}
 
 /*FOOTER*/
 
-footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;z-index: 9;}
+footer {background:#000;height:60px;color:#AAA;font-family:'Gotham';font-weight:900;font-size:14px;line-height:60px;padding:5px 0px;/*z-index: 9;*/}
 footer img {height:50px;width:auto;float:left;margin-right:15px;}
 
 .bx-wrapper{margin-top:-76px!important;position:relative;}
 .bx_sl_li{width:300px!important;border-right:1px solid black;}
-.bx-viewport{height:177px!important;width:95.5%!important;margin:0% 0% 0% 4.5%;}
+.bx-viewport{height:177px!important;width:94%!important;padding:0% 2% 0% 1.5%;margin:0 auto;}
 .bx-controls-direction{position:relative;color:#fff;height:100%;}
-.bx-controls-direction a {display: block;height: 100%;width: 40px;position: absolute;text-align: center;line-height: 150px;font-size: 30px;font-weight: bold;opacity: .9;}
+.bx-controls-direction a {display: block;height: 100%;width: 40px;position: absolute;text-align: center;line-height: 150px;font-size: 30px;font-weight: bold;}
 .bx-controls-direction  .bx-next{right: 0px;background: gray;}
 .bx-controls-direction  .bx-prev{margin-left:57px;background:#111}
 .bx-controls.bx-has-controls-direction {position:absolute;width:100%;height:157px;left:0px;bottom:2px;}
@@ -590,6 +590,13 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 @media(max-width:1200px){
 	.single_top h2{font-size: 2.5em;top:46%;}
 	div.same_size div.img_frame img{width:auto;height:100%;}
+}
+
+@media(max-width: 1025px){
+	div.post div.img_frame{width:220px;height:220px;}
+	.bx-viewport{padding:0% 2% 0% 2.5%;}
+	.sport_calendar{left:-4.8%;}
+
 }
 
 @media (max-width:960px){
@@ -627,7 +634,7 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 	div.destacado.nota1{width:90%;}
 	section.sidebar{float:none!important;width:100%;margin:0 auto;}
 	.match_calendar{display: none;}
-	div.left_container{position:absolute;top:2000px;width:100%;}
+	div.left_container{position:absolute;top:2200px;width:100%;}
 	div.left_container div.img_frame img{position:absolute;height: auto;width: 100%;top: -9999px;bottom: -9999px;left: -9999px;right: -9999px;margin: auto;}
 
 	div.post div.img_frame{width:100%;}

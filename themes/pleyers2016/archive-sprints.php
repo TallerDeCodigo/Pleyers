@@ -16,7 +16,9 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								$link = substr($link, 17);
+								$link = substr($link, 23);
+								// $link = str_replace('/s.com/', '/', $link);
+
 							?>
 
 							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
