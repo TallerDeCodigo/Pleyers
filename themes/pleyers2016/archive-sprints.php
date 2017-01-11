@@ -15,12 +15,12 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								// $link = substr($link, 23); 	//Productivo
-								$link = substr($link, 17);		//Local
+								$link = substr($link, 23); 	//Productivo
+								// $link = substr($link, 17);		//Local
 
 							?>
 
-							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a> </br></br></br></br>
 							<?php 
 								if($img_size == 'foto_grande'){
 									?>
@@ -33,7 +33,7 @@
 
 										<div class="shares">
 
-											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+											<!-- <textarea style="display:none;"><?php the_permalink(); ?></textarea> -->
 
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 												<div class="share_fb" aria-hidden="true"></div> 
@@ -80,15 +80,15 @@
 										</div>
 									</div><br>
 
-									<div class="sprint_excerpt">
+									<!-- <div class="sprint_excerpt">
 										<?php the_excerpt(); ?>
-									</div>
+									</div> -->
 
 									<div class="contenido capital">
 										<?php the_content(); ?>
 										<div class="shares horizontal_share clearfix">
 
-											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+											<!-- <textarea style="display:none;"><?php the_permalink(); ?></textarea> -->
 
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 												<div class="share_fb" aria-hidden="true"></div> 
@@ -121,7 +121,7 @@
 
 										<div class="shares">
 
-											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+											<!-- <textarea style="display:none;"><?php the_permalink(); ?></textarea> -->
 
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 												<div class="share_fb" aria-hidden="true"></div> 
@@ -249,9 +249,9 @@
 											</div>
 										</div><br>
 										
-										<div class="sprint_excerpt">
+										<!-- <div class="sprint_excerpt">
 											<?php the_excerpt(); ?>
-										</div> 
+										</div>  -->
 
 										<div class="<?php echo $img_size; ?>">
 											<?php the_post_thumbnail(); ?>
