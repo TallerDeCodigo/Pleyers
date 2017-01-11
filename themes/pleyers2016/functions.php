@@ -3,8 +3,6 @@
 
 // DEFINIR LOS PATHS A LOS DIRECTORIOS DE JAVASCRIPT Y CSS ///////////////////////////
 
-
-
 	define( 'JSPATH', get_template_directory_uri() . '/js/' );
 
 	define( 'CSSPATH', get_template_directory_uri() . '/css/' );
@@ -181,17 +179,17 @@
 
 
 
-	add_action( 'pre_get_posts', function($query){
+	// add_action( 'pre_get_posts', function($query){
 
-		if( $query->is_main_query() and ! is_admin()){
-			if($query->is_search()){
-				$query->set('post_type', array('post', 'episodios', 'graficos', 'tweets', 'frases'));
-				$query->set('posts_per_page', -1);
-			}
-		}
-		return $query;
+	// 	if( $query->is_main_query() and ! is_admin()){
+	// 		if($query->is_search()){
+	// 			$query->set('post_type', array('post', 'episodios', 'graficos', 'tweets', 'frases'));
+	// 			$query->set('posts_per_page', -1);
+	// 		}
+	// 	}
+	// 	return $query;
 
-	});
+	// });
 
 	function news_get_invitados( $query ) {
 	    if ( is_admin() || ! $query->is_main_query() )
@@ -237,28 +235,28 @@
 
 // INSERTAR POST THUMBNAIL DESDE URL /////////////////////////////////////////////////
 
-	function set_featured_image( $image_url, $post_id  ){
-	    $upload_dir = wp_upload_dir();
-	    $image_data = file_get_contents($image_url);
-	    $filename = basename($image_url);
-	    if(wp_mkdir_p($upload_dir['path']))     $file = $upload_dir['path'] . '/' . $filename;
-	    else                                    $file = $upload_dir['basedir'] . '/' . $filename;
-	    file_put_contents($file, $image_data);
+	// function set_featured_image( $image_url, $post_id  ){
+	//     $upload_dir = wp_upload_dir();
+	//     $image_data = file_get_contents($image_url);
+	//     $filename = basename($image_url);
+	//     if(wp_mkdir_p($upload_dir['path']))     $file = $upload_dir['path'] . '/' . $filename;
+	//     else                                    $file = $upload_dir['basedir'] . '/' . $filename;
+	//     file_put_contents($file, $image_data);
 
-	    $wp_filetype = wp_check_filetype($filename, null );
-	    $attachment = array(
-	        'post_mime_type' => $wp_filetype['type'],
-	        'post_title' => sanitize_file_name($filename),
-	        'post_content' => '',
-	        'post_status' => 'inherit'
-	    );
+	//     $wp_filetype = wp_check_filetype($filename, null );
+	//     $attachment = array(
+	//         'post_mime_type' => $wp_filetype['type'],
+	//         'post_title' => sanitize_file_name($filename),
+	//         'post_content' => '',
+	//         'post_status' => 'inherit'
+	//     );
 
-	    $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
-	    require_once(ABSPATH . 'wp-admin/includes/image.php');
-	    $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
-	    $res1= wp_update_attachment_metadata( $attach_id, $attach_data );
-	    $res2= set_post_thumbnail( $post_id, $attach_id );
-	}
+	//     $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+	//     require_once(ABSPATH . 'wp-admin/includes/image.php');
+	//     $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+	//     $res1= wp_update_attachment_metadata( $attach_id, $attach_data );
+	//     $res2= set_post_thumbnail( $post_id, $attach_id );
+	// }
 
 // HELPER METHODS AND FUNCTIONS //////////////////////////////////////////////////////
 
@@ -298,6 +296,14 @@
 			echo implode(', ', $names);
 		}
 	}
+
+
+	/*CAMBIA POSTYPE DE ENTRADAS A SPRINTS*/
+
+	set_post_type( 13488, 'sprints');
+
+
+
 
 
 
@@ -351,20 +357,27 @@
 		return FALSE;
 	}
 
-	add_filter('next_posts_link_attributes', 'posts_link_attributes');
-	add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+	// add_filter('next_posts_link_attributes', 'posts_link_attributes');
+	// add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
-	function posts_link_attributes(){
-	   return 'class="internav"';
-
-	}
+	// function posts_link_attributes(){
+	//    return 'class="internav"';
+	// }
 	
 	function wpdocs_five_posts_on_homepage( $query ) {
-	    if ( $query->is_home() && $query->is_main_query() ) {
-	        $query->set( 'posts_per_page', 5 );
-	    }
+	    // if ( $query->is_home() && $query->is_main_query() ) {
+	    //     $query->set( 'posts_per_page', 5 );
+	    // }
+
+		if ( $query->is_archive() && $query->is_main_query() ) {
+	        $query->set( 'posts_per_page', 20 );
+	        $query->set( 'order', 'DESC' );
+	    }	
+
 	}
 	add_action( 'pre_get_posts', 'wpdocs_five_posts_on_homepage' );
+
+
 
 	function get_all_posttypes(){
 		$pt = array('post', 'episodios', 'graficos', 'sprints');
@@ -453,56 +466,55 @@
 
 	    /*AJAX FOR BLOGS 2*/
 	    // ajax: generate a list of posts from a list of post types
-	    function my_get_posts()
-	    {
-		    //permission_check(); <-- check nonce and permissions here
+	    // function my_get_posts(){
+		   //  //permission_check(); <-- check nonce and permissions here
 
-		    // show only published posts
-		    $args = array(	
-					'post_type'=>'episodios',
-					'posts_per_page'=>5,
-					'post_status'=>'publish',
-					'orderby'=>'date',
-					'order'=>'DESC',
-					'paged'=>$paged,
-					'tax_query'=>array(
-									array(
-										'taxonomy'=>'shows',
-										'field'=> 'slug',
-										'terms'=>'deportologia'										)
-									)
-					);
+		   //  // show only published posts
+		   //  $args = array(	
+					// 'post_type'=>'episodios',
+					// 'posts_per_page'=>5,
+					// 'post_status'=>'publish',
+					// 'orderby'=>'date',
+					// 'order'=>'DESC',
+					// 'paged'=>$paged,
+					// 'tax_query'=>array(
+					// 				array(
+					// 					'taxonomy'=>'shows',
+					// 					'field'=> 'slug',
+					// 					'terms'=>'deportologia'										)
+					// 				)
+					// );
 
-		    $posts = get_posts($args);
+		   //  $posts = get_posts($args);
 
-		    // put the posts into an array
-		    $arr = array();
-		    foreach ($posts as $post)
-		    {
-		    	$entry = array();
+		   //  // put the posts into an array
+		   //  $arr = array();
+		   //  foreach ($posts as $post)
+		   //  {
+		   //  	$entry = array();
 
-			    // get the post's attributes here
-			    $entry['id'] = $post->ID;
-			    $entry['title'] = $post->post_title;
-			    $arr[] = $entry;
+			  //   // get the post's attributes here
+			  //   $entry['id'] = $post->ID;
+			  //   $entry['title'] = $post->post_title;
+			  //   $arr[] = $entry;
 
-	    	}
+	    // 	}
 
-		    // then output in json format
-		    header("Content-Type: application/json");
-		    echo json_encode($arr);
+		   //  // then output in json format
+		   //  header("Content-Type: application/json");
+		   //  echo json_encode($arr);
 
-		    // make sure you have "exit" here
-		    exit;
-	    }
+		   //  // make sure you have "exit" here
+		   //  exit;
+	    // }
 
 	    // add into the ajax action chains
 
 	    // this is for logged in users
-	    add_action('wp_ajax_my_get_posts', 'my_get_posts');
+	    // add_action('wp_ajax_my_get_posts', 'my_get_posts');
 
-	    // this is for the rest
-	    add_action('wp_ajax_nopriv_my_get_posts', 'my_get_posts');
+	    // // this is for the rest
+	    // add_action('wp_ajax_nopriv_my_get_posts', 'my_get_posts');
 
 
 

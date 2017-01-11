@@ -326,10 +326,13 @@
 					var scroll_num = 0;
 					var lastScrollTop = 0; 
 					var cero = 0;
+					var alto_post;
 					$(function () {
 					    var currentHash = "initial_hash";
 					    $(window).scroll(function () {
 					        $('.anchor_tags').each(function () {
+					        	var anterior = $('.sprints_container div#'+aidi).height();
+
 					            var top = window.pageYOffset;
 					            var distance = top - $(this).offset().top;
 					            var hash = $(this).attr('href');
@@ -346,26 +349,26 @@
 					                currentHash = hash;
 					                es = $('.sprints_container div#'+aidi);
 					                $('.sprints_container div').removeClass('selected');
-					                es.addClass('selected');
+					                es.addClass('selected')
+					                alto_post = es.height();
 
 									var st = $(window).scrollTop();
 									   if (st > lastScrollTop){
-									   		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 500);
-									   		scroll_num += 250;
+									   		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
+									   		$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
+									   		scroll_num += alto_post ;
 									   		console.log('down'+scroll_num);
 									   } else {
-									   	if(cero == 0){
-									   		scroll_num-=250;
-									   		cero++;
-									   	}
-		      					            scroll_num -= 250;
-									      	$('#sidebar_scroll').animate({scrollTop: scroll_num }, 500);
+										   	if(cero == 0){
+										   		scroll_num-=alto_post ;
+										   		cero++;
+										   	}
+		      					            scroll_num -= alto_post ;
+									      	$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
+									      	$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
 									   		console.log('up'+scroll_num);
 									   }
 									   lastScrollTop = st;
-
-
-
 					            }
 					        });
 					    });
@@ -373,17 +376,6 @@
 
 				}
 
-
-
-				if( $('body').hasClass('post-type-archive-sprints') ){
-					
-
-					// $(window).on('scroll', function () {
-					//     $('#sidebar_scroll').scrollTop( $(this).scrollTop() );
-
-					// });
-
-				}
 
 				$('.single-episodios div.foto_grande img').click(function(){
 					$(this).hide();

@@ -6,21 +6,20 @@
 	<section class="container clearfix smart_scroll_container">
 		<section id="sprints_scroll" class="sprint_top">
 			<?php 
-				// $count = 0;
+
 				if(have_posts()): 
 					while(have_posts()):
 						the_post();
-						setup_postdata($post);
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 			?>
 						<article class="single_content" id="<?php echo $post->ID."h"; ?>">
 							<?php 
-								// echo $count;
+
 								$link = get_the_permalink(); 
 								$link = substr($link, 17);
 							?>
-							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>"></a>
 
+							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
 							<?php 
 								if($img_size == 'foto_grande'){
 									?>
@@ -197,7 +196,7 @@
 
 
 								<?php
-									}else if($img_size == 'sin_foto'){
+									}else{
 									?>
 
 
@@ -287,26 +286,23 @@
 									?>
 						</article>
 			<?php  	
-					// $count++;
 					endwhile; 
 					wp_reset_postdata();
 				endif; ?>
-
 		</section>
+					
+
+
+
+					<!--SIDEBAR ARCHIVE BREAKING-->
+
+
 
 		<section id="sidebar_sprints" class="sidebar clearfix">
 			<div id="sidebar_scroll" class="sprints clearfix" >
 				<?php 
 						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-						$args = array(
-									'post_type'=>'sprints',//cambiar por el posttype -> sprints
-									'posts_per_page'=>7,
-									'post_status'=>'publish',
-									'orderby'=>'date',
-									'order'=>'DESC',
-									'paged'=>$paged
-									);
-						$posts = new WP_Query($args);
+						
 						date_default_timezone_set('America/Mexico_City');
 						$hoy = date('U');
 				?>
@@ -319,9 +315,9 @@
 						
 						<div class="sprints_container clearfix">
 							<?php 
-								if($posts->have_posts()): 
-									while($posts->have_posts()):
-										$posts->the_post();
+								if(have_posts()): 
+									while(have_posts()):
+										the_post();
 										setup_postdata($post);
 										$post_date = get_the_date('U');
 
@@ -333,7 +329,7 @@
 							?>
 										
 
-										<a href="<?php the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+										<a href="<?php echo get_the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
 
 										<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">
 											<span class="post_time"><?php  echo $time_ago; ?></span>
@@ -373,7 +369,7 @@
 																<?php //the_excerpt(); ?>
 															</div>	
 													<?php	
-														}else if($img_size == 'sin_foto'){
+														}else{
 														?>
 															<div class="<?php echo $img_size; ?> clearfix">
 																<!-- <a href="#<?php echo $post->ID."h"; ?>">

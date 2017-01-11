@@ -28,17 +28,12 @@
 								$posts->the_post();
 								setup_postdata($post);
 								$post_date = get_the_date('U');
-
 								$time_ago = human_time_diff($post_date, $hoy);
 								$time_ago = preg_replace('/\s+/', '', $time_ago);
 								$time_ago = substr($time_ago, 0, 2);
 								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
-
 					?>
-								
-
-								<a href="<?php the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
-
+								<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
 								<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">
 									<span class="post_time"><?php  echo $time_ago; ?></span>
 									<div class="sprints_post_content clearfix">
@@ -46,7 +41,8 @@
 												if($img_size == 'foto_grande'){
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
-														<a href="#<?php echo $post->ID."h"; ?>">
+
+														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 															<div class="img_frame clearfix">
 																<?php the_post_thumbnail(); ?>
 															</div>
@@ -63,7 +59,7 @@
 												}else if($img_size == 'foto_chica'){
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
-														<a href="#<?php echo $post->ID."h"; ?>">
+														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
 															</div>
@@ -77,16 +73,16 @@
 														<?php //the_excerpt(); ?>
 													</div>	
 											<?php	
-												}else if($img_size == 'sin_foto'){
+												}else{
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
-														<!-- <a href="#<?php echo $post->ID."h"; ?>">
+														<!-- <a href="<?php bloginfo('url'); ?>/sprints">
 															<div class="img_frame">
 																<?php the_post_thumbnail(); ?>
 															</div>
 														</a> -->
 
-														<a href="#<?php echo $post->ID."h"; ?>">
+														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 															<p class="clearfix">
 																<?php the_title(); ?>
 															</p>
