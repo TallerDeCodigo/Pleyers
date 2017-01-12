@@ -12,7 +12,6 @@
 <section class="tax_show">
 	<div class="tax_show_top clearfix">
 		<h2 id="show_name">
-
 			<?php echo $show_name; ?>
 		</h2>
 		<?php 
@@ -35,11 +34,11 @@
 					$tags = get_the_tags();
 					if($tags): foreach($tags as $tag): endforeach; 
 				?>
-						<a href="<?php echo bloginfo('url').'/tag/'.$tag->slug ?>">
-							<span>
+						<span>
+							<a href="<?php echo bloginfo('url').'/tag/'.$tag->slug ?>">
 								<?php echo "#".$tag->name." "; ?>
-							</span>
-						</a>
+							</a>
+						</span>
 				<?php endif; ?>
 
 			<h2>

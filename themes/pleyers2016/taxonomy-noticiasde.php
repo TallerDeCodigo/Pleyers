@@ -13,28 +13,32 @@
 					if($terms){
 						foreach($terms as $term):
 					?>
-						<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
-							<span class="_noticiade">
+						<span class="_noticiade">
+							<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
 								<?php echo "#".esc_html($term->name)." "; ?>
-							</span>
-						</a>	
+							</a>	
+						</span>
 					<?php		
-					endforeach; }
+						endforeach; 
+					}
 				?>
 				<?php 
 					if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
 						$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
 						echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
-					} else { ?>
+					} else { 
+					?>
+					
 					<?php the_post_thumbnail('full'); ?>
+					
 					<div class="grid"></div>
 				<?php } ?>
 
-				<a href="<?php the_permalink(); ?>">
-					<h2>
+				<h2>
+					<a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
-					</h2>
-				</a>
+					</a>
+				</h2>
 		</div>
 
 		<div class="full_container clearfix">
@@ -69,29 +73,29 @@
 							$tags = get_the_tags();
 				?>
 				<div class="post clearfix">
-					<a href="<?php the_permalink(); ?>">
-						<div class="img_frame clearfix">
+					<div class="img_frame clearfix">
+						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail('full'); ?>
-						</div>
-					</a>
+						</a>
+					</div>
 					<?php 
 						$terms = wp_get_post_terms($post->ID, 'noticiasde' ); 
 						if($terms){
 							foreach($terms as $term):
 						?>
-							<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
-								<span>
+							<span>
+								<a href="<?php echo bloginfo('url').'/noticiasde/'.$term->slug; ?>">
 									<?php echo "#".esc_html($term->name)." "; ?>
-								</span>
-							</a>	
+								</a>	
+							</span>
 						<?php		
 						endforeach; }
 					?>
-							<a href="<?php the_permalink(); ?>">
-								<h3>
+							<h3>
+								<a href="<?php the_permalink(); ?>">
 									<?php the_title(); ?>
-								</h3>
-							</a>
+								</a>
+							</h3>
 					<div><?php the_excerpt(); ?></div>
 				</div>
 

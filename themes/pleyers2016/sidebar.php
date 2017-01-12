@@ -16,9 +16,11 @@
 		?>
 				<div class="clearfix">
 					<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado_head.svg" width="30px" height="30px">
-					<a href="<?php bloginfo('url'); ?>/sprints">
-						<h3 class="header_sprints">SPRINTS</h3>
-					</a>
+					<h3 class="header_sprints">
+						<a href="<?php bloginfo('url'); ?>/sprints">
+							SPRINTS
+						</a>
+					</h3>
 				</div>
 				
 				<div class="sprints_container clearfix">
@@ -34,6 +36,7 @@
 								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 					?>
 								<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+
 								<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">
 									<span class="post_time"><?php  echo $time_ago; ?></span>
 									<div class="sprints_post_content clearfix">
@@ -42,44 +45,44 @@
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
 
-														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
-															<div class="img_frame clearfix">
+														<div class="img_frame clearfix">
+															<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 																<?php the_post_thumbnail(); ?>
-															</div>
-														</a>
+															</a>
+														</div>
 
-														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
-															<p class="clearfix">
+														<p class="clearfix">
+															<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 																<?php the_title(); ?>
-															</p>
-														</a>
+															</a>
+														</p>
 													</div>
 											<?php 
 												}else if($img_size == 'foto_chica'){
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
-														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
-															<div class="img_frame">
+														<div class="img_frame">
+															<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 																<?php the_post_thumbnail(); ?>
-															</div>
-														</a>
+															</a>
+														</div>
 
-														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
-															<p class="clearfix">
+														<p class="clearfix">
+															<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 																<?php the_title(); ?>
-															</p>
-														</a>
+															</a>
+														</p>
 													</div>	
 											<?php	
 												}else{
 												?>
 													<div class="<?php echo $img_size; ?> clearfix">
 
-														<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
-															<p class="clearfix">
+														<p class="clearfix">
+															<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 																<?php the_title(); ?>
-															</p>
-														</a>
+															</a>
+														</p>
 													</div>	
 											<?php	
 												}

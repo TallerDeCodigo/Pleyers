@@ -33,7 +33,7 @@
 
 										<div class="shares">
 
-											<!-- <textarea style="display:none;"><?php the_permalink(); ?></textarea> -->
+											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
 
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 												<div class="share_fb" aria-hidden="true"></div> 
@@ -57,21 +57,21 @@
 															$tag_url = $tag->slug;
 														endforeach;
 													?>
-															<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-																<span class="tags">
+															<span class="tags">
+																<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
 																	<?php echo "#".esc_html($tag->name)." "; ?>
-																</span>
-															</a>	
+																</a>	
+															</span>
 													<?php		
 													}
 												?>
 											</div>
 
-											<a href="<?php the_permalink(); ?>">
-												<h2>
+											<h2>
+												<a href="<?php the_permalink(); ?>">
 													<?php the_title(); ?>
-												</h2>
-											</a>
+												</a>
+											</h2>
 											
 											<div class="_the_date">
 												<?php echo get_the_date('H:m d/M/Y'); ?>
@@ -88,7 +88,7 @@
 										<?php the_content(); ?>
 										<div class="shares horizontal_share clearfix">
 
-											<!-- <textarea style="display:none;"><?php the_permalink(); ?></textarea> -->
+											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
 
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 												<div class="share_fb" aria-hidden="true"></div> 
@@ -121,7 +121,7 @@
 
 										<div class="shares">
 
-											<!-- <textarea style="display:none;"><?php the_permalink(); ?></textarea> -->
+											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
 
 											<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 												<div class="share_fb" aria-hidden="true"></div> 
@@ -156,7 +156,11 @@
 												?>
 											</div>
 
-											<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+											<h2>
+												<a href="<?php the_permalink(); ?>">
+													<?php the_title(); ?>
+												</a>
+											</h2>
 
 											<div class="_the_date">
 												<?php echo get_the_date('H:m d/M/Y'); ?>
@@ -170,7 +174,8 @@
 									</div>
 
 									<div class="contenido capital">
-										<?php the_content(); ?>	
+										<?php the_content(); ?>
+
 										<div class="shares horizontal_share clearfix">
 
 											<textarea style="display:none;"><?php the_permalink(); ?></textarea>
@@ -206,6 +211,7 @@
 											<div class="shares">
 
 												<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+
 												<a class="copylink">
 													<div class="share_link" aria-hidden="true"></div> 
 												</a>
@@ -230,17 +236,21 @@
 																$tag_url = $tag->slug;
 															endforeach;
 														?>
-																<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-																	<span class="tags">
+																<span class="tags">
+																	<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
 																		<?php echo "#".esc_html($tag->name)." "; ?>
-																	</span>
-																</a>	
+																	</a>	
+																</span>
 														<?php		
 														}
 													?>
 												</div>
 
-												<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+												<h2>
+													<a href="<?php the_permalink(); ?>">
+														<?php the_title(); ?>
+													</a>
+												</h2>
 
 												<div class="_the_date">
 													<?php echo get_the_date('H:m d/M/Y'); ?>
@@ -259,6 +269,7 @@
 
 										<div class="contenido capital">
 											<?php the_content(); ?>
+
 											<div class="shares horizontal_share clearfix">
 
 												<textarea style="display:none;"><?php the_permalink(); ?></textarea>
@@ -309,9 +320,11 @@
 				?>
 						<div class="clearfix">
 							<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado_head.svg" width="30px" height="30px">
-							<a href="<?php bloginfo('url'); ?>/sprints">
-								<h3 class="header_sprints">SPRINTS</h3>
-							</a>
+							<h3 class="header_sprints">
+								<a href="<?php bloginfo('url'); ?>/sprints">
+									SPRINTS
+								</a>	
+							</h3>
 						</div>
 						
 						<div class="sprints_container clearfix">
@@ -339,34 +352,34 @@
 														if($img_size == 'foto_grande'){
 														?>
 															<div class="<?php echo $img_size; ?> clearfix">
-																<a href="#<?php echo $post->ID."h"; ?>">
-																	<div class="img_frame clearfix">
+																<div class="img_frame clearfix">
+																	<a href="#<?php echo $post->ID."h"; ?>">
 																		<?php the_post_thumbnail(); ?>
-																	</div>
-																</a>
+																	</a>
+																</div>
 
-																<a href="<?php the_permalink(); ?>">
-																	<p class="clearfix">
+																<p class="clearfix">
+																	<a href="<?php the_permalink(); ?>">
 																		<?php the_title(); ?>
-																	</p>
-																</a>
+																	</a>
+																</p>
 																<?php //the_excerpt(); ?>
 															</div>
 													<?php 
 														}else if($img_size == 'foto_chica'){
 														?>
 															<div class="<?php echo $img_size; ?> clearfix">
-																<a href="#<?php echo $post->ID."h"; ?>">
-																	<div class="img_frame">
+																<div class="img_frame">
+																	<a href="#<?php echo $post->ID."h"; ?>">
 																		<?php the_post_thumbnail(); ?>
-																	</div>
-																</a>
+																	</a>
+																</div>
 
-																<a href="<?php the_permalink(); ?>">
-																	<p class="clearfix">
+																<p class="clearfix">
+																	<a href="<?php the_permalink(); ?>">
 																		<?php the_title(); ?>
-																	</p>
-																</a>
+																	</a>
+																</p>
 																<?php //the_excerpt(); ?>
 															</div>	
 													<?php	
@@ -379,11 +392,11 @@
 																	</div>
 																</a> -->
 
-																<a href="#<?php echo $post->ID."h"; ?>">
-																	<p class="clearfix">
+																<p class="clearfix">
+																	<a href="#<?php echo $post->ID."h"; ?>">
 																		<?php the_title(); ?>
-																	</p>
-																</a>
+																	</a>
+																</p>
 																<?php //the_excerpt(); ?>
 															</div>	
 													<?php	
