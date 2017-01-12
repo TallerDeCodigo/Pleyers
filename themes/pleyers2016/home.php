@@ -22,10 +22,8 @@
 		$main_post_id = $posts->posts;
 		$main_post_id = $main_post_id[0]->ID;
 		wp_cache_set('posts_cached', $posts, '', $var_expire);
+	}
 		$count = 0;
-		// echo "<pre>";
-		// 	print_r($posts->posts);
-		// echo "</pre>";
 ?>
 	<section id="uno">
 		<div class="main_banner full_container clearfix">
@@ -103,7 +101,7 @@
 			
 			<?php		
 				} $count ++; wp_reset_postdata(); endwhile; endif;
-			}
+			
 			?>
 						</div>
 		</div>

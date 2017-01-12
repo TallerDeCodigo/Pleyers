@@ -3,12 +3,12 @@
 			<div class="head_jiots">
 				<img src="<?php echo THEMEPATH; ?>/images/jiotstv.png">
 				<span>Haciendo del internet un lugar peor</span>
-				<a href="http://jiots.tv/" target="_blank">
-					<span class="vermas">
+				<span class="vermas">
+					<a href="http://jiots.tv/" target="_blank">
 						Ver Más
 						<img src="<?php echo THEMEPATH; ?>/images/right_arrow_black.png">
-					</span>
-				</a>
+					</a>
+				</span>
 			</div>
 			<?php
 				$var_expire = 300;
@@ -39,12 +39,12 @@
 						$posts->the_post(); setup_postdata($post);
 			?>
 				<div class="jiots_post clearfix">
-					<a href="<?php the_permalink(); ?>">
-						<div class="img_frame clearfix">
+					<div class="img_frame clearfix">
+						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail(); ?>
 							<!-- <img src=""> -->
-						</div>
-					</a>
+						</a>
+					</div>
 					<a href="<?php the_permalink(); ?>">
 							<?php
 								$tags = get_the_tags();
@@ -61,5 +61,13 @@
 				wp_reset_postdata(); endwhile; endif; 
 				}
 			?>
+			<div class="head_jiots">
+				<span class="vermas_bottom">
+					<a href="http://jiots.tv/" target="_blank">
+						Ver Más
+						<img src="<?php echo THEMEPATH; ?>/images/right_arrow_black.png">
+					</a>
+				</span>
+			</div>
 		</div>
 </section>
