@@ -4,7 +4,7 @@
 
 <div class="full_container">
 	<section class="container clearfix smart_scroll_container">
-		<section id="sprints_scroll" class="sprint_top">
+		<section id="sprints_scroll" class="sprint_top clearfix">
 			<?php
 				if(have_posts()): 
 					while(have_posts()):
@@ -15,8 +15,8 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								$link = substr($link, 23); 	//Productivo
-								// $link = substr($link, 17);		//Local
+								// $link = substr($link, 23); 	//Productivo
+								$link = substr($link, 17);		//Local
 
 							?>
 

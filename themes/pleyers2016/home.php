@@ -110,6 +110,8 @@
 		<?php get_template_part('templates/barra', 'partidos'); ?>
 	</section>
 
+
+
 	<section id="dos">
 		<div class="container clearfix">
 			<div class="left_container">
@@ -123,6 +125,7 @@
 								'post__not_in'=>array($main_post_id)
 						);
 					$posts = new WP_Query($args);
+
 					if($posts->have_posts()): 
 						while($posts->have_posts()):
 							$posts->the_post(); 
@@ -130,30 +133,30 @@
 							$tags = get_the_tags();
 				?>
 							<div class="post clearfix">
-								<a href="<?php the_permalink(); ?>">
-									<div class="img_frame clearfix">
+								<div class="img_frame clearfix">
+									<a href="<?php the_permalink(); ?>">
 										<?php the_post_thumbnail(); ?>
-									</div>
-								</a>
+									</a>
+								</div>
 								<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-											<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-												<span class="el_tag">
+											<span class="el_tag">
+												<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
 													<?php 
 														if($terms){
 															$trm_nme = $terms[0]->name;
 															echo "#".$trm_nme;
 														} 
 													?>
-												</span>
-											</a>
-								<a href="<?php the_permalink(); ?>">
-									<h3>
+												</a>
+											</span>
+								<h3>
+									<a href="<?php the_permalink(); ?>">
 										<?php the_title(); ?>
-									</h3>
+									</a>
+								</h3>
 									<div>
 										<?php the_excerpt(); ?>
 									</div>
-								</a>
 							</div>
 				<?php
 					 
