@@ -29,16 +29,16 @@
 				</div>
 				<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url(); ?>">
 					<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-						<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-							<span>
+						<span>
+							<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
 								<?php echo "#".esc_html($terms[0]->name)." "; ?>
-							</span>
-						</a>
-					<a href="<?php the_permalink(); ?>">
-						<h3>
+							</a>
+						</span>
+					<h3>
+						<a href="<?php the_permalink(); ?>">
 							<?php the_title(); ?>
-						</h3>
-					</a>
+						</a>
+					</h3>
 				</div>
 			
 			<?php		
@@ -107,18 +107,20 @@
 								</div>
 
 								<div>
-									<a href="<?php echo bloginfo('url')."/author/".$usr_login; ?>">
-										<h2><?php echo esc_html($nicename); ?></h2>
-									</a>
+									<h2>
+										<a href="<?php echo bloginfo('url')."/author/".$usr_login; ?>">
+											<?php echo esc_html($nicename); ?>
+										</a>
+									</h2>
 									<p>
 										<?php echo $usr_description; ?>
 									</p>
 									<span>
-										<a href="https://twitter.com/<?php echo $twtt; ?>" target="_blank">
-											<p>
+										<p>
+											<a href="https://twitter.com/<?php echo $twtt; ?>" target="_blank">
 												<?php echo "@".esc_html($twtt); ?>
-											</p>
-										</a>
+											</a>
+										</p>
 									</span>
 								</div>
 							</article>

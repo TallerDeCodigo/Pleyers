@@ -15,8 +15,8 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								// $link = substr($link, 23); 	//Productivo
-								$link = substr($link, 17);		//Local
+								$link = substr($link, 23); 	//Productivo
+								//$link = substr($link, 17);		//Local
 
 							?>
 
@@ -80,10 +80,6 @@
 										</div>
 									</div><br>
 
-									<!-- <div class="sprint_excerpt">
-										<?php the_excerpt(); ?>
-									</div> -->
-
 									<div class="contenido capital">
 										<?php the_content(); ?>
 										<div class="shares horizontal_share clearfix">
@@ -104,18 +100,9 @@
 										</div>
 									</div>
 
-									<div class="nav_container">
-										<!-- <a  class="next_p">
-											next >
-										</a> -->
-									</div>
-
-
 								<?php 		
 									}else if($img_size == 'foto_chica'){
 									?>
-
-
 
 									<div class="post_head clearfix">
 
@@ -194,13 +181,6 @@
 										</div>
 									</div>
 
-									<div class="nav_container">
-										<!-- <a  class="next_p">
-											next >
-										</a> -->
-									</div>
-
-
 								<?php
 									}else{
 									?>
@@ -258,10 +238,6 @@
 
 											</div>
 										</div><br>
-										
-										<!-- <div class="sprint_excerpt">
-											<?php the_excerpt(); ?>
-										</div>  -->
 
 										<div class="<?php echo $img_size; ?>">
 											<?php the_post_thumbnail(); ?>
@@ -288,11 +264,6 @@
 											</div>
 										</div>
 
-										<div class="nav_container">
-											<!-- <a  class="next_p">
-												next >
-											</a> -->
-										</div>
 								<?php		
 									}
 									?>

@@ -15,36 +15,37 @@
 			<?php echo $show_name; ?>
 		</h2>
 		<?php 
-			if( get_post_meta($post->ID, 'eg_sources_youtube', true) ){ 
+			$vid_src = get_post_meta($post->ID, 'eg_sources_youtube', true);
+
+			if( $vid_src ){ 
 				$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
 				echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
+			}else{ 
+		 		the_post_thumbnail('full');
 			?>
-			<div class="img_play">
-				<img src="<?php echo THEMEPATH; ?>/images/play.svg">
-			</div>
-		<?php		
-				}else{ 
+				<div class="img_play">
+					<img src="<?php echo THEMEPATH; ?>/images/play.svg">
+				</div>
+				<div class="titulo">
+						<?php
+							$tags = get_the_tags();
+							if($tags): foreach($tags as $tag): endforeach; 
+						?>
+								<span>
+									<a href="<?php echo bloginfo('url').'/tag/'.$tag->slug ?>">
+										<?php echo "#".$tag->name." "; ?>
+									</a>
+								</span>
+						<?php endif; ?>
 
-			 	the_post_thumbnail('full'); 
-
-				} 
+					<h2>
+						<?php the_title(); ?>
+					</h2>	
+				</div>		
+		<?php	 	 
+			} 
 			?>
-		<div class="titulo">
-				<?php
-					$tags = get_the_tags();
-					if($tags): foreach($tags as $tag): endforeach; 
-				?>
-						<span>
-							<a href="<?php echo bloginfo('url').'/tag/'.$tag->slug ?>">
-								<?php echo "#".$tag->name." "; ?>
-							</a>
-						</span>
-				<?php endif; ?>
-
-			<h2>
-				<?php the_title(); ?>
-			</h2>	
-		</div>
+		
 	</div><!--END TAX SHOW TOP-->
 
 
