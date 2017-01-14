@@ -20,7 +20,7 @@
 
 							?>
 
-							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a> </br></br></br></br>
+							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
 							<?php 
 								if($img_size == 'foto_grande'){
 									?>
