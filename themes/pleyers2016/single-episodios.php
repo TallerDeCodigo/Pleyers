@@ -51,7 +51,8 @@
 						<article class="single_content" id="p<?php echo $post->ID; ?>">
 							<?php 
 								$link = get_the_permalink(); 
-								$link = substr($link, 17);
+								// $link = substr($link, 17);//local
+								$link = substr($link, 23);//productivo
 							?>
 							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>"></a>
 
@@ -327,28 +328,10 @@
 		<section id="blog_sprints" class="sidebar clearfix">
 			<div id="blog_scroll" class="sprints clearfix" >
 				<?php 
-						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-						
-						// $args = array(
-						// 			'post_type'=>'sprints',//cambiar por el posttype -> sprints
-						// 			'posts_per_page'=>7,
-						// 			'post_status'=>'publish',
-						// 			'orderby'=>'date',
-						// 			'order'=>'DESC',
-						// 			'paged'=>$paged
-						// 			);
-
 						$posts = new WP_Query($args);
 						date_default_timezone_set('America/Mexico_City');
 						$hoy = date('U');
-				?>
-						<!-- <div class="clearfix">
-							<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado_head.svg" width="30px" height="30px">
-							<a href="<?php bloginfo('url'); ?>/sprints">
-								<h3 class="header_sprints">SPRINTS</h3>
-							</a>
-						</div> -->
-						
+				?>		
 						<div class="sprints_container clearfix">
 							<?php 
 								if($posts->have_posts()): 
@@ -363,8 +346,6 @@
 										$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
 							?>
-										
-
 										<a href="<?php the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
 
 										<div class="formato_b sprints_post clearfix " id="<?php echo $post->ID; ?>">

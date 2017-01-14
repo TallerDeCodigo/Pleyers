@@ -79,27 +79,38 @@
 						<h3><a href="<?php echo bloginfo('url');?>/sprints">Sprints</a></h3>
 					</div>
 					<div>
-						<h3><a href="">Historias</a></h3>
-						<a href="<?php bloginfo('url');?>/noticiasde/basquetbol">Basquetbol</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/futbol">Futbol</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/futbol-americano">Americano</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/beisbol">Beisbol</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/otros-deportes">Otros deportes</a>
+						<h3>Historias</h3>
+						<?php
+
+							$terms = get_terms( array( 'taxonomy' => 'noticiasde','hide_empty' => false ));
+
+							for($i=0; $i<count($terms); $i++){
+								$term_menu = $terms[$i]->name;
+								$term_slug = $terms[$i]->slug;
+							?>
+								<a href="<?php  bloginfo('url'); ?>/noticiasde/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
+						<?php			
+							}
+							?>
 					</div>
 					<div>
-						<h3><a href="">Blogs</a></h3>
-						<a href="<?php bloginfo('url'); ?>/shows/jiots-tv">Jiots Sports</a>
-						<a href="<?php bloginfo('url'); ?>/shows/deportologia">Deportología</a>
-						<a href="<?php bloginfo('url'); ?>/shows/el_pechofrio">El Pechofrío</a>
-						<a href="<?php bloginfo('url'); ?>/shows/tirando-guante">Tirando Guante</a>
-						<a href="<?php bloginfo('url'); ?>/shows/apuntes-de-rabona">Apuntes de Rabona</a>
-						<a href="<?php bloginfo('url'); ?>/shows/turismo-deportivo">Turismo Deportivo</a>
-						<a href="<?php bloginfo('url'); ?>/shows/cultura-pop">Cultura Pop</a>
-						<a href="<?php bloginfo('url'); ?>/shows/tactica">Táctica</a>
-						<a href="<?php bloginfo('url'); ?>/shows/lucha-libre">Lucha Libre</a>
+						<h3>Blogs</h3>
+						<?php
+
+							$terms = get_terms( array( 'taxonomy' => 'shows','hide_empty' => false ));
+
+							for($i=0; $i<count($terms); $i++){
+								$term_menu = $terms[$i]->name;
+								$term_slug = $terms[$i]->slug;
+							?>
+								<a href="<?php  bloginfo('url'); ?>/shows/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
+						<?php			
+							}
+							?>
 					</div>
+
 					<div>
-						<h3><a href="">Publicaciones</a></h3>
+						<h3>Publicaciones</h3>
 						<a href="http://cerocero.mx/" target="_blank">(0-0) cerocero</a>
 						<a href="http://jiots.tv/" target="_blank">Jiots·TV</a>
 					</div>
@@ -116,6 +127,7 @@
 				</nav>
 			</div>
 		</div>
+		
 		<header class="todo_el_header">
 			<div class="container clearfix">
 				<h1>LOS PLEYERS</h1>
@@ -126,21 +138,22 @@
 						<?php get_search_form(); ?>
 						<!-- <input type="search" name="search" placeholder="Búsqueda" style="display:block"> -->
 					</div>
-					<a href="https://www.facebook.com/Los-Pleyers-439793806182134/" target="_blank">
-						<div class="fb"></div>
-					</a>
-					<a href="https://twitter.com/los_pleyers" target="_blank">
-						<div class="tw"></div>
-					</a>
-					<a href="https://www.instagram.com/lospleyers/"  target="_blank">
-						<div class="in"></div>
-					</a>
-					<a href="http://lospleyers.com/" target="_blank">
-						<div class="md"></div>
-					</a>
-					<a href="http://lospleyers.com/" target="_blank">
-						<div class="yt"></div>
-					</a>
+					<div class="fb">
+						<a href="https://www.facebook.com/ceroceromx" target="_blank"></a>
+					</div>
+					
+					<div class="tw">
+						<a href="https://twitter.com/ceroceromx" target="_blank"></a>
+					</div>
+					<div class="in">
+						<a href="https://www.instagram.com/ceroceromx/"  target="_blank"></a>
+					</div>
+					<div class="md">
+						<a href="https://medium.com/cerocero-mx" target="_blank"></a>
+					</div>
+					<div class="yt">
+						<a href="https://www.youtube.com/ElJiotsSports" target="_blank"></a>
+					</div>
 				</nav>
 			</div>
 		</header>

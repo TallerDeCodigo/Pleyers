@@ -353,6 +353,7 @@
 					                alto_post = es.height();
 
 									var st = $(window).scrollTop();
+									
 									   if (st > lastScrollTop){
 									   		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
 									   		$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
@@ -368,7 +369,7 @@
 									      	$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
 									   		console.log('up'+scroll_num);
 									   }
-									   lastScrollTop = st;
+								   lastScrollTop = st;
 					            }
 					        });
 					    });
@@ -376,19 +377,10 @@
 
 				}
 
-
 				$('.single-episodios div.foto_grande img').click(function(){
 					$(this).hide();
 					$(this).parent().find('iframe').show();
 				});
-
-				
-
-
-
-
-
-
 
 	});
 

@@ -25,41 +25,41 @@
 											array(
 												'taxonomy'=>'shows',
 												'field'=>'slug',
-												'terms'=>'jiots-tv'
+												'terms'=>'erizos'
 												)
 											)
 							);
 				$posts = new WP_Query($args);
 				wp_cache_set('jiots_cached', $posts, '', $var_expire);
-				// echo "<pre>";
-				// 	print_r($posts);
-				// echo "</pre>";
+				}
+
 				if($posts->have_posts()): 
 					while($posts->have_posts()):
 						$posts->the_post(); setup_postdata($post);
 			?>
-				<div class="jiots_post clearfix">
-					<div class="img_frame clearfix">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail(); ?>
-							<!-- <img src=""> -->
-						</a>
-					</div>
-					<a href="<?php the_permalink(); ?>">
-							<?php
-								$tags = get_the_tags();
-								if($tags){
-										echo "<span style='display:inline-block;'>";
-											echo "#".esc_html($tags[0]->name)." ";
-										echo "</span>";
-								}
-							?>
-					</a>
-					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-				</div>
+						<div class="jiots_post clearfix">
+							<div class="img_frame clearfix">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail(); ?>
+									<!-- <img src=""> -->
+								</a>
+							</div>
+							<a href="<?php the_permalink(); ?>">
+									<?php
+										$tags = get_the_tags();
+										if($tags){
+												echo "<span style='display:inline-block;'>";
+													echo "#".esc_html($tags[0]->name)." ";
+												echo "</span>";
+										}
+									?>
+							</a>
+							<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+						</div>
 			<?php	
-				wp_reset_postdata(); endwhile; endif; 
-				}
+					endwhile;
+					wp_reset_postdata(); 
+				endif; 
 			?>
 			<div class="head_jiots">
 				<span class="vermas_bottom">
