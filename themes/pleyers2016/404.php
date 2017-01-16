@@ -3,10 +3,10 @@
             <section class="single_post">
 
                 <div class="top_taxonomy">
-                    <div class="tax_description">
+                    <div class="search_description">
                         <img src="<?php echo THEMEPATH; ?>/images/venado_pleyers.png">
                         <h2>Error 404</h2>
-                        <span>No encontramos lo que estas buscando</span><br><span>pero esto podría interesarte.</span>
+                        <span class="search_fail">No encontramos lo que estas buscando</span><br><span>pero esto podría interesarte.</span>
                     </div>
                 
                 </div><!-- top_taxonomy -->

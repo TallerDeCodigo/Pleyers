@@ -67,33 +67,43 @@
 				}
 				
 
+				$('#erizos').hide();
 
 				$(".postform").change(function(){
 				  var id = $(this).find("option:selected").attr("value");
 
+				  console.log(id);
+
 				  switch (id){
 				  	case 0:
-				      	$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #deportologia').hide();
+				      	$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #deportologia, #erizos').hide();
 				  		$('#todos').show();
 				  	break;
 				    
 				    case "el_pechofrio":
 
-				      $('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
+				      $('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos, #erizos').hide();
 				      $('#el_pechofrio').show();
 				    break;
 
 				    case "jiots-tv":
 
-				    	$('#apuntes-de-rabona, #cultura-pop, #deportologia, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
+				    	$('#apuntes-de-rabona, #cultura-pop, #deportologia, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos, #erizos').hide();
 				    	$('#jiots-tv').show();
 				    break;
 				    
 				    case "deportologia":
 
-				    	$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
+				    	$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos, #erizos').hide();
 				    	$('#deportologia').show();
 				    break;
+
+				    case "erizos":
+
+				    	$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos, #deportologia').hide();
+				    	$('#erizos').show();
+				    break;
+
 				  }
 				});
 

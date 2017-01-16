@@ -97,7 +97,7 @@
 						<h3>Blogs</h3>
 						<?php
 
-							$terms = get_terms( array( 'taxonomy' => 'shows','hide_empty' => false ));
+							$terms = get_terms( array( 'taxonomy' => 'shows','hide_empty' => true ));
 
 							for($i=0; $i<count($terms); $i++){
 								$term_menu = $terms[$i]->name;
@@ -138,22 +138,26 @@
 						<?php get_search_form(); ?>
 						<!-- <input type="search" name="search" placeholder="Búsqueda" style="display:block"> -->
 					</div>
-					<div class="fb">
-						<a href="https://www.facebook.com/ceroceromx" target="_blank"></a>
-					</div>
+					<a href="https://www.facebook.com/ceroceromx" target="_blank">
+						<div class="fb"></div>
+					</a>
 					
-					<div class="tw">
-						<a href="https://twitter.com/ceroceromx" target="_blank"></a>
-					</div>
-					<div class="in">
-						<a href="https://www.instagram.com/ceroceromx/"  target="_blank"></a>
-					</div>
-					<div class="md">
-						<a href="https://medium.com/cerocero-mx" target="_blank"></a>
-					</div>
-					<div class="yt">
-						<a href="https://www.youtube.com/ElJiotsSports" target="_blank"></a>
-					</div>
+					<a href="https://twitter.com/ceroceromx" target="_blank">
+						<div class="tw"></div>
+					</a>
+				
+					<a href="https://www.instagram.com/ceroceromx/"  target="_blank">
+						<div class="in"></div>
+					</a>
+					
+					<a href="https://medium.com/cerocero-mx" target="_blank">
+						<div class="md"></div>
+					</a>
+					
+					<a href="https://www.youtube.com/ElJiotsSports" target="_blank">
+						<div class="yt"></div>
+					</a>
+					
 				</nav>
 			</div>
 		</header>

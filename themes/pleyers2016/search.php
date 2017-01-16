@@ -7,7 +7,7 @@
 	<div class="container clearfix">
 		<section class="single_post">
 			<div class="top_taxonomy">
-				<div class="tax_description">
+				<div class="search_description">
 					<span>Resultados de búsqueda para:</span>
 					<h2><?php echo ucfirst($query); ?></h2>
 				</div>
@@ -61,7 +61,7 @@
 			                    <div class="tax_description">
 			                    	<img src="<?php echo THEMEPATH; ?>/images/venado_pleyers.png">
 			                        <h2>Error 404</h2>
-			                        <span>No encontramos lo que estas buscando</span><br><span>pero esto podría interesarte.</span>
+			                        <span class="search_fail">No encontramos lo que estas buscando pero esto podría interesarte.</span>
 			                    </div>
 			                
 			                </div><!-- top_taxonomy -->

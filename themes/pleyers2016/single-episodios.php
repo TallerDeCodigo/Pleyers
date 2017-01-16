@@ -10,7 +10,7 @@
 	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 	$args = array(
 				'post_type'=>'episodios',
-				'posts_per_page'=>7,
+				'posts_per_page'=>100,
 				'post_status'=>'publish',
 				'orderby'=>'date',
 				'order'=>'DESC',
@@ -51,8 +51,8 @@
 						<article class="single_content" id="p<?php echo $post->ID; ?>">
 							<?php 
 								$link = get_the_permalink(); 
-								// $link = substr($link, 17);//local
-								$link = substr($link, 23);//productivo
+								$link = substr($link, 23);	//PRODUCTIVO
+								// $link = substr($link, 17);	//LOCAL
 							?>
 							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>"></a>
 
@@ -433,60 +433,6 @@
 						</div>
 			</div>
 		</section>
-
-
-		<!-- <div class="content_side inline" >
-			<div id="blogs_scroll" class="sprints" >
-				<div class="sprints_container">
-					<?php 
-						if($posts->have_posts()): 
-							while($posts->have_posts()):
-								$posts->the_post();
-								$post_date = get_the_date('U');
-
-								$time_ago = human_time_diff($post_date, $hoy);
-								$time_ago = preg_replace('/\s+/', '', $time_ago);
-								$time_ago = substr($time_ago, 0, 2);
-								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
-
-					?>
-					<div class="formato_b sprints_post clearfix" id="<?php echo $post->ID; ?>">
-						<span class="post_time"><?php  echo $time_ago; ?></span>
-						<div class="sprints_post_content">
-								<?php 
-									if(has_post_thumbnail() ){
-									?>
-									<div class="<?php echo $img_size; ?>">
-										<a href="<?php the_permalink(); ?>">
-											<div class="img_frame">
-												<?php the_post_thumbnail(); ?>
-											</div>
-										</a>
-										<a href="<?php the_permalink(); ?>">
-											<p>	
-												<?php the_title(); ?> 
-											</p>
-										</a>
-										<?php the_excerpt(); ?>
-									</div>
-								<?php 
-									}else{
-									?>
-										<div><?php the_excerpt(); ?></div>
-									<?php	
-									} 
-								?>
-						</div>
-					</div>
-			<?php 				
-							endwhile; 
-						endif; 
-			?>	
-				</div>
-			</div>
-
-		</div> -->
-
 	</section>
 </div>
 

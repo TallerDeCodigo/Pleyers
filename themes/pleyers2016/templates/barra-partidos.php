@@ -34,13 +34,17 @@
 								<?php echo "<span>".$liga_match."</span>"." ".$fecha_match." @ ".$hora_match; ?>
 							</div>
 							<div class="inner_li">
-								<img src="<?php echo wp_get_attachment_url($clean_arr[1]); ?>">
+								<div class="escudo_partido">
+									<img src="<?php echo wp_get_attachment_url($clean_arr[1]); ?>">
+								</div>
 								<span class="team_name">
 									<?php echo $team1_match; ?>
 								</span>
 							</div>
 							<div class="inner_li">
-								<img src="<?php echo wp_get_attachment_url($clean_arr[2]); ?>">
+								<div class="escudo_partido">
+									<img src="<?php echo wp_get_attachment_url($clean_arr[2]); ?>">
+								</div>
 								<span class="team_name">
 									<?php echo $team2_match; ?>
 								</span>

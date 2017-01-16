@@ -15,8 +15,8 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								// $link = substr($link, 23); 	//Productivo
-								$link = substr($link, 17);		//Local
+								$link = substr($link, 23); 	//Productivo
+								// $link = substr($link, 17);		//Local
 
 							?>
 
@@ -181,8 +181,6 @@
 								<?php
 									}else{
 									?>
-
-
 										<div class="post_head clearfix">
 
 											<div class="shares">
@@ -231,9 +229,9 @@
 											</div>
 										</div><br>
 
-										<div class="<?php echo $img_size; ?>">
+										<!-- <div class="<?php echo $img_size; ?>">
 											<?php the_post_thumbnail(); ?>
-										</div>
+										</div> -->
 
 										<div class="contenido capital">
 											<?php the_content(); ?>

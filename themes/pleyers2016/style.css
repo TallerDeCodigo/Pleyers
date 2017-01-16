@@ -210,12 +210,14 @@ div.sprints_container {margin-top:15px;width:99%;}
 .sprints .sprints_post span.post_time {display:block;float:left;width:10%;text-align:right;font-size:14px;font-family:'Roboto Condensed';font-weight:bold;margin-bottom:5px;padding-right:8px;}
 .sprints .sprints_post .sprints_post_content {float:left;width:90%;}
 .sprints .sprints_post .sprints_post_content a {color:#333e48;text-decoration:none;font-family:'Roboto Condensed';}
-.sprints .sprints_post .sprints_post_content div p {margin-bottom:1px;font-size:140%;line-height:140%;color:#777;font-family: 'Roboto Condensed';font-weight: 700}
+.sprints .sprints_post .sprints_post_content div p {margin-bottom:1px;font-size:100%;line-height:140%;color:#777;font-family: 'Roboto Condensed';font-weight: 700}
 .sprints .sprints_post .sprints_post_content div p:first-child{font-size: 2rem; font-weight: bold;color:#212121;}
 .sprints .formato_a .sprints_post_content div.img_frame {margin-bottom:5px;width:100%;height:auto;background:#EEE;}
 .sprints .formato_a .sprints_post_content div.img_frame img {width:100%;height:auto;margin-bottom:-5px;}
-.sprints .formato_b .sprints_post_content div.img_frame {float:left;margin-right:10px;width:72px;height:72px;background:#EEE;}
+.sprints .formato_b .sprints_post_content div.foto_chica div.img_frame{float:left;margin-right:10px;background:#EEE;width:100%; height:100px;}
+.sprints .formato_b .sprints_post_content div.img_frame {float:left;margin-right:10px;background:#EEE;width:100%; height:200px;}
 .sprints .formato_b .sprints_post_content div.img_frame img {position:absolute;height:auto;width:100%;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
+.sprints .sprints_post .sprints_post_content div.foto_chica div.img_frame{width: 45%;float: left;}
 
 
 .sprints ::-webkit-scrollbar {-webkit-appearance:none;width:9px;border-radius:2px;background:rgba(0,0,0,.1);}
@@ -224,7 +226,6 @@ div.sprints_container {margin-top:15px;width:99%;}
 .custom-pagination span{margin-right: 30px}
 .custom-pagination a{margin-right:30px;color:#8c8c8c;}
 img.header_sprints{position:relative;top:38px;margin-left:3px;}
-.sprints .formato_b .sprints_post_content div.img_frame{width:100%; height:200px;}
 .sprints .formato_b .sprints_post_content div.img_frame img{width:100%;}
 /*
 .foto_grande div.img_frame{width:99%;height:150px;}
@@ -252,32 +253,30 @@ div.more_destacado div.destacado h3 {font-size:120%;}
 div.more_destacado div.nota3 {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 
 /*BARRA DE PARTIDOS*/
+.sport_calendar{ font-family: 'Montserrat';z-index:1;text-align: center;font-size: 1.3em;font-weight: bold;width:160px;color:#fff;background: #000;border:1px solid grey;position:relative;left:-4%;top:50px;-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg); transform: rotate(-90deg);z-index:0;}
+
 .match_calendar{margin-bottom:30px!important;}
 .first_li{display:inline-block;position:relative;}
 .second_li{display:none;}
 .match_calendar ul li div{color:#fff;}
+.inner_li{background: #212121;border-bottom:1px solid #000;width:100%;position:relative;}
+.escudo_partido{width:70px; height:70px;position:relative;}
 .inner_li span{color:#ffff00;font-weight: bold;}
-.inner_li img{width:60px;height:60px;}
-.inner_li{background: #212121;border-bottom:1px solid #000;width:100%;}
+.inner_li div.escudo_partido img{position:absolute;height: auto;width: 100%;top: -9999px;bottom: -9999px;left: -9999px;right: -9999px;margin: auto;}
 .single_match li:first-child{background: #000;color:#fff;width:100%;padding:5px 0px;font-weight: bold;}
 .match_list{width:90%;margin:-225px 90px;list-style: none;text-align: justify;background: #000;height:167px;}
 .single_match{list-style: none;margin:0px;}
 .match_list:before {content: '';display: block;margin-top: 0em;}
 .match_list:after {content: '';display: inline-block;width: 100%;}
-
-
+.team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;font-weight: normal!important;position:absolute;left:82px;}
 
 .navs{vertical-align:top;position:relative;padding:83.5px 0px; background: grey}
-/*.navs:first-child{left:65px;}
-.navs:last-child{right:65px;}*/
-.team_name{color:#fff!important;font-size: 1.4em;position:relative;bottom:25px;font-weight: normal!important;}
 .first_li:not(.navs){width:24.5%;}
 .left{left:50px;top:-58px;padding-right:40px;}
 div.left{background-color:#000;background-image: url(../pleyers2016/images/left_nav.png);background-position: center;background-repeat: no-repeat;background-size: 50%;}
 .right{left:1240px;top:58px;padding-left:40px;}
 div.right{background-color:#8c8c8c;background-image: url(../pleyers2016/images/right_nav.png);background-position: center;background-repeat: no-repeat;background-size: 50%;}
 
-.sport_calendar{ font-family: 'Montserrat';z-index:1;text-align: center;font-size: 1.3em;font-weight: bold;width:157px;color:#fff;background: #000;border:1px solid grey;position:relative;left:-3.9%;top:50px;-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg); transform: rotate(-90deg);z-index:0;}
 
 body.home section:first-of-type {padding-top:0px;}
 
@@ -410,6 +409,7 @@ article.pub div img{border:none;width:80%;border-radius: 50%}
 .single-post div.single_post div.single_top{position:relative;width:100%;height:600px;overflow:hidden;}
 .single-post div.single_post div.single_top img{position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 body.ltr .en{max-width: 620px;}
+.author_name{padding-left:8%;}
 
 
 .content_side{float:left;width:30%;margin;max-width: 360px}
@@ -510,7 +510,7 @@ body.ltr .en{max-width: 620px;}
 
 /*QUIENES SOMOMS PAGE*/
 .txt_angosto{width:60%;margin:0 auto;}
-.txt_angosto div{border-bottom:2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
+.txt_angosto div{border-bottom:2px solid rgba(0,0,0,0.5);}
 .txt_angosto p{font-size: 2.8rem;line-height: 38px;color:#8b8b8b;}
 .pubs{margin-top:90px;text-align: center;border-bottom: 2px solid rgba(0,0,0,0.5);padding-bottom:90px;}
 .pubs h2{text-align: left}
@@ -522,7 +522,7 @@ body.ltr .en{max-width: 620px;}
 .page-template-default section.container{width:50%;margin:0 auto;margin-bottom: 90px}
 .page-template-default section.container p{color:#8b8b8b;line-height: 36px;font-size: 2.4rem}
 
-
+.staff article.pub{padding-bottom:;}
 .staff article.pub div{display:inline-block;vertical-align:middle;}
 .staff article.pub div:first-child{width:25%;}
 .staff article.pub div:last-child{width:74%;}
@@ -552,14 +552,17 @@ body.ltr .en{max-width: 620px;}
 .searchform input[type="submit"]{border-style:none;background:0,0,0,0.5;width:30px;height:30px;border-radius: 15px;background-image:url(images/search.svg);background-repeat: no-repeat;background-position: center;background-size: 60%;background-color:transparent;position:absolute;}
 
 
+
 /*SEARCH TEMPLATE*/
 .search section.single_post{width:70%;margin:70px auto;}
 .search div.posts_pool div.post{width:80%;padding-top: 64px;margin:0 auto;}
 .single-episodios .single_post div.single_top{text-align: center;}
 .search div.posts_pool{float:none;width:100%;margin:0px;border-top:2px solid rgba(0,0,0,0.1);}
-.tax_description span{color:#8c8c8c;font-size: 20px}
-.tax_description h2{margin-top:0px!important;margin-bottom:90px!important;}
+.search_description span{color:#8c8c8c;font-size:200%}
+.search_description h2{margin-top:0px!important;margin-bottom:90px!important;font-size: 300%!important;}
 .nota img{width:100%;height:auto;}
+.search_fail{font-size:200%;color:#777;}
+
 
 .search-no-results div.tax_description h2{margin-bottom:10px!important;font-size: 3em}
 
@@ -574,8 +577,7 @@ body.ltr .en{max-width: 620px;}
 div.tax_description{margin-bottom:90px;}
 div.tax_description img{width:20%;float:left;}
 
-.search-no-results div.tax_description h2{margin-bottom:10px!important;font-size: 3em;margin-left: 40%}
-.search-no-results div.tax_description span{margin-left: 20%}
+.search-no-results div.tax_description h2{margin-bottom:10px!important;font-size: 3em;margin-left:0%}
 /*PAGE MAS POSTS*/
 
 .page-id-5070 div.posts_pool{float: none;margin:0 auto;}
