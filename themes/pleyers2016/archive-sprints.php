@@ -15,8 +15,8 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								$link = substr($link, 23); 	//Productivo
-								//$link = substr($link, 17);		//Local
+								// $link = substr($link, 23); 	//Productivo
+								$link = substr($link, 17);		//Local
 
 							?>
 
@@ -25,7 +25,7 @@
 								if($img_size == 'foto_grande'){
 									?>
 
-									<div class="<?php echo $img_size; ?>">
+									<div class="<?php echo $img_size; ?> image_container" >
 										<?php the_post_thumbnail(); ?>
 									</div>
 
@@ -58,9 +58,9 @@
 														endforeach;
 													?>
 															<span class="tags">
-																<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
+																<!-- <a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>"> -->
 																	<?php echo "#".esc_html($tag->name)." "; ?>
-																</a>	
+																<!-- </a>	 -->
 															</span>
 													<?php		
 													}
@@ -68,9 +68,7 @@
 											</div>
 
 											<h2>
-												<a href="<?php the_permalink(); ?>">
-													<?php the_title(); ?>
-												</a>
+												<?php the_title(); ?>
 											</h2>
 											
 											<div class="_the_date">
@@ -133,20 +131,18 @@
 															$tag_url = $tag->slug;
 														endforeach;
 													?>
-															<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-																<span class="tags">
-																	<?php echo "#".esc_html($tag->name)." "; ?>
-																</span>
-															</a>	
+															<span class="tags">
+																<!-- <a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>"> -->
+																<?php echo "#".esc_html($tag->name)." "; ?>
+																<!-- </a>	 -->
+															</span>
 													<?php		
 													}
 												?>
 											</div>
 
 											<h2>
-												<a href="<?php the_permalink(); ?>">
-													<?php the_title(); ?>
-												</a>
+												<?php the_title(); ?>
 											</h2>
 
 											<div class="_the_date">
@@ -179,6 +175,7 @@
 												<div class="share_link" aria-hidden="true"></div> 
 											</a>
 										</div>
+
 									</div>
 
 								<?php
@@ -203,7 +200,6 @@
 												<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
 													<div class="share_tw" aria-hidden="true"></div> 
 												</a>
-
 											</div>
 
 											<div class="left_title">
@@ -217,9 +213,7 @@
 															endforeach;
 														?>
 																<span class="tags">
-																	<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-																		<?php echo "#".esc_html($tag->name)." "; ?>
-																	</a>	
+																	<?php echo "#".esc_html($tag->name)." "; ?>
 																</span>
 														<?php		
 														}
@@ -227,9 +221,7 @@
 												</div>
 
 												<h2>
-													<a href="<?php the_permalink(); ?>">
-														<?php the_title(); ?>
-													</a>
+													<?php the_title(); ?>
 												</h2>
 
 												<div class="_the_date">
@@ -260,10 +252,9 @@
 												<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
 													<div class="share_tw" aria-hidden="true"></div> 
 												</a>
-
 											</div>
-										</div>
 
+										</div>
 								<?php		
 									}
 									?>
@@ -330,11 +321,9 @@
 																</div>
 
 																<p class="clearfix">
-																	<a href="<?php the_permalink(); ?>">
-																		<?php the_title(); ?>
-																	</a>
+																	<?php the_title(); ?>
 																</p>
-																<?php //the_excerpt(); ?>
+
 															</div>
 													<?php 
 														}else if($img_size == 'foto_chica'){
@@ -347,29 +336,22 @@
 																</div>
 
 																<p class="clearfix">
-																	<a href="<?php the_permalink(); ?>">
-																		<?php the_title(); ?>
-																	</a>
+																	<?php the_title(); ?>
 																</p>
-																<?php //the_excerpt(); ?>
+
 															</div>	
 													<?php	
 														}else{
 														?>
 															<div class="<?php echo $img_size; ?> clearfix">
-																<!-- <a href="#<?php echo $post->ID."h"; ?>">
-																	<div class="img_frame">
-																		<?php the_post_thumbnail(); ?>
-																	</div>
-																</a> -->
 
 																<p class="clearfix">
 																	<a href="#<?php echo $post->ID."h"; ?>">
 																		<?php the_title(); ?>
 																	</a>
 																</p>
-																<?php //the_excerpt(); ?>
-															</div>	
+
+															</div>
 													<?php	
 														}
 														?>	

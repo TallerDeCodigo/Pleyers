@@ -1,10 +1,6 @@
 <?php 
 	get_header(); 
 	$posts = get_queried_object();
-	// echo "<pre>";
-	// 	print_r($posts);
-	// echo "</pre>";
-
 ?>
 	<div class="single_post clearfix smart_content_wrapper">
 		<div class="single_top">
@@ -13,9 +9,8 @@
 				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
 					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
 					echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
-				} else { ?>
-				<?php //the_post_thumbnail('full'); ?>
-			<?php } ?>
+				}
+				?>
 			</div>
 		</div>
 
@@ -128,13 +123,18 @@
 						</article>
 				<?php								
 					}
+					$poll = get_post_meta($post->ID, 'poll_question_meta', true);
+
+					if($poll):
 				?>
-				<div class="container clearfix full_container poll_container">
-					<?php 
-						$poll = get_post_meta($post->ID, 'poll_question_meta', true);
-							echo($poll);
-						?>
-				</div>
+						<div class="container clearfix full_container poll_container">
+							<?php 
+								echo($poll);
+								?>
+						</div>
+				<?php 
+					endif;
+					?>
 				<!-- <iframe src="//renderer.qmerce.com/interaction/582ba51cba00a998079fde54" width="100%" height="350" frameborder="0" scrolling="no"></iframe> -->
 
 				<?php if (function_exists('get_pollquestions')): ?>
