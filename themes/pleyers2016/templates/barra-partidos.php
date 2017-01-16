@@ -28,7 +28,7 @@
 				$exploded = multiexplode(array( '"', ',' ), $content);
 				$clean_arr = array_diff_key($exploded, [0=>'xy', 3=>'xy'] );
 	?>
-					<li class="bx_sl_li">
+					<li class="bx_sl_li clearfix">
 						<div class="single_match">
 							<div class="inner_li">
 								<?php echo "<span>".$liga_match."</span>"." ".$fecha_match." @ ".$hora_match; ?>
