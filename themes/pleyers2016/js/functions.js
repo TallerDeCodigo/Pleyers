@@ -363,6 +363,7 @@
 									   if (st > lastScrollTop){
 									   		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
 									   		$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
+									   		$('#episode_scroll').animate({scrollTop: scroll_num }, 250);
 									   		scroll_num += alto_post ;
 									   		console.log('down'+scroll_num);
 									   } else {
@@ -373,6 +374,7 @@
 		      					            scroll_num -= alto_post ;
 									      	$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
 									      	$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
+									      	$('#episode_scroll').animate({scrollTop: scroll_num }, 250);
 									   		console.log('up'+scroll_num);
 									   }
 								   lastScrollTop = st;

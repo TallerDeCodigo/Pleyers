@@ -107,6 +107,7 @@ div.container h2 {font-size:200%;margin:20px 0;}
 /*HEADER*/
 
 header {width:100%; position:fixed; left:0; top:0; right:0; background:yellow; height:60px; box-shadow:0px 5px 5px rgba(0,0,0,0.1); padding:0px 15px;z-index: 1;}
+header.header_jiots{background:#ff8300;}
 h1 {position:absolute;left:0px;top:0px;width:0px;height:0px;overflow:hidden;opacity:0;}
 img.header_logo {height:56px;margin-top:2px;float:left;}
 nav.social {float:right;position:relative;}
@@ -359,10 +360,6 @@ div.jiots_post div.img_frame img {position:absolute;height:auto;width:100%;top:-
 div.jiots_post span {font-weight:700;color:#222;margin-bottom:1px;display:block;}
 div.jiots_post h3 {margin:0;color:#FFF;line-height:115%;font-size:125%;}
 
-
-
-
-
 /*SINGLE*/
 
 
@@ -451,6 +448,11 @@ body.ltr .en{max-width: 620px;}
 
 #episodio_scroll::-webkit-scrollbar {-webkit-appearance:none;opacity:0;}
 #episodio_scroll::-webkit-scrollbar-thumb {opacity:0;}
+
+/*ARCHIVE JIOTS*/
+.post-type-archive-episodios section.container section.sprint_top{width:50%;margin-left:45%;}
+.post-type-archive-episodios section.sidebar{position:absolute;top:2%;}
+.post-type-archive-episodios section.sidebar div.sprints{overflow-y: scroll;height: 770px!important;position: fixed;width: 30%;max-width: 360px;top: 10%;bottom: 0;}
 
 
 /*BLOGS*/

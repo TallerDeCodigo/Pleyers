@@ -332,6 +332,14 @@
 						date_default_timezone_set('America/Mexico_City');
 						$hoy = date('U');
 				?>		
+						<div class="clearfix">
+							<img class="header_sprints" src="<?php echo THEMEPATH; ?>images/venado_head.svg" width="30px" height="30px">
+							<h3 class="header_sprints">
+								<a href="<?php bloginfo('url'); ?>/sprints">
+									BLOGS
+								</a>	
+							</h3>
+						</div>
 						<div class="sprints_container clearfix">
 							<?php 
 								if($posts->have_posts()): 
