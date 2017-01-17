@@ -5,7 +5,7 @@
 
 		$args = array(
 					'post_type'=> $types,
-					'posts_per_page'=>7,
+					'posts_per_page'=>5,
 					'post_status'=>'publish',
 					'orderby'=>'rand',
 					'order'=>'DESC'

@@ -76,7 +76,11 @@
 			<div class="menu">
 				<nav>
 					<div>
-						<h3><a href="<?php echo bloginfo('url');?>/sprints">Sprints</a></h3>
+						<h3 class="head_menu">
+							<a href="<?php echo bloginfo('url');?>/sprints">
+								Sprints
+							</a>
+						</h3>
 					</div>
 					<div>
 						<h3>Historias</h3>
@@ -112,10 +116,14 @@
 					<div>
 						<h3>Publicaciones</h3>
 						<a href="http://cerocero.mx/" target="_blank">(0-0) cerocero</a>
-						<a href="http://jiots.tv/" target="_blank">Jiots·TV</a>
+						<a href="<?php echo bloginfo('url'); ?>/episodios/">Jiots·TV</a>
 					</div>
 					<div>
-						<h3><a href="<?php bloginfo('url'); ?>/quienes-somos">Quiénes Somos</a></h3>
+						<h3 class="head_menu">
+							<a href="<?php bloginfo('url'); ?>/quienes-somos">
+								Quiénes Somos
+							</a>
+						</h3>
 					</div>
 					<div>
 						<figure class="_logo"></figure>

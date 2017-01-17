@@ -32,6 +32,7 @@
 			</h2>
 		</div>	
 		<div class="full_container">
+			
 			<?php get_sidebar(); ?>
 
 			<div class="posts_pool clearfix">

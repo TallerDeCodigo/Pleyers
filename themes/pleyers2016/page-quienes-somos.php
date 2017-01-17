@@ -57,7 +57,7 @@
 					</p>
 				</div>
 
-				<!-- <article class="pubs">
+				<article class="pubs">
 					<h2>
 						NUESTRAS PUBLICACIONES
 					</h2>
@@ -75,7 +75,7 @@
 							tempor incididunt ut labore et dolore magna aliqua.
 						</p>
 					</article>
-				</article> -->
+				</article>
 
 
 

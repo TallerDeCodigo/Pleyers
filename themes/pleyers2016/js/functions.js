@@ -5,11 +5,7 @@
 	"use strict";
 
 	$(function(){
-
-
 				console.log('hello from functions.js');
-
-
 				/**
 				 * Validación de emails
 				 */
