@@ -545,4 +545,59 @@
 
 
 
+
+		/*META BOX FOR USERS */
+		add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+		add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+		function my_show_extra_profile_fields( $user ) {
+			echo "<pre>";
+				print_r($user);
+			echo "</pre>";
+			$meta_elegido = get_user_meta($user->ID, 'elegido', true);
+
+			if($meta_elegido){
+				$chk = 'checked';
+			}else{
+				$chk = '';
+			}
+
+			?>
+
+			<h3>Extra profile information</h3>
+
+			<table class="form-table">
+
+				<tr>
+					<th><label for="elegido">Elegido</label></th>
+
+					<td>
+						<input type="checkbox" name="elegido" id="elegido" value="<?php echo esc_attr( get_the_author_meta( 'elegido', $user->ID ) ); ?>" <?php echo $chk; ?>  /><br />
+						<span class="description">Quienes Somos Staff</span>
+					</td>
+				</tr>
+
+			</table>
+		<?php }
+
+
+
+		add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+		add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+		function my_save_extra_profile_fields( $user_id ) {
+
+			if ( !current_user_can( 'edit_user', $user_id ) ){
+				return false;
+			}
+
+			if ( isset($_POST['elegido'] )   ){
+				update_post_meta($post_id, 'elegido', $_POST['elegido']);
+			}else{
+				delete_post_meta($post_id, 'elegido');
+			}
+
+		}
+
+
 ?>	

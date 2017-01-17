@@ -751,6 +751,7 @@ footer img {height:50px;width:auto;float:left;margin-right:15px;}
 	article.pub div{display:block;margin:0 auto;}
 	article.pub div:first-child{width:50%;margin:0 auto;}
 	.pub p{margin-bottom:10px;}
+	.staff article.pub div:first-child{width:50%;}
 
 }
 
