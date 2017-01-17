@@ -63,6 +63,38 @@
 
 			register_taxonomy( 'shows', 'episodios', $args );
 		}
+
+
+
+		// Users at ABOUT PAGE
+		if( ! taxonomy_exists('elegido')){
+
+			$labels = array(
+				'name'              => 'Elegido',
+				'singular_name'     => 'Elegido',
+				'search_items'      => 'Buscar',
+				'all_items'         => 'Todas',
+				'edit_item'         => 'Editar Elegido',
+				'update_item'       => 'Actualizar Elegido',
+				'add_new_item'      => 'Nuevo Elegido',
+				'new_item_name'     => 'Nombre Nuevo Elegido',
+				'menu_name'         => 'Elegido'
+			);
+
+			$args = array(
+				'hierarchical'      => true,
+				'labels'            => $labels,
+				'show_ui'           => true,
+				'show_admin_column' => true,
+				'show_in_nav_menus' => true,
+				'query_var'         => true,
+				'rewrite'           => array( 'slug' => 'elegido' ),
+			);
+
+			register_taxonomy( 'elegido', 'user', $args );
+		}
+
+
 		
 		
 		

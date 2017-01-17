@@ -80,13 +80,24 @@
 
 
 				<article class="staff">
-					<h2>
-						STAFF
-					</h2>
-					<?php 
+					<h2>STAFF</h2>
+					<?php
+						$args = array(
+						    'role'          => 'shop_manager',
+						    'order'         => 'DESC',
+						    'orderby'       => 'user_registered',
+						    'meta_key'      => 'shop_name', // Is this the meta key you are using?
+						    'meta_value'    => 'the_term_name_or_term_id', // Based on however you store your meta data
+						    'meta_compare'  => '=',
+						);
+
 						$usrs = get_users();
+						
+						// $usrs = new WP_User_Query($args);
 
 						foreach($usrs as $usr):
+
+
 							$usrid = $usr->ID;
 							$nicename = $usr->user_nicename;
 							$usr_login = $usr->user_login;

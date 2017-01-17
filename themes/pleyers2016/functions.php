@@ -191,7 +191,7 @@
 
 	// });
 
-	function news_get_invitados( $query ) {
+	function pleyers_get_sprints( $query ) {
 	    if ( is_admin() || ! $query->is_main_query() )
 	        return;
 
@@ -204,7 +204,7 @@
 	        return;
 	    }
 	}
-	add_action( 'pre_get_posts', 'news_get_invitados', 1 );
+	add_action( 'pre_get_posts', 'pleyers_get_sprints', 1 );
 
 		
 
@@ -460,7 +460,7 @@
 	/*LIMIT FOR EXCERPT 20 WORDS*/
 
 	function custom_excerpt_length( $length ) {
-	        return 25;
+	        return 20;
 	    }
 	    add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -542,4 +542,7 @@
 			"<span class='sc_referencia' data='" . do_shortcode($content) . "'>i</span>";
 		}
 		add_shortcode('referencia','sc_referencia');
-?>
+
+
+
+?>	
