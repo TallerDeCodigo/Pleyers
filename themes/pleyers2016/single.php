@@ -48,7 +48,7 @@
 						<?php the_title(); ?>
 					</h2>
 					<span class="author_name">
-						<?php echo "Por: ".esc_html(get_the_author()); ?>
+						<?php echo esc_html(get_the_author()); ?>
 					</span>
 
 				</div><br>

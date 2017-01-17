@@ -33,7 +33,7 @@
 				'rewrite'           => array( 'slug' => 'noticiasde' ),
 			);
 
-			register_taxonomy( 'noticiasde', 'post', $args );
+			register_taxonomy( 'noticiasde', array('post', 'sprints'), $args );
 		}
 
 		// SHOWS

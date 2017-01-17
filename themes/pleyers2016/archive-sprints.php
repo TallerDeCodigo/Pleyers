@@ -15,12 +15,12 @@
 							<?php 
 
 								$link = get_the_permalink(); 
-								$link = substr($link, 23); 	//Productivo
-								// $link = substr($link, 17);		//Local
+								// $link = substr($link, 23); 	//Productivo
+								$link = substr($link, 17);		//Local
 
 							?>
 
-							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a><br>
 							<?php 
 								if($img_size == 'foto_grande'){
 									?>
@@ -51,20 +51,16 @@
 										<div class="left_title">
 											<div class="head_tag">
 												<?php 
-													$tags = get_the_tags();
-													if($tags){
-														foreach($tags as $tag):
-															$tag_url = $tag->slug;
-														endforeach;
+													$terms = get_the_terms($post->ID, 'noticiasde');
+													$term_name = $terms[0]->name;
+													$term_slug = $terms[0]->slug;
+
 													?>
-															<span class="tags">
-																<!-- <a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>"> -->
-																	<?php echo "#".esc_html($tag->name)." "; ?>
-																<!-- </a>	 -->
-															</span>
-													<?php		
-													}
-												?>
+												<span class="tags">
+													<a href="<?php echo bloginfo('url'); ?>/noticiasde/<?php echo esc_html($term_slug); ?>">
+														<?php if($term_name){	echo "#".esc_html($term_name)." "; } ?>
+													</a>
+												</span>
 											</div>
 
 											<h2>
@@ -125,20 +121,15 @@
 
 											<div class="head_tag">
 												<?php 
-													$tags = get_the_tags();
-													if($tags){
-														foreach($tags as $tag):
-															$tag_url = $tag->slug;
-														endforeach;
+													$terms = get_the_terms($post->ID, 'noticiasde');
+													$term_name = $terms[0]->name;
+													$term_slug = $terms[0]->slug;
 													?>
-															<span class="tags">
-																<!-- <a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>"> -->
-																<?php echo "#".esc_html($tag->name)." "; ?>
-																<!-- </a>	 -->
-															</span>
-													<?php		
-													}
-												?>
+												<span class="tags">
+													<a href="<?php echo bloginfo('url'); ?>/noticiasde/<?php echo $term_slug; ?>">
+														<?php if($term_name){echo "#".esc_html($term_name)." "; } ?>
+													</a>
+												</span>
 											</div>
 
 											<h2>
@@ -204,18 +195,15 @@
 
 												<div class="head_tag">
 													<?php 
-														$tags = get_the_tags();
-														if($tags){
-															foreach($tags as $tag):
-																$tag_url = $tag->slug;
-															endforeach;
+														$terms = get_the_terms();
+														$term_name = $terms[0]->name;
+														$term_slug = $terms[0]->slug;
 														?>
-																<span class="tags">
-																	<?php echo "#".esc_html($tag->name)." "; ?>
-																</span>
-														<?php		
-														}
-													?>
+														<span class="tags">
+															<a href="<?php echo bloginfo('url'); ?>/noticiasde/<?php echo $term_slug; ?>">
+																<?php if($term_name){echo "#".esc_html($term_name)." "; } ?>
+															</a>
+														</span>
 												</div>
 
 												<h2>
@@ -228,10 +216,6 @@
 
 											</div>
 										</div><br>
-
-										<!-- <div class="<?php echo $img_size; ?>">
-											<?php the_post_thumbnail(); ?>
-										</div> -->
 
 										<div class="contenido capital">
 											<?php the_content(); ?>
@@ -333,7 +317,7 @@
 																	</a>
 																</div>
 
-																<p class="clearfix">
+																<p class="clearfix foto_chica">
 																	<?php the_title(); ?>
 																</p>
 

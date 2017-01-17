@@ -51,8 +51,8 @@
 						<article class="single_content" id="p<?php echo $post->ID; ?>">
 							<?php 
 								$link = get_the_permalink(); 
-								$link = substr($link, 23);	//PRODUCTIVO
-								// $link = substr($link, 17);	//LOCAL
+								// $link = substr($link, 23);	//PRODUCTIVO
+								$link = substr($link, 17);	//LOCAL
 							?>
 							<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>"></a>
 
@@ -106,11 +106,11 @@
 												?>
 											</div>
 
-											<a href="<?php the_permalink(); ?>">
-												<h2>
+											<h2>
+												<a href="<?php the_permalink(); ?>">
 													<?php the_title(); ?>
-												</h2>
-											</a>
+												</a>
+											</h2>
 											
 											<div class="_the_date">
 												<?php echo get_the_date('H:m d/M/Y'); ?>
@@ -361,12 +361,12 @@
 																	</div>
 																</a>
 
-																<a href="<?php the_permalink(); ?>">
+																<a href="#<?php echo $post->ID."h"; ?>">
 																	<p class="clearfix">
 																		<?php the_title(); ?>
 																	</p>
 																</a>
-																<?php //the_excerpt(); ?>
+
 															</div>
 													<?php 
 														}else if($img_size == 'foto_chica'){
@@ -383,24 +383,19 @@
 																		<?php the_title(); ?>
 																	</p>
 																</a>
-																<?php //the_excerpt(); ?>
+
 															</div>	
 													<?php	
 														}else if($img_size == 'sin_foto'){
 														?>
 															<div class="<?php echo $img_size; ?> clearfix">
-																<!-- <a href="#<?php echo $post->ID."h"; ?>">
-																	<div class="img_frame">
-																		<?php the_post_thumbnail(); ?>
-																	</div>
-																</a> -->
 
 																<a href="#<?php echo $post->ID."h"; ?>">
 																	<p class="clearfix">
 																		<?php the_title(); ?>
 																	</p>
 																</a>
-																<?php //the_excerpt(); ?>
+
 															</div>	
 													<?php	
 														}

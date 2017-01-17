@@ -13,28 +13,34 @@
 		$posts = new WP_Query($args);
 		if($posts->have_posts()): 
 			while($posts->have_posts()):
-				$posts->the_post(); setup_postdata($post);
-				$tags = get_the_tags();
+				$posts->the_post(); 
+
+				$terms = get_the_terms($post->ID, 'noticiasde');
+				$term_name = $terms[0]->name; 
+				$term_url = $terms[0]->slug;
+
+
 	?>
 	<div class="post clearfix">
-		<a href="<?php the_permalink(); ?>">
-			<div class="img_frame clearfix">
+		<div class="img_frame clearfix">
+			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail(); ?>
-				<!-- <img src="images/post.png"> -->
-			</div>
-		</a>
-		<?php 
-			if(!empty($tags)){
-				foreach($tags as $tag): 
-					$tag_nme = $tag->name;
-				endforeach; 
-					?>
-					<a href="<?php the_permalink(); ?>"><span><?php echo "#".$tag_nme; ?></span></a>
-		<?php 		
-			} 
-		?>
-		<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-		<p><?php the_excerpt(); ?></p>
+			</a>
+		</div>
+		<span>
+			<a href="<?php echo bloginfo('url'); ?>'/noticiasde/'<?php echo esc_html($term_url); ?> ">
+				<?php if($term_name){ echo "#".esc_html($term_name); }else{ } ?>
+			</a>
+		</span>
+
+		<h3>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_title(); ?>
+			</a>
+		</h3>
+		<p>
+			<?php the_excerpt(); ?>
+		</p>
 	</div>
 	<?php
 		wp_reset_postdata(); endwhile; endif; 

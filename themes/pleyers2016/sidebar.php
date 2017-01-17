@@ -67,7 +67,7 @@
 															</a>
 														</div>
 
-														<p class="clearfix">
+														<p class="foto_chica clearfix">
 															<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>">
 																<?php the_title(); ?>
 															</a>
