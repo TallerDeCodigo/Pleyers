@@ -502,6 +502,7 @@ body.ltr .en{max-width: 620px;}
 .tax_show_top h2#show_name{position:absolute;top:8%;left:2%;color:#ffff00;font-size: 2em}
 .tax_show_top{position:relative;width:100%;height:700px;overflow:hidden;}
 .tax_show_top img{position:absolute;height:auto!important;width:100%!important;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
+.tax_show_top iframe{height:700px;}
 
 
 /*SINGLE TAG*/
