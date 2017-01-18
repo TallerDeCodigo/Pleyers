@@ -83,15 +83,14 @@
 					<h2>STAFF</h2>
 					<?php
 						$args = array(
-						    'role'          => 'shop_manager',
+						    'roles'          => array('administrator', 'editor'),
 						    'order'         => 'DESC',
-						    'orderby'       => 'user_registered',
-						    'meta_key'      => 'shop_name', // Is this the meta key you are using?
-						    'meta_value'    => 'the_term_name_or_term_id', // Based on however you store your meta data
+						    'meta_key'      => 'dealing', // Is this the meta key you are using?
+						    'meta_value'    => 'si', // Based on however you store your meta data
 						    'meta_compare'  => '=',
 						);
 
-						$usrs = get_users();
+						$usrs = get_users($args);
 						
 						// $usrs = new WP_User_Query($args);
 

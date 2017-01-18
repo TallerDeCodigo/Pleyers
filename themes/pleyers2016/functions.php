@@ -545,4 +545,42 @@
 
 
 
+		/*SELECCIÓN DE PERFILES PARA PAGINA QUIENES SOMOS*/
+
+		function my_user_field( $user ) {
+		    $gender = get_the_author_meta( 'dealing', $user->ID);
+		?>
+		    <h3><?php _e('Seleccion para Quiénes Somos'); ?></h3>
+		    <table class="form-table">
+		        <tr>
+		            <th>
+		                <label for="Dealing Type"><?php _e('Selección'); ?></label>
+		        	</th>
+		            <td>
+		           		<label>
+		           			<input type="radio" name="dealing" <?php if ($gender == 'Si' ) { ?>checked="checked"<?php }?> value="Si">Tú sí<br />
+		           		</label>
+
+		            	<label>
+		            		<input type="radio" name="dealing" <?php if ($gender == 'No' ) { ?>checked="checked"<?php }?> value="No">Tú no<br />
+		            	</label>
+		            </td>
+		        </tr>
+		    </table>
+		<?php 
+		}
+
+		function my_save_custom_user_profile_fields( $user_id ) {
+		    if ( !current_user_can( 'edit_user', $user_id ) )
+		        return FALSE;
+		    update_usermeta( $user_id, 'dealing', $_POST['dealing'] );
+		}
+
+		add_action( 'show_user_profile', 'my_user_field' );
+		add_action( 'edit_user_profile', 'my_user_field' );
+		add_action( 'personal_options_update', 'my_save_custom_user_profile_fields' );
+		add_action( 'edit_user_profile_update', 'my_save_custom_user_profile_fields' );
+
+
+
 ?>	
