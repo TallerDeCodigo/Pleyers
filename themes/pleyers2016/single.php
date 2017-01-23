@@ -1,123 +1,136 @@
 <?php 
-	get_header(); 
-	$posts = get_queried_object();
-	// echo "<pre>";
-	// 	print_r($posts);
-	// echo "</pre>";
-
+get_header();
+if(have_posts()):
+	while(have_posts()):
+		the_post(); 
+		$terms = wp_get_post_terms($post->ID, 'noticiasde' );
 ?>
-	<div class="single_post clearfix smart_content_wrapper">
-		<div class="single_top">
-			<?php 
-				if(get_post_meta($post->ID, 'eg_sources_youtube', true)){ 
-					$videoid = get_post_meta($post->ID, 'eg_sources_youtube', true);
-					echo '<iframe width="1024" height="576" src="https://www.youtube.com/embed/'.$videoid.'" frameborder="0" allowfullscreen></iframe>';
-				} else { ?>
-				<?php the_post_thumbnail('full'); ?>
-			<?php } ?>
+<section>
+	<div class="main_banner full_container clearfix">
+		<div class="full_frame">
+			<div class="img_frame">
+				<img class="post_picture" src="<?php the_post_thumbnail_url('banner'); ?>" />
+			</div>
 		</div>
+	</div>
+</section>
+<section>
+	<div class="reading_container clearfix">
+		<div class="article_header">
+			<table border="0">
+				<tr>
+					<td>
+						<div class="shares">
+							<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+								<div class="share_fb" aria-hidden="true"></div> 
+							</a>
+							<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+								<div class="share_tw" aria-hidden="true"></div> 
+							</a>
+							<a class="copylink">
+								<div class="share_link" aria-hidden="true"></div> 
+							</a>
+						</div>
+					</td>
+					<td>
+						<?php if ($terms): ?>
+						<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+						<?php endif ?>
+						<h2><?php the_title(); ?></h2>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<span class="author_name">
+							Por 
+							<a href="<?php bloginfo('url'); echo '/author/'.esc_html(get_the_author()); ?>">
+								<?php echo esc_html(get_the_author()); ?>
+							</a>
+						</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<?php if ( has_excerpt( $post->ID ) ) { ?>
+		<div class="single_excerpt">
+			<?php the_excerpt(); ?>
+		</div>
+		<?php } ?>
+		<div class="contenido capital">
+			<?php the_content(); ?>
+			<div class="shares horizontal_share clearfix">
+				<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+					<div class="share_fb" aria-hidden="true"></div> 
+				</a>
+				<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+					<div class="share_tw" aria-hidden="true"></div> 
+				</a>
+				<a class="copylink">
+					<div class="share_link" aria-hidden="true"></div> 
+				</a>
+			</div>
+			<br>
+		</div>
+		<?php 
+			$author_mail = get_the_author_meta('user_email');
+			$usrid = get_the_author_meta('ID');
 
-		<div class="single_content smart_scroll_container smart_ajax_container">
-			
-			<div class="addthis_inline_share_toolbox"></div>
+			if($author_mail){
 
-				<div>
-					<?php 
-						$tags = get_the_tags();
-						if($tags){
-							foreach($tags as $tag):
-								$tag_slug = $tag->slug;
-								$tag_nme = $tag->name;
-							endforeach;
-							?>
-							<a href='<?php echo bloginfo('url')."/tag/".$tag_slug; ?> '><span class='tags'># <?php echo $tag_nme; ?> </span> </a>
-					<?php } ?>
-
-					<h2>
-						<?php the_title(); ?>
-					</h2>
-					<span>
-						<?php echo get_the_author(); ?>
-					</span>
-
-				</div><br>
-
-				<div class="single_excerpt">
-					<?php the_excerpt(); ?>
-				</div>
-
-				<div class="contenido capital">
-					<?php the_content(); ?>
-					<div class="addthis_inline_share_toolbox_dvmh"></div>
-				</div>
+				$email = $author_mail;
+				$hash = md5(strtolower($email));
+				$nme_author = get_the_author();
+				$default = 'https://lospleyers.com/wp-content/uploads/2017/01/place_pleyers.png';
 				
+				$author_slug = get_the_author_meta('user_login');
+				$usr_description = get_user_meta($usrid, 'description', true);
+				$usr_meta = get_user_meta($usrid);
+				$usr_meta = $usr_meta['twitter'];
+				$twtt = $usr_meta[0];
 
-			<?php 
-				$author_mail = get_the_author_meta('user_email');
-				$usrid = get_the_author_meta('ID');
-			?>
-
-				<?php
-					if($author_mail){
-
-						$email = $author_mail;
-						$hash = md5(strtolower($email));
-						$nme_author = get_the_author();
-						$default = "https://lh3.googleusercontent.com/ZMepV1eSMYHg1Rc-EAXScjutJDJwq6e7RzjtuR_HN8cqXv99R6U_aExOk72DlTTk7hwxWk52H5xjkoSserEWKmvf2yNhgQNlSd-RIUiEGLsZ-NP9pPyeNfo3ekzNlR8mHVD_UUNY74pPGddWDTGRQHaqfvVI1vhvdz73XXAxC-K7yqntznVAI85XR3y1W_xlpBGNOpUQNp0SFyWexdN4cdt3-NqWA4cE0w17wSsx6SS58VDh8eyhLi6oSlpfWxJSstz0IcDccsbqRiKg0wtzSYUIgX1PCij3gKSDD3k93nBrKAAR9_XhvOMhVGGg8OYB6x-vqeFwvgFOMFScQr2SNoCQnrwAIS9zvunaOWWSfMc8IldmY4bibf4NcGhsWIhbOA3-6MCmcObLeF3RwUekDPNF_P4WhO20BjHkGRekc5gPOEW9bqC7UkcLtbvGkr1BUWUnZiaI1Hg_VqV8yhvwqKtAl6YWSuEYmER_qaQ-Pmj0llwFWQhRNnDMmcWWrB9xOZABIFiQJdPhFhg8KnulgQ801nsA4V2sj7GVf2K9kx7pU4sBHUUWigEKBF2wqwL4d8qtM03bL_vErA_idjlpBz0As-3gwg85UqHp_49Ho2wIoQo=s200-no";
-						
-						$author_slug = get_the_author_meta('user_login');
-						$usr_description = get_user_meta($usrid, 'description', true);
-						$usr_meta = get_user_meta($usrid);
-						$usr_meta = $usr_meta['twitter'];
-						$twtt = $usr_meta[0];
-
-					?>
-						<article class="pub">
+		?>
+				<table border="0" class="public">
+					<tr>
+						<td>
 							<div class="img_pub">
-								<?php
-									$hash =md5(strtolower(trim($email)))."?d=".urlencode($default);
-								?>
+								<?php $hash =md5(strtolower(trim($email)))."?d=".urlencode($default);?>
 								<img src="https://www.gravatar.com/avatar/<?php echo $hash; ?>">
 							</div>
+						</td>
+						<td>
+							<a class="link" href="<?php echo bloginfo('url')."/author/".$author_slug; ?>"><h2><?php echo esc_html($nme_author); ?></h2></a>
+							<span><?php echo $usr_description; ?></span>
+							<a class="tuit" href="mailto:<?php $email; ?>" target="_top"><?php echo "@".esc_html($twtt); ?></a>
+						</td>
+					</tr>
+				</table>
+			<?php								
+				}
+			?>
+				<div class="poll_container">
+				<?php
+					$poll = get_post_meta($post->ID, 'poll_question_meta', true);
 
-							<div class="content_pub">
-								<a href="<?php echo bloginfo('url')."/author/".$author_slug; ?>">
-									<h2><?php echo esc_html($nme_author); ?></h2>
-								</a>
-								<p>
-									<?php echo $usr_description; ?>
-								</p>
-								<span>
-									<a href="mailto:<?php $email; ?>" target="_top">
-										<?php echo "@".esc_html($twtt); ?>
-									</a>
-								</span>
-							</div>
-						</article>
-				<?php								
+					if($poll){
+						echo($poll);
 					}
 				?>
-				
-				<div class="container clearfix full_container poll_container">
-					<?php 
-						$poll = get_post_meta($post->ID, 'poll_question_meta', true);
-							echo($poll);
-						?>
+					<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+
 				</div>
-				<!-- <iframe src="//renderer.qmerce.com/interaction/582ba51cba00a998079fde54" width="100%" height="350" frameborder="0" scrolling="no"></iframe> -->
-
-				<?php if (function_exists('get_pollquestions')): ?>
-				  <?php //do_shortcode(['poll id="1"']); ?>
-				<?php endif; ?>
-			<div class="line_division"></div>
-			<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-			<div class="globo" style="display:none;">
-				Lorem ipsum dolor sit amet consectetur adiscplicing elit
-			</div>
-
-
-		</div>
-			<?php get_template_part('templates/barra', 'mashistorias'); ?>
-			<?php get_sidebar(); ?>
 	</div>
+</section>
+<?php 
+	endwhile; 
+endif; 
+?>
+<section>
+	<div class="footer_container clearfix">
+		<?php get_template_part('templates/barra', 'mashistorias'); ?>
+		<?php get_sidebar(); ?>
+	</div>
+</section>
 <?php get_footer(); ?>

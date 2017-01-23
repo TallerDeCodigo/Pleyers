@@ -13,35 +13,18 @@
 		<meta name="geo.position" content="23.634501;-102.552784" />
 		<meta name="ICBM" content="23.634501, -102.552784" />
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Condensed|Plaster' rel='stylesheet' type='text/css'>
 		<?php wp_enqueue_script('jquery'); ?>
 		<?php wp_head(); ?>
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-				jQuery('.carousel').bxSlider({
-				    mode: 'horizontal',
-				    infiniteLoop: true,
-				    minSlides: 4,
-				    maxSlides: 4,
-				    moveSlides: 4,
-				    speed: 1000,
-				    pause: 0,
-				    auto: false,
-				    pager: false,
-				    controls: true
-				  });
-			});
-		</script>
-		<script>
-			(function(d, s, id) {
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
 			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=268844043214794";
+			  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1770490416550304";
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
-		</script>
-		<script>
+		
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -49,6 +32,7 @@
 
 			ga('create', 'UA-65208621-1', 'auto');
 			ga('send', 'pageview');
+			
 		</script>
 
 	</head>
@@ -60,47 +44,71 @@
 			<div class="menu">
 				<nav>
 					<div>
-						<h3><a href="<?php echo bloginfo('url');?>/sprints">Sprints</a></h3>
+						<h3>
+							<a href="<?php echo bloginfo('url');?>/sprints">
+								Sprints
+							</a>
+						</h3>
 					</div>
 					<div>
-						<h3><a href="">Historias</a></h3>
-						<a href="<?php bloginfo('url');?>/noticiasde/basquetbol">Basquetbol</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/futbol">Futbol</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/futbol-americano">Americano</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/beisbol">Beisbol</a>
-						<a href="<?php bloginfo('url');?>/noticiasde/otros-deportes">Otros deportes</a>
+						<h3><a>Historias</a></h3>
+						<?php
+
+							$terms = get_terms( array( 'taxonomy' => 'noticiasde' , 'hide_empty' => false ));
+
+							for($i=0; $i<count($terms); $i++){
+								$term_menu = $terms[$i]->name;
+								$term_slug = $terms[$i]->slug;
+							?>
+								<a href="<?php  bloginfo('url'); ?>/noticiasde/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
+						<?php			
+							}
+							?>
 					</div>
 					<div>
-						<h3><a href="">Blogs</a></h3>
-						<a href="<?php bloginfo('url'); ?>/shows/jiots-tv">Jiots Sports</a>
-						<a href="<?php bloginfo('url'); ?>/shows/deportologia">Deportología</a>
-						<a href="<?php bloginfo('url'); ?>/shows/el_pechofrio">El Pechofrío</a>
-						<a href="<?php bloginfo('url'); ?>/shows/tirando-guante">Tirando Guante</a>
-						<a href="<?php bloginfo('url'); ?>/shows/apuntes-de-rabona">Apuntes de Rabona</a>
-						<a href="<?php bloginfo('url'); ?>/shows/turismo-deportivo">Turismo Deportivo</a>
-						<a href="<?php bloginfo('url'); ?>/shows/cultura-pop">Cultura Pop</a>
-						<a href="<?php bloginfo('url'); ?>/shows/tactica">Táctica</a>
-						<a href="<?php bloginfo('url'); ?>/shows/lucha-libre">Lucha Libre</a>
+						<h3><a>Blogs</a></h3>
+						<?php
+
+							$terms = get_terms( array( 
+								    'taxonomy' => 'shows',
+								    'hide_empty' => 1
+								) );
+
+							if ( $terms ) {
+								foreach ( $terms as $term ) {
+
+								$term_menu = $term->name;
+								$term_slug = $term->slug;
+							?>
+								<a href="<?php  bloginfo('url'); ?>/shows/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
+						<?php			
+								}
+							}
+							?>
 					</div>
+
 					<div>
-						<h3><a href="">Publicaciones</a></h3>
+						<h3><a>Publicaciones</a></h3>
 						<a href="http://cerocero.mx/" target="_blank">(0-0) cerocero</a>
-						<a href="http://jiots.tv/" target="_blank">Jiots·TV</a>
+						<a href="<?php echo bloginfo('url'); ?>/shows/jiots-tv/">Jiots Sports</a>
 					</div>
 					<div>
-						<h3><a href="<?php bloginfo('url'); ?>/quienes-somos">Quiénes Somos</a></h3>
+						<h3>
+							<a href="<?php bloginfo('url'); ?>/quienes-somos/">Quiénes Somos</a>
+						</h3>
 					</div>
-					<div>
+					<div class="end_menu">
 						<figure class="_logo"></figure>
-						<a href="">Copyright &copy; 2010 Los Pleyers</a>
+						<a>Copyright &copy; 2010 Los Pleyers</a>
 						<span>
-							<a href="<?php echo bloginfo('url'); ?>/terminos-y-condiciones">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad">Políticas de privacidad</a>&nbsp;
+							<a href="<?php echo bloginfo('url'); ?>/terminos-y-condiciones/">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad/">Políticas de privacidad</a>&nbsp;
 						</span>
 					</div>
 				</nav>
 			</div>
 		</div>
-		<header class="todo_el_header">
+		
+		<header>
 			<div class="container clearfix">
 				<h1>LOS PLEYERS</h1>
 				<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
@@ -110,21 +118,26 @@
 						<?php get_search_form(); ?>
 						<!-- <input type="search" name="search" placeholder="Búsqueda" style="display:block"> -->
 					</div>
-					<a href="https://www.facebook.com/Los-Pleyers-439793806182134/" target="_blank">
+					<a href="https://www.facebook.com/ceroceromx" target="_blank">
 						<div class="fb"></div>
 					</a>
-					<a href="https://twitter.com/los_pleyers" target="_blank">
+					
+					<a href="https://twitter.com/ceroceromx" target="_blank">
 						<div class="tw"></div>
 					</a>
-					<a href="https://www.instagram.com/lospleyers/"  target="_blank">
+				
+					<a href="https://www.instagram.com/ceroceromx/"  target="_blank">
 						<div class="in"></div>
 					</a>
-					<a href="http://lospleyers.com/" target="_blank">
+					
+					<a href="https://medium.com/cerocero-mx" target="_blank">
 						<div class="md"></div>
 					</a>
-					<a href="http://lospleyers.com/" target="_blank">
+					
+					<a href="https://www.youtube.com/ElJiotsSports" target="_blank">
 						<div class="yt"></div>
 					</a>
+					
 				</nav>
 			</div>
 		</header>

@@ -1,126 +1,162 @@
-<?php 
-	get_header(); 
-	$pId = $post->ID;
-	$terms = get_the_terms($post->ID, 'shows'); 
-	$term_slug;
-	foreach($terms as $term){
-		$term_slug = $term->slug;
-	}
+<?php
+$terms = get_the_terms($post->ID, 'shows'); 
+if($terms[0]->slug=="jiots-tv"){
+get_header('jiots');
+} else {
+get_header();
+}
+$pId = $post->ID;
+$term_slug;
+foreach($terms as $term){
+	$term_slug = $term->slug;
+}
+$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$args = array(
+			'post_type'=>'episodios',
+			'posts_per_page'=>100,
+			'post_status'=>'publish',
+			'orderby'=>'date',
+			'order'=>'DESC',
+			'paged'=>$paged,
+			'tax_query'=>array(
+							array(
+								'taxonomy'=>'shows',
+								'field'=>'slug',
+								'terms'=>$term_slug
+								)
+							)
+			);
+
+$posts = new WP_Query($args);
+
+date_default_timezone_set('America/Mexico_City');
+$hoy = date('U');
+
 ?>
-<section class="smart_content_wrapper">
-
-	<div id="contentsWrapper" class="clearfix full_container smart_scroll_container">
-
-		<div class="content_col smart_ajax_container  inline">
-
-			<article id="<?php echo $pId; ?>">
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
-				</a>
-				
-				<div class="single_content">
-					<div class="addthis_inline_share_toolbox"></div>
-					<div>
+<script type="text/javascript">
+	location.href = "#";
+	location.href = "#p<?php echo $pId; ?>";
+</script>
+<section>
+	<div class="paginaqueva">1</div>
+	<div class="full_container clearfix">
+		<div class="sidebar scrollable clearfix">
+			<div class="sprints">
+				<div class="sprints_container">
+					<div class="the_scroll">
 						<?php 
-							$tags = get_the_tags();
-							if($tags){
-								foreach($tags as $tag):
-									$tag_slug = $tag->slug;
-									$tag_nme = $tag->name;
-								endforeach;	
-									echo "<span class='tags'>#".$tag_nme." "."</span>";
-							}
+						if($posts->have_posts()): 
+							while($posts->have_posts()):
+								$posts->the_post(); 
+								setup_postdata($post);
+								$post_date = get_the_date('U');
+
+								$time_ago = human_time_diff($post_date, $hoy);
+								$unwanted_array = array('minuto'=>'m', 'hora'=>'h', 'día'=>'d', 'semana'=>'s', 'mes'=>'M', 'año'=>'A',
+			 						 'minutos'=>'m', 'horas'=>'h', 'días'=>'d', 'semanas'=>'s', 'meses'=>'M', 'años'=>'A',
+			 						 'min'=>'m', 'hour'=>'h', 'day'=>'d', 'week'=>'s', 'month'=>'M', 'year'=>'A',
+			 						 'mins'=>'m', 'hours'=>'h', 'days'=>'d', 'weeks'=>'s', 'months'=>'M', 'years'=>'A', ' '=>'');
+								$time_ago = strtr( $time_ago, $unwanted_array );
 						?>
-
-						<a href="<?php the_permalink(); ?>">
-							<h2>
-								<?php the_title(); ?>
-							</h2>
-						</a>
-						<span class="the_date">
-							<?php echo get_the_date('H:m - d/j/Y'); ?>
-						</span>
-
-					</div>
-					<?php 
-						$contenido = get_the_content();
-						the_content(); 
-						if($contenido){
-							//echo '<div class="addthis_sharing_toolbox"></div>';
-						}else{ }
-						?>
-					<div class="line_division"></div>
-					<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-					<div class="inlink">
-
+						<a href="<?php echo get_the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+						<div class="formato_a sprints_post clearfix" id="<?php echo $post->ID; ?>">
+							<span class="post_time"><?php  echo $time_ago; ?></span>
+							<div class="sprints_post_content">
+								<a href="#<?php echo "p".$post->ID; ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_grande'); ?></div></a>
+								<a href="#<?php echo "p".$post->ID; ?>"><h4><?php the_title(); ?></h4></a>
+							</div>
+						</div>	
 						<?php 
-
-							if(get_post_type( $post )=="episodios"){
-
-							    $_terms = array_shift(get_the_terms($post->ID, 'shows'));
-
-							    // get_posts in same custom taxonomy
-							    $postlist_args = array(
-							        'posts_per_page'  => -1,
-							        'orderby'         => 'date',
-							        'order'           => 'DESC',
-							        'post_type'       => 'episodios',
-							        'tax_query'		  => array(
-							        						array(
-							        							'taxonomy'=>'shows',
-							        							'field'=>'slug',
-							        							'terms'=>$term_slug
-							        							)
-							        						)
-							    );
-
-							    $postlist = get_posts( $postlist_args );
-
-							    // get ids of posts retrieved from get_posts
-							    $ids = array();
-							    foreach ($postlist as $thepost) {
-							        $ids[] = $thepost->ID;
-
-							    }
-
-							    // get and echo previous and next post in the same taxonomy
-							    $thisindex  = array_search($post->ID, $ids);
-							    $previd     = $ids[$thisindex-1];
-							    $nextid     = $ids[$thisindex+1];
-
-							    ?>
-							    <?php
-
-							        if ( !empty($nextid) ) {
-
-							            echo '<a rel="next" href="' .get_permalink($nextid). '"></a>';
-
-							        }
-
-
-							    ?>
-
-							    <?php
-							}else{
-
-							    // Your Default Previous/Next Links in single.php file
-							}
-							?>
-
-
-						<?php //next_post_link(); ?>
-						<div class="next_art_container">
-
-						</div>
+							endwhile; 
+							wp_reset_postdata();
+						endif; 
+						?>
 					</div>
-			</article>
-			
+				</div>
+			</div>
 		</div>
+		<div class="right_container clearfix">
+			<?php
+				$posts = new WP_Query($args);
+				date_default_timezone_set('America/Mexico_City');
 
-		<div class="content_side inline"><?php get_template_part('templates/barra', 'shows'); ?></div>
+				if($posts->have_posts()): 
+						while($posts->have_posts()):
+						$posts->the_post();
+						$terms = wp_get_post_terms($post->ID, 'noticiasde' );
+						$link = get_the_permalink();
+						// $link = substr($link, 23); 	//Productivo
+						$link = substr($link, 17);		//Local
+						$youtube_id = get_post_meta($post->ID, 'eg_sources_youtube', true);
+			?>
+					<article>
+						<div class="referent" id="<?php echo "p".$post->ID; ?>"></div>
+						<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+
+								<div class="episodio no_play" video-id="<?php echo $youtube_id; ?>" >
+									<?php if ($youtube_id): ?>
+										<iframe width="560" height="315" src='' allowfullscreen frameborder="0"></iframe>
+									<?php endif; ?>
+										<?php the_post_thumbnail('grid'); ?>
+								</div>
+
+								<div class="article_header">
+									<table border="0">
+										<tr>
+											<td>
+												<div class="shares">
+													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+														<div class="share_fb" aria-hidden="true"></div> 
+													</a>
+													<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+														<div class="share_tw" aria-hidden="true"></div> 
+													</a>
+													<a class="copylink">
+														<div class="share_link" aria-hidden="true"></div> 
+													</a>
+												</div>
+											</td>
+											<td>
+												<?php if ($terms) { ?>
+												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+												<?php } ?>
+												<h2><?php the_title(); ?></h2>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<span class="author_name">
+													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
+												</span>
+											</td>
+										</tr>
+									</table>
+								</div>
+
+								<div class="contenido">
+									<?php the_content(); ?>
+									<div class="shares horizontal_share clearfix">
+										<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+										<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+											<div class="share_fb" aria-hidden="true"></div> 
+										</a>
+										<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+											<div class="share_tw" aria-hidden="true"></div> 
+										</a>
+										<a class="copylink">
+											<div class="share_link" aria-hidden="true"></div> 
+										</a>
+									</div>
+								</div>
+						</article>
+			<?php  	
+					endwhile; 
+					wp_reset_postdata();
+				endif; 
+			?>
+		</div>
 	</div>
-
-	
 </section>
-
 <?php get_footer(); ?>

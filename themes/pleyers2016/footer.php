@@ -1,12 +1,9 @@
-		<footer>
-			<?php wp_footer(); ?>
-			<div class="container clearfix">
-				<img src="<?php echo THEMEPATH; ?>images/venado-cabeza.svg">
-				<span>LOS PLEYERS © Derechos reservados 2016.</span>
-			</div>
-		</footer>
-
-		<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582e4c79de02ce37"></script> 
-		
+	<footer>
+		<div class="container clearfix">
+			<img src="<?php echo THEMEPATH; ?>images/venado-cabeza.svg">
+			<span>LOS PLEYERS <ins><br></ins>© Derechos reservados 2016.</span>
+		</div>
+	</footer>
+	<?php wp_footer(); ?>
 	</body>
 </html>

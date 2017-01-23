@@ -1,186 +1,238 @@
-<?php 
-	get_header(); 
-	$args = array(
-				'post_type'=>'sprints',
-				'posts_per_page'=>5,
-				'post_status'=>'publish',
-				'orderby'=>'rand',
-				'order'=>'DESC'
-		);
-	$posts = new WP_Query($args);
-?>
-<div class="full_container">
-	<section class="container clearfix smart_scroll_container">
-		<?php get_sidebar(); ?>
-
-		<section class="sprint_top">
-			<?php 
-				if($posts->have_posts()): while($posts->have_posts()):
-					$posts->the_post(); setup_postdata($post);
-					$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
+<?php get_header(); ?>
+<section>
+	<div class="paginaqueva">1</div>
+	<div class="full_container clearfix">
+		<div class="right_container clearfix">
+			<?php
+				if(have_posts()): 
+					while(have_posts()):
+						the_post();
+						$terms = wp_get_post_terms($post->ID, 'noticiasde' );
+						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
+						$link = get_the_permalink();
+						// $link = substr($link, 23); 	//Productivo
+						$link = substr($link, 17);		//Local
 			?>
-			<article class="single_content">
-
-
-				<?php 
-					if($img_size == 'foto_grande'){
-						?>
-
-						<div class="<?php echo $img_size; ?>">
-							<?php the_post_thumbnail(); ?>
-						</div>
-
-						<div class="post_head clearfix">
-
-							<div class="addthis_inline_share_toolbox"></div>
-
-							<div class="left_title">
-
-								<div class="head_tag">
-									<?php 
-										$tags = get_the_tags();
-										if($tags){
-											foreach($tags as $tag):
-												$tag_url = $tag->slug;
-											endforeach;
-										?>
-												<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-													<span class="tags">
-														<?php echo "#".esc_html($tag->name)." "; ?>
-													</span>
-												</a>	
-										<?php		
-										}
-									?>
+					<article>
+						<div class="referent" id="<?php echo $post->ID."h"; ?>"></div>
+						<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+							<?php 
+								if($img_size == 'foto_grande'){
+							?>
+								<div class="<?php echo $img_size; ?>" >
+									<?php the_post_thumbnail('medium_large'); ?>
 								</div>
 
-								<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-								
-								<div class="_the_date">
-									<?php echo get_the_date('H:m d/M/Y'); ?>
+								<div class="article_header">
+									<table border="0">
+										<tr>
+											<td>
+												<div class="shares">
+													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+														<div class="share_fb" aria-hidden="true"></div> 
+													</a>
+													<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+														<div class="share_tw" aria-hidden="true"></div> 
+													</a>
+													<a class="copylink">
+														<div class="share_link" aria-hidden="true"></div> 
+													</a>
+												</div>
+											</td>
+											<td>
+												<?php if ($terms) { ?>
+												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+												<?php } ?>
+												<h2><?php the_title(); ?></h2>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<span class="author_name">
+													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
+												</span>
+											</td>
+										</tr>
+									</table>
 								</div>
 
-							</div>
-						</div><br>
+								<div class="contenido">
+									<?php the_content(); ?>
 
-						<div class="sprint_excerpt">
-							<?php the_excerpt(); ?>
-						</div>
-
-						<div class="contenido capital">
-							<?php the_content(); ?>
-							<div class="addthis_inline_share_toolbox_dvmh"></div>
-						</div>
-
-
-				<!-- <div class="addthis_sharing_toolbox"></div> -->
-
-
-					<?php 		
-						}else if($img_size == 'foto_chica'){
-						?>
-
-
-
-						<div class="post_head clearfix">
-
-							<div class="addthis_inline_share_toolbox"></div>
-
-							<div class="left_title">
-
-								<div class="head_tag">
-									<?php 
-										$tags = get_the_tags();
-										if($tags){
-											foreach($tags as $tag):
-												$tag_url = $tag->slug;
-											endforeach;
-										?>
-												<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-													<span class="tags">
-														<?php echo "#".esc_html($tag->name)." "; ?>
-													</span>
-												</a>	
-										<?php		
-										}
-									?>
+							<?php 		
+								}else if($img_size == 'foto_chica'){
+							?>
+								<div class="article_header">
+									<table border="0">
+										<tr>
+											<td>
+												<div class="shares">
+													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+														<div class="share_fb" aria-hidden="true"></div> 
+													</a>
+													<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+														<div class="share_tw" aria-hidden="true"></div> 
+													</a>
+													<a class="copylink">
+														<div class="share_link" aria-hidden="true"></div> 
+													</a>
+												</div>
+											</td>
+											<td>
+												<?php if ($terms) { ?>
+												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+												<?php } ?>
+												<h2><?php the_title(); ?></h2>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<span class="author_name">
+													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
+												</span>
+											</td>
+										</tr>
+									</table>
 								</div>
 
-								<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-
-								<div class="_the_date">
-									<?php echo get_the_date('H:m d/M/Y'); ?>
-								</div>
-
-							</div>
-						</div><br>
-
-						<div class="<?php echo $img_size; ?>">
-							<?php the_post_thumbnail(); ?>
-						</div>
-
-						<div class="contenido capital">
-							<?php the_content(); ?>	
-							<div class="addthis_inline_share_toolbox_dvmh"></div>
-						</div>
-
-
-
-					<?php
-						}else if($img_size == 'sin_foto'){
-						?>
-							<div class="post_head clearfix">
-
-								<div class="addthis_inline_share_toolbox"></div>
-
-								<div class="left_title">
-
-									<div class="head_tag">
-										<?php 
-											$tags = get_the_tags();
-											if($tags){
-												foreach($tags as $tag):
-													$tag_url = $tag->slug;
-												endforeach;
-											?>
-													<a href="<?php echo bloginfo('url').'/tag/'.$tag_url; ?>">
-														<span class="tags">
-															<?php echo "#".esc_html($tag->name)." "; ?>
-														</span>
-													</a>	
-											<?php		
-											}
-										?>
+								<div class="contenido">
+									<div class="<?php echo $img_size; ?>">
+										<?php the_post_thumbnail('sprints_grande'); ?>
 									</div>
+									<?php the_content(); ?>
 
-									<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-
-									<div class="_the_date">
-										<?php echo get_the_date('H:m d/M/Y'); ?>
-									</div>
-
+							<?php
+								}else{
+							?>
+								<div class="article_header">
+									<table border="0">
+										<tr>
+											<td>
+												<div class="shares">
+													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+														<div class="share_fb" aria-hidden="true"></div> 
+													</a>
+													<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+														<div class="share_tw" aria-hidden="true"></div> 
+													</a>
+													<a class="copylink">
+														<div class="share_link" aria-hidden="true"></div> 
+													</a>
+												</div>
+											</td>
+											<td>
+												<?php if ($terms) { ?>
+												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+												<?php } ?>
+												<h2><?php the_title(); ?></h2>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<span class="author_name">
+													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
+												</span>
+											</td>
+										</tr>
+									</table>
 								</div>
-							</div><br>
-							
-							<div class="sprint_excerpt">
-								<?php the_excerpt(); ?>
-							</div> 
 
-							<div class="<?php echo $img_size; ?>">
-								<?php the_post_thumbnail(); ?>
-							</div>
+								<div class="contenido">
+									<?php the_content(); ?>			
+							<?php		
+								}
+							?>
+									<div class="shares horizontal_share clearfix">
+										<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+										<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+											<div class="share_fb" aria-hidden="true"></div> 
+										</a>
+										<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+											<div class="share_tw" aria-hidden="true"></div> 
+										</a>
+										<a class="copylink">
+											<div class="share_link" aria-hidden="true"></div> 
+										</a>
+									</div>
+								</div>
+						</article>
+			<?php  	
+					endwhile; 
+					wp_reset_postdata();
+				endif; 
+			?>
+		</div>
+		<?php 
+			date_default_timezone_set('America/Mexico_City');
+			$hoy = date('U');
+		?>
+		<div class="sidebar scrollable clearfix">
+			<div class="sprints">
+				<h3 class="header_sprints">Sprints</h3>
+				<div class="sprints_container">
+					<div class="the_scroll">
+						<?php
+							if(have_posts()): 
+								while(have_posts()):
+								the_post();
+								setup_postdata($post);
+								$post_date = get_the_date('U');
 
-							<div class="contenido capital">
-								<?php the_content(); ?>
-								<div class="addthis_inline_share_toolbox_dvmh"></div>
-							</div>
+								$time_ago = human_time_diff($post_date, $hoy);
+								$unwanted_array = array('minuto'=>'m', 'hora'=>'h', 'día'=>'d', 'semana'=>'s', 'mes'=>'M', 'año'=>'A',
+			 						 'minutos'=>'m', 'horas'=>'h', 'días'=>'d', 'semanas'=>'s', 'meses'=>'M', 'años'=>'A',
+			 						 'min'=>'m', 'hour'=>'h', 'day'=>'d', 'week'=>'s', 'month'=>'M', 'year'=>'A',
+			 						 'mins'=>'m', 'hours'=>'h', 'days'=>'d', 'weeks'=>'s', 'months'=>'M', 'years'=>'A', ' '=>'');
+								$time_ago = strtr( $time_ago, $unwanted_array );
+								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
-					<?php		
-						}
 						?>
-			</article>
-			<?php wp_reset_postdata(); endwhile; endif; ?>
-		</section>	
-	</section>
-</div>
+						<a href="<?php echo get_the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+						<?php 
+							if($img_size == 'foto_grande') {
+						?>
+						<div class="formato_a sprints_post clearfix" id="<?php echo $post->ID; ?>">
+							<span class="post_time"><?php  echo $time_ago; ?></span>
+							<div class="sprints_post_content">
+								<a href="#<?php echo $post->ID."h"; ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_grande'); ?></div></a>
+								<a href="#<?php echo $post->ID."h"; ?>"><p><?php the_excerpt(); ?></p></a>
+							</div>
+						</div>
+						<?php 
+							} else if($img_size == 'foto_chica') {
+						?>
+						<div class="formato_b sprints_post clearfix" id="<?php echo $post->ID; ?>">
+							<span class="post_time"><?php  echo $time_ago; ?></span>
+							<div class="sprints_post_content">
+								<a href="#<?php echo $post->ID."h"; ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_grande'); ?></div></a>
+								<a href="#<?php echo $post->ID."h"; ?>"><p><?php the_excerpt(); ?></p></a>
+							</div>
+						</div>
+						<?php 
+							} else {
+						?>
+						<div class="formato_b sprints_post clearfix" id="<?php echo $post->ID; ?>">
+							<span class="post_time"><?php  echo $time_ago; ?></span>
+							<div class="sprints_post_content">
+								<a href="#<?php echo $post->ID."h"; ?>"><p><?php the_excerpt(); ?></p></a>
+							</div>
+						</div>
+						<?php 
+							}
+							endwhile; 
+							wp_reset_postdata();
+						endif; 
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <?php get_footer(); ?>

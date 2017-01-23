@@ -23,8 +23,11 @@
 								$post_date = get_the_date('U');
 
 								$time_ago = human_time_diff($post_date, $hoy);
-								$time_ago = preg_replace('/\s+/', '', $time_ago);
-								$time_ago = substr($time_ago, 0, 2);
+								$unwanted_array = array('minuto'=>'m', 'hora'=>'h', 'día'=>'d', 'semana'=>'s', 'mes'=>'M', 'año'=>'A',
+			 						 'minutos'=>'m', 'horas'=>'h', 'días'=>'d', 'semanas'=>'s', 'meses'=>'M', 'años'=>'A',
+			 						 'min'=>'m', 'hour'=>'h', 'day'=>'d', 'week'=>'s', 'month'=>'M', 'year'=>'A',
+			 						 'mins'=>'m', 'hours'=>'h', 'days'=>'d', 'weeks'=>'s', 'months'=>'M', 'years'=>'A', ' '=>'');
+								$time_ago = strtr( $time_ago, $unwanted_array );
 								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
 					?>

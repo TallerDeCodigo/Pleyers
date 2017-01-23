@@ -9,27 +9,26 @@
 	$posts = new WP_Query($args);
 
 ?>
-<div class="cerocero ">
+<section class="cerocero">
 	<div class="container clearfix">
-			<img src="<?php echo THEMEPATH; ?>/images/00_logo.png">
-			<a href="http://cerocero.mx/" target="_blank">
-				<span class="vermas">Ver Más<img src="<?php echo THEMEPATH; ?>/images/right_arrow_black.png"></span>
-			</a>
-		<ul class="posts_cerocero clearfix">
-			<?php 
-				if($posts->have_posts()): 
-					while($posts->have_posts()):
-					$posts->the_post();
-					setup_postdata($post);
-				?>
-					<li>
-						<?php the_post_thumbnail();?>
-					</li>
-			<?php 
-					wp_reset_postdata();
-					endwhile; 
-				endif; 
-				?>
-		</ul>
+		<img class="section_logo" src="<?php echo THEMEPATH; ?>images/00_logo.png">
+		<a href="http://cerocero.mx/" target="_blank" class="see_more black">Ver más</a>
 	</div>
-</div>
+	<div class="container clearfix posts_cerocero">
+		<?php 
+			if($posts->have_posts()): 
+				while($posts->have_posts()):
+				$posts->the_post();
+				setup_postdata($post);
+				$id_cerocero = get_post_meta($post->ID, 'id_cerocero', true);
+		?>
+		<a href="http://cerocero.mx/?p=<?php echo $id_cerocero; ?>" class="gif_space" target="_blank">
+			<?php the_post_thumbnail('medium');?>
+		</a>
+		<?php 
+				wp_reset_postdata();
+				endwhile; 
+			endif; 
+		?>
+	</div>
+</section>

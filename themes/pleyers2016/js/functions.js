@@ -1,24 +1,85 @@
 (function($){
 
+	$(window).on("load resize", function() {
+
+		var height_screen = $(window).height();
+
+		if ($('body').hasClass('post-type-archive-sprints') || $('body').hasClass('single-sprints')) {
+			$('.sprints_container').height(height_screen-254);
+		} else if ($('body').hasClass('single-episodios')) {
+			$('.sprints_container').height(height_screen-192);
+		}
+
+		$('.carousel').css('opacity','1');
+
+	});
+
 	function docReady(){
 
 	"use strict";
 
 	$(function(){
-
-
 				console.log('hello from functions.js');
 
+				$('.carousel').bxSlider({
+					mode: 'horizontal',
+					slideWidth: 290,
+					minSlides: 2,
+					maxSlides: 4,
+					moveSlides: 1,
+					infiniteLoop: true,
+					speed: 1000,
+				    pause: 0,
+				    auto: false,
+				    pager: false,
+				    controls: true
+				});
 
-				/**
-				 * Validación de emails
-				 */
-				window.validateEmail = function (email) {
-					var regExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-					return regExp.test(email);
-				};
+				$('body').fitVids();
 
+				$("div.sidebar.scrollable")
+					.mouseover(function() {
+						if ($(this).find('.sprints_container').height() < $(this).find('.the_scroll').height()) {
+							$('body').css('overflow', 'hidden');
+						}
+					})
+					.mouseout(function() {
+						$('body').css('overflow', 'auto');
+					});
 
+				$(document).on('click', '.copylink', function() {
+		        	var copyTextarea = $(this).parent().find('textarea');
+		        	  copyTextarea.focus().select();
+		        	  try {
+		        	    var successful = document.execCommand('copy');
+		        	    var msg = successful ? 'successful' : 'unsuccessful';
+		        	    console.log('Copying text command was ' + msg);
+		        	  } catch (err) {
+		        	    console.log('Oops, unable to copy');
+		        	  }
+		        });
+
+				$(document).on('click', '.no_play', function() {
+					$(this).find('iframe').attr('src','https://www.youtube.com/embed/'+$(this).attr('video-id')+'?modestbranding=1&autohide=1&showinfo=0&autoplay=1');
+					$(this).removeClass('no_play');
+					$(this).find('img').fadeOut(500);
+				});
+
+				 $(document).on('click', 'button.dropbtn', function() {
+		        	$('#myDropdown').addClass('show');
+		        });
+
+				$(document).on('click', '#myDropdown a', function() {
+		        	$('#myDropdown').removeClass('show');
+		        	$('#myDropdown a').removeClass('selected');
+		        	$(this).addClass('selected');
+		        	$('button.dropbtn').html($(this).html());
+		        	$('.videos_stack').hide();
+		        	$('#'+$(this).attr('data')).show();
+		        	console.log($(this).attr('data'));
+		        });
+
+		        $('nav.blog_social a').attr('target','_blank');
 
 				/**
 				 * Regresa todos los valores de un formulario como un associative array 
@@ -32,44 +93,17 @@
 					});
 					return result;
 				}
-				var height_screen = $(window).height();
-				var height_container = $('.archive div.full_container').height();
-				var _left_container = $('.left_container').height();
+				var width_screen = $(window).width();
 
+				var orig_title = $('.nota1 a h3').html();
+				var orig_tag = $('.nota1 a span').html();
+				var ch_tag = '';
 
-				$('div.sprints_container').css('height', height_screen-100+"px");
-
-				if( $('body').hasClass('home') ){
-					$('div.sprints_container').css('height', _left_container-90+"px");
-				}
-				if( $('body').hasClass('post-type-archive-sprints') ){
-					$('div.sprints_container').css('height', height_screen-250+"px");	
-				}
-				
-
-
-				$( "div.sprints" ).mouseover(function() {
-						$('body').css('overflow','hidden');
-					}).mouseout(function() {
-						$('body').css('overflow','auto');
-				});
-
-				$( "div.menu nav" )
-					.mouseover(function() {
-						$('body').css('overflow','hidden');
-					})
-					.mouseout(function() {
-						$('body').css('overflow','auto');
-				});
-					var orig_title = $('.nota1 a h3').html();
-					var orig_tag = $('.nota1  a span').html();
-					var ch_tag = '';
 				$('.more_destacado .destacado').mouseover(function() {
 					var img = $(this).attr('data-image');
-					var title = $(this).find('.el_titulo').html();
-					var tag = $(this).find('.el_tag').html();
+					var title = $(this).find('a h3').html();
+					var tag = $(this).find('span a').html();
 					if(tag == undefined){ch_tag = '';}else{ch_tag = tag}
-					console.log(tag);
 				    $('img.post_picture').fadeOut(300, function() {
 				        $('img.post_picture').attr("src",img);
 				        $('img.post_picture').fadeIn(300);
@@ -78,22 +112,12 @@
 				    });
 				}).mouseout(function() {
 					$('img.post_picture').fadeOut(300, function() {
-
 				        $('img.post_picture').attr("src",$('.destacado.nota1').attr('data-image'));
 				        $('img.post_picture').fadeIn(300);
 				        $('.nota1 a h3').html(orig_title);
 				        $('.nota1 a span').html(orig_tag);
-
 				    });
 				});
-
-
-
-
-
-
-
-
 
 				$('#nav_icon').click(function(){
 					if ($('.overscreen').hasClass('open')) {
@@ -101,9 +125,11 @@
 						$('#nav_icon').toggleClass('open');
 						setTimeout(function() {
 							$('.overscreen').hide();
+							$('body').css('overflow','auto');
 						}, 260);
 					} else {
 						$('.overscreen').show();
+						$('body').css('overflow','hidden');
 						setTimeout(function() {
 							$('.overscreen').toggleClass('open');
 							$('#nav_icon').toggleClass('open');
@@ -116,222 +142,90 @@
 					$('#nav_icon').toggleClass('open');
 					setTimeout(function() {
 						$('.overscreen').hide();
+						$('body').css('overflow','auto');
 					}, 260);
 				});
 
-				$(document).mouseup(function(e){
-					// var container = $("nav.menu");
-					// if (!container.is(e.target)&& container.has(e.target).length === 0) {
-					// }, 260);
-					// }
-				});
-
 				$('.balloon').on('click', function(){
-					console.log('hey');
 					$('.globo').slideDown();
 					$('.balloon').append($('.globo'));
 				});
 				$('.globo').mouseleave(function(){
-					console.log('you');
 					$('.globo').slideUp();
 				});
 
 				$('input[type="submit"]').val('');
 
+				/*** NAVEGACIÓN */
+				/*HISTORY URL HKN*/
 
-				var single_img_height = $('.single_top img').height();
-				$('.grid').css('height', single_img_height+32+"px");
+				var newHash = '';
 
-				var blogs_arr = ['.apuntes-de-rabona', '.cultura-pop', '.deportologia', '.jiots-tv', '.el_pechofrio', '.lucha-libre', '.tactica', '.tirando-guante', '.turismo-deportivo'];
+				if(width_screen > 800){
+					var aidi = 0;
+					var es;
+					var scroll_num = 0;
+					var lastScrollTop = 0; 
+					var cero = 0;
+					var alto_post;
+					$(function () {
+					    var currentHash = "initial_hash";
+					    $(window).scroll(function () {
 
+					    	$('.sidebar.scrollable').css('margin-top',$(window).scrollTop()+'px');
+					    	var referencia = $('.the_scroll').height()*$(window).scrollTop();
+					    	referencia = referencia/$('body').height();
+					    	$('.scrollable .sprints_container').scrollTop( referencia );
 
-				$('#apuntes-de-rabona,  #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #deportologia').hide();
+					        $('.anchor_tags').each(function () {
+					        	var anterior = $('.sprints_container div#'+aidi).height();
 
-				$('.apuntes-de-rabona').click(function(){
-					$(this).addClass('change');
-					$('.cultura-pop, .deportologia, .jiots-tv, .el_pechofrio, .lucha-libre, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#apuntes-de-rabona').show();
-					$('#cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
-				});
+					            var top = window.pageYOffset;
+					            var distance = top - $(this).offset().top;
+					            var hash = $(this).attr('href');
 
-				$('.cultura-pop').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona, .deportologia, .jiots-tv, .el_pechofrio, .lucha-libre, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#cultura-pop').show();
-					$('#apuntes-de-rabona, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
-				});
+					            if (distance < 150 && distance > -150 && currentHash != hash) {
+					            	aidi = $(this).attr('data');
+					            	if(history.pushState) {
+					            		history.pushState(null, null, "/"+hash);
+					            	}else { 
+					            		window.location.hash = hash; 
+					            	}
+					                currentHash = hash;
+					                es = $('.sprints_container div#'+aidi);
+					                $('.sprints_container div').removeClass('selected');
+					                es.addClass('selected');
 
-				$('.deportologia').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona, .cultura-pop, .jiots-tv, .el_pechofrio, .lucha-libre, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#apuntes-de-rabona, #cultura-pop, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
-					$('#deportologia').show();
-				});
+					                alto_post = es.height();
 
-				$('.jiots-tv').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona, .cultura-pop, .deportologia, .el_pechofrio, .lucha-libre, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#apuntes-de-rabona, #cultura-pop, #deportologia, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
-					$('#jiots-tv').show();
-				});
+									// var st = $(window).scrollTop();
+									
+									// if (st > lastScrollTop){
+									// 		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
+									// 		$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
+									// 		$('#episode_scroll').animate({scrollTop: scroll_num }, 250);
+									// 		scroll_num += alto_post ;
+									// 		console.log('down'+scroll_num);
+									// } else {
+									//    	if(cero == 0){
+									//    		scroll_num-=alto_post ;
+									//    		cero++;
+									//    	}
+									//         scroll_num -= alto_post ;
+									//   	$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
+									//   	$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
+									//   	$('#episode_scroll').animate({scrollTop: scroll_num }, 250);
+									// 		console.log('up'+scroll_num);
+									// }
 
-				$('.el_pechofrio').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona,  .cultura-pop, .deportologia, .jiots-tv, .lucha-libre, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #lucha-libre, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
-					$('#el_pechofrio').show();
-				});
+									// lastScrollTop = st;
 
-				$('.lucha-libre').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('#lucha-libre').show();
-					$('.apuntes-de-rabona,  .cultura-pop, .deportologia, .jiots-tv, .el_pechofrio, .tactica, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #tactica, #tirando-guante, #turismo-deportivo, #todos').hide();
+					            }
+					        });
+					    });
+					});
 
-				});
-
-				$('.tactica').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona,  .cultura-pop, .deportologia, .jiots-tv, .el_pechofrio, .lucha-libre, .tirando-guante, .turismo-deportivo, .todos').removeClass('change');
-					$('#tactica').show();
-					$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tirando-guante, #turismo-deportivo, #todos').hide();
-				});
-
-				$('.tirando-guante').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona,  .cultura-pop, .deportologia, .jiots-tv, .el_pechofrio, .lucha-libre, .tactica, .turismo-deportivo, .todos').removeClass('change');
-					$('#tirando-guante').show();
-					$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #turismo-deportivo, #todos').hide();
-				});
-
-				$('.turismo-deportivo').click(function(){
-					//$('.barra_blogs li.change').removeClass('change');
-					$(this).addClass('change');
-					$('.apuntes-de-rabona,  .cultura-pop, .deportologia, .jiots-tv, .el_pechofrio, .lucha-libre, .tactica, .tirando-guante, .todos').removeClass('change');
-					$('#turismo-deportivo').show();
-					$('#apuntes-de-rabona,  #cultura-pop, #deportologia, #jiots-tv, #el_pechofrio, #lucha-libre, #tactica, #tirando-guante, #todos').hide();
-				});
-
-				$('.anterior').click(function(){
-					var data_id = $('.barra_blogs').find('.change').attr('data-id');
-
-					if( $('.barra_blogs').find('.change').attr('data-id') == data_id){
-						data_id--;
-						$('.barra_blogs').find('.change').removeClass('change');
-
-						$('.barra_blogs li[data-id='+data_id+']').addClass('change');
-
-					};
-
-				});
-
-				$('.siguiente').click(function(){
-					var data_id = $('.barra_blogs').find('.change').attr('data-id');
-
-					if( $('.barra_blogs').find('.change').attr('data-id') == data_id){
-						data_id++;
-
-						$('.barra_blogs').find('.change').removeClass('change');
-						$('.barra_blogs li[data-id='+data_id+']').addClass('change');
-
-					};
-				})
-
-				/*NAVIGATION PARTIDOS*/
-				$('.right').click(function(){
-
-				});
-
-				/*FNUCION MANUEL SCROLL*/
-				var pag_next=0;
-				// $(window).on("load", function() {
-				// 	if ($('body').height() < document.documentElement.clientHeight) {
-				// 		loader();
-				// 	}
-				// });
-
-				$(window).scroll(function() {
-				   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-				       $('.inlink').last().find('a').trigger('click');
-				   }
-				});
-
-
-				function loader() {
-			       console.log("bottom!");
-			       pag_next = parseInt($('.paginaqueva:first-of-type').html());
-			       pag_next = pag_next+1;
-			       $('.paginaqueva').html(pag_next);
-			       $('.loader').addClass('active');
-			       var code_var = $('code').html();
-			       // code_var = JSON.stringify(code_var);
-			       console.log(code_var);
-
-			       // $.ajax({
-		        //        type: "POST",
-		        //        dataType: "html",
-		        //        url: '<?php echo esc_url(site_url()); ?>/breaking/page/'+pag_next+'/' ,
-		        //        data: '',
-		        //        success: function(data){
-		        //            var $data = $(data);
-		        //            $("body").append($data);
-		        //            $('.paginaqueva').html($('.paginaqueva:first-of-type').html());
-		        //            $('.loader').removeClass('active');
-		        //        },
-		        //        error : function(jqXHR, textStatus, errorThrown) {
-		        //            // $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-		        //        }
-			       //  });
 				}
-
-
-
-				/*SPRITE TIME*/
-				var hour_string = $('.post_time').html();
-				//hour_string = hour_string.substring(0, 3);
-
-		/*** NAVEGACIÓN */
-
-		var newHash = '';
-
-		$(document).on('click', '.inlink a', function(e) {
-
-		 	e.preventDefault();
-		 	var newHash = $(this).attr('href');
-		 	console.log(newHash);
-		 	$(this).parent().find('.next_art_container').empty();
-		 	$(this).parent().find('.next_art_container').addClass('contenido_mas');
- 	 	    $(this).parent().find('.next_art_container').load(newHash+' article', function() {
- 				
- 			});
-
-		 	var myNewState = {
-		     data: {
-		 	        a: 1,
-		 	        b: 2
-		 	    },
-		 	    title: '',
-		 	    url: newHash
-		 	};
-
-		 	history.pushState(myNewState.data, myNewState.title, myNewState.url);
-		 	window.onpopstate = function(event){
-		 	    console.log(myNewState.url); // previous 
-		 	    console.log(window.location.href); // actual
-		 	    var newHash = window.location.href;
-		 	    $(this).parent().find('.next_art_container').load(newHash+' article', function() {
-					// SCROLL HACIA ARRIBA O ABAJO AL TARGET
-				});
-		 	}
-
-		});
 
 	});
 

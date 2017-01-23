@@ -1,65 +1,56 @@
-<div class="jiotstv ">
-		<div class="container clearfix"> 
-			<div class="head_jiots">
-				<img src="<?php echo THEMEPATH; ?>/images/jiotstv.png">
-				<span>Haciendo del internet un lugar peor</span>
-				<a href="http://jiots.tv/" target="_blank">
-					<span class="vermas">
-						Ver Más
-						<img src="<?php echo THEMEPATH; ?>/images/right_arrow_black.png">
-					</span>
-				</a>
-			</div>
-			<?php
-				$var_expire = 300;
-				$query = wp_cache_get('jiots_cached');
-				if($query == false){
+<section class="jiotstv">
+	<div class="container clearfix">
+		<img class="section_logo" src="<?php echo THEMEPATH; ?>images/sports.png">
+		<a href="<?php bloginfo('url'); ?>/shows/jiots-tv/" class="see_more black">Ver más</a>
+	</div>
+	<div class="container clearfix">
+	<?php
+		$var_expire = 300;
+		$query = wp_cache_get('jiots_cached');
+		if($query == false){
 
-				$args = array(
-							'post_type'=>'episodios',
-							'posts_per_page'=>8,
-							'post_status'=>'piublish',
-							'orderby'=>'data',
-							'order'=>'DESC',
-							'tax_query'=>array(
-											array(
-												'taxonomy'=>'shows',
-												'field'=>'slug',
-												'terms'=>'jiots-tv'
-												)
-											)
-							);
-				$posts = new WP_Query($args);
-				wp_cache_set('jiots_cached', $posts, '', $var_expire);
-				// echo "<pre>";
-				// 	print_r($posts);
-				// echo "</pre>";
-				if($posts->have_posts()): 
-					while($posts->have_posts()):
-						$posts->the_post(); setup_postdata($post);
-			?>
-				<div class="jiots_post clearfix">
-					<a href="<?php the_permalink(); ?>">
-						<div class="img_frame clearfix">
-							<?php the_post_thumbnail(); ?>
-							<!-- <img src=""> -->
-						</div>
-					</a>
-					<a href="<?php the_permalink(); ?>">
-							<?php
-								$tags = get_the_tags();
-								if($tags){
-										echo "<span style='display:inline-block;'>";
-											echo "#".esc_html($tags[0]->name)." ";
-										echo "</span>";
-								}
-							?>
-					</a>
-					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+		$args = array(
+					'post_type'=>'episodios',
+					'posts_per_page'=>8,
+					'post_status'=>'piublish',
+					'orderby'=>'data',
+					'order'=>'DESC',
+					'tax_query'=>array(
+									array(
+										'taxonomy'=>'shows',
+										'field'=>'slug',
+										'terms'=>'jiots-tv'
+										)
+									)
+					);
+		$posts = new WP_Query($args);
+		wp_cache_set('jiots_cached', $posts, '', $var_expire);
+		}
+
+		if($posts->have_posts()): 
+			while($posts->have_posts()):
+				$posts->the_post(); setup_postdata($post);
+	?>
+		<div class="jiots_post clearfix">
+			<a href="<?php the_permalink(); ?>">
+				<div class="img_frame clearfix">
+					<?php the_post_thumbnail('sprints_grande'); ?>
 				</div>
-			<?php	
-				wp_reset_postdata(); endwhile; endif; 
+			</a>
+			<?php
+				$tags = get_the_tags();
+				if($tags){
+			?>
+				<a><span>#<?php echo $tags[0]->name; ?></span></a>
+			<?php
 				}
 			?>
+			<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 		</div>
+	<?php	
+			endwhile;
+			wp_reset_postdata(); 
+		endif; 
+	?>
 	</div>
+</section>

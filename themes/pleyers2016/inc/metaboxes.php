@@ -16,7 +16,7 @@
 		add_meta_box( 'nombre_autor_meta', 'Autor de la frase', 'show_nombre_autor_meta', 'frases', 'side', 'high' );
 		add_meta_box( 'id_pleyers_twitter_meta', 'ID de Twitter', 'show_id_pleyers_twitter_meta', 'tweets', 'side', 'high' );
 		add_meta_box( 'id_fecha_partido', 'Información del partido', 'show_get_match_calendar', 'calendarios', 'side', 'high');
-		add_meta_box( 'id_tipo_sprint', 'Tipos de sprint', 'show_get_sprint_type', array('sprints', 'episodios'), 'side', 'high' ); 
+		add_meta_box( 'id_tipo_sprint', 'Tamaños de imagen', 'show_get_sprint_type', array('sprints', 'episodios'), 'side', 'high' ); 
 	});
 
 
@@ -26,8 +26,16 @@
 
 	function show_post_video_meta($post){
 		$eg_sources_youtube = get_post_meta($post->ID, 'eg_sources_youtube', true);
+		$check_thumb 		= get_post_meta($post->ID, 'check_thumb', true) ? 'checked' : '';
+
 		wp_nonce_field(__FILE__, 'post_video_meta_nonce');
+
 		echo "<input type='text' class='widefat' id='eg_sources_youtube' name='eg_sources_youtube' value='$eg_sources_youtube'/>";
+		echo "<br/><br />";
+
+		echo "<label class='selectit'>";
+		echo "<input type='checkbox' name='check_thumb' value='1' $check_thumb>";
+		echo "Importar thumbnail</label>";
 	}
 
 	function show_id_cerocero($post){
@@ -72,7 +80,6 @@
 				<input type='text' id='equipo_dos_match' name='equipo_dos_match', value='$equipo_dos_match' > <br>
 			");
 	}
-
 
 	function show_get_sprint_type($post){
 		$sprint_type = get_post_meta($post->ID, 'sprint_type_meta', true);
@@ -138,6 +145,34 @@
 
 		if ( isset($_POST['eg_sources_youtube']) and check_admin_referer(__FILE__, 'post_video_meta_nonce') ){
 			update_post_meta($post_id, 'eg_sources_youtube', $_POST['eg_sources_youtube']);
+			update_post_meta($post_id, 'check_thumb', $_POST['check_thumb']);
+			if (isset($_POST['check_thumb'])) {
+				if (get_the_post_thumbnail_url($post_id) == ''){
+					$image = 'https://img.youtube.com/vi/'.$_POST['eg_sources_youtube'].'/maxresdefault.jpg';
+					$media = media_sideload_image($image, $post_id);
+					if(!empty($media) && !is_wp_error($media)){
+					    $args = array(
+					        'post_type' => 'attachment',
+					        'posts_per_page' => -1,
+					        'post_status' => 'any',
+					        'post_parent' => $post_id
+					    );
+					    $attachments = get_posts($args);
+					    if(isset($attachments) && is_array($attachments)){
+					        foreach($attachments as $attachment){
+					            $image = wp_get_attachment_image_src($attachment->ID, 'full');
+					            if(strpos($media, $image[0]) !== false){
+					                set_post_thumbnail($post_id, $attachment->ID);
+					                break;
+					            }
+					        }
+					    }
+					}	
+				}
+			}
+		}else{
+			delete_post_meta($post_id, 'eg_sources_youtube');
+			delete_post_meta($post_id, 'check_thumb');
 		}
 
 		if ( isset($_POST['id_cerocero']) and check_admin_referer(__FILE__, 'id_cerocero_meta_nonce') ){
@@ -199,3 +234,56 @@
 
 
 // OTHER METABOXES ELEMENTS //////////////////////////////////////////////////////////
+
+
+
+	if (is_admin()){
+	  /* 
+	   * prefix of meta keys, optional
+	   */
+	  $prefix = 'wp_';
+	  /* 
+	   * configure your meta box
+	   */
+	  $config = array(
+	    'id' => 'demo_meta_box',          // meta box id, unique per meta box
+	    'title' => 'Demo Meta Box',          // meta box title
+	    'pages' => array('shows'),        // taxonomy name, accept categories, post_tag and custom taxonomies
+	    'context' => 'normal',            // where the meta box appear: normal (default), advanced, side; optional
+	    'fields' => array(),            // list of meta fields (can be added by field arrays)
+	    'local_images' => false,          // Use local or hosted images (meta box images for add/remove)
+	    'use_with_theme' => true          //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
+	  );
+	  
+	  $my_meta =  new Tax_Meta_Class($config);
+	  
+
+	  //$my_meta->addColor($prefix.'color_field_id',array('name'=> __('My Color ','tax-meta')));
+	  //Image field
+	  $my_meta->addImage($prefix.'image_field_id',array('name'=> __('Imagen del show ','tax-meta')));
+	  
+	  
+	 
+	  $my_meta->Finish();
+
+	  /* 
+	   * configure your meta box
+	   */
+	  $config = array(
+	    'id' => 'card_meta_box',          // meta box id, unique per meta box
+	    'title' => 'Card Meta Box',          // meta box title
+	    'pages' => array('stack'),        // taxonomy name, accept categories, post_tag and custom taxonomies
+	    'context' => 'normal',            // where the meta box appear: normal (default), advanced, side; optional
+	    'fields' => array(),            // list of meta fields (can be added by field arrays)
+	    'local_images' => false,          // Use local or hosted images (meta box images for add/remove)
+	    'use_with_theme' => true          //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
+	  );
+	  
+	  $my_card_meta =  new Tax_Meta_Class($config);
+	  
+
+	  $my_card_meta->addImage($prefix.'image_card',array('name'=> __('My Card Image ','tax-meta')));
+	 
+	  $my_card_meta->Finish();
+
+	}

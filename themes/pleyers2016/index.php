@@ -1,144 +1,245 @@
-<?php get_header(); ?>
+<?php 
+	get_header();
+	$var_expire=300;
+	$query = wp_cache_get('posts_cached');
 
-
-index
-	<!-- Insert content here -->
-		<div class="content clearfix">
-			<div class="wrapper-destacado clearfix">
-				<?php
-					$args = array(
-							'post_type' 		=> array('post', 'episodios'),
-							'posts_per_page'	=>	1,
-							'category'			=> 17
+	if($query == false){
+		$args = array(
+					'post_type'=>'post',
+					'posts_per_page'=>4,
+					'post_status'=>'publish',
+					'orderby'=>'date',
+					'order'=>'DESC',
+					'tax_query'=>array(
+									array(
+										'taxonomy'=>'category',
+										'field'=>'slug',
+										'terms'=>'destacado'
+										)
+									)
 					);
-					$destacado = get_posts($args);
-					foreach($destacado as $post): setup_postdata($post);
-					$destacado_id = $post->ID;
-					$permalink = get_the_permalink($destacado_id);
-					$squareurl = get_the_post_thumbnail_url($post->ID, 'grid_home_square');
-				?>
-				<div class="post destacado clearfix">
-					<div class="over"></div>
-					<?php $src = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?> 
-					<a href="<?php the_permalink(); ?>"><img class="thumb thumbnota" src="<?php echo $src; ?>" data-square="<?php echo $squareurl; ?>"></a>
-					<span class="date"><?php the_date(); ?></span>
-					<?php 
-						if(get_post_meta($post->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
-					?>
-					<div class="post-info">	
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- destacadp -->
-				<?php endforeach; wp_reset_postdata(); ?>
-			</div><!-- wrapper-destacado -->
-			<?php
-				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-				$args = array(
-						'post_type' 		=> array('graficos', 'post', 'episodios', 'frases', 'tweets'),
-						'paged' 			=> $paged,
-						'category__not_in'	=> 17,
-						'order'    			=> 'DESC'
-				);
-				
-				$play = new WP_Query( $args );
+		$posts = new WP_Query($args);
+		$aidi_preserve = array();
+		wp_cache_set('posts_cached', $posts, '', $var_expire);
+	}
+		$count = 0;
+?>
+	<section id="uno">
+		<div class="main_banner full_container clearfix">
 
-			?>
-			<div class="posts-pool clearfix">
-				<?php			
-					while ( $play->have_posts() ) 
-					{
-						$play->the_post();
-						$permalink = get_the_permalink($play->ID);
-						if(get_post_type($play->ID) == 'post'){
-							$random = rand(1,10);
-						}
-						$_autor   = get_post_meta($post->ID, 'nombre_autor', array("fields"=>"all"));
-
-					
-				?>
-
-				<?php $type = get_post_type($play->ID); if( $type == 'tweets') { ?>
-
-					 <a class="tweets nota" target="_blank" href="http://twitter.com/los_pleyers/status/<?php the_title(); ?>">
-					<div class="clearfix " >
-						<span class="tweetie "><img src="<?php echo THEMEPATH; ?>/images/tweetie.png">@Los_Pleyers</span>
-						<div class="tweet_content"><?php the_content(); ?></div>
-						<span class="date"><?php echo get_the_date(); ?></span>
-					</div></a> <!-- tweet -->
-				
-				<?php } else if(get_post_type($play->ID) == 'frases') { ?>
-				
-					 <div class="nota clearfix frases">
-						<span class="tweetie">#frasedeldía</span>
-						<div class="tweet_content">"<?php the_title(); ?>"</div>
-						<span class="date">- <?php echo $_autor; ?></span>
-						
-					</div> <!-- tweet -->
-				
-
-				<?php } else if(get_post_type($play->ID) == 'graficos') { ?>
-
-					 <div class="nota clearfix grafico bigsquare">
-						
-						
-						<a target="_blank" href="http://cerocero.mx/?p=<?php echo get_post_meta($play->ID, 'id_cerocero', true); ?>">
-						<?php 
-							the_post_thumbnail('full');
-						?>
+		<?php 
+		if($posts->have_posts()): 
+			while($posts->have_posts()):
+				$posts->the_post(); 
+				setup_postdata($post);
+				if($count == 0){
+		?>
+					<div class="img_frame">
+						<img src="<?php echo the_post_thumbnail_url('banner'); ?>" class="post_picture">
+					</div>
+					<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url('banner'); ?>">
+						<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+							<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+								<span>
+									<?php echo "#".esc_html($terms[0]->name)." "; ?>
+								</span>
+							</a>
+						<a href="<?php the_permalink(); ?>">
+							<h3>
+								<?php the_title(); ?>
+							</h3>
 						</a>
-					
-					</div> <!-- post -->
+					</div>
+					<div class="more_destacado">
+		
+		<?php		
+				}else {
+		?>
+						<div class="destacado" data-image="<?php echo the_post_thumbnail_url('banner'); ?>">
+							<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
+											<span>
+												<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+													<?php 
+														if($terms){
+															$trm_nme = $terms[0]->name;
+															echo "#".$trm_nme;
+														} 
+													?>
+												</a>	
+											</span>
+							<a href="<?php the_permalink(); ?>">
+								<h3>
+									<?php the_title(); ?>
+								</h3>
+							</a>
+						</div>
+		<?php		
+			} array_push($aidi_preserve, $post->ID); $count ++; wp_reset_postdata(); endwhile; endif;
+		
+		?>
+					</div>
+		</div>
+		<?php get_template_part('templates/barra', 'partidos'); ?>
+	</section>
 
-				<?php } else { ?> 
+	<section id="dos">
+		<div class="container clearfix">
+			<div class="left_container">
+				<?php 
+					$args = array(
+								'post_type'=> 'post',
+								'posts_per_page'=>5,
+								'post_status'=>'publish',
+								'orderby'=>'date',
+								'order'=>'DESC',
+								'post__not_in'=>$aidi_preserve
+						);
+					$posts = new WP_Query($args);
 
-				<div class="nota clearfix <?php echo get_post_type($play->ID); ?> <?php  if($random == 1 ){ echo 'widescreen bigsquare'; } else { echo 'square'; } ?>">
-					<div class="over"></div>
-					<?php
-						$square = get_the_post_thumbnail($play->ID, 'grid_home_square');
-						$squareurl = get_the_post_thumbnail_url($play->ID, 'grid_home_square');
-						$widescreen = get_the_post_thumbnail($play->ID, 'grid_home_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
-						$bigsquare = get_the_post_thumbnail($play->ID, 'grid_home_square_large', array('data-square' => $squareurl, 'class' => 'thumbnota'));
-					?>			
-					
-					<a href="<?php the_permalink(); ?>">
-					<?php 
-						if(get_post_type($play->ID) == 'episodios'){
-							echo $widescreen; 
-						} else if(get_post_type($play->ID) == 'post'){
-							if($random == 1 ){
-								echo $widescreen; 
-							} else {
-								echo $square; 	
+					if($posts->have_posts()): 
+						while($posts->have_posts()):
+							$posts->the_post(); 
+							setup_postdata($post);
+							$terms = wp_get_post_terms($post->ID, 'noticiasde' );
+				?>
+					<div class="post clearfix">
+						<a href="<?php the_permalink(); ?>">
+							<div class="img_frame clearfix">
+								<?php the_post_thumbnail('poster'); ?>
+							</div>
+						</a>
+						<span>
+							<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+								<?php 
+									if($terms){
+										$trm_nme = $terms[0]->name;
+										echo "#".$trm_nme;
+									} 
+								?>
+							</a>
+						</span>
+						<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+						<a href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
+					</div>
+
+				<?php
+						endwhile; 
+						wp_reset_postdata();
+					endif;
+				?>
+			</div>
+			<?php get_sidebar(); ?>
+		</div>
+	</section>
+
+	<?php get_template_part('templates/barra', 'cerocero'); ?>
+
+	<section id="todos">
+		<div class="grid_videos container clearfix">
+			<h2>Blogs</h2>
+			<?php
+
+				$terms = get_terms( array( 
+				    'taxonomy' => 'shows',
+				    'hide_empty' => 1
+				) );
+
+				if ( $terms ) {
+			?>
+				<div class="dropdown">
+				<button class="dropbtn">Todos</button>
+				  <div id="myDropdown" class="dropdown-content">
+				    <a data="todos" class="selected">Todos</a>
+			<?php
+					foreach ( $terms as $term ) {
+			?>
+					<a data="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a>
+			<?php
+					}
+				}
+			?>
+				  </div>
+				</div>
+				<div id="todos" class="videos_stack clearfix">
+			<?php
+
+				$args = array(	
+							'post_type'=>'episodios',
+							'posts_per_page'=>9,
+							'post_status'=>'publish',
+							'orderby'=>'rand',
+							'order'=>'DESC'
+							);
+				$posts = new WP_Query($args);
+
+				$count = 0;
+					if($posts->have_posts()): 
+						while($posts->have_posts()):
+							$posts->the_post(); setup_postdata($post);
+							if($count == 0 || $count == 3 || $count == 4 || $count == 8) {
+				?>
+					<div class="video_post is_video big_video clearfix">
+						<a href="<?php the_permalink(); ?>">
+							<div class="img_frame clearfix">
+								<?php the_post_thumbnail('grid'); ?>
+							</div>
+							<div class="video_info">
+								<?php 
+									$terms = wp_get_post_terms(); 
+									if($terms): 
+										foreach($terms as $term):
+								?>
+									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+										<span><?php echo esc_html($term->name); ?></span>
+									</a>
+								<?php 
+										endforeach; 
+									endif;?>
+								<h3>
+									<?php the_title(); ?>
+								</h3>
+							</div>
+						</a>
+					</div>
+				<?php
+							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
+				?>
+					<div class="video_post is_video small_video clearfix">
+						<a href="<?php the_permalink(); ?>">
+							<div class="img_frame clearfix">
+								<?php the_post_thumbnail('grid'); ?>
+							</div>
+							<div class="video_info">
+								<?php 
+									$terms = wp_get_post_terms(); 
+									if($terms): 
+										foreach($terms as $term):
+								?>
+									<a href="<?php echo'noticiasde/'.$terms->slug; ?>">
+										<span><?php echo $term->name; ?></span>
+									</a>
+								<?php 
+										endforeach; 
+									endif;
+								?>
+								<h3>
+									<?php the_title(); ?>
+								</h3>
+							</div>
+						</a>
+					</div>
+				<?php 	
 							}
-						} else if(get_post_type($play->ID) == 'graficos'){
-							echo $square; 	
-						}
+
+						$count++;	
+						endwhile;
+					endif;						
 					?>
-					</a>
-					<span class="date"><?php echo get_the_date(); ?></span>
-					<?php 
-						if(get_post_meta($play->ID, 'eg_sources_youtube', true)){
-							echo '<a href="'.$permalink.'"><img class="play" src="'.THEMEPATH.'/images/play.png"></a>';
-						} 
-					?>
-					<div class="post-info">	
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<a class="mas" href="<?php the_permalink(); ?>">MÁS</a>
-					</div><!-- post-info -->
-				</div><!-- post -->
-				<?php } ?>
-				<?php
-					} //End of while
-				?>
-				
-				<?php
-					// wp_reset_postdata();
-				//End of if
-				?>
-				
-			</div><!-- posts-pool -->
-		</div><!-- content -->
-	<?php get_footer(); ?>
+			</div>
+		<?php get_template_part('templates/barra', 'blogs'); ?>
+		</div>
+	</section>
+
+	<?php get_template_part('templates/barra', 'jiots'); ?>
+
+<?php get_footer(); ?>
