@@ -11,7 +11,7 @@
 ?>
 <section class="cerocero">
 	<div class="container clearfix">
-		<img class="section_logo" src="<?php echo THEMEPATH; ?>images/00_logo.png">
+		<a href="http://cerocero.mx/" target="_blank"><img class="section_logo" src="<?php echo THEMEPATH; ?>images/00_logo.png"></a>
 		<a href="http://cerocero.mx/" target="_blank" class="see_more black">Ver más</a>
 	</div>
 	<div class="container clearfix posts_cerocero">

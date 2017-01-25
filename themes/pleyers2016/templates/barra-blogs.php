@@ -14,7 +14,9 @@
 <div id="<?php echo $term->slug; ?>" class="videos_stack with_banner clearfix" style="display:none">
 	<div class="video_post is_video small_video presentation clearfix">
 		<div class="img_frame clearfix">
+			<?php if ($img) : ?>
 			<img src="<?php echo $img['url']; ?>">
+			<?php endif; ?>
 		</div>
 		<nav class="blog_social">
 			<?php echo $term->description; ?>
@@ -53,7 +55,7 @@
 					if($terms): 
 						foreach($terms as $term):
 				?>
-					<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+					<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 						<span><?php echo esc_html($term->name); ?></span>
 					</a>
 				<?php 

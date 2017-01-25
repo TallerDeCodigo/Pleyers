@@ -60,7 +60,7 @@
 								$term_menu = $terms[$i]->name;
 								$term_slug = $terms[$i]->slug;
 							?>
-								<a href="<?php  bloginfo('url'); ?>/noticiasde/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
+								<a href="<?php bloginfo('url'); ?>/noticiasde/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
 						<?php			
 							}
 							?>
@@ -80,7 +80,7 @@
 								$term_menu = $term->name;
 								$term_slug = $term->slug;
 							?>
-								<a href="<?php  bloginfo('url'); ?>/shows/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
+								<a href="<?php bloginfo('url'); ?>/shows/<?php echo esc_html($term_slug); ?>"><?php echo esc_html($term_menu); ?></a>	
 						<?php			
 								}
 							}
@@ -90,7 +90,7 @@
 					<div>
 						<h3><a>Publicaciones</a></h3>
 						<a href="http://cerocero.mx/" target="_blank">(0-0) cerocero</a>
-						<a href="<?php echo bloginfo('url'); ?>/shows/jiots-tv/">Jiots Sports</a>
+						<a href="<?php bloginfo('url'); ?>/shows/jiots-tv/">Jiots Sports</a>
 					</div>
 					<div>
 						<h3>
@@ -101,7 +101,7 @@
 						<figure class="_logo"></figure>
 						<a>Copyright &copy; 2010 Los Pleyers</a>
 						<span>
-							<a href="<?php echo bloginfo('url'); ?>/terminos-y-condiciones/">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad/">Políticas de privacidad</a>&nbsp;
+							<a href="<?php bloginfo('url'); ?>/terminos-y-condiciones/">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad/">Políticas de privacidad</a>&nbsp;
 						</span>
 					</div>
 				</nav>
@@ -116,7 +116,6 @@
 				<nav class="social">
 					<div class="search_bar">
 						<?php get_search_form(); ?>
-						<!-- <input type="search" name="search" placeholder="Búsqueda" style="display:block"> -->
 					</div>
 					<a href="https://www.facebook.com/ceroceromx" target="_blank">
 						<div class="fb"></div>

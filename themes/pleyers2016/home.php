@@ -40,7 +40,7 @@
 						</div>
 						<div class="destacado nota1" data-image="<?php echo the_post_thumbnail_url('banner'); ?>">
 							<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
-								<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+								<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 									<span>
 										<?php echo "#".esc_html($terms[0]->name)." "; ?>
 									</span>
@@ -60,7 +60,7 @@
 						<div class="destacado" data-image="<?php echo the_post_thumbnail_url('banner'); ?>">
 							<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
 											<span>
-												<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+												<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 													<?php 
 														if($terms){
 															$trm_nme = $terms[0]->name;
@@ -112,7 +112,7 @@
 							</div>
 						</a>
 						<span>
-							<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+							<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 								<?php 
 									if($terms){
 										$trm_nme = $terms[0]->name;
@@ -130,6 +130,9 @@
 						wp_reset_postdata();
 					endif;
 				?>
+					<div class="post clearfix">
+						<a class="load_more" href="<?php bloginfo('url'); ?>/historias/"><h3>Ver más historias <span>&raquo;</span></h3></a>
+					</div>
 			</div>
 		</div>
 	</section>

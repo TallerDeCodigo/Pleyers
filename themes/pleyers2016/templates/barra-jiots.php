@@ -1,6 +1,6 @@
 <section class="jiotstv">
 	<div class="container clearfix">
-		<img class="section_logo" src="<?php echo THEMEPATH; ?>images/sports.png">
+		<a href="<?php bloginfo('url'); ?>/shows/jiots-tv/"><img class="section_logo" src="<?php echo THEMEPATH; ?>images/sports.png"></a>
 		<a href="<?php bloginfo('url'); ?>/shows/jiots-tv/" class="see_more black">Ver más</a>
 	</div>
 	<div class="container clearfix">

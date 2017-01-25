@@ -42,14 +42,9 @@
 											</td>
 											<td>
 												<?php if ($terms) { ?>
-												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
 												<h2><?php the_title(); ?></h2>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -86,11 +81,6 @@
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
 												<h2><?php the_title(); ?></h2>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -130,11 +120,6 @@
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
 												<h2><?php the_title(); ?></h2>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>

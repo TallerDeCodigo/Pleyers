@@ -31,7 +31,7 @@
 					</div>
 				</a>
 				<span>
-					<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+					<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 						<?php 
 							if($terms){
 								$trm_nme = $terms[0]->name;

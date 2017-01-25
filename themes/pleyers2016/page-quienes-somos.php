@@ -17,12 +17,16 @@
 		<h2 class="title">NUESTRAS PUBLICACIONES</h2>
 		<div class="contenido clearfix">
 			<div class="publicacion">
-				<img src="<?php echo THEMEPATH; ?>images/pub1.jpg">
-				<p>En Los Pleyers estamos convencidos de que las grandes historias del deporte también son noticias.</p>
+				<a target="_blank" href="http://cerocero.mx/">
+					<img src="<?php echo THEMEPATH; ?>images/pub1.jpg"></a>
+					<p>En Los Pleyers estamos convencidos de que las grandes historias del deporte también son noticias.</p>
+				</a>
 			</div>
 			<div class="publicacion">
-				<img src="<?php echo THEMEPATH; ?>images/pub2.jpg">
-				<p>En Los Pleyers estamos convencidos de que las grandes historias del deporte también son noticias.</p>
+				<a target="_blank" href="<?php echo bloginfo('url'); ?>/shows/jiots-tv/">
+					<img src="<?php echo THEMEPATH; ?>images/pub2.jpg">
+					<p>En Los Pleyers estamos convencidos de que las grandes historias del deporte también son noticias.</p>
+				</a>
 			</div>
 		</div>
 		<h2 class="title">STAFF</h2>

@@ -38,11 +38,6 @@ if(have_posts()):
 						<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 						<?php endif ?>
 						<h2><?php the_title(); ?></h2>
-					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
 						<span class="author_name">
 							Por 
 							<a href="<?php bloginfo('url'); echo '/author/'.esc_html(get_the_author()); ?>">
