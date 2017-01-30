@@ -30,7 +30,6 @@
 	<div class="container clearfix">
 		<div class="left_container">
 			<?php
-
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$args = array(
 							'post_type'=>$types,

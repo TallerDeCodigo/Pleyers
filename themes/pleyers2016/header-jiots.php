@@ -45,6 +45,13 @@
 				<nav>
 					<div>
 						<h3>
+							<a href="<?php echo site_url(); ?>">
+								Los pleyers
+							</a>
+						</h3>
+					</div>
+					<div>
+						<h3>
 							<a href="<?php echo bloginfo('url');?>/sprints">
 								Sprints
 							</a>
@@ -100,7 +107,9 @@
 						</h3>
 					</div>
 					<div class="end_menu">
-						<figure class="_logo"></figure>
+						<a href="<?php echo site_url(); ?>">
+							<figure class="_logo"></figure>
+						</a>
 						<a>Copyright &copy; 2010 Los Pleyers</a>
 						<span>
 							<a href="<?php echo bloginfo('url'); ?>/terminos-y-condiciones">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad">Políticas de privacidad</a>&nbsp;

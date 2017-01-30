@@ -98,7 +98,9 @@
 						</h3>
 					</div>
 					<div class="end_menu">
-						<figure class="_logo"></figure>
+						<a href="<?php echo site_url(); ?>">
+							<figure class="_logo"></figure>
+						</a>
 						<a>Copyright &copy; 2010 Los Pleyers</a>
 						<span>
 							<a href="<?php bloginfo('url'); ?>/terminos-y-condiciones/">Términos y condiciones</a><a href="<?php echo bloginfo('url'); ?>/politicas-de-privacidad/">Políticas de privacidad</a>&nbsp;
@@ -112,7 +114,9 @@
 			<div class="container clearfix">
 				<h1>LOS PLEYERS</h1>
 				<div id="nav_icon"><span></span><span></span><span></span><span></span></div>
-				<a href="<?php echo site_url(); ?>"><img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png"></a>
+				<a href="<?php echo site_url(); ?>">
+					<img class="header_logo" src="<?php echo THEMEPATH; ?>images/logo.png">
+				</a>
 				<nav class="social">
 					<div class="search_bar">
 						<?php get_search_form(); ?>
