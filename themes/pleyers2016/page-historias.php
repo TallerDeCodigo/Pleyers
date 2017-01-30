@@ -9,7 +9,8 @@
 					'post_status'=>'publish',
 					'orderby'=>'date',
 					'order'=>'DESC',
-					'paged'=>$paged
+					'paged'=>$paged,
+					'offset'=>9
 			);
 		$posts = new WP_Query($args);
 	?>
