@@ -619,6 +619,8 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 }
 
 @media(max-width:480px){
+	div.tema_topic{left:5%;}
+	.dropdown{left:42%;}
 	nav.social {display:none;}
 	.dropbtn {width:175px;}
 	.dropdown-content {width:175px;}
@@ -663,7 +665,7 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 	div.article_header h2 {font-size:28px;line-height:36px;}
 	div.contenido {padding-top:20px;padding-bottom:30px;font-size:18px;line-height:24px;}
 	body.single .horizontal_share {top:-10px;}
-	div.article_header span.author_name {margin-top:5px;}
+	div.article_header span.author_name {margin-top:25px;}
 
 	body.single-episodios .horizontal_share {top:-16px;position:relative;}
 	body.single-episodios div.contenido {padding-top:5px;padding-bottom:40px;}
