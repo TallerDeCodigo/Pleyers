@@ -189,7 +189,11 @@
 					            	if(history.pushState) {
 					            		history.pushState(null, null, "/"+hash);
 					            	}else { 
-					            		window.location.hash = hash; 
+					            		window.location.hash = hash;
+					            		ga('send', {
+					            		  hitType: 'pageview',
+					            		  page: location.pathname
+					            		}); 
 					            	}
 					                currentHash = hash;
 					                es = $('.sprints_container div#'+aidi);
