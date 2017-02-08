@@ -1,5 +1,7 @@
 <?php 
 	
+function pleyers_insert_post_and_attachment(){
+
 	$url = 'http://cerocero.mx/api/';
 	$graficos = file_get_contents($url);
 	$json = json_decode($graficos, true);
@@ -37,6 +39,7 @@
 		);
 
 		if (!in_array($ceroceroid, $ids_in_db)) {
+
 			$post_id = wp_insert_post( $grafico );
 
 			$filename = basename($img);
@@ -50,17 +53,26 @@
 				'post_status' => 'inherit'
 			);
 
-
 			$attachment_id = wp_insert_attachment( $attachment, $upload_file['file'] );
 
 			require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+
 			$attachment_data = wp_generate_attachment_metadata( $attachment_id, $upload_file['file'] );
 			wp_update_attachment_metadata( $attachment_id, $attachment_data );
+
+			update_post_meta($post_id, 'id_cerocero', $ceroceroid, '');
 			set_post_thumbnail($post_id, $attachment_id);
 
+	 	}else{
+	 		echo "no se insertó el post";
 	 	}
 	}
 
 	return;
+
+}
+
+pleyers_insert_post_and_attachment();
+
 
 ?>

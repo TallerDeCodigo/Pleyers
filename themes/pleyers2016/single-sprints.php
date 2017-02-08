@@ -28,7 +28,7 @@ $hoy = date('U');
 	<div class="full_container clearfix">
 		<div class="sidebar scrollable clearfix">
 			<div class="sprints">
-				<h3 class="header_sprints">Sprints</h3>
+				<h3 class="header_sprints">Sprints PAGE</h3>
 				<div class="sprints_container">
 					<div class="the_scroll">
 						<?php 

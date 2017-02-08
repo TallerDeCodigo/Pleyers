@@ -35,18 +35,16 @@
 	<?php
 		$args = array(
 		    'roles'          => array('administrator', 'editor'),
-		    'order'         => 'DESC',
-		    'meta_key'      => 'dealing', // Is this the meta key you are using?
-		    'meta_value'    => 'si', // Based on however you store your meta data
+		    'orderby'		=> 'name',
+		    'order'         => 'ASC',
+		    'meta_key'      => 'dealing',
+		    'meta_value'    => 'si',
 		    'meta_compare'  => '=',
 		);
 
 		$usrs = get_users($args);
 
-		// echo "<pre>";
-		// 	print_r($usrs);
-		// echo "</pre>";
-		
+
 		foreach($usrs as $usr):
 
 			$usrid = $usr->ID;
@@ -55,8 +53,14 @@
 			$email =  $usr->user_email;
 			$default = 'https://lospleyers.com/wp-content/uploads/2017/02/pleyers_avatar-1.jpg';
 			$usr_meta = get_user_meta($usrid);
-			$usr_meta = $usr_meta['twitter'];
-			$twtt = $usr_meta[0];
+			$usr_twitter = $usr_meta['twitter'];
+			$usr_apellido = $usr_meta['last_name'];
+
+			// echo "<pre>";
+			// 	print_r($usr_meta);
+			// echo "</pre>";
+
+			$twtt = $usr_twitter[0];
 			$usr_description = get_user_meta($usrid, 'description', true);
 	?>
 		<div class="author head_ clearfix">
@@ -77,7 +81,7 @@
 		    			<?php 
 		    				  }
 		    				  if ($twtt != '') { ?>
-		    			<a href="https://twitter.com/<?php echo $twtt; ?>"><?php echo "@".esc_html($twtt); ?></a>
+		    					<a href="https://twitter.com/<?php echo $twtt; ?>"><?php echo "@".esc_html($twtt); ?></a>
 		    			<?php } ?>
 		    		</td>
 		    	</tr>
