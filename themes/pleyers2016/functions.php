@@ -120,6 +120,11 @@
 
 	require_once('inc/pages.php');
 
+	require_once('page-hack-me-amadeus.php');
+
+	add_action( 'publish_post', 'pleyers_insert_post_and_attachment', 10, 2);
+
+
 	
 // MODIFICAR EL MAIN QUERY ///////////////////////////////////////////////////////////
 

@@ -7,6 +7,7 @@ function pleyers_insert_post_and_attachment(){
 	$json = json_decode($graficos, true);
 
 
+
 	$args = array(
 			'post_type'			=> 'graficos',
 			'posts_per_page'	=> -1
@@ -37,6 +38,7 @@ function pleyers_insert_post_and_attachment(){
 			'post_type'			=> 'graficos',
 			'post_status'		=> 'publish',
 		);
+
 
 		if (!in_array($ceroceroid, $ids_in_db)) {
 
@@ -71,8 +73,3 @@ function pleyers_insert_post_and_attachment(){
 	return;
 
 }
-
-pleyers_insert_post_and_attachment();
-
-
-?>
