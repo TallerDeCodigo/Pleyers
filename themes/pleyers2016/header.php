@@ -12,6 +12,7 @@
 		<meta name="geo.region" content="MX-DIF" />
 		<meta name="geo.position" content="23.634501;-102.552784" />
 		<meta name="ICBM" content="23.634501, -102.552784" />
+		<meta name="google-site-verification" content="boIbiJ5CGCfdnVZhzjBxgPAempcrs74Z9DUwqxSAwjA" />
 		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Condensed|Plaster' rel='stylesheet' type='text/css'>
 		<?php wp_enqueue_script('jquery'); ?>

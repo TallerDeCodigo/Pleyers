@@ -23,7 +23,7 @@
 
 				$('.carousel').bxSlider({
 					mode: 'horizontal',
-					slideWidth: 290,
+					slideWidth: 305,
 					minSlides: 2,
 					maxSlides: 4,
 					moveSlides: 1,
@@ -202,34 +202,19 @@
 
 					                alto_post = es.height();
 
-									// var st = $(window).scrollTop();
-									
-									// if (st > lastScrollTop){
-									// 		$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
-									// 		$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
-									// 		$('#episode_scroll').animate({scrollTop: scroll_num }, 250);
-									// 		scroll_num += alto_post ;
-									// 		console.log('down'+scroll_num);
-									// } else {
-									//    	if(cero == 0){
-									//    		scroll_num-=alto_post ;
-									//    		cero++;
-									//    	}
-									//         scroll_num -= alto_post ;
-									//   	$('#sidebar_scroll').animate({scrollTop: scroll_num }, 250);
-									//   	$('#blog_scroll').animate({scrollTop: scroll_num }, 250);
-									//   	$('#episode_scroll').animate({scrollTop: scroll_num }, 250);
-									// 		console.log('up'+scroll_num);
-									// }
-
-									// lastScrollTop = st;
-
 					            }
 					        });
 					    });
 					});
-
 				}
+
+			/*Get attachment id*/
+			function pleyers_get_image_id($image_url) {
+				global $wpdb;
+				$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+			        return $attachment[0]; 
+			}
+
 
 	});
 

@@ -9,9 +9,6 @@
 		$posts = new WP_Query($args);
 		?>
 	<div class="match_calendar full_container">
-		<div class="sport_calendar">
-			Calendario Deportivo
-		</div>	
 		<ul class="carousel clearfix">
 	<?php	
 		if($posts->have_posts()):

@@ -8,6 +8,10 @@
 				);
 	$posts = new WP_Query($args);
 
+	// echo "<pre>";
+	// 	print_r($posts);
+	// echo "</pre>";
+
 ?>
 <section class="cerocero">
 	<div class="container clearfix">
@@ -19,11 +23,17 @@
 			if($posts->have_posts()): 
 				while($posts->have_posts()):
 				$posts->the_post();
-				setup_postdata($post);
 				$id_cerocero = get_post_meta($post->ID, 'id_cerocero', true);
+
 		?>
 		<a href="http://cerocero.mx/?p=<?php echo $id_cerocero; ?>" class="gif_space" target="_blank">
-			<?php the_post_thumbnail('medium');?>
+			<?php 
+				if(has_post_thumbnail()){	
+					the_post_thumbnail('medium');
+				}else{
+					echo "no tiene thumbnail";
+				}
+				?>
 		</a>
 		<?php 
 				wp_reset_postdata();

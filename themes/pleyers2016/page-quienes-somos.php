@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section>
 	<div class="main_banner page_style video_container clearfix">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/yKgzIInYMds" frameborder="0" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/zQeXAIeo1WA" frameborder="0" allowfullscreen></iframe>
 	</div>
 </section>
 <section class="page_style">
@@ -18,14 +18,14 @@
 		<div class="contenido clearfix">
 			<div class="publicacion">
 				<a target="_blank" href="http://cerocero.mx/">
-					<img src="<?php echo THEMEPATH; ?>images/pub1.jpg"></a>
-					<p>En Los Pleyers estamos convencidos de que las grandes historias del deporte también son noticias.</p>
+					<img src="<?php echo THEMEPATH; ?>images/cerocero_about.png"></a>
+					<p>Las más grandes historias empiezan en (0-0). Información visual y sintética para los grandes curiosos del deporte.</p>
 				</a>
 			</div>
 			<div class="publicacion">
 				<a target="_blank" href="<?php echo bloginfo('url'); ?>/shows/jiots-tv/">
-					<img src="<?php echo THEMEPATH; ?>images/pub2.jpg">
-					<p>En Los Pleyers estamos convencidos de que las grandes historias del deporte también son noticias.</p>
+					<img src="<?php echo THEMEPATH; ?>images/jiotssports_about.png">
+					<p>Trolleo en los espacios deportivos para hacer del internet un lugar peor.</p>
 				</a>
 			</div>
 		</div>
@@ -42,14 +42,18 @@
 		);
 
 		$usrs = get_users($args);
+
+		// echo "<pre>";
+		// 	print_r($usrs);
+		// echo "</pre>";
 		
 		foreach($usrs as $usr):
 
 			$usrid = $usr->ID;
-			$nicename = $usr->user_nicename;
+			$nicename = $usr->display_name;
 			$usr_login = $usr->user_login;
 			$email =  $usr->user_email;
-			$default = 'https://lospleyers.com/wp-content/uploads/2017/01/place_pleyers.png';
+			$default = 'https://lospleyers.com/wp-content/uploads/2017/02/pleyers_avatar-1.jpg';
 			$usr_meta = get_user_meta($usrid);
 			$usr_meta = $usr_meta['twitter'];
 			$twtt = $usr_meta[0];
@@ -61,7 +65,7 @@
 		    		<td>
 		    			<?php $hash =md5(strtolower(trim($email)))."?d=".urlencode($default); ?>
 		    			<div class="author_frame">
-							<img src="https://www.gravatar.com/avatar/<?php echo $hash; ?>">
+							<img src="https://www.gravatar.com/avatar/<?php echo $hash."&size=200"; ?>">
 		    			</div>
 		    		</td>
 		    		<td>
