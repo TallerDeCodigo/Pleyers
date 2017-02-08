@@ -188,12 +188,10 @@
 					            	aidi = $(this).attr('data');
 					            	if(history.pushState) {
 					            		history.pushState(null, null, "/"+hash);
+					            		ga('send', { hitType: 'pageview', page: location.pathname });
 					            	}else { 
 					            		window.location.hash = hash;
-					            		ga('send', {
-					            		  hitType: 'pageview',
-					            		  page: location.pathname
-					            		}); 
+					            		ga('send', { hitType: 'pageview', page: location.pathname });
 					            	}
 					                currentHash = hash;
 					                es = $('.sprints_container div#'+aidi);
