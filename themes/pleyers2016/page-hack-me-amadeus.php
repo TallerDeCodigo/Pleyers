@@ -4,11 +4,6 @@
 	$graficos = file_get_contents($url);
 	$json = json_decode($graficos, true);
 
-	$count = 0;
-	
-	foreach($json as $item){
-		echo $count++."<br>";
-	}
 
 	$args = array(
 			'post_type'			=> 'graficos',
@@ -39,8 +34,6 @@
 			'post_title' 		=> $title,
 			'post_type'			=> 'graficos',
 			'post_status'		=> 'publish',
-
-
 		);
 
 		if (!in_array($ceroceroid, $ids_in_db)) {
@@ -48,26 +41,26 @@
 
 			$filename = basename($img);
 			$upload_file = wp_upload_bits($filename, null, file_get_contents($img));
+			$wp_filetype = wp_check_filetype($filename, null );
+
+			$attachment = array(
+				'post_mime_type' => $wp_filetype['type'],
+				'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+				'post_content' => '',
+				'post_status' => 'inherit'
+			);
 
 
-				$wp_filetype = wp_check_filetype($filename, null );
+			$attachment_id = wp_insert_attachment( $attachment, $upload_file['file'] );
 
-				$attachment = array(
-					'post_mime_type' => $wp_filetype['type'],
-					'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
-					'post_content' => '',
-					'post_status' => 'inherit'
-				);
-
-
-				$attachment_id = wp_insert_attachment( $attachment, $upload_file['file'] );
-
-				require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-				$attachment_data = wp_generate_attachment_metadata( $attachment_id, $upload_file['file'] );
-				wp_update_attachment_metadata( $attachment_id, $attachment_data );
- 				set_post_thumbnail($post_id, $attachment_id);
+			require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+			$attachment_data = wp_generate_attachment_metadata( $attachment_id, $upload_file['file'] );
+			wp_update_attachment_metadata( $attachment_id, $attachment_data );
+			set_post_thumbnail($post_id, $attachment_id);
 
 	 	}
 	}
+
+	return;
 
 ?>
