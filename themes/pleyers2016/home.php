@@ -58,6 +58,7 @@
 				}else {
 		?>
 						<div class="destacado" data-image="<?php echo the_post_thumbnail_url('banner'); ?>">
+						<div class="img_load"><img src="<?php echo the_post_thumbnail_url('banner'); ?>"></div>
 							<?php $terms = wp_get_post_terms($post->ID, 'noticiasde' ); ?>
 											<span>
 												<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">

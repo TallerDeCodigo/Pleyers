@@ -34,6 +34,7 @@ section {width:100%;}
 body section:first-of-type {padding-top:60px;}
 h1, h2, h3 {font-family:'Montserrat';font-weight:700;}
 div.img_frame {position:relative;overflow:hidden;}
+div.img_load {position:absolute;width:0px;height:0px;overflow:hidden;}
 a {text-decoration:none;color:inherit;}
 div.container h2 {font-size:200%;margin:20px 0;}
 .embed{margin-bottom:16px;}
