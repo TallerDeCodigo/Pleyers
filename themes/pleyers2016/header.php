@@ -36,6 +36,27 @@
 			
 		</script>
 
+
+		<?php if (is_single('episodios') || is_single('sprints') || is_single() ) : ?>
+
+			  <script type="application/ld+json">
+			   { 
+			   "@type":"NewsArticle",
+			   "headline":"<?php echo $post->post_title; ?>",
+			   "author": "Los Pleyers",
+			   "publisher": "Los Pleyers",
+			   "url":"<?php echo get_permalink($post->ID); ?>",
+			   "mainEntityOfPage":"<?php echo get_permalink($post->ID); ?>",
+			   "thumbnailUrl":"<?php echo get_the_post_thumbnail_url($post->ID); ?>",
+			   "image":"<?php echo get_the_post_thumbnail_url($post->ID); ?>",
+			   "dateCreated":"<?php echo mysql_to_rfc3339($post->post_date); ?>",
+			   "datePublished":"<?php echo mysql_to_rfc3339($post->post_date); ?>",
+			   "articleSection":["Los Pleyers"]
+			   }   
+			  </script>
+
+		<?php endif; ?>
+
 	</head>
 
 	<body <?php body_class(); ?> >

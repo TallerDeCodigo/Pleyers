@@ -37,7 +37,13 @@ if(have_posts()):
 						<?php if ($terms): ?>
 						<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 						<?php endif ?>
-						<h2><?php the_title(); ?></h2>
+						<h2>
+							<?php the_title(); ?>
+							<br>
+							<span class="la_fecha">
+								<?php the_date(); ?>
+							</span>
+						</h2>
 						<span class="author_name">
 							Por 
 							<a href="<?php bloginfo('url'); echo '/author/'.esc_html(get_the_author()); ?>">
