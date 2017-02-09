@@ -38,6 +38,7 @@
 		echo "Importar thumbnail</label>";
 	}
 
+
 	function show_id_cerocero($post){
 		$id_cerocero = get_post_meta($post->ID, 'id_cerocero', true);
 		wp_nonce_field(__FILE__, 'id_cerocero_meta_nonce');
@@ -83,6 +84,7 @@
 
 	function show_get_sprint_type($post){
 		$sprint_type = get_post_meta($post->ID, 'sprint_type_meta', true);
+		$sel='';
 
 		if($sprint_type == 'sin_foto'){
 			$sel1 = 'selected';
