@@ -115,7 +115,7 @@ $hoy = date('U');
 										<tr>
 											<td>
 												<div class="shares">
-													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<textarea><?php the_permalink(); ?></textarea>
 													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 														<div class="share_fb" aria-hidden="true"></div> 
 													</a>
@@ -151,7 +151,7 @@ $hoy = date('U');
 										<tr>
 											<td>
 												<div class="shares">
-													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<textarea><?php the_permalink(); ?></textarea>
 													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 														<div class="share_fb" aria-hidden="true"></div> 
 													</a>
@@ -190,7 +190,7 @@ $hoy = date('U');
 										<tr>
 											<td>
 												<div class="shares">
-													<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+													<textarea><?php the_permalink(); ?></textarea>
 													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 														<div class="share_fb" aria-hidden="true"></div> 
 													</a>
@@ -221,7 +221,7 @@ $hoy = date('U');
 								}
 							?>
 									<div class="shares horizontal_share clearfix">
-										<textarea style="display:none;"><?php the_permalink(); ?></textarea>
+										<textarea><?php the_permalink(); ?></textarea>
 										<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 											<div class="share_fb" aria-hidden="true"></div> 
 										</a>

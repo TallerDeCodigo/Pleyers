@@ -110,6 +110,22 @@
 						<a href="<?php the_permalink(); ?>">
 							<div class="img_frame clearfix">
 								<?php the_post_thumbnail('poster'); ?>
+								
+								<div class="web_cover clearfix">
+									<div class="shares">
+										<textarea ><?php the_permalink(); ?></textarea>
+										<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+											<div class="share_fb" aria-hidden="true"></div> 
+										</a>
+										<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+											<div class="share_tw" aria-hidden="true"></div> 
+										</a>
+										<a class="copylink">
+											<div class="share_link" aria-hidden="true"></div> 
+										</a>
+									</div>
+								</div>
+
 							</div>
 						</a>
 						<span>
@@ -124,14 +140,17 @@
 						</span>
 						<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 						<a class="the_excerpt" href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
+						
+
 					</div>
+
 
 				<?php
 						endwhile; 
 						wp_reset_postdata();
 					endif;
 				?>
-					<div class="post clearfix">
+					<div class="post _lmore clearfix">
 						<a class="load_more" href="<?php bloginfo('url'); ?>/historias/"><h3>Ver más historias <span>&raquo;</span></h3></a>
 					</div>
 			</div>

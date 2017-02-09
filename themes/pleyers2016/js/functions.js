@@ -49,7 +49,11 @@ function docReady(){
 
 				$(document).on('click', '.copylink', function() {
 		        	var copyTextarea = $(this).parent().find('textarea');
-		        	  copyTextarea.focus().select();
+		        	
+	        	  	copyTextarea.focus().select();
+
+		        	// console.log( copyTextarea.html() );
+
 		        	  try {
 		        	    var successful = document.execCommand('copy');
 		        	    var msg = successful ? 'successful' : 'unsuccessful';
@@ -205,6 +209,17 @@ function docReady(){
 					    });
 					});
 				}
+
+
+				/*HOME SHARES*/
+
+		$('div.post').mouseover(function(){
+			$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
+		});
+
+		$('div.post').mouseleave(function(){
+			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
+		});
 
 
 

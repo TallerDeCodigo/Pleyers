@@ -124,30 +124,36 @@ div.right{background-color:#8c8c8c;background-image:url(images/right_nav.png);ba
 .bx-wrapper{position:absolute;right:20px;top:0px;}
 .bx-controls {position:absolute;width:calc(100% + 61px);height:100%;top:0px;left:-42px;}
 .bx-controls-direction {position:relative;color:#fff;height:100%;}
-.bx-controls-direction a {display:block;height:157px;width:40px;position:absolute;text-align:center;top:0px;line-height:130px;font-size:30px;font-weight:bold;font-family:'Plaster';}
+.bx-controls-direction a {display:block;height:157px;width:40px;position:absolute;text-align:center;top:0px;line-height:150px;font-size:30px;font-weight:bold;font-family:'Plaster';}
 .bx-controls-direction a.bx-next{right:-1px;background:#111;}
 .bx-controls-direction a.bx-prev{left:0px;background:#111;}
 .bx-controls-direction a:hover {background:gray;}
 
 /*POSTS*/
 
-div.left_container {width:calc(100% - 340px);float:left;padding:30px 30px 30px 0px;}
-div.post {max-width:620px;margin:0 auto;width:100%;margin-bottom:16px;padding:10px;box-shadow:1px 1px 10px #8c8c8c;}
-div.post:last-child{box-shadow: none;}
+div.left_container {width:calc(100% - 340px);float:left;padding:30px 30px 20px 0px;}
+div.post {max-width:620px;margin:0 auto;width:100%;margin-bottom:22px;padding:10px;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);border-radius: 2px;}
+div.left_container div.post:nth-of-type(5){margin-bottom: 0px!important;}
+div._lmore{box-shadow: none!important;}
 div.post div.img_frame {width:210px;height:210px;background:#EEE;float:left;margin-right:20px;}
 div.post div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.post span {font-size:90%;font-weight:700;color:#777;}
-div.post h3 {margin:5px 0px 0px;font-size:25px;max-height:95px;overflow:hidden;line-height: 29px;}
-div.post p {color:#777;margin-bottom:0px;line-height:22px;font-size:18px;max-height:84px;overflow:hidden;}
+div.post h3 {margin:5px 0px;font-size:25px;max-height:95px;overflow:hidden;line-height: 29px;}
+div.post p {color:#777;margin-bottom:0px;line-height:27px;font-size:18px;max-height:84px;overflow:hidden;}
 body.home div.left_container div.post:last-of-type {margin-bottom:0px;}
 div.post h3 span {position:relative;top:-1px;font-size:110%;color:inherit;}
+
+.web_cover{opacity: 0;position: relative;bottom:0px;text-align: center;background:rgba(0,0,0,0.3);}
+.web_cover div.shares a{display:inline-block;    background: #fff;border-radius: 50%;background-size: 90%;box-shadow: inset 0 0 1px rgba(0,0,0,0.8);}
+.web_cover div.shares{margin-left:50px;padding:90px 0px;}
+.web_cover div.shares div{margin-bottom:0px;}
 
 /*SPRINTS*/
 
 div.sidebar {float:right;width:320px;}
 div.sprints {width:100%;margin-top:30px;}
 h3.header_sprints {background:#000 url('images/venado_head.svg') no-repeat;background-size:32px 32px;color:#FFF;display:block;width:100%;font-size:140%;margin:0;padding:1px 0px 0px;padding-left:40px;}
-div.sprints_container {margin-top:30px;width:100%;height:1085px;position:relative;overflow:hidden;border-bottom:1px solid #CCC;}
+div.sprints_container {margin-top:30px;width:100%;height:1175px;position:relative;overflow:hidden;border-bottom:1px solid #CCC;}
 .sprints .sprints_post {width:100%;padding-top:15px;border-bottom:1px solid #CCC;padding-bottom:10px;position:relative;}
 .sprints .sprints_post:first-of-type {padding-top:0px;}
 .sprints .sprints_post:last-of-type {border:none;}
@@ -166,14 +172,14 @@ div.sidebar a.see_more {margin-top:13px;}
 
 /*MAIN BANNER*/
 
-div.main_banner {width:100%;background:#000;height:560px;margin-top:25px;margin-bottom:0px;overflow:hidden;position:relative;}
+div.main_banner{width:100%;background:#000;height:550px;margin-top:25px;margin-bottom:0px;overflow:hidden;position:relative;}
 div.main_banner div.img_frame {width:100%;height:100%;position:absolute;left:0px;top:0px;background:#111;}
 div.main_banner div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;opacity:0.95;}
 div.main_banner div.img_frame:after {content:"";position:absolute;left:0px;top:0px;width:100%;height:100%;background:url(images/grid.svg);background-repeat:repeat;background-size:2px;opacity:0.3;}
 div.destacado {text-shadow:0px 0px 25px rgba(0,0,0,0.99);}
 div.destacado span {font-weight:700;color:yellow;margin-bottom:2px;display:block;}
 div.destacado h3 {margin:0;color:#FFF;line-height:115%;}
-div.destacado.nota1 {position:absolute;left:20px;bottom:40px;width:44%;}
+div.destacado.nota1 {position:absolute;left:20px;bottom:20px;width:44%;}
 div.destacado.nota1 h3 {font-size:43px;}
 div.more_destacado {position:absolute;right:20px;top:50%;width:25%;min-width:320px;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}
 div.more_destacado div.destacado {padding:20px 0px;padding-right:20px;}
@@ -309,6 +315,7 @@ body.single div.main_banner div.img_frame:after {opacity:0.1;}
 div.article_header table, div.article_header table tr, div.article_header table td {border:none;border-collapse:collapse;margin:0;padding:0;vertical-align:top;}
 div.article_header table {margin:50px 0;}
 div.article_header .shares {position:relative;}
+.shares textarea{width:0px;height: 0px;overflow:hidden;position:absolute;opacity: 0;}
 div.article_header a.term {margin:0;display:block;font-weight:700;font-size:17px;color:#777;margin-bottom:10px;}
 div.article_header h2 {margin:-10px 0px ;display:block;font-size:40px;line-height:52px;}
 div.article_header span.author_name {font-size:20px;font-family:'Roboto Condensed';color:#777;font-style:italic;margin-top:15px;display:block;position:relative;left:2px;}
@@ -609,7 +616,7 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 
 	div.main_banner div.full_frame {height: 0;padding-bottom: 56%;}
 
-	div.post h3 {font-size:20px;margin-top:0px;max-height: 69px;}
+	div.post h3 {font-size:20px;margin-top:0px;max-height: 91px;line-height: 23px;}
 	div.post span {line-height:80%;position:relative;top:-4px;}
 
 	div.posts_cerocero a.gif_space {width:100%;margin-right:0px;}
