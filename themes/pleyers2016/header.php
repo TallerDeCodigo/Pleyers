@@ -17,23 +17,14 @@
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Condensed|Plaster' rel='stylesheet' type='text/css'>
 		<?php wp_enqueue_script('jquery'); ?>
 		<?php wp_head(); ?>
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1770490416550304";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
 		
+		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
 			ga('create', 'UA-65208621-1', 'auto');
 			ga('send', 'pageview');
-			
 		</script>
 
 
@@ -60,6 +51,16 @@
 	</head>
 
 	<body <?php body_class(); ?> >
+		<div id="fb-root"></div>
+		<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1770490416550304";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 		
 		<div class="overscreen" style="display:none">
 			<div class="_over"></div>
