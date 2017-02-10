@@ -37,14 +37,6 @@
 					<?php the_post_thumbnail('sprints_grande'); ?>
 				</div>
 			</a>
-			<?php
-				$tags = get_the_tags();
-				if($tags){
-			?>
-				<a><span>#<?php echo $tags[0]->name; ?></span></a>
-			<?php
-				}
-			?>
 			<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 		</div>
 	<?php	
