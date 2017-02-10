@@ -104,7 +104,7 @@ if(have_posts()):
 						<td>
 							<a class="link" href="<?php echo bloginfo('url')."/author/".$author_slug; ?>"><h2><?php echo esc_html($nme_author); ?></h2></a>
 							<span><?php echo $usr_description; ?></span>
-							<a class="tuit" href="mailto:<?php $email; ?>" target="_top"><?php echo "@".esc_html($twtt); ?></a>
+							<a class="tuit" href="<?php echo 'http://www.twitter.com/'.$twtt; ?>" target="_blank"><?php echo "@".esc_html($twtt); ?></a>
 						</td>
 					</tr>
 				</table>

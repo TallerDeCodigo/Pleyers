@@ -33,7 +33,7 @@ div.footer_container {width:100%;max-width:1024px;margin:0 auto;}
 section {width:100%;}
 body section:first-of-type {padding-top:60px;}
 h1, h2, h3 {font-family:'Montserrat';font-weight:700;}
-div.img_frame {position:relative;overflow:hidden;}
+div.img_frame {position:relative;overflow:hidden;background-image: url(./images/logo.png);background-repeat: no-repeat;background-position: center;background-size: 70%;}
 div.img_load {position:absolute;width:0px;height:0px;overflow:hidden;}
 a {text-decoration:none;color:inherit;}
 div.container h2 {font-size:200%;margin:20px 0;}
@@ -132,15 +132,15 @@ div.right{background-color:#8c8c8c;background-image:url(images/right_nav.png);ba
 /*POSTS*/
 
 div.left_container {width:calc(100% - 340px);float:left;padding:30px 30px 20px 0px;}
-div.post {max-width:620px;margin:0 auto;width:100%;margin-bottom:22px;padding:10px;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);border-radius: 2px;}
+div.post {max-width:620px;margin:0 auto;width:100%;margin-bottom:22px;padding:10px;/*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);border-radius: 2px;*/}
 div.left_container div.post:nth-of-type(5){margin-bottom: 0px!important;}
 div._lmore{box-shadow: none!important;}
 div.post div.img_frame {width:210px;height:210px;background:#EEE;float:left;margin-right:20px;}
 div.post div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.post span {font-size:90%;font-weight:700;color:#777;}
 div.post h3 {margin:5px 0px;font-size:25px;max-height:95px;overflow:hidden;line-height: 29px;}
-div.post p {color:#777;margin-bottom:0px;line-height:27px;font-size:18px;max-height:84px;overflow:hidden;}
-body.home div.left_container div.post:last-of-type {margin-bottom:0px;}
+div.post p {color:#777;margin-bottom:0px;line-height:148%;font-size:15px;max-height:84px;overflow:hidden;}
+body.home div.left_container div.post:last-of-type {margin-bottom:0px;box-shadow:none;}
 div.post h3 span {position:relative;top:-1px;font-size:110%;color:inherit;}
 
 .web_cover{opacity: 0;position: relative;bottom:0px;text-align: center;background:rgba(0,0,0,0.3);}
@@ -173,7 +173,7 @@ div.sidebar a.see_more {margin-top:13px;}
 /*MAIN BANNER*/
 
 div.main_banner{width:100%;background:#000;height:550px;margin-top:25px;margin-bottom:0px;overflow:hidden;position:relative;}
-div.main_banner div.img_frame {width:100%;height:100%;position:absolute;left:0px;top:0px;background:#111;}
+div.main_banner div.img_frame {width:100%;height:100%;position:absolute;left:0px;top:0px;background:#111;background-image:url(./images/logo.png);background-repeat: no-repeat;background-position: center;background-size: 60%; }
 div.main_banner div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;opacity:0.95;}
 div.main_banner div.img_frame:after {content:"";position:absolute;left:0px;top:0px;width:100%;height:100%;background:url(images/grid.svg);background-repeat:repeat;background-size:2px;opacity:0.3;}
 div.destacado {text-shadow:0px 0px 25px rgba(0,0,0,0.99);}
@@ -204,7 +204,7 @@ div.video_post {float:left;position:relative;overflow:hidden;margin-right:20px;m
 div.video_post div.video_info {position:absolute;left:20px;bottom:12px;width:85%;max-width:300px;}
 div.video_post span {font-weight:700;color:yellow;margin-bottom:3px;display:block;}
 div.video_post h3 {margin:0;color:#FFF;line-height:115%;font-size:24px;word-break:break-word;text-shadow:0px 0px 10px rgba(0,0,0,0.99);}
-div.video_post div.img_frame {width:100%;height:100%;background:yellow;position:absolute;}
+div.video_post div.img_frame {width:100%;height:100%;background:yellow;position:absolute;background-image:url(./images/logo.png);background-repeat: no-repeat;background-position: center;background-size: 70%;}
 div.video_post div.img_frame:after {content:"";position:absolute;left:0px;top:0px;width:100%;height:100%;background:rgba(0,0,0,.4);}
 div.video_post.is_video div.video_info:before {content:"";background:url('images/play.png');position:absolute;left:0px;top:-74px;height:64px;width:90px;}
 
@@ -249,7 +249,7 @@ nav.blog_social a[href*="medium"]:hover {background-position:-160px -30px;}
 .jiotstv img.section_logo {margin-bottom:20px;position:relative;top:-5px;}
 div.jiots_post {width:calc(25% - 15px);float:left;margin-right:20px;margin-bottom:20px;}
 div.jiots_post:nth-of-type(4n) {margin-right:0;}
-div.jiots_post div.img_frame {width:100%;height:0;background:#EEE;padding-bottom:55%;margin-bottom:5px;}
+div.jiots_post div.img_frame {width:100%;height:0;background:#EEE;padding-bottom:55%;margin-bottom:5px;background-image:url(./images/logo.png);background-repeat: no-repeat;background-position: center;background-size: 70%;}
 div.jiots_post div.img_frame img {position:absolute;height:auto;width:100%;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.jiots_post span {font-weight:700;color:#222;margin-bottom:1px;display:block;}
 div.jiots_post h3 {margin:0;color:#FFF;line-height:28px;font-size:24px;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:56px;min-height:56px;overflow:hidden;}
@@ -318,7 +318,7 @@ div.article_header .shares {position:relative;}
 .shares textarea{width:0px;height: 0px;overflow:hidden;position:absolute;opacity: 0;}
 div.article_header a.term {margin:0;display:block;font-weight:700;font-size:17px;color:#777;margin-bottom:10px;}
 div.article_header h2 {margin:-10px 0px ;display:block;font-size:40px;line-height:52px;}
-div.article_header span.author_name {font-size:20px;font-family:'Roboto Condensed';color:#777;font-style:italic;margin-top:15px;display:block;position:relative;left:2px;}
+div.article_header span.author_name {font-size:20px;font-family:'Roboto Condensed';color:#777;font-style:italic;/*margin-top:15px;*/display:block;position:relative;left:2px;}
 div.article_header span.author_name a {border-bottom:1px solid #AAA;}
 
 div.single_excerpt {color:#333;padding-bottom:30px;line-height:28px;font-size:18px;}
@@ -363,7 +363,7 @@ table.public span {color:#777;font-size:16px;font-weight:100;display:block;}
 table.public a.tuit {color:#777;font-size:14px;font-weight:700;margin-top:3px;display:block;}
 
 div.poll_container iframe {margin-bottom:40px;}
-.la_fecha{font-size: 0.5em; color:#777;}
+.la_fecha{font-size: 0.5em; color:#777;font-weight: normal;line-height: 0.5em;position:relative;top:-20px;}
 
 /*SHARE BUTTONS*/
 

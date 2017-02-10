@@ -111,7 +111,7 @@
 							<div class="img_frame clearfix">
 								<?php the_post_thumbnail('poster'); ?>
 								
-								<div class="web_cover clearfix">
+								<!-- <div class="web_cover clearfix">
 									<div class="shares">
 										<textarea ><?php the_permalink(); ?></textarea>
 										<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
@@ -124,7 +124,7 @@
 											<div class="share_link" aria-hidden="true"></div> 
 										</a>
 									</div>
-								</div>
+								</div> -->
 
 							</div>
 						</a>
@@ -192,7 +192,7 @@
 							'post_type'=>'episodios',
 							'posts_per_page'=>9,
 							'post_status'=>'publish',
-							'orderby'=>'rand',
+							'orderby'=>'date',
 							'order'=>'DESC'
 							);
 				$posts = new WP_Query($args);

@@ -178,7 +178,8 @@ function docReady(){
 
 					    	$('.sidebar.scrollable').css('margin-top',$(window).scrollTop()+'px');
 					    	var referencia = $('.the_scroll').height()*$(window).scrollTop();
-					    	referencia = referencia/$('body').height();
+					    	var bodhei = ($('body').height());
+					    	referencia = referencia / bodhei*0.75;
 					    	$('.scrollable .sprints_container').scrollTop( referencia );
 
 					        $('.anchor_tags').each(function () {
@@ -213,13 +214,13 @@ function docReady(){
 
 				/*HOME SHARES*/
 
-		$('div.post').mouseover(function(){
-			$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
-		});
+		// $('div.post').mouseover(function(){
+		// 	$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
+		// });
 
-		$('div.post').mouseleave(function(){
-			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
-		});
+		// $('div.post').mouseleave(function(){
+		// 	$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
+		// });
 
 
 
