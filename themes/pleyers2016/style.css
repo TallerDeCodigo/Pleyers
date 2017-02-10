@@ -43,7 +43,7 @@ div.container h2 {font-size:200%;margin:20px 0;}
 
 body.admin-bar header, body.admin-bar div.overscreen {margin-top:32px;}
 header {width:100%;background:yellow;height:60px;box-shadow:0px 5px 5px rgba(0,0,0,0.1);position:fixed;left:0;top:0;z-index:400;}
-h1 {position:absolute;left:0px;top:0px;width:0px;height:0px;overflow:hidden;opacity:0;}
+header div.container h1 {position:absolute;left:0px;top:0px;width:0px;height:0px;overflow:hidden;opacity:0;}
 img.header_logo {height:56px;margin-top:2px;float:left;}
 nav.social {float:right;position:relative;}
 #nav_icon {width:20px;height:32px;margin-top:14px;margin-right:20px;position:relative;float:left;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out;cursor:pointer;}
@@ -138,7 +138,7 @@ div._lmore{box-shadow: none!important;}
 div.post div.img_frame {width:210px;height:210px;background:#EEE;float:left;margin-right:20px;}
 div.post div.img_frame img {position:absolute;height:100%;width:auto;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.post span {font-size:90%;font-weight:700;color:#777;}
-div.post h3 {margin:5px 0px;font-size:25px;max-height:95px;overflow:hidden;line-height: 29px;}
+div.post h2 {margin:5px 0px;font-size:25px;max-height:95px;overflow:hidden;line-height: 29px;}
 div.post p {color:#777;margin-bottom:0px;line-height:148%;font-size:15px;max-height:84px;overflow:hidden;}
 body.home div.left_container div.post:last-of-type {margin-bottom:0px;box-shadow:none;}
 div.post h3 span {position:relative;top:-1px;font-size:110%;color:inherit;}
@@ -178,12 +178,12 @@ div.main_banner div.img_frame img {position:absolute;height:100%;width:auto;top:
 div.main_banner div.img_frame:after {content:"";position:absolute;left:0px;top:0px;width:100%;height:100%;background:url(images/grid.svg);background-repeat:repeat;background-size:2px;opacity:0.3;}
 div.destacado {text-shadow:0px 0px 25px rgba(0,0,0,0.99);}
 div.destacado span {font-weight:700;color:yellow;margin-bottom:2px;display:block;}
-div.destacado h3 {margin:0;color:#FFF;line-height:115%;}
+div.destacado h2 {margin:0;color:#FFF;line-height:115%;}
 div.destacado.nota1 {position:absolute;left:20px;bottom:20px;width:44%;}
-div.destacado.nota1 h3 {font-size:43px;}
+div.destacado.nota1 h2 {font-size:43px;}
 div.more_destacado {position:absolute;right:20px;top:50%;width:25%;min-width:320px;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);}
 div.more_destacado div.destacado {padding:20px 0px;padding-right:20px;}
-div.more_destacado div.destacado h3 {font-size:142%;}
+div.more_destacado div.destacado h2 {font-size:142%;}
 div.more_destacado div.destacado:nth-of-type(2) {border-top:1px solid #FFF;border-bottom:1px solid #FFF;}
 div.tema_topic {font-weight:700;color:yellow;margin-bottom:3px;display:block;position:absolute;left:20px;top:12px;font-size:42px;}
 
@@ -203,7 +203,7 @@ div.grid_videos h2 {font-size:200%;margin:20px 0;}
 div.video_post {float:left;position:relative;overflow:hidden;margin-right:20px;margin-bottom:20px;}
 div.video_post div.video_info {position:absolute;left:20px;bottom:12px;width:85%;max-width:300px;}
 div.video_post span {font-weight:700;color:yellow;margin-bottom:3px;display:block;}
-div.video_post h3 {margin:0;color:#FFF;line-height:115%;font-size:24px;word-break:break-word;text-shadow:0px 0px 10px rgba(0,0,0,0.99);}
+div.video_post h2 {margin:0;color:#FFF;line-height:115%;font-size:24px;word-break:break-word;text-shadow:0px 0px 10px rgba(0,0,0,0.99);}
 div.video_post div.img_frame {width:100%;height:100%;background:yellow;position:absolute;background-image:url(./images/logo.png);background-repeat: no-repeat;background-position: center;background-size: 70%;}
 div.video_post div.img_frame:after {content:"";position:absolute;left:0px;top:0px;width:100%;height:100%;background:rgba(0,0,0,.4);}
 div.video_post.is_video div.video_info:before {content:"";background:url('images/play.png');position:absolute;left:0px;top:-74px;height:64px;width:90px;}
@@ -252,7 +252,7 @@ div.jiots_post:nth-of-type(4n) {margin-right:0;}
 div.jiots_post div.img_frame {width:100%;height:0;background:#EEE;padding-bottom:55%;margin-bottom:5px;background-image:url(./images/logo.png);background-repeat: no-repeat;background-position: center;background-size: 70%;}
 div.jiots_post div.img_frame img {position:absolute;height:auto;width:100%;top:-9999px;bottom:-9999px;left:-9999px;right:-9999px;margin:auto;}
 div.jiots_post span {font-weight:700;color:#222;margin-bottom:1px;display:block;}
-div.jiots_post h3 {margin:0;color:#FFF;line-height:28px;font-size:24px;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:56px;min-height:56px;overflow:hidden;}
+div.jiots_post h2 {margin:0;color:#FFF;line-height:28px;font-size:24px;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:56px;min-height:56px;overflow:hidden;}
 
 div.main_banner.videos {margin-bottom:20px;}
 div.main_banner.videos div.img_frame:after {background:#000;}
@@ -317,7 +317,7 @@ div.article_header table {margin:50px 0;}
 div.article_header .shares {position:relative;}
 .shares textarea{width:0px;height: 0px;overflow:hidden;position:absolute;opacity: 0;}
 div.article_header a.term {margin:0;display:block;font-weight:700;font-size:17px;color:#777;margin-bottom:10px;}
-div.article_header h2 {margin:-10px 0px ;display:block;font-size:40px;line-height:52px;}
+div.article_header h1 {margin:-10px 0px ;display:block;font-size:40px;line-height:52px;}
 div.article_header span.author_name {font-size:20px;font-family:'Roboto Condensed';color:#777;font-style:italic;/*margin-top:15px;*/display:block;position:relative;left:2px;}
 div.article_header span.author_name a {border-bottom:1px solid #AAA;}
 
@@ -466,7 +466,7 @@ div.referent {width:100%;height:1px;position:absolute;left:0px;top:-40px;}
 .single-episodios article:last-of-type {margin-bottom:20px;}
 .single-episodios article:last-of-type div.contenido {border-bottom:0px;}
 .single-episodios div.sprints_container {margin-top:0px;}
-.single-episodios .sprints_post_content h4 {font-size:18px;}
+.single-episodios .sprints_post_content h1 {font-size:18px;font-family: 'Roboto';margin:0px;}
 
 div.episodio {margin-bottom:30px;position:relative;height:0;width:100%;padding-bottom:56.25%;overflow:hidden;background:#000;}
 div.episodio.no_play {}

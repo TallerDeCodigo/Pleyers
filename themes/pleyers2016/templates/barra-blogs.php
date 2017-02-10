@@ -15,7 +15,7 @@
 	<div class="video_post is_video small_video presentation clearfix">
 		<div class="img_frame clearfix">
 			<?php if ($img) : ?>
-			<img src="<?php echo $img['url']; ?>">
+				<img src="<?php echo $img['url']; ?>">
 			<?php endif; ?>
 		</div>
 		<nav class="blog_social">
@@ -61,9 +61,9 @@
 				<?php 
 						endforeach; 
 					endif;?>
-				<h3>
+				<h2>
 					<?php the_title(); ?>
-				</h3>
+				</h2>
 			</div>
 		</a>
 	</div>				
@@ -88,9 +88,9 @@
 						endforeach; 
 					endif;
 				?>
-				<h3>
+				<h2>
 					<?php the_title(); ?>
-				</h3>
+				</h2>
 			</div>
 		</a>
 	</div>					

@@ -14,6 +14,7 @@ if(have_posts()):
 		</div>
 	</div>
 </section>
+
 <section>
 	<div class="reading_container clearfix">
 		<div class="article_header">
@@ -37,32 +38,37 @@ if(have_posts()):
 						<?php if ($terms): ?>
 						<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 						<?php endif ?>
-						<h2>
+						<h1>
 							<?php the_title(); ?>
 							<br>
 							<span class="la_fecha">
 								<?php the_date(); ?>
 							</span>
-						</h2>
+						</h1>
 						<span class="author_name">
-							Por 
-							<a href="<?php bloginfo('url'); echo '/author/'.esc_html(get_the_author()); ?>">
+							Por
+							<a href="<?php bloginfo('url'); echo '/author/'.get_the_author_meta('user_nicename'); ?>">
 								<?php echo esc_html(get_the_author()); ?>
-							</a>
+							</a> 
 						</span>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<?php if ( has_excerpt( $post->ID ) ) { ?>
-		<div class="single_excerpt">
-			<?php the_excerpt(); ?>
-		</div>
+
+				<div class="single_excerpt">
+					<?php the_excerpt(); ?>
+				</div>
+
 		<?php } ?>
+
 		<div class="contenido capital">
 			<?php the_content(); ?>
 			<div class="shares horizontal_share clearfix">
-				<textarea><?php the_permalink(); ?></textarea>
+				<textarea>
+					<?php the_permalink(); ?>
+				</textarea>
 				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 					<div class="share_fb" aria-hidden="true"></div> 
 				</a>
@@ -75,6 +81,7 @@ if(have_posts()):
 			</div>
 			<br>
 		</div>
+
 		<?php 
 			$author_mail = get_the_author_meta('user_email');
 			$usrid = get_the_author_meta('ID');
@@ -86,7 +93,7 @@ if(have_posts()):
 				$nme_author = get_the_author();
 				$default = 'https://lospleyers.com/wp-content/uploads/2017/01/place_pleyers.png';
 				
-				$author_slug = get_the_author_meta('user_login');
+				$author_slug = get_the_author_meta('user_nicename');
 				$usr_description = get_user_meta($usrid, 'description', true);
 				$usr_meta = get_user_meta($usrid);
 				$usr_meta = $usr_meta['twitter'];
@@ -102,7 +109,11 @@ if(have_posts()):
 							</div>
 						</td>
 						<td>
-							<a class="link" href="<?php echo bloginfo('url')."/author/".$author_slug; ?>"><h2><?php echo esc_html($nme_author); ?></h2></a>
+							<h2>
+								<a class="link" href="<?php echo bloginfo('url')."/author/".$author_slug; ?>">
+									<?php echo esc_html($nme_author); ?>
+								</a>
+							</h2>
 							<span><?php echo $usr_description; ?></span>
 							<a class="tuit" href="<?php echo 'http://www.twitter.com/'.$twtt; ?>" target="_blank"><?php echo "@".esc_html($twtt); ?></a>
 						</td>

@@ -131,7 +131,9 @@ $hoy = date('U');
 												<?php if ($terms) { ?>
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1>
+													<?php the_title(); ?>
+												</h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -167,7 +169,9 @@ $hoy = date('U');
 												<?php if ($terms) { ?>
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1>
+													<?php the_title(); ?>
+												</h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -206,7 +210,9 @@ $hoy = date('U');
 												<?php if ($terms) { ?>
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1>
+													<?php the_title(); ?>
+												</h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>

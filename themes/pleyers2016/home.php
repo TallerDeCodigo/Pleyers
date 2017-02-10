@@ -46,9 +46,9 @@
 									</span>
 								</a>
 							<a href="<?php the_permalink(); ?>">
-								<h3>
+								<h2>
 									<?php the_title(); ?>
-								</h3>
+								</h2>
 							</a>
 						</div>
 					</div>
@@ -71,9 +71,9 @@
 												</a>	
 											</span>
 							<a href="<?php the_permalink(); ?>">
-								<h3>
+								<h2>
 									<?php the_title(); ?>
-								</h3>
+								</h2>
 							</a>
 						</div>
 		<?php		
@@ -138,7 +138,11 @@
 								?>
 							</a>
 						</span>
-						<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+						<a href="<?php the_permalink(); ?>">
+							<h2>
+								<?php the_title(); ?>
+							</h2>
+						</a>
 						<a class="the_excerpt" href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
 						
 
@@ -203,59 +207,58 @@
 							$posts->the_post(); setup_postdata($post);
 							if($count == 0 || $count == 3 || $count == 4 || $count == 8) {
 				?>
-					<div class="video_post is_video big_video clearfix">
-						<a href="<?php the_permalink(); ?>">
-							<div class="img_frame clearfix">
-								<?php the_post_thumbnail('grid'); ?>
-							</div>
-							<div class="video_info">
-								<?php 
-									$terms = wp_get_post_terms(); 
-									if($terms): 
-										foreach($terms as $term):
-								?>
-									<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
-										<span><?php echo esc_html($term->name); ?></span>
+								<div class="video_post is_video big_video clearfix">
+									<a href="<?php the_permalink(); ?>">
+										<div class="img_frame clearfix">
+											<?php the_post_thumbnail('grid'); ?>
+										</div>
+										<div class="video_info">
+											<?php 
+												$terms = wp_get_post_terms(); 
+												if($terms): 
+													foreach($terms as $term):
+											?>
+												<a href="<?php echo 'noticiasde/'.$terms[0]->slug; ?>">
+													<span><?php echo esc_html($term->name); ?></span>
+												</a>
+											<?php 
+													endforeach; 
+												endif;?>
+											<h2>
+												<?php the_title(); ?>
+											</h2>
+										</div>
 									</a>
-								<?php 
-										endforeach; 
-									endif;?>
-								<h3>
-									<?php the_title(); ?>
-								</h3>
-							</div>
-						</a>
-					</div>
+								</div>
 				<?php
 							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 				?>
-					<div class="video_post is_video small_video clearfix">
-						<a href="<?php the_permalink(); ?>">
-							<div class="img_frame clearfix">
-								<?php the_post_thumbnail('grid'); ?>
-							</div>
-							<div class="video_info">
-								<?php 
-									$terms = wp_get_post_terms(); 
-									if($terms): 
-										foreach($terms as $term):
-								?>
-									<a href="<?php echo'noticiasde/'.$terms->slug; ?>">
-										<span><?php echo $term->name; ?></span>
+								<div class="video_post is_video small_video clearfix">
+									<a href="<?php the_permalink(); ?>">
+										<div class="img_frame clearfix">
+											<?php the_post_thumbnail('grid'); ?>
+										</div>
+										<div class="video_info">
+											<?php 
+												$terms = wp_get_post_terms(); 
+												if($terms): 
+													foreach($terms as $term):
+											?>
+												<a href="<?php echo'noticiasde/'.$terms->slug; ?>">
+													<span><?php echo $term->name; ?></span>
+												</a>
+											<?php 
+													endforeach; 
+												endif;
+											?>
+											<h2>
+												<?php the_title(); ?>
+											</h2>
+										</div>
 									</a>
-								<?php 
-										endforeach; 
-									endif;
-								?>
-								<h3>
-									<?php the_title(); ?>
-								</h3>
-							</div>
-						</a>
-					</div>
+								</div>
 				<?php 	
 							}
-
 						$count++;	
 						endwhile;
 					endif;						

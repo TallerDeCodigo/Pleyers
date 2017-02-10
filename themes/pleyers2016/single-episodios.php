@@ -40,6 +40,7 @@ $hoy = date('U');
 <section>
 	<div class="paginaqueva">1</div>
 	<div class="full_container clearfix">
+
 		<div class="sidebar scrollable clearfix">
 			<div class="sprints">
 				<div class="sprints_container">
@@ -63,7 +64,11 @@ $hoy = date('U');
 							<span class="post_time"><?php  echo $time_ago; ?></span>
 							<div class="sprints_post_content">
 								<a href="#<?php echo "p".$post->ID; ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_grande'); ?></div></a>
-								<a href="#<?php echo "p".$post->ID; ?>"><h4><?php the_title(); ?></h4></a>
+								<a href="#<?php echo "p".$post->ID; ?>">
+									<h1>
+										<?php the_title(); ?>
+									</h1>
+								</a>
 							</div>
 						</div>	
 						<?php 
@@ -75,6 +80,7 @@ $hoy = date('U');
 				</div>
 			</div>
 		</div>
+
 		<div class="right_container clearfix">
 			<?php
 				$posts = new WP_Query($args);
@@ -121,7 +127,7 @@ $hoy = date('U');
 												<?php if ($terms) { ?>
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1><?php the_title(); ?></h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
