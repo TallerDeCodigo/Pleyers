@@ -278,7 +278,7 @@ function docReady(){
 			       $.ajax({
 		               type: "GET",
 		               dataType: "html",
-		               url: 'http://localhost/~programacion2/pleyers/sprints/page/'+pag_next+'/' ,
+		               url: 'http://localhost/~programacion2/pleyers/sprints/page/'+pag_next+'/',
 		               data: '',
 		               success: function(data){
 		                   var $data = $(data);
