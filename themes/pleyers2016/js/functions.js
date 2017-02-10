@@ -214,13 +214,13 @@ function docReady(){
 
 				/*HOME SHARES*/
 
-		// $('div.post').mouseover(function(){
-		// 	$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
-		// });
+		$('div.post').mouseover(function(){
+			$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
+		});
 
-		// $('div.post').mouseleave(function(){
-		// 	$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
-		// });
+		$('div.post').mouseleave(function(){
+			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
+		});
 
 
 
