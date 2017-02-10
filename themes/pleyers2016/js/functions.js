@@ -223,6 +223,85 @@ function docReady(){
 		});
 
 
+		/*LOAD POSTS*/
+		if( $('body').hasClass('post-type-archive-sprints') || $('body').hasClass('single-sprints') ){
+				var pag_next=0;
+				$(window).scroll(function() {
+				   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				       loader_bn();
+				   }
+				   if($(window).scrollTop() == 0 &&  parseInt($('.paginaqueva_up').html()) > 1 )  {
+				       loader_bn_up();
+				   }
+				});
+
+				function loader_bn(){
+			       console.log("bottom!");
+			       pag_next = parseInt($('.paginaqueva:first-of-type').html());
+			       console.log(pag_next);
+			       pag_next = pag_next+1;
+			       $('.paginaqueva').html(pag_next);
+			       $('.loader').addClass('active');
+			       $.ajax({
+		               type: "GET",
+		               dataType: "html",
+		               url: 'http://localhost/~programacion2/pleyers/sprints/page/'+pag_next+'/' ,
+		               data: '',
+		               success: function(data){
+		                   var $data = $(data);
+		                   // console.log($data);
+		                   $.each( $data, function( key, value ) {
+		                   		// console.log(value);
+		                   		if( $(value).hasClass('appender') ){
+		                   			 // console.log(pag_next);
+
+	                   				$('.right_container').append($($(value).html()).find('.right_container').html());
+	                   				$('.the_scroll').append($($(value).html()).find('.the_scroll').html());
+	                   				$('.loader').removeClass('active');
+		                   		}
+		                   });
+		               },
+		               error : function(jqXHR, textStatus, errorThrown) {
+		               }
+			        });
+				}
+
+				function loader_bn_up(){
+			       console.log("UP!");
+			       pag_next = parseInt($('.paginaqueva_up').html());
+
+			       console.log(pag_next);
+
+			       pag_next = pag_next-1;
+			       $('.paginaqueva_up').html(pag_next);
+			       $('.loader').addClass('active');
+			       $.ajax({
+		               type: "GET",
+		               dataType: "html",
+		               url: 'http://localhost/~programacion2/pleyers/sprints/page/'+pag_next+'/' ,
+		               data: '',
+		               success: function(data){
+		                   var $data = $(data);
+		                   // console.log($data);
+		                   $.each( $data, function( key, value ) {
+		                   		// console.log(value);
+		                   		if( $(value).hasClass('appender') ){
+		                   			 // console.log(pag_next);
+
+	                   				$('.right_container').prepend('<div class="medir">'+$($(value).html()).find('.right_container').html()+'</ div>');
+	                   				$('.the_scroll').prepend($($(value).html()).find('.the_scroll').html());
+	                   				$('.loader').removeClass('active');
+	                   				$(window).scrollTop( $('div.medir').height());
+		                   		}
+		                   });
+		               },
+		               error : function(jqXHR, textStatus, errorThrown) {
+		               }
+			        });
+				}
+			}//endif has class
+
+
 
 	});
 }

@@ -6,14 +6,41 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 $args = array(
 			'post_type'=>'sprints',
-			'posts_per_page'=>100,
+			'posts_per_page'=>-1,
+			'post_status'=>'publish',
+			'orderby'=>'date',
+			'order'=>'DESC'
+			);
+$posts = new WP_Query($args);
+if($posts->have_posts()):
+	$count = 1;
+	while($posts->have_posts()):
+		$posts->the_post();
+
+		if($pId == $post->ID){
+			break;
+		}
+
+		$count++;
+	endwhile;
+endif;
+$count = $count/5;
+$paged_count = ceil($count);
+
+
+
+$args = array(
+			'post_type'=>'sprints',
+			'posts_per_page'=>5,
 			'post_status'=>'publish',
 			'orderby'=>'date',
 			'order'=>'DESC',
-			'paged'=>$paged
+			'paged'=>$paged_count
 			);
 
 $posts = new WP_Query($args);
+
+
 
 date_default_timezone_set('America/Mexico_City');
 $hoy = date('U');
@@ -24,11 +51,12 @@ $hoy = date('U');
 	location.href = "#gt<?php echo $pId; ?>";
 </script>
 <section>
-	<div class="paginaqueva">1</div>
+	<div class="paginaqueva"><?php echo $paged_count; ?></div>
+	<div class="paginaqueva_up"><?php echo $paged_count; ?></div>
 	<div class="full_container clearfix">
 		<div class="sidebar scrollable clearfix">
 			<div class="sprints">
-				<h3 class="header_sprints">Sprints PAGE</h3>
+				<h3 class="header_sprints">Sprints</h3>
 				<div class="sprints_container">
 					<div class="the_scroll">
 						<?php 
@@ -86,6 +114,7 @@ $hoy = date('U');
 				</div>
 			</div>
 		</div>
+
 		<div class="right_container clearfix">
 			<?php
 				$posts = new WP_Query($args);
@@ -116,10 +145,10 @@ $hoy = date('U');
 											<td>
 												<div class="shares">
 													<textarea><?php the_permalink(); ?></textarea>
-													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+													<a href="# https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 														<div class="share_fb" aria-hidden="true"></div> 
 													</a>
-													<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+													<a href="# https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
 														<div class="share_tw" aria-hidden="true"></div> 
 													</a>
 													<a class="copylink">
@@ -154,10 +183,10 @@ $hoy = date('U');
 											<td>
 												<div class="shares">
 													<textarea><?php the_permalink(); ?></textarea>
-													<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+													<a href="# https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
 														<div class="share_fb" aria-hidden="true"></div> 
 													</a>
-													<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+													<a href="# https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
 														<div class="share_tw" aria-hidden="true"></div> 
 													</a>
 													<a class="copylink">

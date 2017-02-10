@@ -143,7 +143,7 @@
         }
 
 	    if ( is_post_type_archive( 'sprints' ) ) {
-	        $query->set( 'posts_per_page', 20 );
+	        $query->set( 'posts_per_page', 5 );
 	        $query->set('orderby', 'date');
 	        $query->set('order', 'DESC');
 

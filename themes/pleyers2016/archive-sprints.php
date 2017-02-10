@@ -1,6 +1,7 @@
 <?php get_header(); ?>
-<section>
+<section class="appender">
 	<div class="paginaqueva">1</div>
+	<div class="paginaqueva_up">1</div>
 	<div class="full_container clearfix">
 		<div class="right_container clearfix">
 			<?php
@@ -42,9 +43,11 @@
 											</td>
 											<td>
 												<?php if ($terms) { ?>
-												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
+												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
+													<?php echo "#".esc_html($terms[0]->name)." "; ?>
+												</a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1><?php the_title(); ?></h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -80,7 +83,7 @@
 												<?php if ($terms) { ?>
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1><?php the_title(); ?></h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -119,7 +122,7 @@
 												<?php if ($terms) { ?>
 												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug; ?>"><?php echo "#".esc_html($terms[0]->name)." "; ?></a>
 												<?php } ?>
-												<h2><?php the_title(); ?></h2>
+												<h1><?php the_title(); ?></h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>

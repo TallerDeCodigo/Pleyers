@@ -45,7 +45,7 @@
 										<?php echo "#".esc_html($terms[0]->name)." "; ?>
 									</span>
 								</a>
-							<a href="<?php the_permalink(); ?>">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 								<h2>
 									<?php the_title(); ?>
 								</h2>
@@ -70,7 +70,7 @@
 													?>
 												</a>	
 											</span>
-							<a href="<?php the_permalink(); ?>">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 								<h2>
 									<?php the_title(); ?>
 								</h2>
@@ -107,7 +107,7 @@
 							$terms = wp_get_post_terms($post->ID, 'noticiasde' );
 				?>
 					<div class="post clearfix">
-						<a href="<?php the_permalink(); ?>">
+						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 							<div class="img_frame clearfix">
 								<?php the_post_thumbnail('poster'); ?>
 								
@@ -138,7 +138,7 @@
 								?>
 							</a>
 						</span>
-						<a href="<?php the_permalink(); ?>">
+						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 							<h2>
 								<?php the_title(); ?>
 							</h2>
@@ -208,7 +208,7 @@
 							if($count == 0 || $count == 3 || $count == 4 || $count == 8) {
 				?>
 								<div class="video_post is_video big_video clearfix">
-									<a href="<?php the_permalink(); ?>">
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 										<div class="img_frame clearfix">
 											<?php the_post_thumbnail('grid'); ?>
 										</div>
@@ -234,7 +234,7 @@
 							}else if($count == 1 || $count == 2 || $count == 6 || $count == 7){
 				?>
 								<div class="video_post is_video small_video clearfix">
-									<a href="<?php the_permalink(); ?>">
+									<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 										<div class="img_frame clearfix">
 											<?php the_post_thumbnail('grid'); ?>
 										</div>
