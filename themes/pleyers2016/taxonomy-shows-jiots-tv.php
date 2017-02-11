@@ -40,7 +40,7 @@
 				<?php if($tags){ ?>
 					<a><span>#<?php echo $tags[0]->name; ?></span></a>
 				<?php } ?>
-				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 			</div>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="all_banner"></a>
@@ -59,7 +59,7 @@
 						<?php if($tags){ ?>
 							<span>#<?php echo $tags[0]->name; ?></span>
 						<?php } ?>
-						<h3><?php the_title(); ?></h3>
+						<h2><?php the_title(); ?></h2>
 					</div>
 				</a>
 			</div>
@@ -73,7 +73,7 @@
 						<?php if($tags){ ?>
 							<span>#<?php echo $tags[0]->name; ?></span>
 						<?php } ?>
-						<h3><?php the_title(); ?></h3>
+						<h2><?php the_title(); ?></h2>
 					</div>
 				</a>
 			</div>

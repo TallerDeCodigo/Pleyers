@@ -35,22 +35,26 @@
 			$tags = get_the_tags();
 			if ($counter==0) {
 ?>
-		<div class="full_frame">
-			<div class="img_frame">
-				<img class="post_picture" src="<?php the_post_thumbnail_url('banner'); ?>" />
+			<div class="full_frame">
+				<div class="img_frame">
+					<img class="post_picture" src="<?php the_post_thumbnail_url('banner'); ?>" />
+				</div>
+				<div class="tema_topic"><?php echo $show_name; ?></div>
+				<div class="destacado nota1 is_video">
+					<?php if($tags){ ?>
+						<a><span>#<?php echo $tags[0]->name; ?></span></a>
+					<?php } ?>
+					<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+				</div>
 			</div>
-			<div class="tema_topic"><?php echo $show_name; ?></div>
-			<div class="destacado nota1 is_video">
-				<?php if($tags){ ?>
-					<a><span>#<?php echo $tags[0]->name; ?></span></a>
-				<?php } ?>
-				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-			</div>
-		</div>
-		<a href="<?php the_permalink(); ?>" class="all_banner"></a>
+
+			<a href="<?php the_permalink(); ?>" class="all_banner"></a>
+
 	</div>
 </section>
-<section>
+
+<section class="appender">
+	<div
 	<div class="grid_videos full_container clearfix">
 		<div class="videos_stack clearfix">
 	<?php  } elseif ($counter==1 || $counter==4 || $counter==5 || $counter==8) { ?>
@@ -63,7 +67,7 @@
 						<?php if($tags){ ?>
 							<span>#<?php echo $tags[0]->name; ?></span>
 						<?php } ?>
-						<h3><?php the_title(); ?></h3>
+						<h2><?php the_title(); ?></h2>
 					</div>
 				</a>
 			</div>
@@ -77,7 +81,7 @@
 						<?php if($tags){ ?>
 							<span>#<?php echo $tags[0]->name; ?></span>
 						<?php } ?>
-						<h3><?php the_title(); ?></h3>
+						<h2><?php the_title(); ?></h2>
 					</div>
 				</a>
 			</div>
@@ -90,6 +94,7 @@
 		</div>
 	</div>
 </section>
+
 <section>
 	<?php
 		if (function_exists('custom_pagination')) {

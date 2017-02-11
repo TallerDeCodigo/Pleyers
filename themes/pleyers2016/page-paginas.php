@@ -1,50 +1,8 @@
 <?php
-$terms = get_the_terms($post->ID, 'shows'); 
-if($terms[0]->slug=="jiots-tv"){
-get_header('jiots');
-} else {
 get_header();
-}
-
-$pId = $post->ID;
-$term_slug;
-
-foreach($terms as $term){
-	$term_slug = $term->slug;
-}
+$slug_url = $_GET['e'];
 
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-
-$args_test = array(
-			'post_type'=>'episodios',
-			'posts_per_page'=>-1,
-			'post_status'=>'publish',
-			'orderby'=>'date',
-			'order'=>'DESC',
-			'tax_query'=>array(
-							array(
-								'taxonomy'=>'shows',
-								'field'=>'slug',
-								'terms'=>$term_slug
-								)
-							)
-			);
-$posts_test = new WP_Query($args_test);
-if($posts_test->have_posts()):
-	$count = 1;
-	while($posts_test->have_posts()):
-		$posts_test->the_post();
-
-		if($pId == $post->ID){
-			break;
-		}
-
-		$count++;
-	endwhile;
-endif;
-$count = $count/5;
-$paged_count = ceil($count);
-
 
 $args = array(
 			'post_type'=>'episodios',
@@ -52,12 +10,12 @@ $args = array(
 			'post_status'=>'publish',
 			'orderby'=>'date',
 			'order'=>'DESC',
-			'paged'=>$paged_count,
+			'paged'=>$paged,
 			'tax_query'=>array(
 							array(
 								'taxonomy'=>'shows',
 								'field'=>'slug',
-								'terms'=>$term_slug
+								'terms'=>$slug_url
 								)
 							)
 			);
@@ -68,14 +26,10 @@ date_default_timezone_set('America/Mexico_City');
 $hoy = date('U');
 
 ?>
-<script type="text/javascript">
-	location.href = "#";
-	location.href = "#p<?php echo $pId; ?>";
-</script>
 <section class="appender">
 	<div class="taxonomia" data-name="<?php echo $term_slug; ?>"></div>
-	<div class="paginaqueva"><?php echo $paged_count; ?></div>
-	<div class="paginaqueva_up"><?php echo $paged_count; ?></div>
+	<div class="paginaqueva"><?php echo $paged; ?></div>
+	<div class="paginaqueva_up"><?php echo $paged; ?></div>
 
 	<div class="full_container clearfix">
 
