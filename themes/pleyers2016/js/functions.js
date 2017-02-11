@@ -179,7 +179,7 @@ function docReady(){
 					    	$('.sidebar.scrollable').css('margin-top',$(window).scrollTop()+'px');
 					    	var referencia = $('.the_scroll').height()*$(window).scrollTop();
 					    	var bodhei = ($('body').height());
-					    	referencia = referencia / bodhei*0.75;
+					    	referencia = referencia / bodhei*0.8;
 					    	$('.scrollable .sprints_container').scrollTop( referencia );
 
 					        $('.anchor_tags').each(function () {
@@ -245,7 +245,7 @@ function docReady(){
 			       $.ajax({
 		               type: "GET",
 		               dataType: "html",
-		               url: 'http://localhost/~programacion2/pleyers/sprints/page/'+pag_next+'/' ,
+		               url: 'https://lospleyers.com/sprints/page/'+pag_next+'/' ,
 		               data: '',
 		               success: function(data){
 		                   var $data = $(data);
@@ -278,7 +278,7 @@ function docReady(){
 			       $.ajax({
 		               type: "GET",
 		               dataType: "html",
-		               url: 'http://localhost/~programacion2/pleyers/sprints/page/'+pag_next+'/',
+		               url: 'https://lospleyers.com/sprints/page/'+pag_next+'/',
 		               data: '',
 		               success: function(data){
 		                   var $data = $(data);
@@ -320,16 +320,13 @@ function docReady(){
 			       pag_next = parseInt($('.paginaqueva').html());
 			       pag_next = pag_next+1;
 
-			       
-			       console.log(show_name);
-
 			       $('.paginaqueva').html(pag_next);
 			       $('.loader').addClass('active');
 
 			       $.ajax({
 		               type: "GET",
 		               dataType: "html",
-		               url: 'http://localhost/~programacion2/pleyers/paginas/page/'+pag_next+'/?e='+show_name,
+		               url: 'https://lospleyers.com/paginas/page/'+pag_next+'/?e='+show_name,
 		               data: '',
 		               success: function(data){
 		                   var $data = $(data);
@@ -360,7 +357,7 @@ function docReady(){
 			       $.ajax({
 		               type: "GET",
 		               dataType: "html",
-		               url: 'http://localhost/~programacion2/pleyers/paginas/page/'+pag_next+'/?e='+show_name,
+		               url: 'https://lospleyers.com/paginas/page/'+pag_next+'/?e='+show_name,
 		               data: '',
 		               success: function(data){
 		                   var $data = $(data);

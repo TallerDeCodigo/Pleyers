@@ -126,8 +126,8 @@ $hoy = date('U');
 						$terms = wp_get_post_terms($post->ID, 'noticiasde' );
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 						$link = get_the_permalink();
-						// $link = substr($link, 23); 	//Productivo
-						$link = substr($link, 17);		//Local
+						$link = substr($link, 23); 	//Productivo
+						// $link = substr($link, 17);		//Local
 			?>
 					<article>
 						<div class="referent" id="<?php echo "gt".$post->ID; ?>"></div>
