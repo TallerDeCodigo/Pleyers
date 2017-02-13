@@ -57,6 +57,8 @@ function docReady(){
 		        	  try {
 		        	    var successful = document.execCommand('copy');
 		        	    var msg = successful ? 'successful' : 'unsuccessful';
+		        	    $(this).parent().find('.alerta').show();
+		        	    // alert("link copiado a portapapeles");
 		        	    console.log('Copying text command was ' + msg);
 		        	  } catch (err) {
 		        	    console.log('Oops, unable to copy');
@@ -220,6 +222,7 @@ function docReady(){
 
 		$('div.post').mouseleave(function(){
 			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
+			$('.alerta').hide();
 		});
 
 

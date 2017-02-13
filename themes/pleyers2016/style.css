@@ -148,6 +148,8 @@ div.post h3 span {position:relative;top:-1px;font-size:110%;color:inherit;}
 .web_cover div.shares{margin-left:50px;padding:90px 0px;}
 .web_cover div.shares div{margin-bottom:0px;}
 
+.alerta{position:absolute;display:none;background:rgba(0,0,0,0.5);color:#fff;font-size: 0.7em;padding:2px;left:22%;border-radius: 2px;width:110px;}
+
 /*SPRINTS*/
 
 div.sidebar {float:right;width:320px;}
@@ -560,6 +562,10 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 	.sc_dato {margin-right:-10px;}
 }
 
+@media(max-width: 800px){
+	div.more_destacado div.destacado h2{color:#000;font-size:1.6em;}
+}
+
 @media(max-width:782px){
 	body.admin-bar header, body.admin-bar div.overscreen {margin-top:46px;}
 }
@@ -597,6 +603,10 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 }
 
 @media(max-width:600px){
+	div.destacado.nota1 h2{font-size:1.8em;}
+	div.more_destacado div.destacado h2{font-size:1.4em;}
+	div.post h2{font-size: 1.4em; line-height:25px;}
+
 	div.post div.img_frame {width:115px;height:115px;}
 	div.post a.the_excerpt {display:none;}
 
@@ -633,6 +643,9 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 }
 
 @media(max-width:480px){
+	div.destacado.nota1 h2{font-size:1.6em;}
+	div.more_destacado div.destacado h2{font-size:1.2em;}
+	div.post h2{font-size: 1.3em; line-height:23px;}
 	.dropdown{left:42%;}
 	nav.social {display:none;}
 	.dropbtn {width:175px;}
@@ -689,6 +702,8 @@ div.publicacion:nth-of-type(2n) {margin-right:0px;}
 }
 
 @media(max-width:360px){
+	div.post h2{font-size: 1.2em; line-height:22px;}
+
 	div.container {padding-right:10px;padding-left:10px;}
 	div.short_container {padding-left:10px;padding-right:10px;}
 	div.contenido {padding-left:10px;padding-right:10px;}

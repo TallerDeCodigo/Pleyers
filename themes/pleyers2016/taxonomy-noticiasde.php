@@ -21,7 +21,7 @@
 			</div>
 			<div class="tema_topic">#<?php echo $the_term; ?></div>
 			<div class="destacado nota1">
-				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 			</div>
 		</div>
 	</div>
@@ -71,7 +71,7 @@
 						?>
 					</a>
 				</span>
-				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 				<a class="the_excerpt" href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
 			</div>
 			<?php

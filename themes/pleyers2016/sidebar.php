@@ -1,6 +1,10 @@
 <div class="sidebar clearfix">
 	<div class="sprints">
-		<h3 class="header_sprints">Sprints</h3>
+		<h3 class="header_sprints">
+			<a href="<?php bloginfo('url'); ?>/sprints">
+				Sprints
+			</a>
+		</h3>
 		<div class="sprints_container">
 			<?php 
 				$args = array(
