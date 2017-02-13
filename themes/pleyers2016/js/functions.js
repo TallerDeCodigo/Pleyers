@@ -198,12 +198,8 @@ function docReady(){
 					            var distance = top - $(this).offset().top;
 					            var hash = $(this).attr('href');
 					            var site_url = document.location.origin;
-					            console.log(site_url);
 
 					            hash = hash.replace(site_url+"/", '');
-					            console.log(hash);
-
-
 
 					            if (distance < 150 && distance > -150 && currentHash != hash) {
 					            	aidi = $(this).attr('data');

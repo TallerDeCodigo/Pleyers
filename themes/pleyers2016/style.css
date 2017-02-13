@@ -377,6 +377,7 @@ div.poll_container iframe {margin-bottom:40px;}
 .shares div.share_fb{background:url(images/fb.svg);width:32px;height:32px;background-position:center;background-size:100%}
 .shares div.share_tw{background:url(images/tw_color.svg);width:32px;height:32px;background-position:center;background-size:100%}
 .horizontal_share div{display:inline-block;margin:10px 4px;}
+.horizontal_share div.alerta{display:none;margin:0px;}
 .horizontal_share{width:100%;text-align:center;}
 body.single .horizontal_share{position:relative;top:15px;}
 
@@ -392,7 +393,7 @@ body.post-type-archive-sprints section {padding-top:0px;}
 .post-type-archive-sprints .sidebar div.sprints_container {border-bottom:none;overflow-y:scroll;height:2000px;}
 .post-type-archive-sprints .sidebar div.sprints_container::-webkit-scrollbar {-webkit-appearance:none;opacity:0;width:0px;}
 .post-type-archive-sprints .sidebar div.sprints_container::-webkit-scrollbar-thumb {opacity:0;width:0px;}
-div.right_container {width:calc(100% - 340px);float:right;padding:40px 0px 40px 20px;}
+.post-type-archive-sprints div.right_container {width:calc(100% - 340px);float:right;padding:40px 0px 40px 20px;}
 
 .post-type-archive-sprints article {width:100%;max-width:720px;margin:0 auto;position:relative;padding-top:60px;}
 .post-type-archive-sprints article div.contenido {border-top:0px;padding:10px 0px 90px;}
@@ -421,7 +422,7 @@ body.single-sprints section {padding-top:0px;}
 .single-sprints .sidebar div.sprints_container {border-bottom:none;overflow-y:scroll;height:2000px;}
 .single-sprints .sidebar div.sprints_container::-webkit-scrollbar {-webkit-appearance:none;opacity:0;width:0px;}
 .single-sprints .sidebar div.sprints_container::-webkit-scrollbar-thumb {opacity:0;width:0px;}
-div.right_container {width:calc(100% - 340px);float:right;padding:40px 0px 40px 20px;}
+div.right_container {width:100%;padding:40px 0px 40px 20px;}
 
 .single-sprints article {width:100%;max-width:720px;margin:0 auto;position:relative;padding-top:60px;}
 .single-sprints article div.contenido {border-top:0px;padding:10px 0px 90px;}
@@ -452,7 +453,7 @@ body.single-episodios section {padding-top:0px;}
 .single-episodios .sidebar div.sprints_container {border-bottom:none;overflow-y:scroll;}
 .single-episodios .sidebar div.sprints_container::-webkit-scrollbar {-webkit-appearance:none;opacity:0;width:0px;}
 .single-episodios .sidebar div.sprints_container::-webkit-scrollbar-thumb {opacity:0;width:0px;}
-div.right_container {width:calc(100% - 340px);float:right;padding:40px 0px 40px 20px;}
+.single-episodios div.right_container {width:calc(100% - 340px);float:right;padding:40px 0px 40px 20px;}
 
 .single-episodios article {width:100%;max-width:720px;margin:0 auto;position:relative;padding-top:60px;}
 .single-episodios article div.contenido {border-top:0px;padding:10px 0px 90px;}
