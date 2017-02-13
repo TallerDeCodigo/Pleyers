@@ -375,6 +375,8 @@
 
 	}//custom pagination
 
+	
+
 	/*LIMIT FOR EXCERPT 20 WORDS*/
 
 	function custom_excerpt_length( $length ) {

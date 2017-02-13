@@ -11,12 +11,12 @@
 						$terms = wp_get_post_terms($post->ID, 'noticiasde' );
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 						$link = get_the_permalink();
-						$link = substr($link, 23); 	//Productivo
-						// $link = substr($link, 17);		//Local
 			?>
 					<article>
 						<div class="referent" id="<?php echo $post->ID."h"; ?>"></div>
-						<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+
+						<a href="<?php echo esc_url($link); ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+
 							<?php 
 								if($img_size == 'foto_grande'){
 							?>
@@ -43,12 +43,16 @@
 												</div>
 											</td>
 											<td>
-												<?php if ($terms) { ?>
-												<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
-													<?php echo "#".esc_html($terms[0]->name)." "; ?>
-												</a>
-												<?php } ?>
-												<h1><?php the_title(); ?></h1>
+												<?php 
+													if ($terms): ?>
+														<a class="term" href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
+															<?php echo "#".esc_html($terms[0]->name)." "; ?>
+														</a>
+												<?php 
+													endif; ?>
+												<h1>
+													<?php the_title(); ?>
+												</h1>
 												<span class="author_name">
 													<?php echo ucfirst(get_the_date('F j, Y - g:i A')); ?>
 												</span>
@@ -185,7 +189,9 @@
 								$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
 						?>
-						<a href="<?php echo get_the_permalink();?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+
+						<a href="<?php echo esc_url(get_the_permalink()); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+
 						<?php 
 							if($img_size == 'foto_grande') {
 						?>

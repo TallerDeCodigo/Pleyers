@@ -171,7 +171,6 @@ function docReady(){
 				/*** NAVEGACIÓN */
 				/*HISTORY URL HKN*/
 
-				var newHash = '';
 
 				if(width_screen > 800){
 					var aidi = 0;
@@ -180,6 +179,7 @@ function docReady(){
 					var lastScrollTop = 0; 
 					var cero = 0;
 					var alto_post;
+
 					$(function () {
 					    var currentHash = "initial_hash";
 					    $(window).scroll(function () {
@@ -187,32 +187,38 @@ function docReady(){
 					    	$('.sidebar.scrollable').css('margin-top',$(window).scrollTop()+'px');
 					    	var referencia = $('.the_scroll').height()*$(window).scrollTop();
 					    	var bodhei = ($('body').height());
-					    	referencia = referencia / bodhei*0.8;
-					    	$('.scrollable .sprints_container').scrollTop( referencia );
 
+					    	referencia = referencia / bodhei*0.8;
+
+					    	$('.scrollable .sprints_container').scrollTop( referencia );
 					        $('.anchor_tags').each(function () {
 					        	var anterior = $('.sprints_container div#'+aidi).height();
 
 					            var top = window.pageYOffset;
 					            var distance = top - $(this).offset().top;
 					            var hash = $(this).attr('href');
+					            var site_url = document.location.origin;
+					            console.log(site_url);
+
+					            hash = hash.replace(site_url+"/", '');
+					            console.log(hash);
+
+
 
 					            if (distance < 150 && distance > -150 && currentHash != hash) {
 					            	aidi = $(this).attr('data');
 					            	if(history.pushState) {
 					            		history.pushState(null, null, "/"+hash);
-					            		ga('send', { hitType: 'pageview', page: location.pathname });
+					            		// ga('send', { hitType: 'pageview', page: location.pathname });
 					            	}else { 
 					            		window.location.hash = hash;
-					            		ga('send', { hitType: 'pageview', page: location.pathname });
+					            		// ga('send', { hitType: 'pageview', page: location.pathname });
 					            	}
 					                currentHash = hash;
 					                es = $('.sprints_container div#'+aidi);
 					                $('.sprints_container div').removeClass('selected');
 					                es.addClass('selected');
-
 					                alto_post = es.height();
-
 					            }
 					        });
 					    });
@@ -225,7 +231,6 @@ function docReady(){
 		$('div.post').mouseover(function(){
 			$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
 		});
-
 		$('div.post').mouseleave(function(){
 			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
 		});

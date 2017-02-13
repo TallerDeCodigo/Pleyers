@@ -129,13 +129,11 @@ $hoy = date('U');
 						$posts->the_post();
 						$terms = wp_get_post_terms($post->ID, 'noticiasde' );
 						$link = get_the_permalink();
-						$link = substr($link, 23); 	//Productivo
-						// $link = substr($link, 17);		//Local
 						$youtube_id = get_post_meta($post->ID, 'eg_sources_youtube', true);
 			?>
 					<article>
 						<div class="referent" id="<?php echo "p".$post->ID; ?>"></div>
-						<a href="<?php echo $link; ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
+						<a href="<?php echo esc_url($link); ?>" class="anchor_tags" data="<?php echo $post->ID; ?>" ></a>
 
 								<div class="episodio no_play" video-id="<?php echo $youtube_id; ?>" >
 									<?php if ($youtube_id): ?>

@@ -31,43 +31,43 @@
 						$time_ago = strtr( $time_ago, $unwanted_array );
 						$img_size = get_post_meta($post->ID, 'sprint_type_meta', true);
 
-					if($img_size == 'foto_grande'){
-			?>
-			<div class="formato_a sprints_post clearfix">
-			<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
-				<span class="post_time"><?php  echo $time_ago; ?></span>
-				<div class="sprints_post_content">
-					<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_grande'); ?></div></a>
-					<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>"><p><?php the_excerpt(); ?></p></a>
-				</div>
-			</div>
-			<?php 
-					}else if($img_size == 'foto_chica'){
-			?>
-			<div class="formato_b sprints_post clearfix">
-			<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
-				<span class="post_time"><?php  echo $time_ago; ?></span>
-				<div class="sprints_post_content">
-					<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_chica'); ?></div></a>
-					<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>"><p><?php the_excerpt(); ?></p></a>
-				</div>
-			</div>
-			<?php	
-					}else{
-			?>
-			<div class="formato_b sprints_post clearfix">
-			<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
-				<span class="post_time"><?php  echo $time_ago; ?></span>
-				<div class="sprints_post_content">
-					<a href="<?php bloginfo('url'); ?>/sprints/<?php echo "#".$post->ID."h"; ?>"><p><?php the_excerpt(); ?></p></a>
-				</div>
-			</div>
+						if($img_size == 'foto_grande'){
+				?>
+							<div class="formato_a sprints_post clearfix">
+							<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+								<span class="post_time"><?php  echo $time_ago; ?></span>
+								<div class="sprints_post_content">
+									<a href="<?php the_permalink(); ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_grande'); ?></div></a>
+									<a href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
+								</div>
+							</div>
+					<?php 
+						}else if($img_size == 'foto_chica'){
+						?>
+							<div class="formato_b sprints_post clearfix">
+							<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+								<span class="post_time"><?php  echo $time_ago; ?></span>
+								<div class="sprints_post_content">
+									<a href="<?php the_permalink(); ?>"><div class="img_frame"><?php the_post_thumbnail('sprints_chica'); ?></div></a>
+									<a href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
+								</div>
+							</div>
+					<?php	
+						}else{
+						?>
+							<div class="formato_b sprints_post clearfix">
+							<a href="<?php the_permalink(); ?>" class="link_url" data="<?php echo $post->ID; ?>"></a>
+								<span class="post_time"><?php  echo $time_ago; ?></span>
+								<div class="sprints_post_content">
+									<a href="<?php the_permalink(); ?>"><p><?php the_excerpt(); ?></p></a>
+								</div>
+							</div>
 			<?php 	
-					}			
+						}			
 					endwhile; 
 					wp_reset_postdata();
 				endif; 
-			?>	
+				?>	
 		</div>
 		<a href="<?php bloginfo('url'); ?>/sprints" class="see_more gray">Ver más</a>
 	</div>
