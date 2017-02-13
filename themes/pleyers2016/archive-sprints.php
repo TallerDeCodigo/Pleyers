@@ -39,6 +39,7 @@
 													<a class="copylink">
 														<div class="share_link" aria-hidden="true"></div> 
 													</a>
+													<div class="alerta">Link copiado al portapapeles</div>
 												</div>
 											</td>
 											<td>
@@ -77,6 +78,7 @@
 													<a class="copylink">
 														<div class="share_link" aria-hidden="true"></div> 
 													</a>
+													<div class="alerta">Link copiado al portapapeles</div>
 												</div>
 											</td>
 											<td>
@@ -116,6 +118,7 @@
 													<a class="copylink">
 														<div class="share_link" aria-hidden="true"></div> 
 													</a>
+													<div class="alerta">Link copiado al portapapeles</div>
 												</div>
 											</td>
 											<td>
@@ -147,6 +150,7 @@
 										<a class="copylink">
 											<div class="share_link" aria-hidden="true"></div> 
 										</a>
+										<div class="alerta">Link copiado al portapapeles</div>
 									</div>
 								</div>
 						</article>

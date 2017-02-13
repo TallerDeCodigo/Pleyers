@@ -58,12 +58,18 @@ function docReady(){
 		        	    var successful = document.execCommand('copy');
 		        	    var msg = successful ? 'successful' : 'unsuccessful';
 		        	    $(this).parent().find('.alerta').show();
-		        	    // alert("link copiado a portapapeles");
+
 		        	    console.log('Copying text command was ' + msg);
 		        	  } catch (err) {
-		        	    console.log('Oops, unable to copy');
+		        	    // console.log('Oops, unable to copy');
 		        	  }
+
+	        	  	setTimeout(function() {
+	        	  		 $('.alerta').hide();
+	        	  	}, 1000);
+
 		        });
+	
 
 				$(document).on('click', '.no_play', function() {
 					$(this).find('iframe').attr('src','https://www.youtube.com/embed/'+$(this).attr('video-id')+'?modestbranding=1&autohide=1&showinfo=0&autoplay=1');
@@ -222,7 +228,6 @@ function docReady(){
 
 		$('div.post').mouseleave(function(){
 			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
-			$('.alerta').hide();
 		});
 
 

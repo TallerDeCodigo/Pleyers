@@ -66,7 +66,7 @@ function pleyers_insert_post_and_attachment(){
 			set_post_thumbnail($post_id, $attachment_id);
 
 	 	}else{
-	 		echo "no se insertó el post";
+	 		// echo "no se insertó el post";
 	 	}
 	}
 

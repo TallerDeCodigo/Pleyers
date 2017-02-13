@@ -59,8 +59,24 @@
 				<a href="<?php the_permalink(); ?>">
 					<div class="img_frame clearfix">
 						<?php the_post_thumbnail('poster'); ?>
+						<div class="web_cover clearfix">
+							<div class="shares">
+								<textarea ><?php the_permalink(); ?></textarea>
+								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>','Compartir en Facebook','width=600,height=400')">
+									<div class="share_fb" aria-hidden="true"></div> 
+								</a>
+								<a href="https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx" target="popup" onclick="window.open('https://twitter.com/share?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=ceroceromx','Compartir en Twitter','width=600,height=400')">
+									<div class="share_tw" aria-hidden="true"></div> 
+								</a>
+								<a class="copylink">
+									<div class="share_link" aria-hidden="true"></div> 
+								</a>
+								<div class="alerta">Link copiado al portapapeles</div>
+							</div>
+						</div>
 					</div>
 				</a>
+
 				<span>
 					<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 						<?php 
