@@ -125,6 +125,29 @@
 	add_action( 'publish_post', 'pleyers_insert_post_and_attachment', 10, 2);
 
 
+
+
+// REWRITE RULES ////////////////////////////////////////////////////////////////////	
+
+	if(!function_exists('news_rewrite_rule')){
+		function news_rewrite_rule($post){	
+			$terms = get_terms('noticiasde', array('hide_empty'=>false) );
+			add_rewrite_rule( 'noticiasde/([^/]+)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]','top' );
+			add_rewrite_rule( 'noticiasde/([^/]+)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/amp(/(.*))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]&amp=$matches[6]','top' );
+			add_rewrite_rule( 'noticiasde/([^/]+)/(?:/([0-9]+))?/amp(/(.*))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&name=$matches[2]&amp=$matches[3]','top' );
+			foreach($terms as $term){
+				$term = $term->slug;
+				add_rewrite_rule( 'noticiasde/'.$term, 'index.php?post_type=post&noticiasde='.$term,'top' );
+			}
+			add_rewrite_rule( 'sprints/([^/]+)/?$', 'index.php?post_type=sprints&name=$matches[1]','top' );
+
+			add_rewrite_rule( 'shows/([^/]+)/?$', 'index.php?post_type=episodios&name=$matches[1]','top' );
+			add_rewrite_rule('(.?.+?)(?:)/?$', 'index.php?pagename=$matches[1]','top' );
+		}
+	}	
+		add_action('init', 'news_rewrite_rule', 10, 3);
+
+
 	
 // MODIFICAR EL MAIN QUERY ///////////////////////////////////////////////////////////
 
@@ -462,6 +485,7 @@
 		add_filter('post_type_link', 'noticiasde_permalink', 10, 3);
 
 		function noticiasde_permalink($permalink, $post_id, $leavename) {
+
 		    if (strpos($permalink, '%noticiasde%') === FALSE) return $permalink;
 		        // Get post
 		        $post = get_post($post_id);
@@ -476,15 +500,8 @@
 		    return str_replace('%noticiasde%', "noticiasde/".$taxonomy_slug, $permalink);
 		} 
 
-		if(!function_exists('news_rewrite_rule')){
-			function news_rewrite_rule()
-			{
-				//historia
-				add_rewrite_rule( 'noticiasde/(.+?)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]','top' );
-				add_rewrite_rule( 'noticiasde/(.+?)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/amp(/(.*))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]&amp=$matches[6]','top' );
-				add_rewrite_rule( '([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[1]','top' );
-				add_rewrite_rule( 'noticias/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[2]','top' );
-			}
-		}	
+		
+
 			
-		add_action('init', 'news_rewrite_rule', 10, 3);
+			
+

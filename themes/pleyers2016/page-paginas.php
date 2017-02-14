@@ -1,4 +1,9 @@
 <?php
+	/*
+    *
+    * Template Name: paginas
+    *
+    */
 get_header();
 $slug_url = $_GET['e'];
 

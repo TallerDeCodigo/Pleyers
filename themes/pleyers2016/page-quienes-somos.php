@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php 
+	/*
+    *
+    * Template Name: Quienes somos
+    *
+    */
+get_header(); ?>
 <section>
 	<div class="main_banner page_style video_container clearfix">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/zQeXAIeo1WA" frameborder="0" allowfullscreen></iframe>

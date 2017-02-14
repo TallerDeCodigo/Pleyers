@@ -1,18 +1,18 @@
-<?php 
-get_header();
-while ( have_posts() ) :
-the_post();
+<?php get_header();
+
+	while ( have_posts() ) :
+	the_post();
 ?>
-<section>
-	<div class="reading_container page_style clearfix">	
-		<h2 class="title"><?php echo get_the_title(); ?></h2>
-		<div class="contenido capital">
-			<?php the_content(); ?>
+	<section>
+		<div class="reading_container page_style clearfix">	
+			<h2 class="title"><?php echo get_the_title(); ?></h2>
+			<div class="contenido capital">
+				<?php the_content(); ?>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 <?php
-endwhile;
+	endwhile;
 wp_reset_query();
 get_footer();
 ?>

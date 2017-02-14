@@ -1,4 +1,9 @@
-<?php 
+<?php
+	/*
+     *
+     * Template Name: Hack me amadeus
+     *
+     */
 	
 function pleyers_insert_post_and_attachment(){
 

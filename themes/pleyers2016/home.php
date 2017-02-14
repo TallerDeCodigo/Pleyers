@@ -27,7 +27,7 @@
 	<section id="uno">
 		<div class="main_banner full_container clearfix">
 
-		<?php 
+		<?php
 		if($posts->have_posts()): 
 			while($posts->have_posts()):
 				$posts->the_post(); 
