@@ -24,12 +24,12 @@
 			);
 
 			$args = array(
-				'hierarchical'      => true,
+				'hierarchical'      => false,
 				'labels'            => $labels,
 				'show_ui'           => true,
 				'show_admin_column' => true,
 				'show_in_nav_menus' => true,
-				'query_var'         => true,
+				'query_var'         => 'noticiasde',
 				'rewrite'           => array( 'slug' => 'noticiasde' ),
 			);
 

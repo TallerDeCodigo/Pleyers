@@ -454,3 +454,37 @@
 
 		add_action( 'edit_user_profile', 'my_user_field' );
 		add_action( 'edit_user_profile_update', 'my_save_custom_user_profile_fields' );
+
+
+
+
+		add_filter('post_link', 'noticiasde_permalink', 10, 3);
+		add_filter('post_type_link', 'noticiasde_permalink', 10, 3);
+
+		function noticiasde_permalink($permalink, $post_id, $leavename) {
+		    if (strpos($permalink, '%noticiasde%') === FALSE) return $permalink;
+		        // Get post
+		        $post = get_post($post_id);
+		        if (!$post) return $permalink;
+
+		        // Get taxonomy terms
+		        $terms = wp_get_object_terms($post->ID, 'noticiasde');
+		        if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0])){
+		        	$taxonomy_slug = $terms[0]->slug;
+		        }else $taxonomy_slug = 'not-rated';
+
+		    return str_replace('%noticiasde%', "noticiasde/".$taxonomy_slug, $permalink);
+		} 
+
+		if(!function_exists('news_rewrite_rule')){
+			function news_rewrite_rule()
+			{
+				//historia
+				add_rewrite_rule( 'noticiasde/(.+?)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]','top' );
+				add_rewrite_rule( 'noticiasde/(.+?)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/amp(/(.*))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]&amp=$matches[6]','top' );
+				add_rewrite_rule( '([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[1]','top' );
+				add_rewrite_rule( '(.+?)/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[2]','top' );
+			}
+		}	
+			
+		add_action('init', 'news_rewrite_rule', 10, 3);

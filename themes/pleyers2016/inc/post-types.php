@@ -39,6 +39,8 @@
 		);
 		register_post_type( 'episodios', $args );
 
+		
+
 		// GRAFICOS
 		$labels = array(
 			'name'          => 'Gráficos',
