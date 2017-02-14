@@ -483,7 +483,7 @@
 				add_rewrite_rule( 'noticiasde/(.+?)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]','top' );
 				add_rewrite_rule( 'noticiasde/(.+?)/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/amp(/(.*))?/?$', 'index.php?post_type=post&noticiasde=$matches[1]&year=$matches[2]&monthnum=$matches[3]&day=$matches[4]&name=$matches[5]&amp=$matches[6]','top' );
 				add_rewrite_rule( '([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[1]','top' );
-				add_rewrite_rule( '(.+?)/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[2]','top' );
+				add_rewrite_rule( 'noticias/([^/]+)(?:/([0-9]+))?/?$', 'index.php?post_type=post&name=$matches[2]','top' );
 			}
 		}	
 			

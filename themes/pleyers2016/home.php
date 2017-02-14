@@ -107,9 +107,10 @@
 							$terms = wp_get_post_terms($post->ID, 'noticiasde' );
 				?>
 					<div class="post clearfix">
-						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
 							<div class="img_frame clearfix">
-								<?php the_post_thumbnail('poster'); ?>
+								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo get_the_title(); ?>">
+									<?php the_post_thumbnail('poster'); ?>
+								</a>
 								
 								<div class="web_cover clearfix">
 									<div class="shares">
@@ -128,7 +129,6 @@
 								</div>
 
 							</div>
-						</a>
 						<span>
 							<a href="<?php bloginfo('url'); echo '/noticiasde/'.$terms[0]->slug.'/'; ?>">
 								<?php 

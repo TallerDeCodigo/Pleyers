@@ -47,28 +47,21 @@ function docReady(){
 						$('body').css('overflow', 'auto');
 					});
 
-				$(document).on('click', '.copylink', function() {
-		        	var copyTextarea = $(this).parent().find('textarea');
-		        	
+				$('.copylink').on('click', function() {
+					console.log('click');
+		        	var copyTextarea = $(this).parent().parent().find('textarea');
 	        	  	copyTextarea.focus().select();
-
-		        	// console.log( copyTextarea.html() );
-
 		        	  try {
 		        	    var successful = document.execCommand('copy');
 		        	    var msg = successful ? 'successful' : 'unsuccessful';
 		        	    $(this).parent().find('.alerta').show();
-
-		        	    console.log('Copying text command was ' + msg);
 		        	  } catch (err) {
-		        	    // console.log('Oops, unable to copy');
+		        	    console.log('Oops, unable to copy');
 		        	  }
-
 	        	  	setTimeout(function() {
 	        	  		 $('.alerta').hide();
 	        	  	}, 1000);
-
-		        });
+		        });//end copy link
 	
 
 				$(document).on('click', '.no_play', function() {
@@ -96,6 +89,7 @@ function docReady(){
 				/**
 				 * Regresa todos los valores de un formulario como un associative array 
 				 */
+
 				window.getFormData = function (selector) {
 					var result = [],
 						data   = $(selector).serializeArray();
@@ -170,8 +164,6 @@ function docReady(){
 
 				/*** NAVEGACIÓN */
 				/*HISTORY URL HKN*/
-
-
 				if(width_screen > 800){
 					var aidi = 0;
 					var es;
@@ -221,30 +213,11 @@ function docReady(){
 					});
 				}
 
-
-				/*HOME SHARES*/
-
-		$('div.post').mouseover(function(){
-			$(this).find('div.web_cover').animate({'opacity': '1'}, 'fast');
-		});
-		$('div.post').mouseleave(function(){
-			$(this).find('div.web_cover').animate({'opacity': '0'}, 'fast');
-		});
-
-
 		/*LOAD POSTS*/
-		if( $('body').hasClass('post-type-archive-sprints') || $('body').hasClass('single-sprints') ){
+		if( $('body').hasClass('post-type-archive-sprints')){
 				var pag_next=0;
 				$(window).scroll(function() {
 				   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-				       loader_sp();
-				   }
-				   if($(window).scrollTop() == 0 &&  parseInt($('.paginaqueva_up').html()) > 1 )  {
-				       loader_sp_up();
-				   }
-				});
-
-				function loader_sp(){
 			       console.log("bottom!");
 			       pag_next = parseInt($('.paginaqueva:first-of-type').html());
 			       console.log(pag_next);
@@ -273,41 +246,46 @@ function docReady(){
 		               error : function(jqXHR, textStatus, errorThrown) {
 		               }
 			        });
-				}
+				   }
 
-				function loader_sp_up(){
-			       console.log("UP!");
-			       pag_next = parseInt($('.paginaqueva_up').html());
+				   if($(window).scrollTop() == 0 &&  parseInt($('.paginaqueva_up').html()) > 1 )  {
+	       		       console.log("UP!");
+	       		       pag_next = parseInt($('.paginaqueva_up').html());
 
-			       console.log(pag_next);
+	       		       console.log(pag_next);
 
-			       pag_next = pag_next-1;
-			       $('.paginaqueva_up').html(pag_next);
-			       $('.loader').addClass('active');
-			       $.ajax({
-		               type: "GET",
-		               dataType: "html",
-		               url: 'https://lospleyers.com/sprints/page/'+pag_next+'/',
-		               data: '',
-		               success: function(data){
-		                   var $data = $(data);
-		                   // console.log($data);
-		                   $.each( $data, function( key, value ) {
-		                   		// console.log(value);
-		                   		if( $(value).hasClass('appender') ){
-		                   			 // console.log(pag_next);
+	       		       pag_next = pag_next-1;
+	       		       $('.paginaqueva_up').html(pag_next);
+	       		       $('.loader').addClass('active');
+	       		       $.ajax({
+	       	               type: "GET",
+	       	               dataType: "html",
+	       	               url: 'https://lospleyers.com/sprints/page/'+pag_next+'/',
+	       	               data: '',
+	       	               success: function(data){
+	       	                   var $data = $(data);
+	       	                   // console.log($data);
+	       	                   $.each( $data, function( key, value ) {
+	       	                   		// console.log(value);
+	       	                   		if( $(value).hasClass('appender') ){
+	       	                   			 // console.log(pag_next);
 
-	                   				$('.right_container').prepend('<div class="medir">'+$($(value).html()).find('.right_container').html()+'</ div>');
-	                   				$('.the_scroll').prepend($($(value).html()).find('.the_scroll').html());
-	                   				$('.loader').removeClass('active');
-	                   				$(window).scrollTop( $('div.medir').height());
-		                   		}
-		                   });
-		               },
-		               error : function(jqXHR, textStatus, errorThrown) {
-		               }
-			        });
-				}
+	                          				$('.right_container').prepend('<div class="medir">'+$($(value).html()).find('.right_container').html()+'</ div>');
+	                          				$('.the_scroll').prepend($($(value).html()).find('.the_scroll').html());
+	                          				$('.loader').removeClass('active');
+	                          				$(window).scrollTop( $('div.medir').height());
+	       	                   		}
+	       	                   });
+	       	               },
+	       	               error : function(jqXHR, textStatus, errorThrown) {
+	       	               }
+	       		        });
+				   }
+				});
+
+				
+
+			      
 			}//endif has class
 
 
@@ -317,15 +295,7 @@ function docReady(){
 		        var show_name = $('div.taxonomia').attr('data-name');
 				$(window).scroll(function() {
 				   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-				       loader_ep();
-				   }
-				   if($(window).scrollTop() == 0 &&  parseInt($('.paginaqueva_up').html()) > 1 )  {
-				       loader_ep_up();
-				   }
-				});
-
-				function loader_ep(){
-			       console.log("bottom!");
+				       console.log("bottom!");
 			       pag_next = parseInt($('.paginaqueva').html());
 			       pag_next = pag_next+1;
 
@@ -352,10 +322,9 @@ function docReady(){
 		               error : function(jqXHR, textStatus, errorThrown) {
 		               }
 			        });
-				}
-
-				function loader_ep_up(){
-			       console.log("UP!");
+				   }
+				   if($(window).scrollTop() == 0 &&  parseInt($('.paginaqueva_up').html()) > 1 )  {
+				       console.log("UP!");
 			       pag_next = parseInt($('.paginaqueva_up').html());
 
 			       console.log(pag_next);
@@ -384,8 +353,13 @@ function docReady(){
 		               error : function(jqXHR, textStatus, errorThrown) {
 		               }
 			        });
-				}
-			}
+
+				   }
+				});
+
+
+			       
+			}//end single episodios
 
 
 
